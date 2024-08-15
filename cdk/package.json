@@ -1,0 +1,29 @@
+{
+  "name": "ghoulean-zola-cdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && cdk synth",
+    "cdk": "cdk",
+    "deploy": "cdk deploy",
+    "synth": "cdk synth",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "author": "Ghoulean",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.3.0",
+    "aws-cdk": "^2.151.0",
+    "aws-cdk-lib": "^2.151.0",
+    "constructs": "10.0.0",
+    "dotenv": "^16.3.1",
+    "prettier": "3.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.1.0"
+  }
+}
