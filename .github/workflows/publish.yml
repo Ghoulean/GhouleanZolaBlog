@@ -3,7 +3,6 @@ on:
     push:
         branches:
             - mainline
-            - GithubActionsFinangling
 
 jobs:
     deploy:
