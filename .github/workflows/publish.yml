@@ -33,4 +33,4 @@ jobs:
               run: |
                 cd cdk
                 npm install
-                CDK_DEFAULT_ACCOUNT=${{ secrets.AWS_ACCOUNT_ID }} CDK_DEFAULT_REGION=${{ vars.AWS_REGION }} npm run cdk deploy
+                CDK_DEFAULT_ACCOUNT=${{ secrets.AWS_ACCOUNT_ID }} CDK_DEFAULT_REGION=${{ vars.AWS_REGION }} DOMAIN_NAME=${{ vars.DOMAIN_NAME }} npm run cdk deploy
