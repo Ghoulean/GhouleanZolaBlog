@@ -32,5 +32,5 @@ jobs:
             - name: Deploy Zola site
               run: |
                 cd cdk
-                npm run i
+                npm install
                 npm run cdk deploy
