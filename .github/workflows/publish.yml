@@ -27,6 +27,7 @@ jobs:
             - name: Build Zola site
               run: |
                 cd zola
+                git clone https://github.com/jieiku/abridge.git themes/abridge
                 zola build
             - name: Deploy Zola site
               run: |
