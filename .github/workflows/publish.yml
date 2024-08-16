@@ -4,15 +4,15 @@ on:
         branches:
             - mainline
             - GithubActionsFinangling
-permissions:
-    id-token: write
-    contents: read
 
 jobs:
-    run:
+    deploy:
         runs-on: ubuntu-latest
         environment: Default
         timeout-minutes: 10
+        permissions:
+            id-token: write
+            contents: read
         steps:
             - uses: actions/checkout@v4
             - uses: taiki-e/install-action@v2
