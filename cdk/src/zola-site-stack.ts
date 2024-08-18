@@ -192,6 +192,7 @@ export class ZolaSiteStack extends Stack {
             destinationBucket: this.wwwBucket,
             distribution: this.wwwCloudfrontDistribution,
             distributionPaths: ["/*"],
+            memoryLimit: 1024,
         });
     }
 }
