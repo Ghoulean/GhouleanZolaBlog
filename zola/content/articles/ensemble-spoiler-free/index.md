@@ -205,7 +205,7 @@ Note: this guide assumes you completed every reception and have multiple copies 
  
 * Black Silence:
   * Fixed deck
-  * Lone Fixer, Fervor, Mind Hauler, Health Hauler  
+  * Lone Fixer, Locked Potential, Mind Hauler, Health Hauler  
 * Nikolai  
   * Graze the Grass, Wedging Thorn, Multislash, Will of the City, Will of the Prescript, Battle Command, Concentration, Duel, Disposal  
   * Maximum Crash, Mind Hauler, Health Hauler, A Fighter That Never Retreats  

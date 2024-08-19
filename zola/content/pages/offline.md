@@ -7,4 +7,4 @@ draft = false
 
 ## Offline Mode
 
-Sorry, no cache found and it looks like you’re offline, a connection is required.
+No cache found, and it looks like you’re offline. A connection is required.
