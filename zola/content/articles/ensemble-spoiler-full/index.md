@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-08-17
+updated = 2024-08-19
 draft = false
 
 [taxonomies]
@@ -11,6 +11,7 @@ tags = ["Library of Ruina Guides", "lor"]
 [extra]
 toc = true
 series = "Library of Ruina Guides"
+thumbnail = "banner.png"
 +++
 
 # Spoiler-Full Introduction
@@ -449,7 +450,7 @@ This *would* be a fairly straightforward fight if not for the **contracts**, whi
 
 The contracts' restrictions prevent the usage of "typical" decks entirely, "typical" here being decks that follow the 5-4-3 rule (a rule that I just made up): 5 card draw, 4 light restores, 3-cost clashers. The intent of this fight is to improvise your deckbuilding. There are various strategies for tackling this; I'll go through them from least to most cheesy.
 
-**Strategy 1: Tech it up**
+### Strategy 1: Tech it up
 
 To **tech** is to prepare a special tool or strategy in order to counter an opponent. In other words, we'll tweak our decks in order to synergize with these contracts:
 
@@ -459,54 +460,68 @@ To **tech** is to prepare a special tool or strategy in order to counter an oppo
 * Might: This is the one deck where you have to rebuild from the ground up. You'll want to follow 5-4-3 to the best of your ability, but only with mono-offensive pages. Note that the requirements are relaxed compared to Singular Strike, as you are free to include pages that have one offensive die but one or more defensive dice. For example, Deep Drag, Sturdy Defense, and Duel are all valid picks.  
 * Swiftness: You don't need to make any modifications
 
-**Strategy 2: Sacrifice a dedicated contract holder**
+#### Recommended Abnos \+ Egos: 
+
+* Abnos:  
+  * Tier 1: Baptism \> Thirteenth Toll \> Lean Bloody Wings \>\>\> Gaze of Others \= Attention and Focus \= Time
+  * Tier 2: Confession (time this well) \> A Nostalgic Sound \= Advent (do not put on Light contract) \> Penance \> Martyr \= Silence  
+  * Tier 3: Divine Power \= Apostles \> Sentinel  
+* Egos: Sound of a Star \> Penitence \> Dead Silence \= Heaven \>\>\> Paradise Lost
+
+#### Demo
+
+\<todo\>  
+
+### Strategy 2: Sacrifice a dedicated contract holder
 
 You get to choose who gets which contract by redirecting them. As a consequence, you can let one person get 3 or 4 contracts, and then kill them off. This allows your other nuggets to freely run decks free of contracts.
 
 ![Axe gang, axe gang](axe_gang.png)
 
+![Redirect](redirect.png)
+
 I suggest you leave Swiftness un-redirected because that one mostly doesn't do anything, but you're free to run other contract(s) that you want to keep for whatever reason.
 
 Because the Shades copy the keypage of your assistant librarians, the fight quickly reduces to a mostly-typical 4 vs 4 fight.
 
-**Strategy 3: Blockma**
+### Strategy 3: Blockma
 
 Through the power of Combat Preparation and Bi An (mostly Combat Preparation), the Shades' decks become mostly non threatening, while your librarians' decks still pack a punch. Blockma abuses Shades' battle behavior: they alternate between two different "modes". First, they play a card from the copied librarians' deck alongside "Shadow Image". On the next turn, they either play two copies of the page that beat the Clash Lose die effect, or two copies of "I'M THE REAL ONE\!\!\!" (a 9-9 9-9 9-9 offensive page) if the Clash Lose effect was not activated.
 
 ![Shadow images](shadow_image.png)
 ![I'M THE REAL ONE!!!](im_the_real_one.png)
 
-With Lean, Bloody Wings, alongside a well-timed Confession, you can stagger the Shades slowly while being unkillable. Do your best to prevent the Shades from copying Combat Preparation though.
+By stacking irresponsible amounts of Endurance on all your librarians using Combat Preparation, you can slowly stagger the Shades while being untouchable. Aim to play at least 2 Combat Preparations across all librarians every turn (ideally 3 or more). Try to prevent the Shades from copying Combat Preparation also.
 
 ![Blockma 2](blockma_2_1.png)
 ![Blockma 3](blockma_3_1.png)
 ![Blockma 4](blockma_4_1.png)
 
-While Combat Preparation can boost your block dice to double digits basically every turn, I do not recommend going *full* Blockma, and instead leave one or two non-Blockma decks so that you have a nugget that does damage. Ironically, the best non-Blockma holder is Hokma himself as Shades do not copy his deck.
+(note: no attributions)
+
+Although Combat Preparation practically guarentees that you win every clash, I do not recommend going *full* Blockma. Instead, leave one or two non-Blockma decks so that you have a nugget that can finish off Shades who get staggered from all the blocking. Ironically, the best non-Blockma holder is Hokma himself as Shades do not copy his deck.
 
 ![Blockma Xiao](blockma_1.png)
-(Aside: since Shade-exclusive pages are mono-blunt, attributing Stiletto on your assistant librarians will make clashing with Shadow Image and I'M THE REAL ONE\!\!\! easier. Keep in mind that this also boosts the Shades' pierce dice)
+(Aside: since Shade-exclusive pages are mono-blunt, attributing Stiletto on your assistant librarians will make clashing with Shadow Image and I'M THE REAL ONE\!\!\! easier. Keep in mind that this will also boosts the Shades' pierce dice)
 
-**Strategy 4: Whatever Po Po is doing**
+#### Recommended Abnos \+ Egos: 
+
+* Abnos:  
+  * Tier 1: Lean Bloody Wings = Attention and Focus \> Gaze of Others \= Baptism \> Thirteenth Toll \> Time  
+  * Tier 2: Confession (time this well) \> A Nostalgic Sound \= Advent (do not put on Light contract) \> Penance \> Martyr \= Silence  
+  * Tier 3: Divine Power \= Apostles \> Sentinel  
+* Egos: Sound of a Star \> Penitence \> Dead Silence \= Heaven \>\>\> Paradise Lost
+
+#### Demo
+
+{{ youtube(id="GyUGJ6FHGfI") }}
+
+### Strategy 4: Whatever Po Po is doing
 
 Here, just...copy whatever Po Po is doing (he takes Swiftness and Amplification – build in English at end of video)
 
 {{ youtube(id="\_iAh8D0mebs") }}
 
-### Recommended Abnos \+ Egos: 
-
-* Abnos:  
-  * Tier 1:   
-    * Not Blockma: Baptism \> Thirteenth Toll \> Lean Bloody Wings \>\>\> Gaze of Others \= Attention and Focus \= Time  
-    * Blockma: Lean Bloody Wings \>\>\> Attention and Focus \> Gaze of Others \= Baptism \> Thirteenth Toll \> Time  
-  * Tier 2: Confession (time this well) \> A Nostalgic Sound \= Advent (do not put on Light contract) \> Penance \> Martyr \= Silence  
-  * Tier 3: Divine Power \= Apostles \> Sentinel  
-* Egos: Sound of a Star \> Penitence \> Dead Silence \= Heaven \>\>\> Paradise Lost
-
-### Demo
-
-"Intended" playthrough: \<todo\>  
-Blockma with cheesed contracts: {{ youtube(id="GyUGJ6FHGfI") }}
 
 # Keter
 
@@ -663,7 +678,7 @@ This 3-turn cycle repeats until either Wrist Cutter or Angela dies.
 
 If you're having trouble keeping Angela alive, bring Mirinae with the following changes: cut Fervor and Remain Vigilant in Peace on Mirinae and then replace them with Puppet Strings and Nuovo Fabric. When Mirinae spawns, use Puppet Strings on Angela.
 
-## Demo
+### Demo
 
 \<todo\>
 

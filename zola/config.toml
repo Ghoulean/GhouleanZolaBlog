@@ -106,7 +106,7 @@ title_separator = "|"  # Separator between title and title_addition, set as |, -
 title_addition = "" # a default value for title addition
 author = "Ghoulean" # Put Your Name here
 keywords = "ghoulean" # used for the primary site index
-banner = "banner.png" # Used as default image for OpenGraph/Twitter if page specific image is undefined.
+banner = "banner2.png" # Used as default image for OpenGraph/Twitter if page specific image is undefined.
 # twitter_meta = "your-user-name" # for SEO: twitter:site and twitter:creator
 # google = "Your Google Site verification code."
 # bing = "Your Bing Site verification code."
@@ -219,14 +219,14 @@ pwa_BASE_CACHE_FILES = "'/js/theme.min.js','/js/theme_light.min.js','/abridge.cs
 ###############################################################################
 
 # todo: custom favicon
-favicon_theme_color = "#333333"
-favicon_ms_color = "#333333"
+favicon_theme_color = "#32251f"
+favicon_ms_color = "#32251f"
 # favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
 # favicon_mask_color = "#ff9900"
-# favicon_svg = "favicon.svg" # favicon.svg
+favicon_svg = "favicon.svg" # favicon.svg
 # favicon180 = "apple-touch-icon.png" # apple-touch-icon.png
-# favicon32 = "favicon-32x32.png" # favicon-32x32.png
-# favicon16 = "favicon-16x16.png" # favicon-16x16.png
+favicon32 = "favicon-32x32.png" # favicon-32x32.png
+favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 
 ###############################################################################

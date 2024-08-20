@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FREE]"
 description = "This guide is for people who don’t want to build 45 decks for the Reverberation Ensemble, but still want to figure out the gameplay themselves."
 date = 2024-08-17
-updated = 2024-08-17
+updated = 2024-08-19
 draft = false
 
 [taxonomies]
@@ -11,6 +11,7 @@ tags = ["Library of Ruina Guides", "lor"]
 [extra]
 toc = true
 series = "Library of Ruina Guides"
+thumbnail = "banner.png"
 +++
 
 # Introduction
