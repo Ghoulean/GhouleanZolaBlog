@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-08-19
+updated = 2024-08-25
 draft = false
 
 [taxonomies]
@@ -499,7 +499,7 @@ By stacking irresponsible amounts of Endurance on all your librarians using Comb
 
 (note: no attributions)
 
-Although Combat Preparation practically guarentees that you win every clash, I do not recommend going *full* Blockma. Instead, leave one or two non-Blockma decks so that you have a nugget that can finish off Shades who get staggered from all the blocking. Ironically, the best non-Blockma holder is Hokma himself as Shades do not copy his deck.
+Although Combat Preparation practically guarantees that you win every clash, I do not recommend going *full* Blockma. Instead, leave one or two non-Blockma decks so that you have a nugget that can finish off Shades who get staggered from all the blocking. Ironically, the best non-Blockma holder is Hokma himself as Shades do not copy his deck.
 
 ![Blockma Xiao](blockma_1.png)
 (Aside: since Shade-exclusive pages are mono-blunt, attributing Stiletto on your assistant librarians will make clashing with Shadow Image and I'M THE REAL ONE\!\!\! easier. Keep in mind that this will also boosts the Shades' pierce dice)
@@ -522,7 +522,6 @@ Here, just...copy whatever Po Po is doing (he takes Swiftness and Amplification 
 
 {{ youtube(id="\_iAh8D0mebs") }}
 
-
 # Keter
 
 Reference: [Keter, spoiler free builds](/articles/ensemble-spoiler-free/#keter)
@@ -535,6 +534,7 @@ He has Lone Fixer, but so do you (unless you forgot to attribute). He also has s
 * Hitting Durandal will let you win most of your clashes in the next scene, but making Durandal land is tricky. 1-side and/or time Durandal with your The Black Silence passive to maximize these odds. You should look to land Durandal whenever possible.
 * Clash Wheels Industry or Mook Workshop against Unhinged Melodia to prevent the \+3 strength gain, which will make your life immensely difficult next scene if it activates
 * Unless you managed to land both dice on Durandal on the previous scene, prefer 1-siding with your 0-costs over clashing
+* Towards the end of the fight, Argalia should be low enough on stagger that you can rush him down. Sword of Frost facilitates this as all of your pages will fire before any of his.
 * Save Furioso the very end when Argalia hits his 25 HP health gate.
 
 ### Recommended Abnos \+ Egos: 
@@ -551,7 +551,9 @@ He has Lone Fixer, but so do you (unless you forgot to attribute). He also has s
 
 # Black Silence
 
-You\* killed his wife, after all. Bring your [Elite Squad](/articles/ensemble-spoiler-free/#the-elite-squad) to deal with this mess. You can go back to the deckbuilding screen by quitting to title and re-entering the game.
+You have to feel the same sorrow as mine...
+
+Bring your [Elite Squad](/articles/ensemble-spoiler-free/#the-elite-squad) to deal with this mess. You can go back to the deckbuilding screen by quitting to title and re-entering the game.
 
 ## Phase 1 \- Roland
 
@@ -565,7 +567,7 @@ You\* killed his wife, after all. Bring your [Elite Squad](/articles/ensemble-sp
 
 "Others" here referring to some combination of Alias Workshop, Old Boys Workshop, Ranga Workshop, and Zelkova Workshop
 
-Tips:
+### Tips:
 
 * **Do not let Roland land Durandal.** If there's only one takeaway you can get from this phase, it's this.
 * Wheels Industry \+ Mook Workshop: clash with leading block, e.g. Absorb Impact, Double-edged Rencounter, Graze the Grass. If you brought Binah, Pillar can delete the strong first die.
@@ -580,7 +582,7 @@ Big Roland spawns 4 minions. Each time one of his minions die, Roland loses 50 H
 
 If you stay on this phase for too long, eventually he'll start throwing out mass attacks.
 
-Tips:
+### Tips:
 
 * This phase is generally regarded as the least threatening. Use this phase as an opportunity to build hand size, light, and team emotion. You should be able to end every scene at full light and full hand size.
 * Use the bare minimum to deal with the minions each scene, and throw everything else at Roland's main body
@@ -589,7 +591,7 @@ Tips:
 
 There are two mechanics you need to pay attention to: Soul Link and Combo.
 
-**Soul Link**
+### Soul Link
 Both Roland and Angelica start with 4 stacks of Soul Link; they're practically invincible while Soul Link is up. In order to deplete Soul Link:
 
 * Win the clash against Angelica's Unstable Bond with the "Dark Presence" buff
@@ -602,10 +604,14 @@ In order to obtain these buffs:
 
 Thus, you can deplete up to two stacks of Soul Link per turn.
 
-**Combo**
+### Combo
 If Angelica and Roland target the same librarian with the same workshop page, then Roland will give his dice to Angelica. For example, if Angelica's Zelkova Workshop (4-8 slash, 3-8 blunt) and Roland's Combo: Zelkova Workshop (3-8 slash, 3-8 slash) both target the same librarian, then Roland will not play Zelkova Workshop, but Angelica's Zelkova Workshop will attack the librarian with a 4-8 slash, 3-8 blunt, 3-8 slash, 3-8 slash in that order.
 
-Therefore, the strategy is to either split focus, or to ram this into a counter die that will win every clash. From anecdotal experience, I've found that the first is more consistent.
+Therefore, there are three main strategies to deal with this:
+
+1. Split focus: multiple librarians clash into these cards to prevent one from getting overwhelmed
+2. Counter with a single strong 3-cost clasher. The threat from Combo pages come from obscurity: your librarian has to defend against more dice than the pre-combat screen will lead you to believe. But even with dice getting shuffled around, most combo pages are 3- or 4-dice attacks.
+3. Ram a combo page into a counter die that you know will win every clash.
 
 Prioritize depleting Soul Link over breaking up Combo.
 
@@ -613,7 +619,9 @@ Prioritize depleting Soul Link over breaking up Combo.
 
 Roland uses a bunch of cards. He spawns several weapons behind him over 3 turns. At the end of the third turn, he uses a powerful mass. He will move to Phase 4.2 if he hits 400 HP.
 
-The strategy is to deal damage hard and fast in order to change phases as quickly as possible, thus avoiding the mass attack. **Do not sacrifice econ to do DPS.** At this point, your librarians should be at high emotion level. Additionally, they should be holding a full or almost-full hand size as well as being at full or almost-full light. If they are not, refill them on card draw and/or light turn 1\.
+The strategy is to deal damage hard and fast enough to force a phase change before the mass attack happens. Ignore the weapons he spawns behind him as that will prevent dealing damage against Roland himself.
+
+**Do not sacrifice econ in order to deal damage.** While Roland is charging up his mass, his attacks are fairly weak. Use this opportunity to rebuild your econ (card draw and light restore) and prepare yourself for success in the next phase. Even though this segment is a DPS race, at this point, your librarians should be at high emotion level. Even by using mostly econ cards, you should still be able to kill him.
 
 ## Phase 4.2 \- Abno Clones
 
@@ -632,9 +640,9 @@ There is no priority as each clone is fairly frail. Try to spread out your damag
 
 Roland throws out attacks until he dies for real this time. So just kill him.
 
-For the mass – honestly, unless you have like \+6 power on yourself or something, just ignore it. Don't slot anything into that speed die.
+For the mass – if you have less than \+6 power on yourself and/or don't have a strong first-die page, accept that you'll get hit.
 
-## Demo
+### Demo
 
 {{ youtube(id="HLPOR0zEckk") }}
 
