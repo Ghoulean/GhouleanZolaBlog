@@ -424,7 +424,7 @@ You MUST pick Weight of Sin as your first abno card in order for this deck to su
 
 ### Demo 2:
 
-* \<todo: video\>
+{{ youtube(id="yT4lWAwXe6o") }}
 
 # Hokma
 
@@ -636,7 +636,7 @@ For the mass – honestly, unless you have like \+6 power on yourself or somethi
 
 ## Demo
 
-{{ youtube(id="gopOF6H9lmk") }}
+{{ youtube(id="HLPOR0zEckk") }}
 
 # Keter Realization
 
@@ -914,7 +914,7 @@ This is a scripted fight: Barel and Zena play the exact same cards every turn, e
 
 ### Demo
 
-\<todo\>
+{{ youtube(id="uLj3_PdvQM4") }}
 
 # Credits
 
@@ -930,6 +930,6 @@ Special thanks to the following people who contributed to the making of this gui
 * Stuff
 * Loki
 
-![Loki](loki.jpg)
+![Loki](loki_small.gif)
 
 This is Loki.
