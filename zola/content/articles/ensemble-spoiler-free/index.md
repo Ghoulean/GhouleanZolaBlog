@@ -25,19 +25,19 @@ Note: this guide assumes you completed every reception and have multiple copies 
 # Malkuth
 
 * Xiao
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Raging Storm: Love  
-  * Volatile Passion, Flaring Brand, Mind Hauler, Hugging Fire Sitting on Brushwood  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Raging Storm: Love
+  * Volatile Passion, Flaring Brand, Mind Hauler, Hugging Fire Sitting on Brushwood
 * Lowell
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Forming Storm  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Forming Storm
   * Locked Potential, Firm as a Great Mountain, Hugging Fire Sitting on Brushwood, Electric Shock
 * Miris
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Fiery Dragon Fist  
-  * Four Trigrams, Furious Fire Rendering the Skies, Firm as a Great Mountain, Electric Shock  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Fiery Dragon Fist
+  * Four Trigrams, Furious Fire Rendering the Skies, Firm as a Great Mountain, Electric Shock
 * Mei
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Tieshankao  
-  * Four Trigrams, Locked Potential, Easygoing Breather  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Tieshankao
+  * Four Trigrams, Locked Potential, Easygoing Breather
 * Cecil
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Tieshankao  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Tieshankao
   * Four Trigrams, Furious Fire Rendering the Skies, Wedge
 
 ![Malkuth 1](malkuth_1.png) ![Malkuth 2](malkuth_2.png) ![Malkuth 3](malkuth_3.png) ![Malkuth 4](malkuth_4.png) ![Malkuth 5](malkuth_5.png)
@@ -46,18 +46,18 @@ Note: this guide assumes you completed every reception and have multiple copies 
 
 * Olivier
   * Graze the Grass, Wedging Thorn, Forward March, Multislash, Steel Knuckles, Will of the Prescript, Duel, Double-edged Rencounter, True Trigram Formation
-  * High-Level Acrobatics, Lion’s Fist, Health Hauler, Mind Hauler  
+  * High-Level Acrobatics, Lion’s Fist, Health Hauler, Mind Hauler
 * Yae
-  * Graze the Grass, Wedging Thorn, Forward March, Multislash, Steel Knuckles, Will of the Prescript, Duel, Double-edged Rencounter, Exhale Smoke
-  * Eyes of Death/Enervation, Fervor, Health Hauler  
+  * Wedging Thorn, Forward March, Guidance of the Gears, Multislash, Steel Knuckles, Will of the Prescript, Duel, Double-edged Rencounter, Exhale Smoke
+  * Eyes of Death/Enervation, Fervor, Health Hauler
 * Myo
-  * Energy Cycle, Graze the Grass, Multislash, Savage Mode, Will of the City, Will of the Prescript, Concentration, Duel, Double-edged Rencounter  
-  * The Strongest, Fervor, Remain Vigilant in Peace  
+  * Graze the Grass, Forward March, Multislash, Savage Mode, Will of the City, Will of the Prescript, Concentration, Duel, Double-edged Rencounter
+  * The Strongest, Fervor, Remain Vigilant in Peace
 * Maxim
-  * Energy Cycle, Graze the Grass, Multislash, Will of the City, Will of the Prescript, Duel, Double-edged Rencounter, Rhino Ram, Ground Crash  
-  * Fervor, High-Level Acrobatics, Mind Hauler, Bzzz Bzzz  
+  * Graze the Grass, Forward March, Multislash, Will of the City, Will of the Prescript, Duel, Double-edged Rencounter, Rhino Ram, Ground Crash
+  * Fervor, High-Level Acrobatics, Mind Hauler, Bzzz Bzzz
 * Dong-hwan
-  * Graze the Grass, Wedging Thorn, Forward March, Multislash, Steel Knuckles, Forceful Gesture, Will of the Prescript, Duel, Double-edged Rencounter  
+  * Graze the Grass, Wedging Thorn, Forward March, Multislash, Steel Knuckles, Forceful Gesture, Will of the Prescript, Duel, Double-edged Rencounter
   * High-Level Acrobatics, Lion’s Fist, Mind Hauler, Health Hauler
 
 ![Yesod 1](yesod_1.png) ![Yesod 2](yesod_2.png) ![Yesod 3](yesod_3.png) ![Yesod 4](yesod_4.png) ![Yesod 5](yesod_5.png)
@@ -70,13 +70,13 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * Allen
     * Frontal Assault, Graze the Grass, Wedging Thorn, Extract Fuel, Shoving Stab, Gale Kick, Will of the Prescript, Laceration, Prod the Weakness
     * Wedge, Piercer, Fervor, Deep Wound, Electric Shock
-  * Night Awl  
+  * Night Awl
     * Frontal Assault, Graze the Grass, Wedging Thorn, Extract Fuel, Shoving Stab, Gale Kick, Will of the Prescript, Laceration, Prod the Weakness
     * Wedge, Piercer, Fervor, Deep Wound, Electric Shock
-  * Night Awl  
+  * Night Awl
     * Frontal Assault, Graze the Grass, Wedging Thorn, Extract Fuel, Shoving Stab, Gale Kick, Will of the Prescript, Laceration, Prod the Weakness
     * Wedge, Piercer, Fervor, Deep Wound, Electric Shock
-  * Bamboo-Hatted Kim:  
+  * Bamboo-Hatted Kim:
     * x3 Draw of the Sword x3 Clone x3 Burning Flash
     * Battle Ready, Dark Cloud Blade, Bottom Deal
 
@@ -85,58 +85,58 @@ Note: this guide assumes you completed every reception and have multiple copies 
 # Netzach
 
 * Mirinae:
-  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick  
-  * Bottom Deal, Best Choice, Fervor, Mind Hauler  
-* Yan:  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Baleful Brand, Distorted Blade  
-  * Fervor, Health Hauler, Mind Hauler, Electric Shock  
-* Nikolai:  
-  * Graze the Grass, Wedging Thorn, Forward March, Multislash, Absorb Impact, Will of the Prescript, Sturdy Defense, Concentration, Disposal  
-  * Battle Ready, Dark Cloud Blade, Fervor, Mind Hauler  
-* Esther  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Emotional Turbulence, Castigation  
-  * Fervor, Remain Vigilant in Peace, Wedge, Jolting Puncture, Electric Shock  
-* Kalo  
-  * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire  
+  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick
+  * Bottom Deal, Best Choice, Fervor, Mind Hauler
+* Yan:
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Baleful Brand, Distorted Blade
+  * Fervor, Health Hauler, Mind Hauler, Electric Shock
+* Nikolai:
+  * Graze the Grass, Wedging Thorn, Forward March, Multislash, Absorb Impact, Will of the Prescript, Sturdy Defense, Concentration, Disposal
+  * Battle Ready, Dark Cloud Blade, Fervor, Mind Hauler
+* Esther
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Emotional Turbulence, Castigation
+  * Fervor, Remain Vigilant in Peace, Wedge, Jolting Puncture, Electric Shock
+* Kalo
+  * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire
   * Bottom Deal, Stacking the Deck, Best Choice, Empowered First Shock, Additional Supplies
 
 ![Netzach 1](netzach_1.png) ![Netzach 2](netzach_2.png) ![Netzach 3](netzach_3.png) ![Netzach 4](netzach_4.png) ![Netzach 5](netzach_5.png)
 
 # Tiphereth
  
-* Harold:  
-  * Puppet Blockade, Graze the Grass, Extract Fuel, Multislash, A Golden Opportunity\!, Ready Up\!, Will of the Prescript, Sturdy Defense, Duel  
+* Harold:
+  * Puppet Blockade, Graze the Grass, Extract Fuel, Multislash, A Golden Opportunity\!, Ready Up\!, Will of the Prescript, Sturdy Defense, Duel
   * Grit, Haboob, Toughness, Keeping in Stride
 * Allen 
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear
   * Wedge, Fervor, Singular Strike, Keeping in Stride
 * Night Awl 
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear
   * Wedge, Fervor, Singular Strike, Keeping in Stride
 * Night Awl 
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear
   * Wedge, Fervor, Singular Strike, Keeping in Stride
 * Night Awl 
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear  
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear
   * Wedge, Fervor, Singular Strike, Keeping in Stride
 
 ![Tiphereth 1](tiphereth_1.png) ![Tiphereth 2](tiphereth_2.png) ![Tiphereth 3](tiphereth_3.png) ![Tiphereth 4](tiphereth_4.png) ![Tiphereth 5](tiphereth_5.png)
 
 # Gebura
 
-* Red Mist:  
-  * x2 Steel Knuckles, x3 Spear, x3 Upstanding Slash, 1x Focus Spirit  
-  * Myo’s Prowess, Fervor, Health Hauler, Electric Shock  
-* Kalo  
-  * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire  
+* Red Mist:
+  * x2 Steel Knuckles, x3 Spear, x3 Upstanding Slash, 1x Focus Spirit
+  * Myo’s Prowess, Fervor, Health Hauler, Electric Shock
+* Kalo
+  * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire
   * Bottom Deal, Stacking the Deck, Best Choice, Empowered First Shot, Additional Supplies
-* Esther  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Deep Drag, Sturdy Defense, Double Edged Rencounter, Castigation  
-  * Fervor, A Fighter that Never Retreats, Health Hauler, Mind Hauler, Electric Shock  
-* Yae  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Deep Drag, Loss of Senses, Double Edged Rencounter, Exhale Smoke  
-  * Sooty Thwack, Locked Potential, Easygoing Breather  
-* Purple Tear:  
+* Esther
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Deep Drag, Sturdy Defense, Double Edged Rencounter, Castigation
+  * Fervor, A Fighter that Never Retreats, Health Hauler, Mind Hauler, Electric Shock
+* Yae
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Deep Drag, Loss of Senses, Double Edged Rencounter, Exhale Smoke
+  * Sooty Thwack, Locked Potential, Easygoing Breather
+* Purple Tear:
   * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Venomous Fangs, Will of the Prescript, Laceration
   * Stiletto, Wedge, Electric Shock
 
@@ -144,20 +144,20 @@ Note: this guide assumes you completed every reception and have multiple copies 
 
 # Chesed
 
-* Nikolai:  
-  * Graze the Grass, Wedging Thorn, Energy Conversion, Multislash, Absorb Impact, A Golden Opportunity\!, Will of the Prescript, Battle Command, Double-edged Rencounter  
-  * Battle Ready, Bionic Charge-synchronized Hull, Fervor, Firm as a Great Mountain  
-* Mirinae:  
-  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick  
-  * Bottom Deal, Best Choice, The Messenger, Mind Hauler  
-* Xiao  
-  * Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the City, Will of the Prescript, Deep Drag, Emotional Turbulence, Raging Storm: Love  
-  * Volatile Passion, Flaring Brand, Mind Hauler, Health Hauler, Electric Shock  
-* Olivier:  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the Prescript, Emotional Turbulence, Sturdy Defense, True Trigram Formation  
-  * Fervor, Locked Potential, Health Hauler, Mind Hauler  
-* Maxim  
-  * Graze the Grass, Wedging Thorn, Forward March, Multislash, Absorb Impact, Will of the Prescript, Deep Drag, Rhino Ram, Ground Crash  
+* Nikolai:
+  * Graze the Grass, Wedging Thorn, Energy Conversion, Multislash, Absorb Impact, A Golden Opportunity\!, Will of the Prescript, Battle Command, Double-edged Rencounter
+  * Battle Ready, Bionic Charge-synchronized Hull, Fervor, Firm as a Great Mountain
+* Mirinae:
+  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick
+  * Bottom Deal, Best Choice, The Messenger, Mind Hauler
+* Xiao
+  * Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the City, Will of the Prescript, Deep Drag, Emotional Turbulence, Raging Storm: Love
+  * Volatile Passion, Flaring Brand, Mind Hauler, Health Hauler, Electric Shock
+* Olivier:
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the Prescript, Emotional Turbulence, Sturdy Defense, True Trigram Formation
+  * Fervor, Locked Potential, Health Hauler, Mind Hauler
+* Maxim
+  * Graze the Grass, Wedging Thorn, Forward March, Multislash, Absorb Impact, Will of the Prescript, Deep Drag, Rhino Ram, Ground Crash
   * Fervor, High-Level Acrobatics, Mind Hauler, Bzzz Bzzz
 
 ![Chesed 1](chesed_1.png) ![Chesed 2](chesed_2.png) ![Chesed 3](chesed_3.png) ![Chesed 4](chesed_4.png) ![Chesed 5](chesed_5.png)
@@ -166,38 +166,38 @@ Note: this guide assumes you completed every reception and have multiple copies 
 
 * Binah:
   * Fixed deck
-  * In Times Like These\!, Easygoing Breather, Mind Hauler, The Messenger  
-* Olivier  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Repressed Flesh, Will of the Prescript, Deep Drag, Double-edged Rencounter, True Trigram Formation  
-  * Fervor, High-level Acrobatics, Mind Hauler, Electric Shock  
-* Mirinae  
-  * x3 Ominous Power x3 Brace Up x3 Augury Kick  
-  * Bottom Deal, Best Choice, Mind Hauler, Fervor, Firm as a Great Mountain  
-* Allen  
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Somber Procuration, Venomous Fangs, Will of the Prescript, Sturdy Defense, Laceration  
-  * Wedge, Fervor, Mind Hauler, Piercer, Electric Shock  
-* Kalo  
-  * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire  
+  * In Times Like These\!, Easygoing Breather, Four Trigrams, Electric Shock
+* Olivier
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Repressed Flesh, Will of the Prescript, Deep Drag, Double-edged Rencounter, True Trigram Formation
+  * Fervor, High-level Acrobatics, Mind Hauler, Electric Shock
+* Mirinae
+  * x3 Ominous Power x3 Brace Up x3 Augury Kick
+  * Bottom Deal, Best Choice, Mind Hauler, Fervor, Firm as a Great Mountain
+* Allen
+  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Somber Procuration, Venomous Fangs, Will of the Prescript, Sturdy Defense, Laceration
+  * Wedge, Fervor, Mind Hauler, Piercer, Electric Shock
+* Kalo
+  * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire
   * Bottom Deal, Stacking the Deck, Best Choice, Empowered First Shot, Additional Supplies
 
 ![Binah 1](binah_1.png) ![Binah 2](binah_2.png) ![Binah 3](binah_3.png) ![Binah 4](binah_4.png) ![Binah 5](binah_5.png)
 
 # Hokma
 
-* Nikolai  
-  * Graze the Grass, Energy Conversion, Multislash, Absorb Impact, Will of the Prescript, Sturdy Defense, Battle Command, Concentration, Disposal  
-  * Myo’s Prowess, The Strongest, Immediate Repairs, Health Hauler  
-* Bayard  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Feint, Shoving Stab, Steel Knuckles, Will of the Prescript, Double-edged Rencounter  
-  * Fervor, a Fighter That Never Retreats, Raging Torrent, Mind Hauler, Health Hauler  
-* Purple Tear (Slash stance)  
-  * x3 Clone, x3 Will of the City, x3 Rapid Gashes  
-  * Battle Ready, Dark Cloud Blade, Offensive Position, Mind Hauler, Electric Shock  
-* Xiao  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Raging Storm Love  
-  * Volatile Passion, Flaring Brand, Keeping in Stride, Mind Hauler, Electric Shock  
+* Nikolai
+  * Graze the Grass, Energy Conversion, Multislash, Absorb Impact, Will of the Prescript, Sturdy Defense, Battle Command, Concentration, Disposal
+  * Myo’s Prowess, The Strongest, Immediate Repairs, Health Hauler
+* Bayard
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Feint, Shoving Stab, Steel Knuckles, Will of the Prescript, Double-edged Rencounter
+  * Fervor, a Fighter That Never Retreats, Raging Torrent, Mind Hauler, Health Hauler
+* Purple Tear (Slash stance)
+  * x3 Clone, x3 Will of the City, x3 Rapid Gashes
+  * Battle Ready, Dark Cloud Blade, Offensive Position, Mind Hauler, Electric Shock
+* Xiao
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Raging Storm Love
+  * Volatile Passion, Flaring Brand, Keeping in Stride, Mind Hauler, Electric Shock
 * Bamboo-Hatted Kim
-  * x3 Draw of the Sword, x3 Clone, x3 Burning Flash  
+  * x3 Draw of the Sword, x3 Clone, x3 Burning Flash
   * Dark Cloud Blade, Battle Ready, Bottom Deal
 
 ![Hokma 1](hokma_1.png) ![Hokma 2](hokma_2.png) ![Hokma 3](hokma_3.png) ![Hokma 4](hokma_4.png) ![Hokma 5](hokma_5.png)
@@ -206,17 +206,17 @@ Note: this guide assumes you completed every reception and have multiple copies 
  
 * Black Silence:
   * Fixed deck
-  * Lone Fixer, Locked Potential, Mind Hauler, Health Hauler  
-* Nikolai  
-  * Graze the Grass, Wedging Thorn, Multislash, Will of the City, Will of the Prescript, Battle Command, Concentration, Duel, Disposal  
-  * Maximum Crash, Mind Hauler, Health Hauler, A Fighter That Never Retreats  
-* Purple Tear (pierce stance)  
+  * Lone Fixer, Locked Potential, Mind Hauler, Health Hauler
+* Nikolai
+  * Graze the Grass, Wedging Thorn, Multislash, Will of the City, Will of the Prescript, Battle Command, Concentration, Duel, Disposal
+  * Maximum Crash, Mind Hauler, Health Hauler, A Fighter That Never Retreats
+* Purple Tear (pierce stance)
   * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Dagger Press, Somber Procuration, Will of the Prescript, Sturdy Defense, Laceration 
   * Stiletto, Wedge, Keeping in Stride
-* Mirinae  
-  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick  
-  * Bottom Deal, Best Choice, Mind Hauler, Firm as a Great Mountain, Fervor  
-* Olivier  
+* Mirinae
+  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick
+  * Bottom Deal, Best Choice, Mind Hauler, Firm as a Great Mountain, Fervor
+* Olivier
   * Frontal Assault, Wedging Thorn, Forward March, Multislash, Feint, Will of the Prescript, Deep Drag, Double-Edged Rencounter, True Trigram Formation
   * Fervor, Locked Potential, Mind Hauler, Health Hauler
 
@@ -227,23 +227,23 @@ Note: this guide assumes you completed every reception and have multiple copies 
 Struggling with a fight and need to concentrate **everything** onto a single floor? Take 5 of your favorite picks from here. With the exception of Red Mist and Binah, these decks work on every floor.
 
 * Nikolai
-  * Graze the Grass, Wedging Thorn, Multislash, Will of the City, Will of the Prescript, Battle Command, Concentration, Duel, Disposal  
+  * Graze the Grass, Wedging Thorn, Multislash, Will of the City, Will of the Prescript, Battle Command, Concentration, Duel, Disposal
   * Maximum Crash, Mind Hauler, Health Hauler, A Fighter That Never Retreats
-* Purple Tear (pierce stance)  
+* Purple Tear (pierce stance)
   * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Dagger Press, Somber Procuration, Will of the Prescript, Sturdy Defense, Laceration 
   * Stiletto, Wedge, Keeping in Stride
-* Mirinae  
-  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick  
-  * Bottom Deal, Best Choice, Mind Hauler, Firm as a Great Mountain, Fervor  
-* Olivier  
+* Mirinae
+  * x3 Ominous Power, x3 Brace Up, x3 Augury Kick
+  * Bottom Deal, Best Choice, Mind Hauler, Firm as a Great Mountain, Fervor
+* Olivier
   * Frontal Assault, Wedging Thorn, Forward March, Multislash, Feint, Will of the Prescript, Deep Drag, Double-Edged Rencounter, True Trigram Formation
   * Fervor, Locked Potential, Mind Hauler, Health Hauler
-* Xiao  
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the Prescript, Deep Drag, Double-Edged Rencounter, Raging Storm: Love  
-  * Mind Hauler, Health Hauler, Volatile Passion, Flaring Brand, Electric Shock  
-* Red Mist  
-  * x2 Steel Knuckles, x3 Upstanding Slash, x3 Spear, x1 Focus Spirit,   
-  * Myo’s Prowess, Offensive Position, Health Hauler, Mind Hauler  
+* Xiao
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the Prescript, Deep Drag, Double-Edged Rencounter, Raging Storm: Love
+  * Mind Hauler, Health Hauler, Volatile Passion, Flaring Brand, Electric Shock
+* Red Mist
+  * x2 Steel Knuckles, x3 Upstanding Slash, x3 Spear, x1 Focus Spirit, 
+  * Myo’s Prowess, Offensive Position, Health Hauler, Mind Hauler
 * Binah 
   * Fixed deck 
   * In Times Like These\!, Easygoing Breather, Fervor, Mind Hauler
@@ -254,12 +254,13 @@ Struggling with a fight and need to concentrate **everything** onto a single flo
 
 Special thanks to the following people who contributed to the making of this guide:
 
-* Aisir  
-* Alice Margatroid  
-* Atse  
-* CountDuckoo  
-* Jakkie  
-* Mozzarella  
-* Render  
-* Stuff  
+* Aisir
+* Alice Margatroid
+* Ameko
+* Atse
+* CountDuckoo
+* Jakkie
+* Mozzarella
+* Render
+* Stuff
 * Loki

@@ -930,6 +930,7 @@ Special thanks to the following people who contributed to the making of this gui
 
 * Aisir
 * Alice Margatroid
+* Ameko
 * Atse
 * CountDuckoo
 * Jakkie
