@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FREE]"
 description = "This guide is for people who don’t want to build 45 decks for the Reverberation Ensemble, but still want to figure out the gameplay themselves."
 date = 2024-08-17
-updated = 2024-08-19
+updated = 2024-09-01
 draft = false
 
 [taxonomies]
@@ -185,7 +185,7 @@ Note: this guide assumes you completed every reception and have multiple copies 
 # Hokma
 
 * Nikolai
-  * Graze the Grass, Energy Conversion, Multislash, Absorb Impact, Will of the Prescript, Sturdy Defense, Battle Command, Concentration, Disposal
+  * Feint, Absorb Impact, A Golden Opportunity!, Will of the Prescript, Deep Drag, Sturdy Defense, Battle Command, Concentration, Disposal
   * Myo’s Prowess, The Strongest, Immediate Repairs, Health Hauler
 * Bayard
   * Frontal Assault, Wedging Thorn, Forward March, Multislash, Feint, Shoving Stab, Steel Knuckles, Will of the Prescript, Double-edged Rencounter

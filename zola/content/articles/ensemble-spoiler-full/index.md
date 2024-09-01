@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-08-25
+updated = 2024-09-01
 draft = false
 
 [taxonomies]
@@ -456,7 +456,7 @@ To **tech** is to prepare a special tool or strategy in order to counter an oppo
 
 * Amplification: include a large variety of page costs in your deck. The \+3 dice power means that even with 0-cost pages, you'll be winning most if not all clashes with the selected cost. The \-3 dice power means that even with 3-cost pages, you'll probably be losing said clashes. Try to obtain and maintain a large hand size so that you have a plethora of options to choose from every turn.
 * Liberty: Include almost exclusively 3-cost cards in your deck. Try to obtain and maintain a large hand size so that the likelihood of playing discounted cards is high. Will of the City is a great inclusion because it's a light restore that can get discounted even further, resulting in a 1- or even a 0-cost that restores 3 light (net light restore: 2 or 3). Alternatively, Rapid Gashes ignores the Liberty effect entirely.
-* Light: Go heavy on card draw, and remove all light restores from your deck. Baptism can help bring your light usage to zero, if you manage to grab that abno page. Avoid Advent like the plague (pun intended). Running pages with counter dice guarantees that the light gets spent: otherwise, if the target dies before the page without a counter gets used, you won't spend light. Especially in early emo levels, you will eventually run into situations where you are forced to have some leftover light; HP healing passives \+ Reindeer Treatment can take advantage of this.
+* Light: Go heavy on card draw, and remove all light restores from your deck. Baptism can help bring your light usage to zero, if you manage to grab that abno page. Avoid Advent like the plague (pun intended). Running pages with counter dice guarantees that the light gets spent: otherwise, if the target dies before the page without a counter gets used, you won't spend light. Especially in early emo levels, you will eventually run into situations where you are forced to have some leftover light; HP healing passives \+ Reindeer Treatment can take advantage of this. **Do not let Pluto trap the Light contract holder** as Pluto will prevent light expenditure, **instantly killing** your librarian.
 * Might: This is the one deck where you have to rebuild from the ground up. You'll want to follow 5-4-3 to the best of your ability, but only with mono-offensive pages. Note that the requirements are relaxed compared to Singular Strike, as you are free to include pages that have one offensive die but one or more defensive dice. For example, Deep Drag, Sturdy Defense, and Duel are all valid picks.
 * Swiftness: You don't need to make any modifications
 
@@ -470,7 +470,7 @@ To **tech** is to prepare a special tool or strategy in order to counter an oppo
 
 #### Demo
 
-{{ youtube(id="-d_HFLVOjoA") }}
+{{ youtube(id="9AVj8cM7Anw") }}
 
 ### Strategy 2: Sacrifice a dedicated contract holder
 
