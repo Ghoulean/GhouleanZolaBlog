@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FREE]"
 description = "This guide is for people who don’t want to build 45 decks for the Reverberation Ensemble, but still want to figure out the gameplay themselves."
 date = 2024-08-17
-updated = 2024-09-01
+updated = 2024-09-07
 draft = false
 
 [taxonomies]
@@ -40,7 +40,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Tieshankao
   * Four Trigrams, Furious Fire Rendering the Skies, Wedge
 
-![Malkuth 1](malkuth_1.png) ![Malkuth 2](malkuth_2.png) ![Malkuth 3](malkuth_3.png) ![Malkuth 4](malkuth_4.png) ![Malkuth 5](malkuth_5.png)
+{{ img(src="malkuth_1.png" class="ci" alt="Malkuth 1") }}
+{{ img(src="malkuth_2.png" class="ci" alt="Malkuth 2") }}
+{{ img(src="malkuth_3.png" class="ci" alt="Malkuth 3") }}
+{{ img(src="malkuth_4.png" class="ci" alt="Malkuth 4") }}
+{{ img(src="malkuth_5.png" class="ci" alt="Malkuth 5") }}
 
 # Yesod
 
@@ -60,7 +64,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * Graze the Grass, Wedging Thorn, Forward March, Multislash, Steel Knuckles, Forceful Gesture, Will of the Prescript, Duel, Double-edged Rencounter
   * High-Level Acrobatics, Lion’s Fist, Mind Hauler, Health Hauler
 
-![Yesod 1](yesod_1.png) ![Yesod 2](yesod_2.png) ![Yesod 3](yesod_3.png) ![Yesod 4](yesod_4.png) ![Yesod 5](yesod_5.png)
+{{ img(src="yesod_1.png" class="ci" alt="Yesod 1") }}
+{{ img(src="yesod_2.png" class="ci" alt="Yesod 2") }}
+{{ img(src="yesod_3.png" class="ci" alt="Yesod 3") }}
+{{ img(src="yesod_4.png" class="ci" alt="Yesod 4") }}
+{{ img(src="yesod_5.png" class="ci" alt="Yesod 5") }}
 
 # Hod
 
@@ -80,7 +88,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
     * x3 Draw of the Sword x3 Clone x3 Burning Flash
     * Battle Ready, Dark Cloud Blade, Bottom Deal
 
-![Hod 1](hod_1.png) ![Hod 2](hod_2.png) ![Hod 3](hod_3.png) ![Hod 4](hod_4.png) ![Hod 5](hod_5.png)
+{{ img(src="hod_1.png" class="ci" alt="Hod 1") }}
+{{ img(src="hod_2.png" class="ci" alt="Hod 2") }}
+{{ img(src="hod_3.png" class="ci" alt="Hod 3") }}
+{{ img(src="hod_4.png" class="ci" alt="Hod 4") }}
+{{ img(src="hod_5.png" class="ci" alt="Hod 5") }}
 
 # Netzach
 
@@ -100,7 +112,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire
   * Bottom Deal, Stacking the Deck, Best Choice, Empowered First Shock, Additional Supplies
 
-![Netzach 1](netzach_1.png) ![Netzach 2](netzach_2.png) ![Netzach 3](netzach_3.png) ![Netzach 4](netzach_4.png) ![Netzach 5](netzach_5.png)
+{{ img(src="netzach_1.png" class="ci" alt="Netzach 1") }}
+{{ img(src="netzach_2.png" class="ci" alt="Netzach 2") }}
+{{ img(src="netzach_3.png" class="ci" alt="Netzach 3") }}
+{{ img(src="netzach_4.png" class="ci" alt="Netzach 4") }}
+{{ img(src="netzach_5.png" class="ci" alt="Netzach 5") }}
 
 # Tiphereth
  
@@ -120,7 +136,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Will of the Prescript, Laceration, Celestial Spear
   * Wedge, Fervor, Singular Strike, Keeping in Stride
 
-![Tiphereth 1](tiphereth_1.png) ![Tiphereth 2](tiphereth_2.png) ![Tiphereth 3](tiphereth_3.png) ![Tiphereth 4](tiphereth_4.png) ![Tiphereth 5](tiphereth_5.png)
+{{ img(src="tiphereth_1.png" class="ci" alt="Tiphereth 1") }}
+{{ img(src="tiphereth_2.png" class="ci" alt="Tiphereth 2") }}
+{{ img(src="tiphereth_3.png" class="ci" alt="Tiphereth 3") }}
+{{ img(src="tiphereth_4.png" class="ci" alt="Tiphereth 4") }}
+{{ img(src="tiphereth_5.png" class="ci" alt="Tiphereth 5") }}
 
 # Gebura
 
@@ -140,7 +160,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Venomous Fangs, Will of the Prescript, Laceration
   * Stiletto, Wedge, Electric Shock
 
-![Gebura 1](gebura_1.png) ![Gebura 2](gebura_2.png) ![Gebura 3](gebura_3.png) ![Gebura 4](gebura_4.png) ![Gebura 5](gebura_5.png)
+{{ img(src="gebura_1.png" class="ci" alt="Gebura 1") }}
+{{ img(src="gebura_2.png" class="ci" alt="Gebura 2") }}
+{{ img(src="gebura_3.png" class="ci" alt="Gebura 3") }}
+{{ img(src="gebura_4.png" class="ci" alt="Gebura 4") }}
+{{ img(src="gebura_5.png" class="ci" alt="Gebura 5") }}
 
 # Chesed
 
@@ -160,7 +184,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * Graze the Grass, Wedging Thorn, Forward March, Multislash, Absorb Impact, Will of the Prescript, Deep Drag, Rhino Ram, Ground Crash
   * Fervor, High-Level Acrobatics, Mind Hauler, Bzzz Bzzz
 
-![Chesed 1](chesed_1.png) ![Chesed 2](chesed_2.png) ![Chesed 3](chesed_3.png) ![Chesed 4](chesed_4.png) ![Chesed 5](chesed_5.png)
+{{ img(src="chesed_1.png" class="ci" alt="Chesed 1") }}
+{{ img(src="chesed_2.png" class="ci" alt="Chesed 2") }}
+{{ img(src="chesed_3.png" class="ci" alt="Chesed 3") }}
+{{ img(src="chesed_4.png" class="ci" alt="Chesed 4") }}
+{{ img(src="chesed_5.png" class="ci" alt="Chesed 5") }}
 
 # Binah
 
@@ -180,7 +208,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire
   * Bottom Deal, Stacking the Deck, Best Choice, Empowered First Shot, Additional Supplies
 
-![Binah 1](binah_1.png) ![Binah 2](binah_2.png) ![Binah 3](binah_3.png) ![Binah 4](binah_4.png) ![Binah 5](binah_5.png)
+{{ img(src="binah_1.png" class="ci" alt="Binah 1") }}
+{{ img(src="binah_2.png" class="ci" alt="Binah 2") }}
+{{ img(src="binah_3.png" class="ci" alt="Binah 3") }}
+{{ img(src="binah_4.png" class="ci" alt="Binah 4") }}
+{{ img(src="binah_5.png" class="ci" alt="Binah 5") }}
 
 # Hokma
 
@@ -200,7 +232,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * x3 Draw of the Sword, x3 Clone, x3 Burning Flash
   * Dark Cloud Blade, Battle Ready, Bottom Deal
 
-![Hokma 1](hokma_1.png) ![Hokma 2](hokma_2.png) ![Hokma 3](hokma_3.png) ![Hokma 4](hokma_4.png) ![Hokma 5](hokma_5.png)
+{{ img(src="hokma_1.png" class="ci" alt="Hokma 1") }}
+{{ img(src="hokma_2.png" class="ci" alt="Hokma 2") }}
+{{ img(src="hokma_3.png" class="ci" alt="Hokma 3") }}
+{{ img(src="hokma_4.png" class="ci" alt="Hokma 4") }}
+{{ img(src="hokma_5.png" class="ci" alt="Hokma 5") }}
 
 # Keter
  
@@ -220,7 +256,11 @@ Note: this guide assumes you completed every reception and have multiple copies 
   * Frontal Assault, Wedging Thorn, Forward March, Multislash, Feint, Will of the Prescript, Deep Drag, Double-Edged Rencounter, True Trigram Formation
   * Fervor, Locked Potential, Mind Hauler, Health Hauler
 
-![Keter 1](keter_1.png) ![Keter 2](nikolai.png) ![Keter 3](pierce_pt.png) ![Keter 4](mirinae.png) ![Keter 5](olivier.png)
+{{ img(src="keter_1.png" class="ci" alt="Keter 1") }}
+{{ img(src="nikolai.png" class="ci" alt="Keter 2") }}
+{{ img(src="pierce_pt.png" class="ci" alt="Keter 3") }}
+{{ img(src="mirinae.png" class="ci" alt="Keter 4") }}
+{{ img(src="olivier.png" class="ci" alt="Keter 5") }}
 
 # The Elite Squad
 
@@ -241,6 +281,9 @@ Struggling with a fight and need to concentrate **everything** onto a single flo
 * Xiao
   * Frontal Assault, Wedging Thorn, Forward March, Multislash, Somber Procuration, Will of the Prescript, Deep Drag, Double-Edged Rencounter, Raging Storm: Love
   * Mind Hauler, Health Hauler, Volatile Passion, Flaring Brand, Electric Shock
+* Kalo
+  * x2 Reload, x2 Class and Respect, x1 Bayonet Combat, x3 Shock Round, x1 Focus Fire
+  * Bottom Deal, Stacking the Deck, Best Choice, Empowered First Shot, Additional Supplies
 * Red Mist
   * x2 Steel Knuckles, x3 Upstanding Slash, x3 Spear, x1 Focus Spirit, 
   * Myo’s Prowess, Offensive Position, Health Hauler, Mind Hauler
@@ -248,7 +291,14 @@ Struggling with a fight and need to concentrate **everything** onto a single flo
   * Fixed deck 
   * In Times Like These\!, Easygoing Breather, Fervor, Mind Hauler
 
-![Nikolai](nikolai.png) ![Pierce pt](pierce_pt.png) ![Mirinae](mirinae.png) ![Olivier](olivier.png) ![Xiao](xiao.png) ![Red Mist](gebura_elite.png) ![Binah](binah_elite.png)
+{{ img(src="nikolai.png" class="ci" alt="Nikolai") }}
+{{ img(src="pierce_pt.png" class="ci" alt="Pierce pt") }}
+{{ img(src="mirinae.png" class="ci" alt="Mirinae") }}
+{{ img(src="olivier.png" class="ci" alt="Olivier") }}
+{{ img(src="xiao.png" class="ci" alt="Xiao") }}
+{{ img(src="kalo.png" class="ci" alt="Kalo") }}
+{{ img(src="gebura_elite.png" class="ci" alt="Red Mist") }}
+{{ img(src="binah_elite.png" class="ci" alt="Binah") }}
 
 # Credits
 

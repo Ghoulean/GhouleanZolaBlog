@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-09-01
+updated = 2024-09-07
 draft = false
 
 [taxonomies]
@@ -83,7 +83,10 @@ Equipped with this knowledge, we can construct a counterbuild specifically tailo
     * Snipe, Blind Fire, Concentration, Bzzz Bzzz
   * (do not bring a 4th or 5th nugget)
 
-![Nugget 2](malkuth_optimized_2.png) ![Nugget 3](malkuth_optimized_3.png) ![Only bring 3 nuggets](only_bring_3.png)
+{{ img(src="malk_optimized_2.png" class="ci" alt="Nugget 2") }}
+{{ img(src="malk_optimized_3.png" class="ci" alt="Nugget 3") }}
+{{ img(src="only_bring_3.png" class="ci" alt="Only bring 3 nuggets") }}
+
 
 Abnos \+ Egos same as previous section.
 
@@ -286,7 +289,8 @@ This build plays into Tiphxodia.
 * 4 assistant librarians
   * Unequipped
 
-![Tiph optimized](tiph_optimized.png)
+{{ img(src="tiph_optimized.png" class="ci" alt="Tiph optimized") }}
+
 
 Your opening should look like this:
 
@@ -418,7 +422,8 @@ If, for whatever reason, you want to kill Elena even faster than you already do,
   * x3 Opportunity Spotted, x2 Steel Knuckles, x3 Will of the City, x1 True Trigram Formation
   * Health Hauler, Mind Hauler, Grit, Firm as a Great Mountain
 
-![Weight of Sin Olivier](wos_olivier.png)
+{{ img(src="wos_olivier.png" class="ci" alt="Weight of Sin Olivier") }}
+
 
 You MUST pick Weight of Sin as your first abno card in order for this deck to succeed. After obtaining Weight of Sin, use Opportunity Spotted to activate Weight of Sin repeatedly. This deck works well with Big Eyes.
 
@@ -478,7 +483,8 @@ You get to choose who gets which contract by redirecting them. As a consequence,
 
 ![Axe gang, axe gang](axe_gang.png)
 
-![Redirect](redirect.png)
+{{ img(src="redirect.png" class="ci" alt="Redirect") }}
+
 
 I suggest you leave Swiftness un-redirected because that one mostly doesn't do anything, but you're free to run other contract(s) that you want to keep for whatever reason.
 
@@ -488,20 +494,22 @@ Because the Shades copy the keypage of your assistant librarians, the fight quic
 
 Through the power of Combat Preparation and Bi An (mostly Combat Preparation), the Shades' decks become mostly non threatening, while your librarians' decks still pack a punch. Blockma abuses Shades' battle behavior: they alternate between two different "modes". First, they play a card from the copied librarians' deck alongside "Shadow Image". On the next turn, they either play two copies of the page that beat the Clash Lose die effect, or two copies of "I'M THE REAL ONE\!\!\!" (a 9-9 9-9 9-9 offensive page) if the Clash Lose effect was not activated.
 
-![Shadow images](shadow_image.png)
-![I'M THE REAL ONE!!!](im_the_real_one.png)
+{{ img(src="shadow_image.png" class="ci" alt="Shadow images") }}
+
+{{ img(src="im_the_real_one.png" class="ci" alt="I'M THE REAL ONE!!!") }}
 
 By stacking irresponsible amounts of Endurance on all your librarians using Combat Preparation, you can slowly stagger the Shades while being untouchable. Aim to play at least 2 Combat Preparations across all librarians every turn (ideally 3 or more). Try to prevent the Shades from copying Combat Preparation also.
 
-![Blockma 2](blockma_2_1.png)
-![Blockma 3](blockma_3_1.png)
-![Blockma 4](blockma_4_1.png)
+{{ img(src="blockma_2_1.png" class="ci" alt="Blockma 2") }}
+{{ img(src="blockma_3_1.png" class="ci" alt="Blockma 3") }}
+{{ img(src="blockma_4_1.png" class="ci" alt="Blockma 4") }}
 
 (note: no attributions)
 
 Although Combat Preparation practically guarantees that you win every clash, I do not recommend going *full* Blockma. Instead, leave one or two non-Blockma decks so that you have a nugget that can finish off Shades who get staggered from all the blocking. Ironically, the best non-Blockma holder is Hokma himself as Shades do not copy his deck.
 
-![Blockma Xiao](blockma_1.png)
+{{ img(src="blockma_1.png" class="ci" alt="Blockma Xiao") }}
+
 (Aside: since Shade-exclusive pages are mono-blunt, attributing Stiletto on your assistant librarians will make clashing with Shadow Image and I'M THE REAL ONE\!\!\! easier. Keep in mind that this will also boosts the Shades' pierce dice)
 
 #### Recommended Abnos \+ Egos: 
@@ -923,6 +931,57 @@ This is a scripted fight: Barel and Zena play the exact same cards every turn, e
 ### Demo
 
 {{ youtube(id="uLj3_PdvQM4") }}
+
+# A Short Word on Deckbuilding
+
+## The 5-4-3 rule
+
+As a general rule of thumb, I like to adhere to the 5-4-3 rule: 5 card draw, 4 light restores, 3-cost clashers.
+
+ - **5 draw** because you can't do anything with an empty hand, and a full hand of 8 cards gives you way more options than a hand of 2 cards.
+ - **4 light restores** because you can't do anything if you have no light. I bias towards 0-cost light restores because you can always play them to restore light. By the way, cards like Blind Faith do not count as light restore because you spend more light than you gain back.
+ - **3-cost clashers** because they strike the perfect balance between powerful and "smooth" to use. 3-cost clashers tend to outclash 0-, 1-, and 2-cost cards, while 4-cost clashers can be difficult to slot in at times.
+
+You may have noticed that I have a tendency to build Singleton decks. This is because Singleton is the easiest deck archetype to build for that satisfies these requirements. Although Multislash and Will of the Prescript are really hard to give up, you do have some degree of freedom in choosing your remaining light restores, and a lot of flexibility with your 3-cost clashers.
+
+## Alternate deck choices
+
+* Olivier
+  * x3 Ominous Power, x2 Brace Up, x1 333...1973, x1 True Trigram Formation, x1 Impugnatio Ultimata, x1 Divisionary Impact
+  * Margin, Bottom Deal, Mind Hauler, Health Hauler
+
+{{ img(src="olivier_discard.png" class="ci" alt="Olivier discard") }}
+
+This deck aims to infinitely cycle your powerful clashers at emotion level 5 as much as possible. Use 333...1973 to thin out your deck to 8 cards. Use x3 Ominous Power to instantly restore 9 light. Then use Divisionary Impact with a 4-cost clasher and 2 Brace Ups. You get 1 natural draw, 1 draw from playing cards at emo 5, 4 draw from Brace Up, 1 draw from Margin, and 1 draw from Bottom Deal. 1 + 1 + 4 + 1 + 1 = 8, which perfectly redraws your entire hand so you get to do that again.
+
+Margin and Bottom Deal are mandatory. Hauler passives can be changed if desired.
+
+* Purple Tear (guard stance)
+  * x3 Leap, x3 Energy Conversion, x3 Overcharge
+  * Fervor, Offensive Position, Mind Hauler, Health Hauler
+
+{{ img(src="overcharge_pt.png" class="ci" alt="Overcharge PT") }}
+
+Guard stance is immune to all debuffs, which includes Overcharge's self-immobilize and Offensive Position's self-fragile. Due to Overcharge's naturally high rolls combined with Purple Tear's Manipulator of Odds, this deck is naturally resilient against powernull.
+
+All passives can be swapped out if desired. Triple R Suit + Maximum Crash is a funny combo.
+
+ * Nikolai
+   * x3 Graze the Grass, x1 Battle Command, x1 Le Regole, x3 Concentration, x1 Disposal
+   * Battle Ready, Skim Prescript, Maximum Crash, Messenger
+{{ img(src="turbo_nikolai.png" class="ci" alt="Turbo Nikolai") }}
+
+A high-difficulty deck that aims to pump out Disposal as fast as possible. Play Concentration + Graze the Grass on turn 1 to activate Nikolai's Commander passive, then play that combo again on turn 2 to hit 20 charge. Note that both Battle Ready and Skim Prescript are required to guarentee that this combo is always available. The most challenging aspect of piloting this deck is smartly deciding when to use (or *not* use) combat pages in order to conserve draw and/or light economy.
+
+## Other decks
+
+You can beat the entire Ensemble and the rest of the game using only Ominbrace Duel:
+
+<todo: images>
+
+You can also beat the entire Ensemble and the rest of the game using only Rapid Gashes:
+
+<todo: images>
 
 # Credits
 
