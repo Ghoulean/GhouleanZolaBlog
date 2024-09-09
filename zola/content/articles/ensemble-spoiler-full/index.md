@@ -16,7 +16,7 @@ thumbnail = "banner.png"
 
 # Spoiler-Full Introduction
 
-That means this section is **full of spoilers**. Don't say I didn't warn you. [Go here for the spoiler-FREE guide.](/articles/ensemble-spoiler-full)
+That means this section is **full of spoilers**. Don't say I didn't warn you. [Go here for the spoiler-FREE guide.](/articles/ensemble-spoiler-free)
 
 Once you enter the Reverberation Ensemble, you will be locked out of burning books, abno suppressions, realizations, and any other reception. Forfeiting at any point of the game from this point onwards will reset your progress, so don't click the button that says "forfeit" (Clicking "return to title" is safe). If, however, you do accidentally click forfeit, *immediately* Alt-F4ing will close the game before it saves, hopefully reverting the game back to before you forfeited.
 

@@ -15,7 +15,7 @@ toc = true
 
 Last month...literally last month, like early February...I randomly looked up Lain's hairties and found out that they were not hairties but instead hairclips. Its "true" shape is depicted only in a single image of the Lain art book (as far as I can tell).
 
-![artbook hairclip](Lains_hairclip_artbook.jpg)
+{{ img(src="Lains_hairclip_artbook.jpg" class="ci" alt="artbook hairclip") }}
 
 The only real life replications of this that I could find were:
 
@@ -25,7 +25,7 @@ The only real life replications of this that I could find were:
 
 I'm not paying $22 plus tax to Shapeways for a piece of plastic! Screw that! I'm going to make it myself! I thought to myself. So I did.
 
-![3d model](3d_model_hairclip.png)
+{{ img(src="3d_model_hairclip.png" class="ci" alt="3d model") }}
 
 [https://github.com/Ghoulean/LainHairclip/](https://github.com/Ghoulean/LainHairclip/)
 
@@ -37,19 +37,19 @@ Anyways, here's how it came out:
 
 ## PLA Plastic
 
-![PLA plastic shipment box](PLA_Plastic_box.jpg)
+{{ img(src="PLA_Plastic_box.jpg" class="ci" alt="PLA plastic shipment box") }}
 
 The PLA plastic was first to arrive (~1 week), manufactured by Hudson Creative Group. Quick printing times is this material's forte, after all.
 
-![PLA plastic disassembled](PLA_Plastic_disassembled.jpg)
+{{ img(src="PLA_Plastic_disassembled.jpg" class="ci" alt="PLA plastic disassembled") }}
 
-![PLA plastic assembled](PLA_Plastic_assembled.jpg)
+{{ img(src="PLA_Plastic_assembled.jpg" class="ci" alt="PLA plastic assembled") }}
 
-![PLA plastic scale](PLA_Plastic_scale.jpg)
+{{ img(src="PLA_Plastic_scale.jpg" class="ci" alt="PLA plastic scale") }}
 
 Even from a distance, I could see the printing lines. Can't tell if PLA plastic simply requires a larger nozzle or whatever, or if this is indicative of poor printing quality. At the time I didn't have a measure, so there's an eraser for scale.
 
-![PLA plastic broken](PLA_Plastic_broken.jpg)
+{{ img(src="PLA_Plastic_broken.jpg" class="ci" alt="PLA plastic broken") }}
 
 Aaaand I broke it. Almost immediately, I squeezed it in my hand too hard. I didn't even get to wear it. Awful.
 
@@ -57,21 +57,21 @@ Aaaand I broke it. Almost immediately, I squeezed it in my hand too hard. I didn
 
 After ~2 weeks from ordering, the Nylon arrived. Manufactured by JawsTec.
 
-![nylon disassembled](Nylon_disassembled.jpg)
+{{ img(src="Nylon_disassembled.jpg" class="ci" alt="nylon disassembled") }}
 
-![nylon assembled 1](Nylon_assembled_1.jpg)
+{{ img(src="Nylon_assembled_1.jpg" class="ci" alt="nylon assembled 1") }}
 
-![nylon scale](Nylon_scale.jpg)
+{{ img(src="Nylon_scale.jpg" class="ci" alt="nylon scale") }}
 
 I was surprised that it couldn't close as well as I expected it to.
 
-![nylon assembled 2](Nylon_assembled_2.jpg)
+{{ img(src="Nylon_assembled_2.jpg" class="ci" alt="nylon assembled 2") }}
 
 It looks and feels nice. Sturdier and better-printed too.
 
-![nylon wear 1](Nylon_wear_1.jpg)
+{{ img(src="Nylon_wear_1.jpg" class="ci" alt="nylon wear 1") }}
 
-![nylon wear 2](Nylon_wear_2.jpg)
+{{ img(src="Nylon_wear_2.jpg" class="ci" alt="nylon wear 2") }}
 
 BAM!!! *(2024-08-15 edit: good god my hair looks awful)*
 
@@ -85,13 +85,13 @@ I still have one more material left to try out. I doubt the material will make a
 
 It's finally here after ~4 weeks. Manufactured by Vegas 3D Printing.
 
-![resin box](Resin_box.jpg)
+{{ img(src="Resin_box.jpg" class="ci" alt="resin box") }}
 
-![resin stuck](Resin_stuck.jpg)
+{{ img(src="Resin_stuck.jpg" class="ci" alt="resin stuck") }}
 
 Uh, it's kinda stuck. Had to use a bit of force to unstick it. I have no idea if this is normal.
 
-![resin disassembled](Resin_dissembled.jpg)
+{{ img(src="Resin_dissembled.jpg" class="ci" alt="resin disassembled") }}
 
 After unsticking it, I caught a whiff of it and it smells like wet paint. Not the nice kind either; very nasty. It's also sticky. I'm not putting that in my hair. Screw that, back into the bag it goes, and back into the bag it stays.
 
