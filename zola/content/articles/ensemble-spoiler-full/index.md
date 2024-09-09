@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-09-07
+updated = 2024-09-08
 draft = false
 
 [taxonomies]
@@ -977,11 +977,11 @@ A high-difficulty deck that aims to pump out Disposal as fast as possible. Play 
 
 You can beat the entire Ensemble and the rest of the game using only Ominbrace Duel:
 
-<todo: images>
+<todo: video>
 
 You can also beat the entire Ensemble and the rest of the game using only Rapid Gashes:
 
-<todo: images>
+{{ youtube(id="BiuaZ-TRId4") }}
 
 # Credits
 

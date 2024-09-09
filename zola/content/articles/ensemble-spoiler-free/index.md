@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FREE]"
 description = "This guide is for people who don’t want to build 45 decks for the Reverberation Ensemble, but still want to figure out the gameplay themselves."
 date = 2024-08-17
-updated = 2024-09-07
+updated = 2024-09-08
 draft = false
 
 [taxonomies]
@@ -156,7 +156,7 @@ Note: this guide assumes you completed every reception and have multiple copies 
 * Yae
   * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Deep Drag, Loss of Senses, Double Edged Rencounter, Exhale Smoke
   * Sooty Thwack, Locked Potential, Easygoing Breather
-* Purple Tear:
+* Purple Tear (pierce stance):
   * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Shoving Stab, Somber Procuration, Venomous Fangs, Will of the Prescript, Laceration
   * Stiletto, Wedge, Electric Shock
 
@@ -222,7 +222,7 @@ Note: this guide assumes you completed every reception and have multiple copies 
 * Bayard
   * Frontal Assault, Wedging Thorn, Forward March, Multislash, Feint, Shoving Stab, Steel Knuckles, Will of the Prescript, Double-edged Rencounter
   * Fervor, a Fighter That Never Retreats, Raging Torrent, Mind Hauler, Health Hauler
-* Purple Tear (Slash stance)
+* Purple Tear (slash stance)
   * x3 Clone, x3 Will of the City, x3 Rapid Gashes
   * Battle Ready, Dark Cloud Blade, Offensive Position, Mind Hauler, Electric Shock
 * Xiao
