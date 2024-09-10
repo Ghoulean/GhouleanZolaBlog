@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-09-08
+updated = 2024-09-10
 draft = false
 
 [taxonomies]
@@ -656,9 +656,11 @@ For the mass – if you have less than \+6 power on yourself and/or don't have a
 
 # Keter Realization
 
-Bring the [Elite Squad](/articles/ensemble-spoiler-free/#the-elite-squad). Make sure you quit to title so that you are able to deckbuild properly.
+Bring the [Elite Squad](/articles/ensemble-spoiler-free/#the-elite-squad).
 
-Note that during the entirety of this realization, you gain twice as many emotion coins. 
+Note that during the entirety of this realization, you gain twice as many emotion coins.
+
+Unlike every other realization in the game, each phase is checkpointed. At any time, you can go back to the deckbuilding screen by quitting to title and re-entering the game, and you'll pick right off where you last were.
 
 ## Phase 1.1 \- Wrist Cutter
 
@@ -666,8 +668,8 @@ Objective: survive.
 
 On turn 3, Wrist Cutter will use many threatening pages. In order to counter this, you want to use x2 Display of Affection. You need 6 light to do this, which means you should spend the first 2 turns building emotion level:
 
-* Turn 1: Clash with Lean, Bloody Wings (just one)
-* Turn 2: Clash Profound Sorrow with Coffin,
+* Turn 1: Clash against the block dice using Lean, Bloody Wings (just one)
+* Turn 2: Clash against Profound Sorrow using Coffin
 * Turn 3: x2 Display of Affection
 
 So long you manage to not die by the end of turn 3, you'll move to phase 1.2.
@@ -977,11 +979,13 @@ A high-difficulty deck that aims to pump out Disposal as fast as possible. Play 
 
 You can beat the entire Ensemble and the rest of the game using only Ominbrace Duel:
 
-<todo: video>
+{{ youtube(id="R8cgdUEDwOk") }}
 
 You can also beat the entire Ensemble and the rest of the game using only Rapid Gashes:
 
 {{ youtube(id="BiuaZ-TRId4") }}
+
+I don't recommend doing either as the first seems really boring and the second actually was boring
 
 # Credits
 
