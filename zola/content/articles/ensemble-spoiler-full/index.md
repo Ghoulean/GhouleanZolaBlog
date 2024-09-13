@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-09-10
+updated = 2024-09-12
 draft = false
 
 [taxonomies]
@@ -898,9 +898,9 @@ If you're scared of Elena's anti-recovery, strong first die pages and mass summa
 
 Pluto attempts to give out a contract every scene. All of his contracts damage your draw economy in some way:
 
-* Unjust Counterpart: Defense: discards a random page and gain Protection equal to its Cost next Scene. Spend 1 light to use this page and get rid of this effect.
-* Unjust Offense: Defense: prevents natural draw; boosts damage by 1\. Spend 1 light to use this page and get rid of this effect.
-* Unjust Counterpart: Light: restore 1 additional light and add a useless card to your deck at the end of each scene. Spend 1 light to use this page and get rid of this effect.
+* **Unjust Counterpart: Defense**: discards a random page and gain Protection equal to its Cost next Scene. Spend 1 light to use this page and get rid of this effect.
+* **Unjust Counterpart: Offense**: prevents natural draw; boosts damage by 1\. Spend 1 light to use this page and get rid of this effect.
+* **Unjust Counterpart: Light**: restore 1 additional light and add a useless card to your deck at the end of each scene. Spend 1 light to use this page and get rid of this effect.
 
 Generally speaking, you want to get rid of your contracts as soon as you get them.
 
