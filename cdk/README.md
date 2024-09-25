@@ -8,7 +8,7 @@ Instead of:
 
 ```
 # Will result in error
-npm run build -- --profile AWS_DEFAULT_PROFILE=AdministratorAccess-025066286221
+npm run build -- --profile AWS_DEFAULT_PROFILE=ProfileName
 ```
 
 Bootstrap and deploy to account likewise.

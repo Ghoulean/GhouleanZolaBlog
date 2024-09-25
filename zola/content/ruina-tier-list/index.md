@@ -1,7 +1,7 @@
 +++
 title = "LoR Keypage Tierlist"
 description = "Opinionated strength of equipped keypages for vanilla content"
-date = 2024-09-08
+date = 2024-09-21
 draft = true
 
 [taxonomies]
@@ -14,50 +14,206 @@ toc = true
 
 # Introduction
 
-I play this game way too much so I'm ranking all the endgame key pages based on how I perceive their power level in terms of their overall and peak performance. I'm judging key pages as equippable key pages and *not* as attribution fodder, which deserves its own tier list. I'm judging these pages based off their performance in the endgame vanilla base game only (Impuritas Civitatis). The rankings within a tier are not ordered.
+I play this game way too much so I'm ranking all the endgame key pages based on how I perceive their power level in terms of their overall and peak performance. I'm judging key pages as equippable key pages and *not* as attribution fodder, which deserves its own tier list. I'm judging these pages based off their performance in the mid- and endgame vanilla base game only (Star of the City + Impuritas Civitatis). The rankings within a tier are not ordered.
 
-# Unranked
-
-I haven't played with their key pages enough to give a confident assessment, but I'm still going to rank these based off the vibes I get from their base passives and exclusives. If you want to find an easy mistake to ream against, it's in this section.
-
-#### Good Vibes
-
-- Katriel is like slightly worse Kalo
-- Lowell feels somewhat underrated with effectively +2 power every turn if you can emo level up aggressively, plus has a lot of attribution slots so can be built flexibly. Unfortunately his exclusive Forming Storm and Raging Storm Harm is clunky to use, but it's still a turn 3 mass at the fastest.
-- Mei and Cecil: Has Fervor, in-built recovery, and the exclusive Tieshaokan deals a decent amount of damage.
-- Rudolph's Mind Crush looks very powerful and Reindeer Treatment *could* be an in-built 2 strength...but hard to unlock that power without dying. Maybe good when paired with Offensive Position and Health Hauler? Survivor looks mostly useless.
-- Harold is a tankier Hana Fixer. Trigrams is strong.
-- Black Silence is...somewhat underwhelming as a 1v1 duelist, but makes up for it with +2 universal dice power with Black Silence. Sure, you have to play three combat pages for that, but you were doing to do that anyways.
-- Argalia
-
-#### Bad Vibes
-
-- Denis is like Kalo/Katriel but worse
-- Boris barely has any passives but Discipline is funny I guess
-- Martina and Bada charge passives are Fervor but worse. Sinister Strike feels like Pinpoint Breakthrough but worse. Sure you can run multiple copies of Martina, but then you're running multiple copies of Martina
-- Eileen has Nuovo Fabric, but you need to bring your own Puffy Brume
-- Bremen and Greta have Nuovo Fabric
-- Jae Heon has Puppet Strings at least, but not much else
-- Why would you willfully inflict Pluto on yourself?
-
-# Bad
-
-I don't like these key pages at all. They're not even fun to play.
-
-#### A Church of Gears Worshipper
-
-This thing doesn't even have Speed. 'nuf said.
-
-#### Nemo
-A tempermental Fervor sidegrade that requires constant Charge manipulation as well as an Unrelenting sidegrade that's arguably worse, as the healing expends all charge. Energy Beam provides a solid option against strong first-die and strong second-die pages, but you know what else can respond to those pages? For strong first-die, leading blocks such as Absorb Impact are easier to use, cost less, and mitigate the damage; for strong second-die, you can do something similarly with Sturdy Defense which also draws cards. Nemo is locked into a charge-spend build, and doesn't offer much payoff in return. At least his combat pages are pretty good.
-
-A good Nemo deck probably looks something like this:
+#### Black Silence
 
 <todo>
 
-#### Chun and Miris
+#### Red Mist
 
+A solid and easy-to-use keypage that revolves around one simple game plan: deal a lot of damage, and snowball from there:
 
+- Upstanding Slash starts off as a 2-cost with rolls comparable to Baleful Brand, Eliminate, and Shock Round, but if you manage to snowball, you get 1 draw plus cost reduction, eventually putting all your Upstanding Slashes to 0-cost (assuming you're not running Singleton).
+- Spear is the exact same, though its rolls are more akin to Feint (significantly worse base rolls, but scale noticably better off strenght).
+- Level Slash is similar, but applies bleed and restores light instead of drawing. At the start of an act, it's effectively a restore 0; as it gets cost-reduced, it becomes a 0-cost restore 2. The bleed application grants synergy with the Vampirism abno page. Generally speaking, however, Level Slash should be paired with a strategy that revolves more heavily around EGO usage.
+- Focus Spirit provides easy access to strength, letting you reach your damage thresholds more easily.
+- Onrush is fun but clunky in the majority of scenarios, but has a niche usecase in Gebura realization and low-turn strategies
+- Great Split Vertical is what Onrush wants to be. Auto-wins one clash and destroys another combat page, mitigating the disadvantage somewhat of using high-cost single target EGO pages
+- Manifest Ego is a free full stagger restore at emo 4. Also restores 6 light.
+- Great Split Horizontal is the greatest-rolling playerside mass summation in the entire game.
+- Cannot use floor EGOs...but with GSV and GSH, who needs 'em?
+
+Red Mist's feast-or-famine snowballing nature means she often demands resources from her team (if she has one), which usually ends up with her holding all the abno pages.
+
+Myo's Prowess is Red Mist's most popular attribution, but she also goes well with other genericly strong passives such as Health Hauler, Electric Shock, and Fervor. Red Mist can skimp on Mind Hauler due to Manifest Ego and Shell, though it's still a great tool for early survivability. Instead of Health Hauler, Red Mist can also take Deep Wound and rely on Vampirism for healing. Another alternate option is self-smoke for bigger damage numbers.
+
+<todo: standard>
+<todo: deep wound>
+<todo: selfsmoke>
+
+If going true solo, Red Mist really enjoys Lone Fixer, Claws of Savagery, Absorption, and Instincts. If going untrue solo, Red Mist still enjoys all of those, but add Remembrance, Kizuna/Extreme Fatigue (either of em), and Mountain of Corpses. In both cases, she wants more counter dice to better deal with everything that's hitting her.
+
+<todo>
+
+You may have noticed that all these Red Mist decks look kinda same-y. Red Mist is a pretty one-note key page: she can only effectively do one thing, which is dealing a bunch of damage by herself through brute force. While she *is* quite strong, unfortunately she cannot perform the same bullsh*t that the top tier key pages can perform. Also, she's locked to the Floor of Language.
+
+#### Emma
+
+The king of Urban Nightmare with two innate power passives, Emma falls off hard in Star of the City and never comes back due to the sheer lack of blunt support (until Duel I guess), a health/stagger statline not well-suited for Star of the City receptions, and the fact that everyone in SotC and above resists blunt for whatever reason.
+
+Probably still better than Nemo though. +2 power is respectable, even if it's on blunt dice.
+
+#### Lowell
+
+A generic Liu keypage with A Fighter that Never Retreats and Forming Storm + Raging Storm Harm.
+
+A Fighter that Never Retreats is a 2-cost Fervor sidegrade if you play aggressively and emo up every turn. But regardless of the passive's strength, if you want it, attribute it.
+
+The net cost of Forming Storm + Raging Storm Harm is the same as Raging Storm Love. But Forming Storm is awkward to use; it requires a do-nothing turn for setup, and that do-nothing turn has to occur on turn 2 or later. Furthermore, you can't bank Raging Storm Harm in the same way you can bank Pinpoint Breakthrough; you gotta use it or lose it.
+
+#### Cecil
+
+A generic Liu keypage with Firm as a Great Mountain and the exclusive Tieshaokan.
+
+The passive is 3-cost. It's pretty good as it can heal ~50 HP throughout a reception. But regardless of the passive's strength, if you want it, attribute it.
+
+Tieshaokan, Cecil's exclusive (shared with Mei), has a weak first die with a tight roll followed by a powerful second die. The tight roll helps with emotion generation, especially as it only has two dice. Tieshaokan also has a pierce counter that applies a lot of burn. It's a decent exclusive that might be worth picking up over or alongside Prod the Weakness, though be warned that the first die is likely going to lose a lot of clashes.
+
+#### Mei
+
+Same as Cecil except instead of Firm as a Great Mountain, it's Remain Vigilant in Peace.
+
+#### Boris
+
+A Speed 1 keypage with Grit and that's it. You can attribute Grit away.
+
+Discipline is one of the few playerside powernull cards in the game, and also Discipline effectively has four offensive dice. The powernull sort of griefs the card: multi-dice cards scale very well with power, except you can't boost this card's power without resulting to Brawl. Discipline is still a great card though, especially since the last three dice are almost guarenteed to hit.
+
+#### Katriel
+
+Thumb Soldato with Empowered First Shot.
+
+#### Denis
+
+Thumb Soldato with Additional Supplies.
+
+#### Thumb Soldato
+
+A ranged page that gets access to the full arsenel of Thumb combat pages, of which are powerful, clash well, and apply a ton of paralysis, disarm, and burn for basically free, as well as draw economy from discarding generated ammunition plus draw on Reload and Shock Round. A 2-cost 6-11 is no joke (Shock Round is bugged and only provides +1 power at most, but it's still really good)
+
+Sample deck: <todo>
+
+#### Martina
+
+Tempermental Fervor sidegrades that requires constant Charge manipulation, slightly extra stagger damage, and Uncanny Strike.
+
+She shares most the same weaknesses that Bada and Nemo have: Speed 1, frailish, and locked into charge. But what sets her apart is that her kit is remarkably geared towards staggering: Uncanny Strike can do a whopping 18 stagger damage on a single hit, in addition to Heavy-hearted Forte.
+
+#### Bada
+
+Tempermental Fervor sidegrades that requires constant Charge manipulation, occasional protection, and Devastating Thrash.
+
+6-10 6-10 7-11 are honestly pretty respectable rolls, and 4 charge isn't exactly difficult to nab. But like Nemo:
+
+ - Speed 1
+ - Kinda frail, even with the 1 Protection (beaten out by Dong-hwan the Grade 1 Fixer)
+ - Locked into charge
+
+Which cuts into his usability. And his exclusive isn't good enough for one or three copies to push him beyond his limitations.
+
+#### Rudolph
+
+The long-ranged attacker of R Corp who's actually arguably better just when brawlin' it melee. Speed I, 4 starting light, and a fairly unique Fervor sidegrade in Reindeer Treatment: it starts at +0, but upon taking enough damage, goes up to +2. His exclusive passive, Survivor, is also very strange: it's technically the most cost-efficient power passive in the game, but it's practically impossible to utilize in most cases since getting staggered generally leads shortly to death. For the most part, you can't rely on this passive to give you power. Brainwave Charge-focusing Antlers grants a little bit of extra stagger damage if you go charge, which is nice.
+
+The reindeers' exclusive, Mind Whip, is okay I guess. I consider it a Vapour sidegrade that neither draws nor applies smoke.
+
+Mind Crush is a fairly powerful mass summation usable at 20 charge. It's roughly on-par with Feral Knives.
+
+Rudolph's power is more difficult to unlock than Myo's, but the mass summation alone makes him a pretty solid pick overall. A deck for Rudolph would probably look something like this:
+
+<todo>
+
+#### Harold
+
+Speed 3, 4 starting light, Four Trigrams, All for Hana, and access to True Trigram Formation. She might be boring and overshadowed by her colleague Olivier, but she's still a pretty solid keypage.
+
+Not much to say here other than run something generically good.
+
+<todo>
+
+#### Mirinae
+
+Mirinae is entirely defined by her passive Hana for All, which duplicates strength, endurance, protection, and stagger protection gained from combat pages to a random ally. Due to the passive's high cost, as well as its selfless nature, it's generally infeasible to attribute this on anyone other than Mirinae, so she's uniquely positioned to act as an offensive support buffer on the team.
+
+For generalist usage, she has one practical build with only some variation:
+
+<todo>
+
+One may consider Observe over Augury Kick if they fear they cannot land hits (this is usually not a concern, as 7-12 is a pretty high base roll). One may additionally choose to swap out x1 Ominous Power for x1 True Trigram Formation. This inclusion helps Mirinae defend against both mass-individuals and mass-summations, as both Augury Kick and Brace Up tend to be poor mass defenders.
+
+The effect of +3 power is insane, and practically guarentees that the random recipient of this buff will win every clash they engage in that turn. To illustrate, let's look at Frontal Assault. Its 2-7 1-2 rolls are more or less in line with its status as a 0-cost light restore. However, +3 power turns these rolls into a 5-10 4-5...comparable to Shock Round's unboosted 5-10 5-7! And this is before any additional power bonuses from the recipient!
+
+#### Olivier
+
+<todo>
+
+#### Eileen
+
+<todo>
+
+#### Greta
+
+<todo>
+
+#### Bremen
+
+<todo>
+
+#### Jae-heon
+
+<todo>
+
+#### Pluto
+
+Contracts.
+
+Why...why would you do this to yourself? I mean, I guess it's a fun challenge, but you're forced to build and play weirdly and even suboptimally at times. Amplification for example kinda bricks half the time even with a good spread. 
+
+Since you can only switch contracts once per scene, meaning that if your opening hand is unlucky, it can take 2 turns to get everyone's contracts in order. Although this really only affects Might and Haste, it just *feels* bad to waste turns shuffling your hand around.
+
+If you really insist on using these contracts though...
+
+1. Offensive Position procs Might contract in 1 turn since there's no limitation to where the Strength comes from. Nikolai's Commander also works.
+2. Field Mods, Rapid Gashes, and Easygoing Breather are likely your best options for activating Liberty contract.
+3. You can use combat pages with counter dice in order to spend light even if the page ultimately doesn't get used. This can help you not die to Light Contract.
+4. Evade dice are really nice for Swiftness contract.
+5. Amplification Contract is f*cked, I'm sorry to say.
+
+#### Argalia
+
+<todo>
+
+#### A Church of Gears Worshipper
+
+This thing doesn't even have Speed. You need to spend 4 attribution points just to make this page usable.
+
+The ONLY reason why this might be a good thing is that you can attribute Yujin's Speed 2 passive onto this for 3 speed dice right off the bat. There's no point in doing this outside of disgustingly specific niche challenges because you still only have 3 starting light. You probably can't even use all those speed dice.
+
+#### Nemo
+Tempermental Fervor sidegrades that requires constant Charge manipulation as well as an Unrelenting sidegrade. Energy Beam provides a solid option against strong first-die and strong second-die pages, but you know what else can respond to those pages? For strong first-die, leading blocks such as Absorb Impact are easier to use, cost less, and mitigate the damage; for strong second-die, you can do something similarly with Sturdy Defense which also draws cards. Nemo is locked into a charge-spend build, and doesn't offer much payoff in return.
+
+For the most part, Emergency Resuscitation Protocol is a 5-cost Unrelenting that spends all charge and occasionally leaves you above the Unrelenting threshold when you finally unstagger. ERP is better than Unrelenting in decks where you have a lot of stagger restores (in the form of evade dice, Mind Hauler, or Immediate Repairs), and thus don't get staggered in the first place.
+
+There is one fight that ERP can absolutely screw you over, and that's against the Red Mist. ERP can put Nemo in a situation where he's a free punching bag for Red Mist to reach her damage thresholds and snowball out of control. Unrelenting, on the other hand, reduces damage by 25, which impedes Red Mist's snowballing mechanics.
+
+A Nemo deck probably looks something like this:
+
+<todo>
+
+#### Chun
+
+A generic Liu keypage with Furious Fire Rendering the Skies and the exclusive Flaming Dragon Fist.
+
+The passive is 3-cost. I think this passive is not good because the burn boost is RNG and breaks even with Flaring Brand even in the best-case scenario. Regardless of the passive's strength, if you want it, attribute it.
+
+Flaming Dragon Fist, Chun's exclusive (shared with Miris), has the greatest playerside second die in the game. It's fun, but no more impactful than Fervid Emotions. Anecdotally, FDF's high cost and low emotion generation usually results in awkward next turns.
+
+#### Miris
+
+A generic Liu keypage with Hugging Fire, Sitting Brushwood and Flaming Dragon Fist.
+
+See Chun's entry. Miris has the same rating for essentially the same reasons. I think Hugging Fire Sitting on Brushwood is interesting since only one member on the team needs to attribute this. But except in possibly some unknown niche strategy where the extra stagger matters, I think I'd rather just take +1 from Offensive Position.
 
 #### Irina
 
@@ -70,10 +226,6 @@ As she has no strengths, I would put her on Ominbrace Duel duty to maximize her 
 And finally, you can (eventually) create a constant light restoration engine for your entire team with Discard Multi-Party compensation. However, even when paired with light-hungry builds such as Binah, I still don't consider the amount of setup required to get this running worth the payoff. Especially since you can somewhat rely on emo level up for light restores until emo 5, and it's not demanding to include and play light restoration in your decks.
 
 <todo>
-
-# Niche
-
-Key pages that I would only bring if, for whatever reason, I need to fulfill several specific, coinciding requirements at the same time. Or if I'm running through Ensemble.
 
 #### Yujin
 
@@ -89,43 +241,56 @@ Boundary of Death is bad but funny, so of course it gets an honorable mention:
 
 <todo>
 
-#### Huburt
+#### Hubert
 
-Locked Potential is a slightly worse Fervor sidegrade. He also has Speed 3 and 4 starting light. Decapitation is a pretty funny exclusive, though I think I'd rather just take Emotional Turbulence, Double-Edged Rencounter, or Duel instead as it's held back by its Blade Unlocked quest. Breaking Pressure is underwhelming.
+Locked Potential is a slightly worse Fervor sidegrade. He also has Speed 1, but 4 starting light. Decapitation is a pretty funny exclusive, though I think I'd rather just take Emotional Turbulence, Double-Edged Rencounter, or Duel instead as it's held back by its Blade Unlocked quest. Breaking Pressure is underwhelming.
 
-Since I don't consider his exclusive worth running, there's no reason to use Huburt over Esther except in Ensemble. Although not technically mandatory, you're kind of railroaded into a Singleton build due to Locked Potential. 
+Since I don't consider his exclusive worth running, there's no reason to use Hubert over Esther except in Ensemble. Although not technically mandatory, you're kind of railroaded into a Singleton build due to Locked Potential. 
 
 <todo>
 
 #### Gloria
 
-Same as Huburt, except Easygoing Breather is somewhat better due to improving econ, and Eradication is worse due to its awful minroll and meh highroll; 12-23 is the second-worst playerside mass summation in the game (behind Tiphereth's Nihil). Eradication is also gated by both light and Blade Unlocked.
+Same as Hubert, except Easygoing Breather is somewhat better due to improving econ, and Eradication is worse due to its awful minroll and meh highroll; 12-23 is the second-worst playerside mass summation in the game (behind Tiphereth's Nihil). Eradication is also gated by both light and Blade Unlocked.
 
 <todo>
 
 #### Myo
 
-A very strange keypage where she can grab up to +5 conditional power from Myo's Prowess, plus +1 again from Savage Mode. Feral Knives is also a very powerful combat page, though it's locked behind both Savage Mode and 20 charge. The Savage Mode quest isn't *too* bad as the opportunity cost to play it on turns 1 or 2 is not high, but the rolls are still worse than Will of the City's.
+A fast-hitting 4-light keypage where she can grab up to +5 conditional power from Myo's Prowess, plus +1 again from Savage Mode. Feral Knives is also a very powerful combat page, though it's locked behind both Savage Mode and 20 charge. The Savage Mode quest isn't *too* bad as the opportunity cost to play it on turns 1 or 2 is not high, but it still means no juicy turn 3 Feral Knives. This is a minor point though as you usually don't care about rushing your mass attack.
 
-Myo has two downsides: firstly, that she only has three passive slots; and secondly, that she's railroaded into charge-based builds. Myo's Prowess pairs well with The Strongest and Maximum Crash, which costs 8 and leaving 1 passive slot left open. Charge builds tend to require including suboptimal clashers in order to build charge, so Myo has trouble managing card inclusions. Both of these are surmountable, but often the end results makes me wish I simply stapled Myongest onto another keypage.
+Myo has a few downsides: 
+- Speed I limits her action economy at Emo 5 to only three speed dice
+- Myo only has three passive slots, effectively "down" 1 or 2 passives compared to other builds
+- Feral Knives heavily incentivizes her into charge-based builds
+
+Myo's Prowess passive is often overlooked as a Fervor sidegrade. Even without being paired with The Strongest, you're still likely to gain 1 or 2 power per speed die, especially since Rabbit Augmentation and Compressed Charge-Stimulated Muscleforce grant bonus Haste for almost free.
+
+Myo's Prowess pairs well with The Strongest and Maximum Crash, though due to her limited passive slots, slotting in both sacrifices her ability to equip survivability passives.
 
 A typical Myo build would look something like this:
 
 <todo>
 
-And a chargeless Myo build might look something like this:
+Thanks to Myo's Prowess, you can use cards that grant haste as an effective +1 power. For something more chargeless, try something like this:
 
 <todo>
+
+Oh and also she gets Concentrated Fire and Pinpoint Shot which is cool I guess.
 
 #### Maxim
 
-A tank key page. Like Myo, Maxim is railroaded into charge; unlike Myo, Maxim gets access to Rhino Ram and Ground Crash. Rhino Ram's rolls are slightly but noticably better than Energy Beam's, and build towards Ground Crash's charge question. A 23-32 mass is nothing to scoff at, but the fact that Ground Crash expends all charge makes it awkward to use.
+Although the Rhinos are generally seen as "tank" key pages, generally speaking you should avoid treating them as one. The Rhino bonuses give boosts to Endurance and Protection, but the real treat is his passive Maximum Crash. A 50% damage bonus is equivalent to 10 stacks of self-Smoke plus Puffy Brume and Sooty Thwak; naturally, Maxim really wants to rush 20 charge. 
 
-His extra tankiness and extra attribution slots lend Maxim to be more beginner friendly, but for the most part, I consider Maxim inferior to Myo.
+Maxim gets access to Rhino Ram and Ground Crash. Rhino Ram is a Concentration sidegrade, but costs 1 more light. Ground Crash is a 23-32 mass summation whose damage gets boosted by Maximum Crash. However, it expends all charge, so you'll be looking to rebuild your charge afterwards. Since Maxim only has Speed 1, this is kinda annoying to do, actually.
+
+Maxim also has 4 starting light, which is pretty nice and lets him use Rhino Ram turn 1 if he wants.
+
+A typical Maxim deck would look like this.
 
 <todo>
 
-There does exist a cheese strat for Pluto involving Maxim, however:
+There does exist a cheese strat for Pluto involving Maxim:
 
 <todo>
 
@@ -197,10 +362,6 @@ The biggest consequence of only moving every other turn is that he drags team em
 
 <todo>
 
-# Good
-
-Yeah, this stuff's pretty good.
-
 #### Kalo
 
 Self-sustainable draw with Bottom Deal, solid clashing, and massive paralysis/disarm infliction through ammunition. Kalo only has one build but it's a good one. He does run into some light issues at emo 5, but this is still managable with Stacking the Deck along with smart cycling.
@@ -209,7 +370,11 @@ Self-sustainable draw with Bottom Deal, solid clashing, and massive paralysis/di
 
 #### Esther
 
-Same exact comments as Hubert and Gloria, but with two major differences: firstly, his exclusive Castigation kinda sucks, but secondly, his exclusive passive Raging Torrent is strong enough to bump him up from "niche" tier. The extra draw lets you play more aggressively during the first few scenes of a reception, letting you more aggressively lean on clashing with 3-costs and foregoing draw for a bit.
+Same exact comments as Hubert and Gloria, but with three major differences:
+
+1. Speed 3 instead of Speed 1
+2. His exclusive, Castigation, kinda sucks
+3. His passive Raging Torrent is very strong. The extra draw lets you play more aggressively during the first few scenes of a reception, letting you more aggressively lean on clashing with 3-costs and foregoing draw for a bit. You could always attribute this away though.
 
 <todo>
 
@@ -227,7 +392,7 @@ You can also infinitely loop Distorted Blade using a build that's similar to Tan
 
 <todo>
 
-Finally, there's Magic Trick DBlade. I think this build sucks because it's really clunky to use before *team* emotion 5. Great for YouTube montages. Not so much for anything else.
+Finally, there's Magic Trick DBlade. To be frank, I think this build sucks because it's really clunky to use before *team* emotion 5. Great for YouTube montages. Not so much for anything else.
 
 <todo>
 
@@ -237,7 +402,7 @@ Bloodfiendish is effectively Fervor and Health Hauler stapled together. I consid
 
 I think Bloodspreading is not very good (comparable to Eradication; 17-25 is the fourth-worst playerside mass summation in the game), and Unending Thirst is a decent Raging Storm Love sidegrade. Unfortunately, it's locked to the third scene and beyond, which limits its effectiveness in multi-act receptions like DEnsemble.
 
-But hey, hard to beat a built-in health hauler!
+But hey, she has a built-in health hauler + Fervor!
 
 Build Elena generically.
 
@@ -245,33 +410,50 @@ Build Elena generically.
 
 #### Donghwan
 
+<todo>
+
 #### Allen
+
++2 pierce power right out of the gate, at the cost of not being able to play anything* not-pierce. Considering how many mono-pierce cards are in SotC, this is really good. Will of the Prescript, Sturdy Defense, Frontal Assault, Wedging Thorn, and Graze the Grass basically build themselves. Laceration becomes immensely deadly, as it additionally inflicts Feeble on hit.
+
+Speed I and 3 starting light is bleh, but still, +2 power. Add in Wedge and Fervor, and +4 absolutely shreds.
+
+<todo>
+
+You can still feasibly run Multislash and Will of the City for econ, FYI, but be careful not to clash or ram these into counter dice
 
 #### Yae
 
-# Side Options
-
-These aren't "autoinclude" by my subjective standards, but they're really strong
+<todo>
 
 #### Angela
 
-Despite the fact that she's only available in Keter realization, I actually really like Angela's kit. 
+Despite the fact that she's only available in Keter realization, I really love Angela's kit:
 
-#### Red Mist
+ - Display of Affection is a strong 3-cost 2 die clasher with an effective leading 10-12 that *also* deletes the next die on clash win.
+ - Token of Friendship applies 2 Fragile, setting up some serious damage on the next turn.
+ - Lean Bloody Wings is a great 1-siding tool that also draws
+ - Shyness is the best econ page in the game, restoring net 3 light and drawing 1
+ - Coffin applies Seal
+
+Over the course of Keter Realization, she also gains access to her EGO, which take one of the best attacks from each floor. Sure, some of them like Those who are Faithful and Trustworthy and The Fearlessness to Keep On Living, are just masses that you throw at Snow Queen because they kinda missed (why choose Faded Memories over Logging (sadface)...?) but you get Fourth Match Flame, Regret, Red Eyes, Dipsia, and Apocalypse. You're spoiled by choice on which amazing EGO you want to throw out this turn, and the high light cost is offset entirely by Shyness so that next turn you just get to do it again.
+
+Due to her high reliance on EGO, her weakest point is definitely at Bloodbath where you have no EGO.
+
+No passive attribution, but she doubles Emotion gain across the entire team, and gains extra draw+light each turn. No one else in the game can do this.
 
 #### Xiao
 
+<todo>
+
 #### Purple Tear
 
-# Autoinclude
-
-If I want to win a reception no matter what (maybe I'm showing off?), I bring these key pages
+<todo>
 
 #### Binah
 
-#### Olivier
+<todo>
 
-#### Mirinae
+#### Nikolai
 
-# Nikolai
-
+<todo>
