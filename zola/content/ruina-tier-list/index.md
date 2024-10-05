@@ -18,7 +18,9 @@ I play this game way too much so I'm ranking all the endgame key pages based on 
 
 #### Black Silence
 
-<todo>
+You basically never get a chance to use him: you get to play Black Silence in two 1v1s vs Olivier and Argalia. Then Roland is locked out of most of Ensemble, Black Silence, Keter Realization, and even Distorted Ensemble. That's basically the entire endgame! And when you finally do get to play him again, Baral smashes your skull in on turn 1 with a 30-30 flat roll. Since Roland is locked to Keter floor, you also don't get EGO until you beat the game.
+
+Black Silence's cards and passives are okay overall, I guess? Only 3 draw and 3 light restores (down from my personal recommendation of 5 draw and 4 light restores) means that Roland's really hurting for econ at emo 5. Wheels Industry and Crystal Atelier are some of the best clashers in the game, but his other cards aren't particularly noteworthy. Even Durandal is a Bi Xi sidegrade but worse. The +2 on every third page is nice, but most of the time it's comparable to Fervor + A Fighter that Never Retreats.
 
 #### Red Mist
 
@@ -150,35 +152,59 @@ The effect of +3 power is insane, and practically guarentees that the random rec
 
 #### Eileen
 
+Yae sidegrade.
+
+**Pros**:
+- 4 starting light and Speed 3, allowing her to use cards like Everspinning Gearwheel on turn 1 as well as cycle better at emo 5
+- More consistent power from Masterful Smoker compared to Madness and Smoke Overflow
+- More consistent damage in Meat Gear compared to Excess Supply
+
+**Cons**
+- Thought Gear: Indoctrinate kinda sucks as a mass. It trades power for utility, except that utility can easily be offset by running good economy on individual decks
+- Lower highs compared to Yae
+- No Exhale Smoke, but by this point you have Gearwheel so you're okay
+
+A sample deck looks like this:
+
 <todo>
 
 #### Greta
+
+A 4-light, Speed 3 keypage with Prep Up the Main Dish and Tackle Mount. 
+
+Prep Up the Main Dish is an interesting Fervor sidegrade that's slightly overcosted (5 rather than 4), grants slightly more power (1-2 instead of flat 1), and requires bleed application on the target. Due to this precondition, Greta naturally gravitates towards single-target fights where managing bleed application is easier.
+
+Tackle Mount is one of the only four playerside pages that destroys all of the opponent's dice (the other three being Disposal, Furioso, and The Forgotten), giving Greta a niche spot in speedrunning strategies where this mechanic may be useful. Among these options, only Disposal and Tackle Mount are possible to play on turn 2: Disposal requires x2 Golden Opportunities against two triple-offense pages and win every clash. Tackle Mount merely requires drawing into Tackle Mount and Field Mods, and then finding a way to level up emotion.
+
+If you're not planning on taking advantage of this niche strategy, it's hard to place Greta as 6 light cost on Tackle Mount makes it hard to recover from economically afterwards unless you emo level up.
 
 <todo>
 
 #### Bremen
 
+A 4-light, Speed 3 keypage with Neigh~! Woof-woof! Bawk! and Chorus at the Climax.
+
+Their unique passive is something alright. It doesn't give any power either.
+
+Chorus at the Climax is a strong 6-cost mass individual that inflicts crippling debuffs on the next scene. It's pretty solid, but falls short in comparison to other mass individuals like Raging Storm Love, Unending Thirst, and Crescendo.
+
 <todo>
 
 #### Jae-heon
 
-<todo>
+A 4-light, Speed 3 keypage with Puppet Strings and Straining Strings
 
 #### Pluto
 
-Contracts.
+Contracts. They're really good if you build around them, actually, since 2 of your decks can get away with packing very little light economy:
 
-Why...why would you do this to yourself? I mean, I guess it's a fun challenge, but you're forced to build and play weirdly and even suboptimally at times. Amplification for example kinda bricks half the time even with a good spread. 
+1. Field Mods and Easygoing Breather are likely your best options for activating Liberty contract. Red Mist's 2-costs and Opening Ceremony also work. You could also do Rapid Gashes, though there's not much point in Liberty if you're doing that. Anyways, Liberty is pretty strong and you can shove pretty much any 3-cost you want into a deck like this. Will of the City is super strong because it can cost-reduce to a 0-cost restore 3.
+2. Light contract is even easier to activate (it's basically free) but you do need to spend everything. You can use combat pages with counter dice in order to spend light even if the page ultimately doesn't get used. This can help you not die to Light Contract. Keep in mind that staggering and killing restore 1 light each (this happens mid-scene), so avoid using masses as you may suddenly find yourself without a health bar for no reason. Light contract users really appreciate Health Haulers.
+3. Evade dice are really nice for Swiftness contract I guess. I don't think this contract is impactful, positively nor negatively.
+4. Might contract is ridiculously easy to proc: Offensive Position procs Might contract in 1 turn since there's no limitation to where the Strength comes from. Nikolai's Commander passive also works. In terms of deckbuilding though, this is probably one of the most restrictive. You're probably running Ominbrace Duel, Mirinae without True Trigram Formation, Burning Flash, or some weird Tanya deck that looks something like this? <todo>
+5. Amplification Contract is f\*ckin' awful, I'm sorry to say. Aim to build around *not* activating Amp Contract by excluding all of a certain cost from your deck. I like to exclude 2-costs since I can just run a standard Singleton deck. Ominbrace also works. Amp will stick around and continue clogging hand though, which is annoying but not too terrible.
 
-Since you can only switch contracts once per scene, meaning that if your opening hand is unlucky, it can take 2 turns to get everyone's contracts in order. Although this really only affects Might and Haste, it just *feels* bad to waste turns shuffling your hand around.
-
-If you really insist on using these contracts though...
-
-1. Offensive Position procs Might contract in 1 turn since there's no limitation to where the Strength comes from. Nikolai's Commander also works.
-2. Field Mods, Rapid Gashes, and Easygoing Breather are likely your best options for activating Liberty contract.
-3. You can use combat pages with counter dice in order to spend light even if the page ultimately doesn't get used. This can help you not die to Light Contract.
-4. Evade dice are really nice for Swiftness contract.
-5. Amplification Contract is f*cked, I'm sorry to say.
+The weakest part of a Pluto team is Pluto himself, and his presence alone warps deckbuilding around his contracts. It's hard to judge him as a result.
 
 #### Argalia
 
@@ -186,9 +212,9 @@ If you really insist on using these contracts though...
 
 #### A Church of Gears Worshipper
 
-This thing doesn't even have Speed. You need to spend 4 attribution points just to make this page usable.
+This thing doesn't even have Speed. You need to spend 4 attribution points minimum just to make this page usable.
 
-The ONLY reason why this might be a good thing is that you can attribute Yujin's Speed 2 passive onto this for 3 speed dice right off the bat. There's no point in doing this outside of disgustingly specific niche challenges because you still only have 3 starting light. You probably can't even use all those speed dice.
+The ONLY reason why this might be a good thing is so that you can attribute Yujin's Speed 2 passive onto this for 3 speed dice right off the bat. There's no point in doing this outside of disgustingly specific niche challenges because you still only have 3 starting light. You probably can't even use all those speed dice.
 
 #### Nemo
 Tempermental Fervor sidegrades that requires constant Charge manipulation as well as an Unrelenting sidegrade. Energy Beam provides a solid option against strong first-die and strong second-die pages, but you know what else can respond to those pages? For strong first-die, leading blocks such as Absorb Impact are easier to use, cost less, and mitigate the damage; for strong second-die, you can do something similarly with Sturdy Defense which also draws cards. Nemo is locked into a charge-spend build, and doesn't offer much payoff in return.
@@ -452,7 +478,23 @@ No passive attribution, but she doubles Emotion gain across the entire team, and
 
 #### Binah
 
-<todo>
+A powerful offensive ranged unit with in-built card draw, Fairy infliction, speed dice dealing, dice deletion, and a triple-blunt mass individual with Feeble infliction. Binah wields a self-contained, yet self-sustainable deck who can stand strong both as a DPS and as a status inflicter.
+
+Fairy is one of the most powerful playerside status available in the game; it's a better bleed that deals damage on *every* dice roll and doesn't decrease except on turn end. Since Binah is ranged, she can reliable stack 2-8 Fairy in a single turn before any dice are rolled thanks to Degraded Pillar plus Degraded Fairy, which can both come out at the same time as early as turn 1.
+
+Degraded Chain is one of the very few seals in the entire game; the others being Coffin (abno page), Coffin (Angela), Silent Bullet, Sword Sharpened with Tears, and Heaven. Angela's Coffin is restricted to Keter realization only, and the others are locked behind EGO or abno pages. Degraded Chain can come out as early as turn 1 and wreck havoc on the enemy action economy.
+
+Degraded Shockwave is a 5-cost mass individual that inflicts Feeble and grants Protection across the entire team. Even disregarding the x3 strength scaling that a triple-offense mass individual provides, these statuses can buy some much needed survivability for her other nuggets. The big issue with this card is that it has a high cost, so it tends to sit in Binah's hand for a long time before it sees use.
+
+All of Binah's cards have a high natural roll. Degraded Pillar's rolls are comparable to Emotional Turbulence at emo 4, and the anti-recycle on the first die of Pillar is a guaranteed "can't lose" against all melee pages. Degraded Fairy's rolls resemble Will of the City's. Degraded Chain's base rolls are greater than Violet Blade's, though it doesn't have the x2 damage scaling that VB does. Degraded Lock's first die resembles Tieshaokan's second die.
+
+Perhaps Binah's greatest weakness is her economy. She lacks 0-cost light restores, which means that a 1-light Binah can only throw out a single Degraded Fairy and that's it. She only has 3 light restores in a top-heavy deck, so if her draw luck is bad, she can run out of light at emo 5 fairly quickly. Her lack of light economy also means that she struggles to use EGOs without bricking as well.
+
+Binah is definitely a strange unit to pick up at first, but she does a lot at the same time. The versatility she offers to her floor's team composition enables a variety of unique offensive options that no other floor has access to.
+
+<todo: better analysis other than writing her strengths>
+
+<todo: passives>
 
 #### Nikolai
 

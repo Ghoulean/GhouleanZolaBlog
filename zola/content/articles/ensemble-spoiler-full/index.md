@@ -946,36 +946,7 @@ As a general rule of thumb, I like to adhere to the 5-4-3 rule: 5 card draw, 4 l
 
 You may have noticed that I have a tendency to build Singleton decks. This is because Singleton is the easiest deck archetype to build for that satisfies these requirements. Although Multislash and Will of the Prescript are really hard to give up, you do have some degree of freedom in choosing your remaining light restores, and a lot of flexibility with your 3-cost clashers.
 
-## Alternate deck choices
-
-* Olivier
-  * x3 Ominous Power, x2 Brace Up, x1 333...1973, x1 True Trigram Formation, x1 Impugnatio Ultimata, x1 Divisionary Impact
-  * Margin, Bottom Deal, Mind Hauler, Health Hauler
-
-{{ img(src="olivier_discard.png" class="ci" alt="Olivier discard") }}
-
-This deck aims to infinitely cycle your powerful clashers at emotion level 5 as much as possible. Use 333...1973 to thin out your deck to 8 cards. Use x3 Ominous Power to instantly restore 9 light. Then use Divisionary Impact with a 4-cost clasher and 2 Brace Ups. You get 1 natural draw, 1 draw from playing cards at emo 5, 4 draw from Brace Up, 1 draw from Margin, and 1 draw from Bottom Deal. 1 + 1 + 4 + 1 + 1 = 8, which perfectly redraws your entire hand so you get to do that again.
-
-Margin and Bottom Deal are mandatory. Hauler passives can be changed if desired.
-
-* Purple Tear (guard stance)
-  * x3 Leap, x3 Energy Conversion, x3 Overcharge
-  * Fervor, Offensive Position, Mind Hauler, Health Hauler
-
-{{ img(src="overcharge_pt.png" class="ci" alt="Overcharge PT") }}
-
-Guard stance is immune to all debuffs, which includes Overcharge's self-immobilize and Offensive Position's self-fragile. Due to Overcharge's naturally high rolls combined with Purple Tear's Manipulator of Odds, this deck is naturally resilient against powernull.
-
-All passives can be swapped out if desired. Triple R Suit + Maximum Crash is a funny combo.
-
- * Nikolai
-   * x3 Graze the Grass, x1 Battle Command, x1 Le Regole, x3 Concentration, x1 Disposal
-   * Battle Ready, Skim Prescript, Maximum Crash, Messenger
-{{ img(src="turbo_nikolai.png" class="ci" alt="Turbo Nikolai") }}
-
-A high-difficulty deck that aims to pump out Disposal as fast as possible. Play Concentration + Graze the Grass on turn 1 to activate Nikolai's Commander passive, then play that combo again on turn 2 to hit 20 charge. Note that both Battle Ready and Skim Prescript are required to guarentee that this combo is always available. The most challenging aspect of piloting this deck is smartly deciding when to use (or *not* use) combat pages in order to conserve draw and/or light economy.
-
-## Other decks
+## Other deck options
 
 You can beat the entire Ensemble and the rest of the game using only Ominbrace Duel:
 
