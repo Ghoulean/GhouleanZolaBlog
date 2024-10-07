@@ -22,6 +22,16 @@ You basically never get a chance to use him: you get to play Black Silence in tw
 
 Black Silence's cards and passives are okay overall, I guess? Only 3 draw and 3 light restores (down from my personal recommendation of 5 draw and 4 light restores) means that Roland's really hurting for econ at emo 5. Wheels Industry and Crystal Atelier are some of the best clashers in the game, but his other cards aren't particularly noteworthy. Even Durandal is a Bi Xi sidegrade but worse. The +2 on every third page is nice, but most of the time it's comparable to Fervor + A Fighter that Never Retreats.
 
+You can't attribute against Olivier, but vs Argalia something like:
+
+<build: Lone Fixer, Health Hauler, Mind Hauler, Four Trigrams>
+
+...or some variation of this should work.
+
+When non-solo (for whatever reason), you can go something like this to alleviate Black Silence's poor emo 5 econ:
+
+<build: Unlocked Potential, Easygoing Breather, Raging Torrent, Mind Hauler, Health Hauler>
+
 #### Red Mist
 
 A solid and easy-to-use keypage that revolves around one simple game plan: deal a lot of damage, and snowball from there:
@@ -40,13 +50,17 @@ Red Mist's feast-or-famine snowballing nature means she often demands resources 
 
 Myo's Prowess is Red Mist's most popular attribution, but she also goes well with other genericly strong passives such as Health Hauler, Electric Shock, and Fervor. Red Mist can skimp on Mind Hauler due to Manifest Ego and Shell, though it's still a great tool for early survivability. Instead of Health Hauler, Red Mist can also take Deep Wound and rely on Vampirism for healing. Another alternate option is self-smoke for bigger damage numbers.
 
-<todo: standard>
-<todo: deep wound>
-<todo: selfsmoke>
+<build: x3 Spear, x3 Upstanding Slash, x2 Focus Spirit, x1 Steel Knuckles; Myo's Prowess, Electric Shock, Health Hauler + Mind Hauler OR Offensive Position + Deep Wound>
+
+<build: x3 Spear, x3 Upstanding Slash, x1 Smoke Prick, x1 Inhale Smoke, x1 flex; Myo's Prowess, Sooty Thwak, Puffy Brume, Health Hauler>
 
 If going true solo, Red Mist really enjoys Lone Fixer, Claws of Savagery, Absorption, and Instincts. If going untrue solo, Red Mist still enjoys all of those, but add Remembrance, Kizuna/Extreme Fatigue (either of em), and Mountain of Corpses. In both cases, she wants more counter dice to better deal with everything that's hitting her.
 
-<todo>
+<build: x3 Spear, x3 Upstanding Slash, x3 Steel Knuckles>
+
+<build: Lone Fixer, Myo's Prowess, Health Hauler>
+
+<build: Lone Fixer, Remembrance, Kizuna/Extreme Fatigue (3)>
 
 You may have noticed that all these Red Mist decks look kinda same-y. Red Mist is a pretty one-note key page: she can only effectively do one thing, which is dealing a bunch of damage by herself through brute force. While she *is* quite strong, unfortunately she cannot perform the same bullsh*t that the top tier key pages can perform. Also, she's locked to the Floor of Language.
 
@@ -94,13 +108,17 @@ Thumb Soldato with Additional Supplies.
 
 A ranged page that gets access to the full arsenel of Thumb combat pages, of which are powerful, clash well, and apply a ton of paralysis, disarm, and burn for basically free, as well as draw economy from discarding generated ammunition plus draw on Reload and Shock Round. A 2-cost 6-11 is no joke (Shock Round is bugged and only provides +1 power at most, but it's still really good)
 
-Sample deck: <todo>
+Sample deck:
+
+<build: x2 Reload x2 Class and Respect x1 Bayonet Combat x3 Shock Round x1 Focus Fire; Bottom Deal, Best Choice, Fervor, Mind Hauler>
 
 #### Martina
 
 Tempermental Fervor sidegrades that requires constant Charge manipulation, slightly extra stagger damage, and Uncanny Strike.
 
-She shares most the same weaknesses that Bada and Nemo have: Speed 1, frailish, and locked into charge. But what sets her apart is that her kit is remarkably geared towards staggering: Uncanny Strike can do a whopping 18 stagger damage on a single hit, in addition to Heavy-hearted Forte.
+She shares most the same weaknesses that Bada and Nemo have: Speed 1, frailish, and locked into charge. But what sets her apart is that her kit is geared towards staggering: Uncanny Strike can do a whopping 18 stagger damage on a single hit, in addition to Heavy-hearted Forte.
+
+I still don't think Martina is any good because self-smoke with Sooty Thwak can also reach these numbers and with less commitment (2-cost passive, Inhale Smoke, any keypage).
 
 #### Bada
 
@@ -114,6 +132,8 @@ Tempermental Fervor sidegrades that requires constant Charge manipulation, occas
 
 Which cuts into his usability. And his exclusive isn't good enough for one or three copies to push him beyond his limitations.
 
+I just don't like charge spenders in general because I feel like you can accomplish the same thing with a Singleton engine except easier. Energy Conversion is amazing for compressing your light economy in the event that your deck slots are filled up, but most keypages don't need to play a large variety of combat pages.
+
 #### Rudolph
 
 The long-ranged attacker of R Corp who's actually arguably better just when brawlin' it melee. Speed I, 4 starting light, and a fairly unique Fervor sidegrade in Reindeer Treatment: it starts at +0, but upon taking enough damage, goes up to +2. His exclusive passive, Survivor, is also very strange: it's technically the most cost-efficient power passive in the game, but it's practically impossible to utilize in most cases since getting staggered generally leads shortly to death. For the most part, you can't rely on this passive to give you power. Brainwave Charge-focusing Antlers grants a little bit of extra stagger damage if you go charge, which is nice.
@@ -124,15 +144,18 @@ Mind Crush is a fairly powerful mass summation usable at 20 charge. It's roughly
 
 Rudolph's power is more difficult to unlock than Myo's, but the mass summation alone makes him a pretty solid pick overall. A deck for Rudolph would probably look something like this:
 
-<todo>
+<build: Wedging Thorn, Graze the Grass, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Concentration, Duel, Mind Crush>
+<build: Graze the Grass, Multislash, Absorb Impact, Bulky Impact, Will of the Prescript, Concentration, Mind Crush, Duel, Will of the City>
+<build: Fervor, Mind Hauler, Health Hauler, Madness>
+<build: Offensive Position, Health Hauler, Fervor, Electric Shock>
 
 #### Harold
 
-Speed 3, 4 starting light, Four Trigrams, All for Hana, and access to True Trigram Formation. She might be boring and overshadowed by her colleague Olivier, but she's still a pretty solid keypage.
+Speed 3, 4 starting light, Four Trigrams, All for Hana, and access to True Trigram Formation. She might be boring and overshadowed by her colleague Olivier, but she's still a pretty solid keypage. All for Hana + Endurance Trigram lets her choose to not die for a scene.
 
-Not much to say here other than run something generically good.
+Not much to say here other than run something generically good. Draw Trigram + True Trigram Formation is like a mini-Will of the Prescript btw.
 
-<todo>
+<build: Wedging Thorn, Forward March, Multislash, Will of the City, Deep Drag, Will of the Prescript, Emotional Turbulence, Double-Edged Rencounter, True Trigram Formation; Fervor, Unlocked Potential, Health Hauler, Mind Hauler>
 
 #### Mirinae
 
@@ -140,15 +163,38 @@ Mirinae is entirely defined by her passive Hana for All, which duplicates streng
 
 For generalist usage, she has one practical build with only some variation:
 
-<todo>
+<build: x3 Ominous Power, x3 Brace Up, x3 Augury Kick; Bottom Deal, Best Choice, Nuovo Fabric, Puppet Strings>
 
-One may consider Observe over Augury Kick if they fear they cannot land hits (this is usually not a concern, as 7-12 is a pretty high base roll). One may additionally choose to swap out x1 Ominous Power for x1 True Trigram Formation. This inclusion helps Mirinae defend against both mass-individuals and mass-summations, as both Augury Kick and Brace Up tend to be poor mass defenders.
+<build: High Level Acrobatics, Lion's Fist, Fervor, Firm as a Great Mountain>
+
+One may consider Observe over Augury Kick if they fear they cannot land hits (this is usually not a concern, as 7-12 is a fairly high base roll). One may additionally choose to swap out x1 Ominous Power for x1 True Trigram Formation. This inclusion helps Mirinae defend against both mass-individuals and mass-summations, as both Augury Kick and Brace Up tend to be poor mass defenders.
 
 The effect of +3 power is insane, and practically guarentees that the random recipient of this buff will win every clash they engage in that turn. To illustrate, let's look at Frontal Assault. Its 2-7 1-2 rolls are more or less in line with its status as a 0-cost light restore. However, +3 power turns these rolls into a 5-10 4-5...comparable to Shock Round's unboosted 5-10 5-7! And this is before any additional power bonuses from the recipient!
 
 #### Olivier
 
-<todo>
+All of the upsides of Harold, plus his unique passive Twelve Fixers.
+
+This passive is insane. +2 minroll is roughly equivalent to +1 flat power in terms of probability, but has two immensely beneficial upsides compared to flat power:
+
+- Not affected by powernull
+- Min/maxrolls more likely for emotion gain
+
+As a result, Olivier is the ultimate generalist, performing at a level of consistency that no other keypage in the game can match. Olivier can run pretty much every standard deck under any condition and still be able to step up and run with it. Additionally, his restricted roll ranges mean he doesn't even need to clash as much as other key pages do in order to generate enough emotion coins to level up. This may be a downside if you've brought a build where managing emotion level is crucial, but a huge upside in builds where you want to push emotion level as fast as possible. 
+
+Generalist Olivier builds would look something like this:
+
+<build: Wedging Thorn, Forward March, Multislash, Feint, Will of the City, Deep Drag, Will of the Prescript, Double-Edged Rencounter, True Trigram Formation; Fervor, Unlocked Potential, Health Hauler, Mind Hauler>
+
+I'm a big fan of this emo 5 Discard loop deck myself:
+
+<build: x3 Ominous Power, x2 Brace Up, x1 Field Mods, x1 Impugnatio Ultima, x1 True Trigram Formation, x1 Divinatory Impact; Bottom Deal, Margin, Mind Hauler, Health Hauler>
+
+And I've saved the absolute best for last: Weight of Sin Olivier:
+
+<build: x2 Brace Up, x3 Opportunity Spotted, x2 Steel Knuckles, x2 Will of the City; Mind Hauler, Health Hauler, Bloodfiendish, Grit>
+
+As implied by the name, Weight of Sin is mandatory. Big Eyes is super helpful but not required. In this deck you basically want to prioritize survivability passives over power as you'll be constantly activating Weight of Sin's effect for massive amounts of strength and endurance every scene.
 
 #### Eileen
 
@@ -161,12 +207,12 @@ Yae sidegrade.
 
 **Cons**
 - Thought Gear: Indoctrinate kinda sucks as a mass. It trades power for utility, except that utility can easily be offset by running good economy on individual decks
-- Lower highs compared to Yae
 - No Exhale Smoke, but by this point you have Gearwheel so you're okay
+- Lower highs compared to Yae; Masterful Smoker doesn't offer as much potential power as Madness, and Meat Gear not as much damage as Excess Supply
 
 A sample deck looks like this:
 
-<todo>
+<build: x1 Wedging Thorn, x1 Forward March, x1 Multislash, x1 Guidance of the Gears, x1 Smoke Prick, x1 Deep Drag, x1 Will of the Prescript, x1 Vapour, x1 Everspinning Gearwheel; Sooty Thwak, Four Trigrams, Mind Hauler>
 
 #### Greta
 
@@ -178,21 +224,33 @@ Tackle Mount is one of the only four playerside pages that destroys all of the o
 
 If you're not planning on taking advantage of this niche strategy, it's hard to place Greta as 6 light cost on Tackle Mount makes it hard to recover from economically afterwards unless you emo level up.
 
-<todo>
+<build: Wedging Thorn, Class and Respect, Multislash, Snake's Prey, Will of the City, Shoving Stab, Will of the Prescript, Laceration, Tackle Mount; Fervor, Health Hauler, Mind Hauler, Deep Wound, Razor Strike>
+
+<build: x2 Ominous Power, x3 Brace Up, x1 Tackle Mount, x2 Duel; Bottom Deal, Deep Wound, High Level Acrobatics, Lion's Fist, Electric Shock>
 
 #### Bremen
 
 A 4-light, Speed 3 keypage with Neigh~! Woof-woof! Bawk! and Chorus at the Climax.
 
-Their unique passive is something alright. It doesn't give any power either.
+Their unique passive is something alright. It doesn't give any power, but it *sort of* acts as Mind Hauler + Electric Shock. Which is nice, guess.
 
-Chorus at the Climax is a strong 6-cost mass individual that inflicts crippling debuffs on the next scene. It's pretty solid, but falls short in comparison to other mass individuals like Raging Storm Love, Unending Thirst, and Crescendo.
+Chorus at the Climax on the other hand is a powerful 6-cost mass individual that inflicts crippling debuffs on the next scene. It's pretty solid. In terms of raw damage it still falls short in comparison to other mass individuals like Raging Storm Love, Unending Thirst, and Crescendo, but the setup it provides on the next turn can result in mass carnage for all involved.
 
 <todo>
 
 #### Jae-heon
 
-A 4-light, Speed 3 keypage with Puppet Strings and Straining Strings
+A 4-light, Speed 3 keypage with Puppet Strings and Straining Strings.
+
+Puppet Strings is a strong good passive for survivability and that's it.
+
+In comparison to Chorus at the Climax, Straining Strings is more defensively oriented and doesn't really set up anything at all for the next turn. It heals the Puppet Strings recipient, which is nice.
+
+<todo>
+
+You can clone Puppet Strings so that Straining Strings heals everyone on your team. That's like, a 6-cost Pentinence.
+
+<todo>
 
 #### Pluto
 
@@ -217,6 +275,7 @@ This thing doesn't even have Speed. You need to spend 4 attribution points minim
 The ONLY reason why this might be a good thing is so that you can attribute Yujin's Speed 2 passive onto this for 3 speed dice right off the bat. There's no point in doing this outside of disgustingly specific niche challenges because you still only have 3 starting light. You probably can't even use all those speed dice.
 
 #### Nemo
+
 Tempermental Fervor sidegrades that requires constant Charge manipulation as well as an Unrelenting sidegrade. Energy Beam provides a solid option against strong first-die and strong second-die pages, but you know what else can respond to those pages? For strong first-die, leading blocks such as Absorb Impact are easier to use, cost less, and mitigate the damage; for strong second-die, you can do something similarly with Sturdy Defense which also draws cards. Nemo is locked into a charge-spend build, and doesn't offer much payoff in return.
 
 For the most part, Emergency Resuscitation Protocol is a 5-cost Unrelenting that spends all charge and occasionally leaves you above the Unrelenting threshold when you finally unstagger. ERP is better than Unrelenting in decks where you have a lot of stagger restores (in the form of evade dice, Mind Hauler, or Immediate Repairs), and thus don't get staggered in the first place.
@@ -434,7 +493,17 @@ Build Elena generically.
 
 <todo>
 
-#### Donghwan
+#### Donghwan the Grade 1 Fixer
+
+A SotC1 generalist keypage who can do pretty much anything. Between in-built Fervor, in-built bleed application, and Toughness offering up to 3 prot + stagger prot, Donghwan is surprisingly durable and isn't afraid to strike back. His natural tankiness also makes him an unexpectedly powerful soloist for someone from SotC1. He also has Speed 3, which is really nice.
+
+A "standard" Donghwan deck would be some generic Singleton deck:
+
+<todo: on-tier deck>
+
+<todo: lateendgame deck>
+
+But he can easily stand toe-to-toe with Red Mist, on-tier:
 
 <todo>
 
@@ -442,13 +511,19 @@ Build Elena generically.
 
 +2 pierce power right out of the gate, at the cost of not being able to play anything* not-pierce. Considering how many mono-pierce cards are in SotC, this is really good. Will of the Prescript, Sturdy Defense, Frontal Assault, Wedging Thorn, and Graze the Grass basically build themselves. Laceration becomes immensely deadly, as it additionally inflicts Feeble on hit.
 
-Speed I and 3 starting light is bleh, but still, +2 power. Add in Wedge and Fervor, and +4 absolutely shreds.
+Speed 3 is really good, 3 starting light is bleh. Still, +2 power is hard to beat. Add in Wedge and Fervor, and +4 absolutely shreds.
 
 <todo>
 
 You can still feasibly run Multislash and Will of the City for econ, FYI, but be careful not to clash or ram these into counter dice
 
 #### Yae
+
+Generically powerful smoke-oriented offensive powerhouse with random +2 strength from Madness at times. Her in-built Immediate Repairs makes her tankier than she seems: she's a key page that fights to the bitter end. If she frequently rolls into 5 Fragile from Madness, however, Immediate Repairs would all be for naught.
+
+Exhale Smoke is also the second-strongest double-sided Smoke application in the game, right behind Gearwheel. Unfortunately, Yae can't use this page turn 1 as Yae only has 3 starting light.
+
+3 passive slots is painful, but thanks to Immediate Repairs she can make the choice to forgo sustain more easily compared to other keypages.
 
 <todo>
 
@@ -482,7 +557,7 @@ A powerful offensive ranged unit with in-built card draw, Fairy infliction, spee
 
 Fairy is one of the most powerful playerside status available in the game; it's a better bleed that deals damage on *every* dice roll and doesn't decrease except on turn end. Since Binah is ranged, she can reliable stack 2-8 Fairy in a single turn before any dice are rolled thanks to Degraded Pillar plus Degraded Fairy, which can both come out at the same time as early as turn 1.
 
-Degraded Chain is one of the very few seals in the entire game; the others being Coffin (abno page), Coffin (Angela), Silent Bullet, Sword Sharpened with Tears, and Heaven. Angela's Coffin is restricted to Keter realization only, and the others are locked behind EGO or abno pages. Degraded Chain can come out as early as turn 1 and wreck havoc on the enemy action economy.
+Degraded Chain is one of the very few seals in the entire game; the others being Coffin (abno page), Coffin (Angela), Silent Bullet, Sword Sharpened with Tears, and Heaven. Angela's Coffin is restricted to Keter realization only, and the others are locked behind EGO or abno pages. Degraded Chain can come out as early as turn 1 and wreck havoc on the enemy action economy and also makes the target always 1-side-able for 1 turn.
 
 Degraded Shockwave is a 5-cost mass individual that inflicts Feeble and grants Protection across the entire team. Even disregarding the x3 strength scaling that a triple-offense mass individual provides, these statuses can buy some much needed survivability for her other nuggets. The big issue with this card is that it has a high cost, so it tends to sit in Binah's hand for a long time before it sees use.
 
