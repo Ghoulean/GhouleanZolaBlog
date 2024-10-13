@@ -600,28 +600,29 @@ If you stay on this phase for too long, eventually he'll start throwing out mass
 There are two mechanics you need to pay attention to: Soul Link and Combo.
 
 ### Soul Link
-Both Roland and Angelica start with 4 stacks of Soul Link; they're practically invincible while Soul Link is up. In order to deplete Soul Link:
 
-* Win the clash against Angelica's Unstable Bond with the "Dark Presence" buff
-* Win the clash against Roland's Unstable Bond with the "Ashen Presence" buff
+Both Roland and Angelica start with 4 stacks of Soul Link; they're practically invincible while Soul Link is up. 
 
-In order to obtain these buffs:
+Every scene, Roland and Angelica use Dark Bond and Ashen Bond, respectively. Redirecting these attacks may not seem to do anything since they're both pages with only counter dice, but this gives you a same-scene "Dark Presence" buff (Dark Bond) or "Ashen Presence" buff (Ashen Bond) that can be used to deplete Soul Link. 
 
-* Obtain the "Ashen Presence" buff by redirecting Angelica's "Ashen Bond"
-* Obtain the "Dark Presence" buff by redirecting Roland's "Dark Bond"
+Additionally, every scene, Roland and Angelica play their own version of Unstable Bond. One die on each of these pages have an on-clash lose effect: if the attacker has a specific Presence buff (Ashen Presence if clashing vs Roland, Dark Presence if clashing vs Angelica), Soul Link depletes by 1.
 
-Thus, you can deplete up to two stacks of Soul Link per turn.
+Therefore, in order to deplete Soul Link:
+
+* One librarian redirects Roland's Dark Bond. That same librarian must also win the clash against Angelica's Unstable Bond.
+* One librarian redirects Angelica's Ashen Bond. That same librarian must also win the clash against Roland's Unstable Bond.
 
 ### Combo
+
 If Angelica and Roland target the same librarian with the same workshop page, then Roland will give his dice to Angelica. For example, if Angelica's Zelkova Workshop (4-8 slash, 3-8 blunt) and Roland's Combo: Zelkova Workshop (3-8 slash, 3-8 slash) both target the same librarian, then Roland will not play Zelkova Workshop, but Angelica's Zelkova Workshop will attack the librarian with a 4-8 slash, 3-8 blunt, 3-8 slash, 3-8 slash in that order.
 
 Therefore, there are three main strategies to deal with this:
 
-1. Split focus: multiple librarians clash into these cards to prevent one from getting overwhelmed
-2. Counter with a single strong 3-cost clasher. The threat from Combo pages come from obscurity: your librarian has to defend against more dice than the pre-combat screen will lead you to believe. But even with dice getting shuffled around, most combo pages are 3- or 4-dice attacks.
+1. Split focus: multiple librarians clash into these cards to prevent one from getting overwhelmed.
+2. Clash Angelica's Combo page with a single strong 3-cost clasher. The threat from Combo pages come from obscurity: your librarian has to defend against more dice than the pre-combat screen will lead you to believe. But even with dice getting shuffled around, most combo pages are 3- or 4-dice attacks. This strategy should mitigate most of the damage that your librarian would otherwise need to endure.
 3. Ram a combo page into a counter die that you know will win every clash.
 
-Prioritize depleting Soul Link over breaking up Combo.
+If you can't properly counter Combo no matter how you try to clash, then prioritize following the instructions in the Soul Link section over the instructions here.
 
 ## Phase 4.1 \- Memories
 

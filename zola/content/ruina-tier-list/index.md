@@ -24,13 +24,13 @@ Black Silence's cards and passives are okay overall, I guess? Only 3 draw and 3 
 
 You can't attribute against Olivier, but vs Argalia something like:
 
-<build: Lone Fixer, Health Hauler, Mind Hauler, Four Trigrams>
+https://tiphereth.zasz.su/u/decks/Y--BNh62D/
 
 ...or some variation of this should work.
 
 When non-solo (for whatever reason), you can go something like this to alleviate Black Silence's poor emo 5 econ:
 
-<build: Unlocked Potential, Easygoing Breather, Raging Torrent, Mind Hauler, Health Hauler>
+https://tiphereth.zasz.su/u/decks/Y--yZRi4L/
 
 #### Red Mist
 
@@ -50,17 +50,16 @@ Red Mist's feast-or-famine snowballing nature means she often demands resources 
 
 Myo's Prowess is Red Mist's most popular attribution, but she also goes well with other genericly strong passives such as Health Hauler, Electric Shock, and Fervor. Red Mist can skimp on Mind Hauler due to Manifest Ego and Shell, though it's still a great tool for early survivability. Instead of Health Hauler, Red Mist can also take Deep Wound and rely on Vampirism for healing. Another alternate option is self-smoke for bigger damage numbers.
 
-<build: x3 Spear, x3 Upstanding Slash, x2 Focus Spirit, x1 Steel Knuckles; Myo's Prowess, Electric Shock, Health Hauler + Mind Hauler OR Offensive Position + Deep Wound>
+https://tiphereth.zasz.su/u/decks/CR-hx8XCScoIidJe-k3mlU/
+caption=Offensive Position + Deep Wound over double Haulers also okay
 
-<build: x3 Spear, x3 Upstanding Slash, x1 Smoke Prick, x1 Inhale Smoke, x1 flex; Myo's Prowess, Sooty Thwak, Puffy Brume, Health Hauler>
+https://tiphereth.zasz.su/u/decks/CR-pxgtyn2NURfM3-o3PQS/
+caption=Focus Spirit is flexible. Everspinning Gearwheel over Inhale Smoke also okay
 
 If going true solo, Red Mist really enjoys Lone Fixer, Claws of Savagery, Absorption, and Instincts. If going untrue solo, Red Mist still enjoys all of those, but add Remembrance, Kizuna/Extreme Fatigue (either of em), and Mountain of Corpses. In both cases, she wants more counter dice to better deal with everything that's hitting her.
 
-<build: x3 Spear, x3 Upstanding Slash, x3 Steel Knuckles>
-
-<build: Lone Fixer, Myo's Prowess, Health Hauler>
-
-<build: Lone Fixer, Remembrance, Kizuna/Extreme Fatigue (3)>
+https://tiphereth.zasz.su/u/decks/CR-haRbmy6MIzOPy-ME_I/
+caption=Remembrance + Kizuna/Extreme Fatigue (3) also okay, but only for untrue solo.
 
 You may have noticed that all these Red Mist decks look kinda same-y. Red Mist is a pretty one-note key page: she can only effectively do one thing, which is dealing a bunch of damage by herself through brute force. While she *is* quite strong, unfortunately she cannot perform the same bullsh*t that the top tier key pages can perform. Also, she's locked to the Floor of Language.
 
@@ -110,7 +109,7 @@ A ranged page that gets access to the full arsenel of Thumb combat pages, of whi
 
 Sample deck:
 
-<build: x2 Reload x2 Class and Respect x1 Bayonet Combat x3 Shock Round x1 Focus Fire; Bottom Deal, Best Choice, Fervor, Mind Hauler>
+https://tiphereth.zasz.su/u/decks/CD-dGF3m3lJnCpSA-kfrj8/
 
 #### Martina
 
@@ -144,10 +143,9 @@ Mind Crush is a fairly powerful mass summation usable at 20 charge. It's roughly
 
 Rudolph's power is more difficult to unlock than Myo's, but the mass summation alone makes him a pretty solid pick overall. A deck for Rudolph would probably look something like this:
 
-<build: Wedging Thorn, Graze the Grass, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Concentration, Duel, Mind Crush>
-<build: Graze the Grass, Multislash, Absorb Impact, Bulky Impact, Will of the Prescript, Concentration, Mind Crush, Duel, Will of the City>
-<build: Fervor, Mind Hauler, Health Hauler, Madness>
-<build: Offensive Position, Health Hauler, Fervor, Electric Shock>
+https://tiphereth.zasz.su/u/decks/CV-iCNDWpUCvKXDE-lEe8s/
+https://tiphereth.zasz.su/u/decks/CV-iCNDViy0tl~FU-Qilh9/
+
 
 #### Harold
 
@@ -155,17 +153,16 @@ Speed 3, 4 starting light, Four Trigrams, All for Hana, and access to True Trigr
 
 Not much to say here other than run something generically good. Draw Trigram + True Trigram Formation is like a mini-Will of the Prescript btw.
 
-<build: Wedging Thorn, Forward March, Multislash, Will of the City, Deep Drag, Will of the Prescript, Emotional Turbulence, Double-Edged Rencounter, True Trigram Formation; Fervor, Unlocked Potential, Health Hauler, Mind Hauler>
+https://tiphereth.zasz.su/u/decks/Co-q52_Gyy6qhMQq-k3rNB/
 
 #### Mirinae
 
 Mirinae is entirely defined by her passive Hana for All, which duplicates strength, endurance, protection, and stagger protection gained from combat pages to a random ally. Due to the passive's high cost, as well as its selfless nature, it's generally infeasible to attribute this on anyone other than Mirinae, so she's uniquely positioned to act as an offensive support buffer on the team.
 
-For generalist usage, she has one practical build with only some variation:
+For generalist usage, she has one practical build with some variation:
 
-<build: x3 Ominous Power, x3 Brace Up, x3 Augury Kick; Bottom Deal, Best Choice, Nuovo Fabric, Puppet Strings>
-
-<build: High Level Acrobatics, Lion's Fist, Fervor, Firm as a Great Mountain>
+https://tiphereth.zasz.su/u/decks/Cn-rZYxFehhZvuU9-U5KCAs/
+caption=All passives are flexible. Other options include, but are not limited to, Nuovo Fabric, Grit, Puppet Strings, Mind Hauler, Fervor, Firm as a Great Mountain
 
 One may consider Observe over Augury Kick if they fear they cannot land hits (this is usually not a concern, as 7-12 is a fairly high base roll). One may additionally choose to swap out x1 Ominous Power for x1 True Trigram Formation. This inclusion helps Mirinae defend against both mass-individuals and mass-summations, as both Augury Kick and Brace Up tend to be poor mass defenders.
 
@@ -182,19 +179,22 @@ This passive is insane. +2 minroll is roughly equivalent to +1 flat power in ter
 
 As a result, Olivier is the ultimate generalist, performing at a level of consistency that no other keypage in the game can match. Olivier can run pretty much every standard deck under any condition and still be able to step up and run with it. Additionally, his restricted roll ranges mean he doesn't even need to clash as much as other key pages do in order to generate enough emotion coins to level up. This may be a downside if you've brought a build where managing emotion level is crucial, but a huge upside in builds where you want to push emotion level as fast as possible. 
 
-Generalist Olivier builds would look something like this:
+I'm not going to list the Rapid Gashes and Duel builds, but the Singleton Olivier builds would look something like this:
 
-<build: Wedging Thorn, Forward March, Multislash, Feint, Will of the City, Deep Drag, Will of the Prescript, Double-Edged Rencounter, True Trigram Formation; Fervor, Unlocked Potential, Health Hauler, Mind Hauler>
+https://tiphereth.zasz.su/u/decks/Cp-q526iamPaWYry-k3sn9/
 
 I'm a big fan of this emo 5 Discard loop deck myself:
 
-<build: x3 Ominous Power, x2 Brace Up, x1 Field Mods, x1 Impugnatio Ultima, x1 True Trigram Formation, x1 Divinatory Impact; Bottom Deal, Margin, Mind Hauler, Health Hauler>
+https://tiphereth.zasz.su/u/decks/Cp-rRdOC2DBTYNH9-k3nYM/
+caption=You can take Field mods over 333...1973 if you prefer.
 
 And I've saved the absolute best for last: Weight of Sin Olivier:
 
-<build: x2 Brace Up, x3 Opportunity Spotted, x2 Steel Knuckles, x2 Will of the City; Mind Hauler, Health Hauler, Bloodfiendish, Grit>
+https://tiphereth.zasz.su/u/decks/Cp-nNHNI~AOWFCgR-0VymO/
 
 As implied by the name, Weight of Sin is mandatory. Big Eyes is super helpful but not required. In this deck you basically want to prioritize survivability passives over power as you'll be constantly activating Weight of Sin's effect for massive amounts of strength and endurance every scene.
+
+<todo: screenshot>
 
 #### Eileen
 
@@ -212,7 +212,7 @@ Yae sidegrade.
 
 A sample deck looks like this:
 
-<build: x1 Wedging Thorn, x1 Forward March, x1 Multislash, x1 Guidance of the Gears, x1 Smoke Prick, x1 Deep Drag, x1 Will of the Prescript, x1 Vapour, x1 Everspinning Gearwheel; Sooty Thwak, Four Trigrams, Mind Hauler>
+https://tiphereth.zasz.su/u/decks/Cs-smEFZOnu_wDCu-MBmI/
 
 #### Greta
 
@@ -224,9 +224,9 @@ Tackle Mount is one of the only four playerside pages that destroys all of the o
 
 If you're not planning on taking advantage of this niche strategy, it's hard to place Greta as 6 light cost on Tackle Mount makes it hard to recover from economically afterwards unless you emo level up.
 
-<build: Wedging Thorn, Class and Respect, Multislash, Snake's Prey, Will of the City, Shoving Stab, Will of the Prescript, Laceration, Tackle Mount; Fervor, Health Hauler, Mind Hauler, Deep Wound, Razor Strike>
+https://tiphereth.zasz.su/u/decks/Ct-vruDwP9xmPug6-BdT90pp/
 
-<build: x2 Ominous Power, x3 Brace Up, x1 Tackle Mount, x2 Duel; Bottom Deal, Deep Wound, High Level Acrobatics, Lion's Fist, Electric Shock>
+https://tiphereth.zasz.su/u/decks/Ct-vrziuZOnStaE9-yOKwou/
 
 #### Bremen
 
@@ -236,21 +236,23 @@ Their unique passive is something alright. It doesn't give any power, but it *so
 
 Chorus at the Climax on the other hand is a powerful 6-cost mass individual that inflicts crippling debuffs on the next scene. It's pretty solid. In terms of raw damage it still falls short in comparison to other mass individuals like Raging Storm Love, Unending Thirst, and Crescendo, but the setup it provides on the next turn can result in mass carnage for all involved.
 
-<todo>
+https://tiphereth.zasz.su/u/decks/Cu-v1DHaIWs6AL5y-kbjor/
+
+https://tiphereth.zasz.su/u/decks/Cu-v1Dc44RfOwDK9-UdUPYc/
 
 #### Jae-heon
 
 A 4-light, Speed 3 keypage with Puppet Strings and Straining Strings.
 
-Puppet Strings is a strong good passive for survivability and that's it.
+Puppet Strings is a strong good passive for giving a teammate some survivability and that's it.
 
 In comparison to Chorus at the Climax, Straining Strings is more defensively oriented and doesn't really set up anything at all for the next turn. It heals the Puppet Strings recipient, which is nice.
 
-<todo>
+https://tiphereth.zasz.su/u/decks/Cx-vSkj8B0w~QUty-kbjor/
 
-You can clone Puppet Strings so that Straining Strings heals everyone on your team. That's like, a 6-cost Pentinence.
+You can Clone Puppet Strings so that Straining Strings heals everyone on your team. That's like, a 6-cost Pentinence. This deck is really bad btw because sometimes you can get unlucky and not be able to set this up at all, since Puppet Strings is a zero-cost card and Clone hits a random highest-cost page. But it's funny. Exhausting Straining Strings, 333...1974, and Field Mods makes the deck more consistent. Use Ominous Power before cloning or else you might clone Ominous Power. Cloning Clone is fine, but Cloning Brace Up is not.
 
-<todo>
+https://tiphereth.zasz.su/u/decks/Cx-vU_L7gfr~Ula1-qWdUs/
 
 #### Pluto
 
@@ -261,8 +263,6 @@ Contracts. They're really good if you build around them, actually, since 2 of yo
 3. Evade dice are really nice for Swiftness contract I guess. I don't think this contract is impactful, positively nor negatively.
 4. Might contract is ridiculously easy to proc: Offensive Position procs Might contract in 1 turn since there's no limitation to where the Strength comes from. Nikolai's Commander passive also works. In terms of deckbuilding though, this is probably one of the most restrictive. You're probably running Ominbrace Duel, Mirinae without True Trigram Formation, Burning Flash, or some weird Tanya deck that looks something like this? <todo>
 5. Amplification Contract is f\*ckin' awful, I'm sorry to say. Aim to build around *not* activating Amp Contract by excluding all of a certain cost from your deck. I like to exclude 2-costs since I can just run a standard Singleton deck. Ominbrace also works. Amp will stick around and continue clogging hand though, which is annoying but not too terrible.
-
-The weakest part of a Pluto team is Pluto himself, and his presence alone warps deckbuilding around his contracts. It's hard to judge him as a result.
 
 #### Argalia
 
@@ -284,7 +284,7 @@ There is one fight that ERP can absolutely screw you over, and that's against th
 
 A Nemo deck probably looks something like this:
 
-<todo>
+https://tiphereth.zasz.su/u/decks/CI-d83I~ixiDNjmK-G0PTg/
 
 #### Chun
 
@@ -304,13 +304,15 @@ See Chun's entry. Miris has the same rating for essentially the same reasons. I 
 
 No intrinsic power, and her exclusive mass attack is difficult to obtain and plan around. Her light restoration passive should never affect gameplay if she's given a deck with a proper econ setup, and the restoration is little to even attempt running a deck without a proper econ setup. Multi-party compensation is likewise too inconsistent to be worth building around. At least she has Speed 3, and the debuff removal is nice if it ever manages to matter.
 
-As she has no strengths, I would put her on Ominbrace Duel duty to maximize her own survivability. There's also a funny thing you can try with Yujin's Kizuna to activate a turn 2 mass, but this is higher risk, lower reward than just running Xiao:
+There's a funny thing you can try with Yujin's Kizuna to activate a turn 2 mass, but this is higher risk, lower reward than just running Xiao:
 
-<todo>
+https://tiphereth.zasz.su/u/decks/Cg-k_F1f6nc6JCo9-qcg9vo/
+
+<todo: screenshot>
 
 And finally, you can (eventually) create a constant light restoration engine for your entire team with Discard Multi-Party compensation. However, even when paired with light-hungry builds such as Binah, I still don't consider the amount of setup required to get this running worth the payoff. Especially since you can somewhat rely on emo level up for light restores until emo 5, and it's not demanding to include and play light restoration in your decks.
 
-<todo>
+https://tiphereth.zasz.su/u/decks/Cg-pIOSBY1GWG6q2-kXaZ7/
 
 #### Yujin
 
@@ -322,7 +324,7 @@ She works best with Rapid Gashes, which still procs Overbreathing, giving her pl
 
 <todo>
 
-Boundary of Death is bad but funny, so of course it gets an honorable mention:
+Dedicated Boundary of Death is bad but funny, so of course it gets an honorable mention:
 
 <todo>
 
