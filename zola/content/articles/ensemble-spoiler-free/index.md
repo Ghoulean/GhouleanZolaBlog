@@ -305,6 +305,7 @@ Struggling with a fight and need to concentrate **everything** onto a single flo
 Special thanks to the following people who contributed to the making of this guide:
 
 * Aisir
+* Alice Margatroid
 * Ameko
 * Atse
 * CountDuckoo
