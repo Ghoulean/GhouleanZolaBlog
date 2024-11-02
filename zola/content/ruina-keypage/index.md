@@ -1,8 +1,7 @@
 +++
-title = "LoR Keypage Tierlist"
+title = "LoR Keypage Evaluation"
 description = "Opinionated strength of equipped keypages for vanilla content"
-date = 2024-09-21
-draft = true
+date = 2024-11-01
 
 [taxonomies]
 tags = ["lor"]
@@ -10,11 +9,11 @@ tags = ["lor"]
 toc = true
 +++
 
-{{ img(src="ruina_tier_list.png" class="ci" alt="Tier list") }}
-
 # Introduction
 
 I play this game way too much so I'm ranking all the endgame key pages based on how I perceive their power level in terms of their overall and peak performance. I'm judging key pages as equippable key pages and *not* as attribution fodder, which deserves its own tier list. I'm judging these pages based off their performance in the mid- and endgame vanilla base game only (Star of the City + Impuritas Civitatis). The rankings within a tier are not ordered.
+
+This was originally supposed to be a tier list, but this "one day project" ended up spanning several months so f*ck me I guess. I'm not making images for each deck. There's too many decks, and I'm burnt out.
 
 #### Black Silence
 
@@ -24,13 +23,13 @@ Black Silence's cards and passives are okay overall, I guess? Only 3 draw and 3 
 
 You can't attribute against Olivier, but vs Argalia something like:
 
-https://tiphereth.zasz.su/u/decks/Y--BNh62D/
+[https://tiphereth.zasz.su/u/decks/Y--BNh62D/](https://tiphereth.zasz.su/u/decks/Y--BNh62D/)
 
 ...or some variation of this should work.
 
 When non-solo (for whatever reason), you can go something like this to alleviate Black Silence's poor emo 5 econ:
 
-https://tiphereth.zasz.su/u/decks/Y--yZRi4L/
+[https://tiphereth.zasz.su/u/decks/Y--yZRi4L/](https://tiphereth.zasz.su/u/decks/Y--yZRi4L/)
 
 #### Red Mist
 
@@ -50,15 +49,15 @@ Red Mist's feast-or-famine snowballing nature means she often demands resources 
 
 Myo's Prowess is Red Mist's most popular attribution, but she also goes well with other genericly strong passives such as Health Hauler, Electric Shock, and Fervor. Red Mist can skimp on Mind Hauler due to Manifest Ego and Shell, though it's still a great tool for early survivability. Instead of Health Hauler, Red Mist can also take Deep Wound and rely on Vampirism for healing. Another alternate option is self-smoke for bigger damage numbers.
 
-https://tiphereth.zasz.su/u/decks/CR-hx8XCScoIidJe-k3mlU/
+[https://tiphereth.zasz.su/u/decks/CR-hx8XCScoIidJe-k3mlU/](https://tiphereth.zasz.su/u/decks/CR-hx8XCScoIidJe-k3mlU/)
 caption=Offensive Position + Deep Wound over double Haulers also okay
 
-https://tiphereth.zasz.su/u/decks/CR-pxgtyn2NURfM3-o3PQS/
+[https://tiphereth.zasz.su/u/decks/CR-pxgtyn2NURfM3-o3PQS/](https://tiphereth.zasz.su/u/decks/CR-pxgtyn2NURfM3-o3PQS/)
 caption=Focus Spirit is flexible. Everspinning Gearwheel over Inhale Smoke also okay
 
 If going true solo, Red Mist really enjoys Lone Fixer, Claws of Savagery, Absorption, and Instincts. If going untrue solo, Red Mist still enjoys all of those, but add Remembrance, Kizuna/Extreme Fatigue (either of em), and Mountain of Corpses. In both cases, she wants more counter dice to better deal with everything that's hitting her.
 
-https://tiphereth.zasz.su/u/decks/CR-haRbmy6MIzOPy-ME_I/
+[https://tiphereth.zasz.su/u/decks/CR-haRbmy6MIzOPy-ME_I/](https://tiphereth.zasz.su/u/decks/CR-haRbmy6MIzOPy-ME_I/)
 caption=Remembrance + Kizuna/Extreme Fatigue (3) also okay, but only for untrue solo.
 
 You may have noticed that all these Red Mist decks look kinda same-y. Red Mist is a pretty one-note key page: she can only effectively do one thing, which is dealing a bunch of damage by herself through brute force. While she *is* quite strong, unfortunately she cannot perform the same bullsh*t that the top tier key pages can perform. Also, she's locked to the Floor of Language.
@@ -109,7 +108,7 @@ A ranged page that gets access to the full arsenel of Thumb combat pages, of whi
 
 Sample deck:
 
-https://tiphereth.zasz.su/u/decks/CD-dGF3m3lJnCpSA-kfrj8/
+[https://tiphereth.zasz.su/u/decks/CD-dGF3m3lJnCpSA-kfrj8/](https://tiphereth.zasz.su/u/decks/CD-dGF3m3lJnCpSA-kfrj8/)
 
 #### Martina
 
@@ -143,8 +142,8 @@ Mind Crush is a fairly powerful mass summation usable at 20 charge. It's roughly
 
 Rudolph's power is more difficult to unlock than Myo's, but the mass summation alone makes him a pretty solid pick overall. A deck for Rudolph would probably look something like this:
 
-https://tiphereth.zasz.su/u/decks/CV-iCNDWpUCvKXDE-lEe8s/
-https://tiphereth.zasz.su/u/decks/CV-iCNDViy0tl~FU-Qilh9/
+[https://tiphereth.zasz.su/u/decks/CV-iCNDWpUCvKXDE-lEe8s/](https://tiphereth.zasz.su/u/decks/CV-iCNDWpUCvKXDE-lEe8s/)
+[https://tiphereth.zasz.su/u/decks/CV-iCNDViy0tl~FU-Qilh9/](https://tiphereth.zasz.su/u/decks/CV-iCNDViy0tl~FU-Qilh9/)
 
 
 #### Harold
@@ -153,7 +152,7 @@ Speed 3, 4 starting light, Four Trigrams, All for Hana, and access to True Trigr
 
 Not much to say here other than run something generically good. Draw Trigram + True Trigram Formation is like a mini-Will of the Prescript btw.
 
-https://tiphereth.zasz.su/u/decks/Co-q52_Gyy6qhMQq-k3rNB/
+[https://tiphereth.zasz.su/u/decks/Co-q52_Gyy6qhMQq-k3rNB/](https://tiphereth.zasz.su/u/decks/Co-q52_Gyy6qhMQq-k3rNB/)
 
 #### Mirinae
 
@@ -161,7 +160,7 @@ Mirinae is entirely defined by her passive Hana for All, which duplicates streng
 
 For generalist usage, she has one practical build with some variation:
 
-https://tiphereth.zasz.su/u/decks/Cn-rZYxFehhZvuU9-U5KCAs/
+[https://tiphereth.zasz.su/u/decks/Cn-rZYxFehhZvuU9-U5KCAs/](https://tiphereth.zasz.su/u/decks/Cn-rZYxFehhZvuU9-U5KCAs/)
 caption=All passives are flexible. Other options include, but are not limited to, Nuovo Fabric, Grit, Puppet Strings, Mind Hauler, Fervor, Firm as a Great Mountain
 
 One may consider Observe over Augury Kick if they fear they cannot land hits (this is usually not a concern, as 7-12 is a fairly high base roll). One may additionally choose to swap out x1 Ominous Power for x1 True Trigram Formation. This inclusion helps Mirinae defend against both mass-individuals and mass-summations, as both Augury Kick and Brace Up tend to be poor mass defenders.
@@ -181,16 +180,16 @@ As a result, Olivier is the ultimate generalist, performing at a level of consis
 
 I'm not going to list the Rapid Gashes and Duel builds, but the Singleton Olivier builds would look something like this:
 
-https://tiphereth.zasz.su/u/decks/Cp-q526iamPaWYry-k3sn9/
+[https://tiphereth.zasz.su/u/decks/Cp-q526iamPaWYry-k3sn9/](https://tiphereth.zasz.su/u/decks/Cp-q526iamPaWYry-k3sn9/)
 
 I'm a big fan of this emo 5 Discard loop deck myself:
 
-https://tiphereth.zasz.su/u/decks/Cp-rRdOC2DBTYNH9-k3nYM/
+[https://tiphereth.zasz.su/u/decks/Cp-rRdOC2DBTYNH9-k3nYM/](https://tiphereth.zasz.su/u/decks/Cp-rRdOC2DBTYNH9-k3nYM/)
 caption=You can take Field mods over 333...1973 if you prefer.
 
 And I've saved the absolute best for last: Weight of Sin Olivier:
 
-https://tiphereth.zasz.su/u/decks/Cp-nNHNI~AOWFCgR-0VymO/
+[https://tiphereth.zasz.su/u/decks/Cp-nNHNI~AOWFCgR-0VymO/](https://tiphereth.zasz.su/u/decks/Cp-nNHNI~AOWFCgR-0VymO/)
 
 As implied by the name, Weight of Sin is mandatory. Big Eyes is super helpful but not required. In this deck you basically want to prioritize survivability passives over power as you'll be constantly activating Weight of Sin's effect for massive amounts of strength and endurance every scene.
 
@@ -212,7 +211,7 @@ Yae sidegrade.
 
 A sample deck looks like this:
 
-https://tiphereth.zasz.su/u/decks/Cs-smEFZOnu_wDCu-MBmI/
+[https://tiphereth.zasz.su/u/decks/Cs-smEFZOnu_wDCu-MBmI/](https://tiphereth.zasz.su/u/decks/Cs-smEFZOnu_wDCu-MBmI/)
 
 #### Greta
 
@@ -224,9 +223,9 @@ Tackle Mount is one of the only four playerside pages that destroys all of the o
 
 If you're not planning on taking advantage of this niche strategy, it's hard to place Greta as 6 light cost on Tackle Mount makes it hard to recover from economically afterwards unless you emo level up.
 
-https://tiphereth.zasz.su/u/decks/Ct-vruDwP9xmPug6-BdT90pp/
+[https://tiphereth.zasz.su/u/decks/Ct-vruDwP9xmPug6-BdT90pp/](https://tiphereth.zasz.su/u/decks/Ct-vruDwP9xmPug6-BdT90pp/)
 
-https://tiphereth.zasz.su/u/decks/Ct-vrziuZOnStaE9-yOKwou/
+[https://tiphereth.zasz.su/u/decks/Ct-vrziuZOnStaE9-yOKwou/](https://tiphereth.zasz.su/u/decks/Ct-vrziuZOnStaE9-yOKwou/)
 
 #### Bremen
 
@@ -236,9 +235,9 @@ Their unique passive is something alright. It doesn't give any power, but it *so
 
 Chorus at the Climax on the other hand is a powerful 6-cost mass individual that inflicts crippling debuffs on the next scene. It's pretty solid. In terms of raw damage it still falls short in comparison to other mass individuals like Raging Storm Love, Unending Thirst, and Crescendo, but the setup it provides on the next turn can result in mass carnage for all involved.
 
-https://tiphereth.zasz.su/u/decks/Cu-v1DHaIWs6AL5y-kbjor/
+[https://tiphereth.zasz.su/u/decks/Cu-v1DHaIWs6AL5y-kbjor/](https://tiphereth.zasz.su/u/decks/Cu-v1DHaIWs6AL5y-kbjor/)
 
-https://tiphereth.zasz.su/u/decks/Cu-v1Dc44RfOwDK9-UdUPYc/
+[https://tiphereth.zasz.su/u/decks/Cu-v1Dc44RfOwDK9-UdUPYc/](https://tiphereth.zasz.su/u/decks/Cu-v1Dc44RfOwDK9-UdUPYc/)
 
 #### Jae-heon
 
@@ -248,11 +247,11 @@ Puppet Strings is a strong good passive for giving a teammate some survivability
 
 In comparison to Chorus at the Climax, Straining Strings is more defensively oriented and doesn't really set up anything at all for the next turn. It heals the Puppet Strings recipient, which is nice.
 
-https://tiphereth.zasz.su/u/decks/Cx-vSkj8B0w~QUty-kbjor/
+[https://tiphereth.zasz.su/u/decks/Cx-vSkj8B0w~QUty-kbjor/](https://tiphereth.zasz.su/u/decks/Cx-vSkj8B0w~QUty-kbjor/)
 
 You can Clone Puppet Strings so that Straining Strings heals everyone on your team. That's like, a 6-cost Pentinence. This deck is really bad btw because sometimes you can get unlucky and not be able to set this up at all, since Puppet Strings is a zero-cost card and Clone hits a random highest-cost page. But it's funny. Exhausting Straining Strings, 333...1974, and Field Mods makes the deck more consistent. Use Ominous Power before cloning or else you might clone Ominous Power. Cloning Clone is fine, but Cloning Brace Up is not.
 
-https://tiphereth.zasz.su/u/decks/Cx-vU_L7gfr~Ula1-qWdUs/
+[https://tiphereth.zasz.su/u/decks/Cx-vU_L7gfr~Ula1-qWdUs/](https://tiphereth.zasz.su/u/decks/Cx-vU_L7gfr~Ula1-qWdUs/)
 
 #### Pluto
 
@@ -261,12 +260,28 @@ Contracts. They're really good if you build around them, actually, since 2 of yo
 1. Field Mods and Easygoing Breather are likely your best options for activating Liberty contract. Red Mist's 2-costs and Opening Ceremony also work. You could also do Rapid Gashes, though there's not much point in Liberty if you're doing that. Anyways, Liberty is pretty strong and you can shove pretty much any 3-cost you want into a deck like this. Will of the City is super strong because it can cost-reduce to a 0-cost restore 3.
 2. Light contract is even easier to activate (it's basically free) but you do need to spend everything. You can use combat pages with counter dice in order to spend light even if the page ultimately doesn't get used. This can help you not die to Light Contract. Keep in mind that staggering and killing restore 1 light each (this happens mid-scene), so avoid using masses as you may suddenly find yourself without a health bar for no reason. Light contract users really appreciate Health Haulers.
 3. Evade dice are really nice for Swiftness contract I guess. I don't think this contract is impactful, positively nor negatively.
-4. Might contract is ridiculously easy to proc: Offensive Position procs Might contract in 1 turn since there's no limitation to where the Strength comes from. Nikolai's Commander passive also works. In terms of deckbuilding though, this is probably one of the most restrictive. You're probably running Ominbrace Duel, Mirinae without True Trigram Formation, Burning Flash, or some weird Tanya deck that looks something like this? <todo>
-5. Amplification Contract is f\*ckin' awful, I'm sorry to say. Aim to build around *not* activating Amp Contract by excluding all of a certain cost from your deck. I like to exclude 2-costs since I can just run a standard Singleton deck. Ominbrace also works. Amp will stick around and continue clogging hand though, which is annoying but not too terrible.
+4. Might contract is ridiculously easy to proc: Offensive Position procs Might contract in 1 turn since there's no limitation to where the Strength comes from. Nikolai's Commander passive also works. In terms of deckbuilding though, this is probably one of the most restrictive. You're probably running Ominbrace Duel, Mirinae without True Trigram Formation, Burning Flash, or some weird Rudolph deck that looks like this? Self-stagger to proc Survivor constantly. [https://tiphereth.zasz.su/u/decks/CV-iDAOYa31XIv5K-mh5mC/](https://tiphereth.zasz.su/u/decks/CV-iDAOYa31XIv5K-mh5mC/)
+5. Amplification Contract is f\*ckin' awful, I'm sorry to say. Even if you try to build a deck with a wide spread, often you'll find yourself playing 3 or 4 cards a scene at most. This hurts a lot as some decks and playstyles rely on using econ cards for DPS. Aim to build around *not* activating Amp Contract by excluding all of a certain cost from your deck. I like to exclude 2-costs since I can just run a standard Singleton deck. Ominbrace also works. Amp will stick around and continue clogging hand though, which is annoying but not too terrible.
 
 #### Argalia
 
-<todo>
+Hot take: I don't think this guy is very good at all. Argalia's gimmick is Resonance, which conditionally provides +2 power and easy economy. I don't really think the economy is all that special; Singleton and Ominbrace does the exact same thing already. And minus his masses and Trails of Blue, I feel like there's no actual reason to play around Resonance. Resonant Scythe rolls insanely well under Resonance, admittedly.
+
+Resonance also has anti-synergy with Myongest.
+
+Temptuous Danza is probably the most consistent way to start activating Resonance. At 4 Vibration, you have a 1/3 chance per speed dice to roll that value.
+
+Build that plays towards Resonance:
+
+[https://tiphereth.zasz.su/u/decks/Cq-u~C4BtI11D9XN-G0Yim/](https://tiphereth.zasz.su/u/decks/Cq-u~C4BtI11D9XN-G0Yim/)
+
+Build that doesn't use Resonance (spoiler alert: it's Singleton):
+
+[https://tiphereth.zasz.su/u/decks/Cq-sXTcDZxiupONy-kbjor/](https://tiphereth.zasz.su/u/decks/Cq-sXTcDZxiupONy-kbjor/)
+
+Clone Crescendo build (meme deck):
+
+[https://tiphereth.zasz.su/u/decks/Cq-u8YiedsfPu3vN-N3gD8/](https://tiphereth.zasz.su/u/decks/Cq-u8YiedsfPu3vN-N3gD8/)
 
 #### A Church of Gears Worshipper
 
@@ -284,7 +299,7 @@ There is one fight that ERP can absolutely screw you over, and that's against th
 
 A Nemo deck probably looks something like this:
 
-https://tiphereth.zasz.su/u/decks/CI-d83I~ixiDNjmK-G0PTg/
+[https://tiphereth.zasz.su/u/decks/CI-d83I~ixiDNjmK-G0PTg/](https://tiphereth.zasz.su/u/decks/CI-d83I~ixiDNjmK-G0PTg/)
 
 #### Chun
 
@@ -306,13 +321,13 @@ No intrinsic power, and her exclusive mass attack is difficult to obtain and pla
 
 There's a funny thing you can try with Yujin's Kizuna to activate a turn 2 mass, but this is higher risk, lower reward than just running Xiao:
 
-https://tiphereth.zasz.su/u/decks/Cg-k_F1f6nc6JCo9-qcg9vo/
+[https://tiphereth.zasz.su/u/decks/Cg-k_F1f6nc6JCo9-qcg9vo/](https://tiphereth.zasz.su/u/decks/Cg-k_F1f6nc6JCo9-qcg9vo/)
 
 <todo: screenshot>
 
 And finally, you can (eventually) create a constant light restoration engine for your entire team with Discard Multi-Party compensation. However, even when paired with light-hungry builds such as Binah, I still don't consider the amount of setup required to get this running worth the payoff. Especially since you can somewhat rely on emo level up for light restores until emo 5, and it's not demanding to include and play light restoration in your decks.
 
-https://tiphereth.zasz.su/u/decks/Cg-pIOSBY1GWG6q2-kXaZ7/
+[https://tiphereth.zasz.su/u/decks/Cg-pIOSBY1GWG6q2-kXaZ7/](https://tiphereth.zasz.su/u/decks/Cg-pIOSBY1GWG6q2-kXaZ7/)
 
 #### Yujin
 
@@ -320,13 +335,13 @@ https://tiphereth.zasz.su/u/decks/Cg-pIOSBY1GWG6q2-kXaZ7/
 
 Despite these shortcomings, her Overbreathing passive does have one niche usage that lets her be usable in SotC and above: as the majority of EGO pages are 4 light or above, she is really good at taking advantage of the light restore to cycle EGO spam. On floors with powerful EGO such as Malkuth, Yesod, and Hokma, she can do a lot of work.
 
-She works best with Rapid Gashes, which still procs Overbreathing, giving her plenty of room to play EGO turn after turn while still dealing a bunch of damage.
+She works best with Rapid Gashes, which still procs Overbreathing, giving her plenty of room to play EGO turn after turn while still dealing a bunch of damage. Given enough healing (i.e. Health Hauler), she can gain so much health that she wouldn't have otherwise, mitigating her naturally subpar resistances.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Bk-jQoH6FFyhspkl-xqoJs/](https://tiphereth.zasz.su/u/decks/Bk-jQoH6FFyhspkl-xqoJs/)
 
 Dedicated Boundary of Death is bad but funny, so of course it gets an honorable mention:
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Bk-TqK3d_OWq5aY2-G0tpZ/](https://tiphereth.zasz.su/u/decks/Bk-TqK3d_OWq5aY2-G0tpZ/)
 
 #### Hubert
 
@@ -334,13 +349,13 @@ Locked Potential is a slightly worse Fervor sidegrade. He also has Speed 1, but 
 
 Since I don't consider his exclusive worth running, there's no reason to use Hubert over Esther except in Ensemble. Although not technically mandatory, you're kind of railroaded into a Singleton build due to Locked Potential. 
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CN-f1iL6ZKPCFZ1a-G0Yim/](https://tiphereth.zasz.su/u/decks/CN-f1iL6ZKPCFZ1a-G0Yim/)
 
 #### Gloria
 
 Same as Hubert, except Easygoing Breather is somewhat better due to improving econ, and Eradication is worse due to its awful minroll and meh highroll; 12-23 is the second-worst playerside mass summation in the game (behind Tiphereth's Nihil). Eradication is also gated by both light and Blade Unlocked.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CO-flyymMr6Mjdta-G0Yim/](https://tiphereth.zasz.su/u/decks/CO-flyymMr6Mjdta-G0Yim/)
 
 #### Myo
 
@@ -357,11 +372,11 @@ Myo's Prowess pairs well with The Strongest and Maximum Crash, though due to her
 
 A typical Myo build would look something like this:
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CT-jm9LeZBZ9ogg0-MI5R/](https://tiphereth.zasz.su/u/decks/CT-jm9LeZBZ9ogg0-MI5R/)
 
-Thanks to Myo's Prowess, you can use cards that grant haste as an effective +1 power. For something more chargeless, try something like this:
+Thanks to Myo's Prowess, you can use cards that grant haste as an effective +1 power. For something more chargeless (which I don't recommend), try something like this:
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CT-kdVPfhD5MtJvJ-Fat2/](https://tiphereth.zasz.su/u/decks/CT-kdVPfhD5MtJvJ-Fat2/)
 
 Oh and also she gets Concentrated Fire and Pinpoint Shot which is cool I guess.
 
@@ -375,27 +390,29 @@ Maxim also has 4 starting light, which is pretty nice and lets him use Rhino Ram
 
 A typical Maxim deck would look like this.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CU-iJq2S8_iT3jYE-QvoLx/](https://tiphereth.zasz.su/u/decks/CU-iJq2S8_iT3jYE-QvoLx/)
 
-There does exist a cheese strat for Pluto involving Maxim:
+There is this cheese strat for Pluto involving Maxim that's cool:
 
-<todo>
+<todo: link https://youtu.be/_iAh8D0mebs>
+
+[https://tiphereth.zasz.su/u/decks/CU-ihSPwCrSTwgox-Yht08/](https://tiphereth.zasz.su/u/decks/CU-ihSPwCrSTwgox-Yht08/)
 
 #### Philip (Ensemble)
 
 +1 generic power just from touching someone that can even activate mid-combat is pretty good. Sadly, his lack of attribution slots restrict his flexibility, and it's hard to justify running Philip over those in the "good" tier.
 
-Philip's decent as a generalist:
+Philip's decent as a generalist, I guess. Slap on Singleton, Fervor, haulers, y'know the deal. I don't even want to bring up the deck because you already know it.
 
-<todo>
+However, building around his exclusives turn him into a single-die maniac. Rekindled Strike is the second-strongest first-die 3-cost in the game (behind Onrush) that addtionally activates his Overheat passive and lowers the cost of Blazing Strike. Repeated use of Rekindled Strike makes Blazing Strike an attractive inclusion:
 
-Building around his exclusives turn him into a single-die maniac. Rekindled Strike is the second-strongest first-die 3-cost in the game (behind Onrush) that addtionally activates his Overheat passive and lowers the cost of Blazing Strike. Repeated use of Rekindled Strike can even make Blazing Strike an attractive inclusion:
+[https://tiphereth.zasz.su/u/decks/Cr-ZM4iFvR87pAH9-klzOl/](https://tiphereth.zasz.su/u/decks/Cr-ZM4iFvR87pAH9-klzOl/)
 
-<todo>
+Lastly, there's this weird P Spacebar Tiphxodia build specifically for Oswald that uses Philip, applying burn in order to accelerate the fight progress:
 
-Lastly, there's this weird P Spacebar Tiphxodia build that uses Philip as an upgraded version of his Urban Nightmare version, applying burn in order to accelerate the fight progress:
+<todo: link video>
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Cr-mN_ne8txw0SAs-PHrl/](https://tiphereth.zasz.su/u/decks/Cr-mN_ne8txw0SAs-PHrl/)
 
 #### Tanya
 
@@ -403,15 +420,17 @@ Guts grants Tanya an extra health bar. However, even with Guts, in high-damage r
 
 Her exclusives on the other hand are powerful if you can play them. Due to their high cost, however, they require buildaround in order to see good use:
 
-<todo> beatdown loop
+[https://tiphereth.zasz.su/u/decks/Cw-tXgtKo2SDMwmd-B4fEOcy/](https://tiphereth.zasz.su/u/decks/Cw-tXgtKo2SDMwmd-B4fEOcy/)
 
-<todo> bpp loop
+[https://tiphereth.zasz.su/u/decks/Cw-vc3ZYLSD32eZ9-BsWIobY/](https://tiphereth.zasz.su/u/decks/Cw-vc3ZYLSD32eZ9-BsWIobY/)
 
 #### Oswald
 
 Splendid Performance is an inflexible Fervor sidegrade that really only gets to benefit Rapid Gashes. So Oswald is stuck on Rapid Gashes duty.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Cv-jQoH0lMujA_lF-k3pVu/](https://tiphereth.zasz.su/u/decks/Cv-jQoH0lMujA_lF-k3pVu/)
+
+(Take x3 Will of the City over Brace Ups + 333...1974 if no Bottom Deal)
 
 There's probably a Funny Prank build for Climax floating around somewhere at least, but I haven't been able to find one that I'm satisfied with yet.
 
@@ -421,11 +440,11 @@ His innate +2 slash power and Singular Slash alongside his UN-tier frailty and l
 
 Burning Flash is weak against mass defense and obligates Kim into taking Bottom Deal among one of his three passive slots...but hey, 2-cost 10-14 10-14. Works with Pluto's Might Contract also.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/B8-hSYc7mtxkGbLZ-KuCw/](https://tiphereth.zasz.su/u/decks/B8-hSYc7mtxkGbLZ-KuCw/)
 
-Kim Rapid Gashes is somewhat worse than Rapid Gashes on Oswald or Yujin, but admittedly not by much.
+Kim Rapid Gashes is somewhat worse than Rapid Gashes on Oswald, but admittedly not by much. Due to his lack of passive attribution slots, it's hard to run the Bottom Deal variant of Rapid Gashes.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/B8-jQoH5Vv~xG3gO-Zcky/](https://tiphereth.zasz.su/u/decks/B8-jQoH5Vv~xG3gO-Zcky/)
 
 #### The Udjat
 
@@ -433,11 +452,11 @@ They're really tanky. That's...that's kinda it. They're good at tanking hits.
 
 Due to this tankiness, they're good for generating negative emotion coins for Tiphxodia, Mountain of Corpses, and other abno page buildarounds that involve negative emotions:
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Cf-CV6nD8IXO1nwK-0L8P9/](https://tiphereth.zasz.su/u/decks/Cf-CV6nD8IXO1nwK-0L8P9/)
 
-You can also bring three of them to bore Kali to death and deny her damage thresholds:
+You can also bring three of them to bore Kali to death and deny her damage thresholds. In this case, you may want to drop Opportunity Spotted for some tankier cards and economy, like Sturdy Defense and Puppet Blockade:
 
-<todo>
+<todo: video>
 
 #### Bayard
 
@@ -447,23 +466,35 @@ But he's actually insanely good once he gets his position ready. Nabbing +7 stre
 
 The biggest consequence of only moving every other turn is that he drags team emotion level, delaying potential powerspikes from abno pages. This feels especially bad when one of your teammates is running an abno-reliant build.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Ck-qvK8lI~erpOdy-uY1tYV/](https://tiphereth.zasz.su/u/decks/Ck-qvK8lI~erpOdy-uY1tYV/)
+
+(Other passive options include, but are not limited to, Health Hauler, Battle Ready, Electric Shock, A Fighter That Never Retreats.)
+
+There's also a Survivor build that wants Bayard to stack to +5 strength through continuous self-stagger; I'm not a fan of this as the same downsides of the Mirage-Grit build are accentuated even further. On the plus side, the combat page list is pretty much the same.
+
+[https://tiphereth.zasz.su/u/decks/Ck-qvK8lI~erpOdy-BKTP1Pk/](https://tiphereth.zasz.su/u/decks/Ck-qvK8lI~erpOdy-BKTP1Pk/)
+
+On both builds, you can drop Overcharge or Moulinet for Field Mods to thin your deck and thus pick up Ready Position more consistently.
 
 #### Kalo
 
-Self-sustainable draw with Bottom Deal, solid clashing, and massive paralysis/disarm infliction through ammunition. Kalo only has one build but it's a good one. He does run into some light issues at emo 5, but this is still managable with Stacking the Deck along with smart cycling.
+Self-sustainable draw with Bottom Deal, solid clashing, healing from Best Choice, and massive paralysis/disarm infliction through ammunition. Kalo only has one build but it's a good one. He does run into some light issues at emo 5, but this is still managable with Stacking the Deck along with smart cycling.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CE-dGF3m3lJnCpSA-ChEz6yN/](https://tiphereth.zasz.su/u/decks/CE-dGF3m3lJnCpSA-ChEz6yN/)
+
+Not much to say other than that the Thumb are strong offensive generalists that rivals Singleton in power.
 
 #### Esther
 
 Same exact comments as Hubert and Gloria, but with three major differences:
 
 1. Speed 3 instead of Speed 1
-2. His exclusive, Castigation, kinda sucks
+2. His exclusive, Castigation, kinda sucks (IMO)
 3. His passive Raging Torrent is very strong. The extra draw lets you play more aggressively during the first few scenes of a reception, letting you more aggressively lean on clashing with 3-costs and foregoing draw for a bit. You could always attribute this away though.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CM-ftqfQS7EnUbxa-G0Yim/](https://tiphereth.zasz.su/u/decks/CM-ftqfQS7EnUbxa-G0Yim/)
+
+Apparently there's a way to stack Matchlight on Castigation for funny numbers, but no reception will let you do that except maybe Finn's.
 
 #### Yan
 
@@ -473,13 +504,13 @@ His strength comes from his unique exclusives. Baleful Brand is a strong 3-cost 
 
 A generalist Yan deck would look something like this:
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CZ-meiK9sZmmlQia-kbjor/](https://tiphereth.zasz.su/u/decks/CZ-meiK9sZmmlQia-kbjor/)
 
-You can also infinitely loop Distorted Blade using a build that's similar to Tanya. Duel used to help build emo level. Note that you should use Steel Knuckles *after* Brace Up or else you will discard Steel Knuckles's draw. Yes, that's how draw works. No, I didn't believe it at first either.
+You can also infinitely loop Distorted Blade using a build that's similar to Tanya. Duel used to help build emo level. Note that, if you don't want to run Margin, you should use Steel Knuckles *after* Brace Up or else you will discard Steel Knuckles's draw. Yes, that's how draw works. No, I didn't believe it at first either.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/CZ-meVWFddhoJWCd-BLTlXD/](https://tiphereth.zasz.su/u/decks/CZ-meVWFddhoJWCd-BLTlXD/)
 
-Finally, there's Magic Trick DBlade. To be frank, I think this build sucks because it's really clunky to use before *team* emotion 5. Great for YouTube montages. Not so much for anything else.
+Finally, there's Magic Trick DBlade. To be frank, I think this build sucks because it's really clunky to use before *team* emotion 5. The only time you can reasonably reach this build is Black Silence probably, and even then Yan is busy trying to get his combo going during the roughest part of the reception (phase 1). Great for YouTube montages. Not so much for anything else.
 
 <todo>
 
@@ -491,33 +522,27 @@ I think Bloodspreading is not very good (comparable to Eradication; 17-25 is the
 
 But hey, she has a built-in health hauler + Fervor!
 
-Build Elena generically.
+Build Elena generically. And you know what that means:
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Cy-rG~zY3M42Rq4y-G0Sr1/](https://tiphereth.zasz.su/u/decks/Cy-rG~zY3M42Rq4y-G0Sr1/)
 
 #### Donghwan the Grade 1 Fixer
 
 A SotC1 generalist keypage who can do pretty much anything. Between in-built Fervor, in-built bleed application, and Toughness offering up to 3 prot + stagger prot, Donghwan is surprisingly durable and isn't afraid to strike back. His natural tankiness also makes him an unexpectedly powerful soloist for someone from SotC1. He also has Speed 3, which is really nice.
 
-A "standard" Donghwan deck would be some generic Singleton deck:
+While a "standard" Donghwan deck would simply run some Singleton variant (or Ominbrace, or Rapid Gashes...) he can easily stand toe-to-toe with Red Mist, on-tier (Yesod floor only):
 
-<todo: on-tier deck>
-
-<todo: lateendgame deck>
-
-But he can easily stand toe-to-toe with Red Mist, on-tier:
-
-<todo>
+[https://tiphereth.zasz.su/u/decks/B~-Utq9O1PB6K_wM-QnwPp/](https://tiphereth.zasz.su/u/decks/B~-Utq9O1PB6K_wM-QnwPp/)
 
 #### Allen
 
-+2 pierce power right out of the gate, at the cost of not being able to play anything* not-pierce. Considering how many mono-pierce cards are in SotC, this is really good. Will of the Prescript, Sturdy Defense, Frontal Assault, Wedging Thorn, and Graze the Grass basically build themselves. Laceration becomes immensely deadly, as it additionally inflicts Feeble on hit.
++2 pierce power right out of the gate, at the cost of not being able to play anything* not-pierce. Thankfully, there's a lot of mono-pierce cards in SotC, and especially mono-pierce econ cards. Will of the Prescript, Sturdy Defense, Frontal Assault, Wedging Thorn, and Graze the Grass basically build themselves. Laceration becomes immensely deadly, as it additionally inflicts Feeble on hit.
 
 Speed 3 is really good, 3 starting light is bleh. Still, +2 power is hard to beat. Add in Wedge and Fervor, and +4 absolutely shreds.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Cd-n0BZmlKyoQjdB-k3rL2/](https://tiphereth.zasz.su/u/decks/Cd-n0BZmlKyoQjdB-k3rL2/)
 
-You can still feasibly run Multislash and Will of the City for econ, FYI, but be careful not to clash or ram these into counter dice
+You can still feasibly run Multislash and Will of the City for econ, FYI, but be careful not to clash or ram these into counter dice (because they will lose).
 
 #### Yae
 
@@ -527,7 +552,9 @@ Exhale Smoke is also the second-strongest double-sided Smoke application in the 
 
 3 passive slots is painful, but thanks to Immediate Repairs she can make the choice to forgo sustain more easily compared to other keypages.
 
-<todo>
+[https://tiphereth.zasz.su/u/decks/Ci-qAyd3AVC3tKtZ-MHNq/](https://tiphereth.zasz.su/u/decks/Ci-qAyd3AVC3tKtZ-MHNq/)
+
+(Take Four Trigrams over Eye of Death/Enervation if you are in IC)
 
 #### Angela
 
@@ -547,32 +574,71 @@ No passive attribution, but she doubles Emotion gain across the entire team, and
 
 #### Xiao
 
-<todo>
+I find Xiao really solid as a generalist who also masses a lot. Yeah, that's it. She's just really solid. I consider her an Olivier sidegrade, maybe 1 tier below bc Olivier is stupid strong. +2 power before passive attribution (+1 power from Fervor, +1 power from Nine Children of Dragon at emo 2/4), and Volatile Emotion is an easy +1 additional power because Force of a Wildfire provides onhit burn. Then you can slap on another power passive like Eye of Death/Enervation, Offensive Position, Locked Potential for an additional +1. So +4 to all dice in general.
+
+That's not even accounting for her masses: Pu Lao, Ya Zi, Tao Tie. Which are all just really solid, and you can slot in fairly easily with light restores to keep the cycle going.
+
+I like going Unlock + Multislash + WotC together when running Xiao so mass + x3 light restores also draws me enough cards to redraw said light restores at emo 5. Bonus points if I bring Raging Storm: Love since that thins the deck also, further boosting its consistency.
+
+[https://tiphereth.zasz.su/u/decks/CX-giI1AVZOyb7qD-k3snu/](https://tiphereth.zasz.su/u/decks/CX-giI1AVZOyb7qD-k3snu/)
 
 #### Purple Tear
 
-<todo>
++2 (sometimes 3) dice power on a die type already makes her on-par with Allen, and that's not even accounting for the crazy shenanigans you can pull off by bringing four different decks at the same time. Or the 50% slash damage bonus. Or the doubled debuff application on pierce. Or the debuff immunity from guard. I'm ignoring blunt.
+
+Crazy solo strats! Massive amounts of damage (plus smoke)! Forceful Gesture! Did I mention massive amounts of damage yet?
+
+Purple Tear can do many things well, but for the most part only one at a time. I know some of ya'll want to stancedance with Grace of the Prescript, but trust me, you're just screwing yourself over for the most part. Especially during Chesed realization. Unless you REALLY know what you're doing, pick a stance during deckbuilding and stick to it.
+
+Slash stance:
+
+Self-sufficient Slash: [https://tiphereth.zasz.su/u/decks/CW-gEo_pQvh43ntX-UplsfU/](https://tiphereth.zasz.su/u/decks/CW-gEo_pQvh43ntX-UplsfU/) Can use Violet Blade over Eliminate
+SSSBSST: [https://tiphereth.zasz.su/u/decks/CW-kPv9REl308In0-Yftb4/](https://tiphereth.zasz.su/u/decks/CW-kPv9REl308In0-Yftb4/) This strongly relies on emo level up for light restores, and you should prepare to swap stances at emo 5. Yes I know I just said you shouldn't be swapping stances. Ideally, with this deck, you win before hitting emo 5.
+
+Pierce stance:
+
+Basically Allen: [https://tiphereth.zasz.su/u/decks/CW-rgIVYOo7qtHDB-Fat2/](https://tiphereth.zasz.su/u/decks/CW-rgIVYOo7qtHDB-Fat2/)
+Gesture Stance: [https://tiphereth.zasz.su/u/decks/CW-kc_JSKWBIE4IN-k3qkV/](https://tiphereth.zasz.su/u/decks/CW-kc_JSKWBIE4IN-k3qkV/) Make sure you are constantly drawing cards
+
+Blunt stance:
+
+ - This space intentionally left blank
+
+Guard stance:
+
+Overcharge: [https://tiphereth.zasz.su/u/decks/CW-Xy1CL2ZOtel4m-VH2BOh/](https://tiphereth.zasz.su/u/decks/CW-Xy1CL2ZOtel4m-VH2BOh/) Intended to operate under powernull. Note: Maximum Crash only performs the charge check at start of scene. You can also use Carver of Scars if you aren't concerned with charge uptime. You can drop Graze the Grass for another Energy Conversion, though the GtG makes piloting easier at emo 5. If powernull isn't a concern, Offensive Position is a good alternative as Guard stance nullifies the self-fragile
+Blockma: [https://tiphereth.zasz.su/u/decks/CW-lmiu482F47EqN-0PIeP/ You may slot in Combat Prep and/](https://tiphereth.zasz.su/u/decks/CW-lmiu482F47EqN-0PIeP/ You may slot in Combat Prep and/)or Seize ya Chance over Serpentine Barrier
 
 #### Binah
 
-A powerful offensive ranged unit with in-built card draw, Fairy infliction, speed dice dealing, dice deletion, and a triple-blunt mass individual with Feeble infliction. Binah wields a self-contained, yet self-sustainable deck who can stand strong both as a DPS and as a status inflicter.
+A powerful offensive ranged unit with in-built card draw, Fairy infliction, speed dice seals, dice deletion, and a triple-blunt mass individual with Feeble infliction. Binah wields a self-contained, yet self-sustainable deck who can stand strong both as a DPS and as a status inflicter.
 
-Fairy is one of the most powerful playerside status available in the game; it's a better bleed that deals damage on *every* dice roll and doesn't decrease except on turn end. Since Binah is ranged, she can reliable stack 2-8 Fairy in a single turn before any dice are rolled thanks to Degraded Pillar plus Degraded Fairy, which can both come out at the same time as early as turn 1.
+Degraded Chain and Pillar are *really* strong. They screw over your target in a way that no other key page in the game can. That, combined with the sheer consistency that both can end up in your hand by turn 2 push Binah up to one of the best key pages in the (vanilla) game.
 
-Degraded Chain is one of the very few seals in the entire game; the others being Coffin (abno page), Coffin (Angela), Silent Bullet, Sword Sharpened with Tears, and Heaven. Angela's Coffin is restricted to Keter realization only, and the others are locked behind EGO or abno pages. Degraded Chain can come out as early as turn 1 and wreck havoc on the enemy action economy and also makes the target always 1-side-able for 1 turn.
+Degraded Shockwave is also powerful, but it also plays weird. As a 5-cost mass individual that inflicts Feeble and grants Protection across the entire team, it moreso protects your own team rather than wiping out the enemy. That, combined with its high cost, means it tends to sit in Binah's hand for a long time before it sees use due to often bricking Binah for the next turn.
 
-Degraded Shockwave is a 5-cost mass individual that inflicts Feeble and grants Protection across the entire team. Even disregarding the x3 strength scaling that a triple-offense mass individual provides, these statuses can buy some much needed survivability for her other nuggets. The big issue with this card is that it has a high cost, so it tends to sit in Binah's hand for a long time before it sees use.
+For builds, well, there's only passive attribution to talk about. My default choices are In Times Like These! and Easygoing Breather. In Times Like These! procs often because it checks at the *end* of the scene, while Binah's innate passive draw is at the *beginning*. Easygoing Breather alleviates some of her light issues at emo 5. Four Trigrams can furthermore alleviate her light issues. You can also try the Haulers (of course), Fervor, Messenger, Puppet Strings...you're pretty flexible in this regard.
 
-All of Binah's cards have a high natural roll. Degraded Pillar's rolls are comparable to Emotional Turbulence at emo 4, and the anti-recycle on the first die of Pillar is a guaranteed "can't lose" against all melee pages. Degraded Fairy's rolls resemble Will of the City's. Degraded Chain's base rolls are greater than Violet Blade's, though it doesn't have the x2 damage scaling that VB does. Degraded Lock's first die resembles Tieshaokan's second die.
-
-Perhaps Binah's greatest weakness is her economy. She lacks 0-cost light restores, which means that a 1-light Binah can only throw out a single Degraded Fairy and that's it. She only has 3 light restores in a top-heavy deck, so if her draw luck is bad, she can run out of light at emo 5 fairly quickly. Her lack of light economy also means that she struggles to use EGOs without bricking as well.
-
-Binah is definitely a strange unit to pick up at first, but she does a lot at the same time. The versatility she offers to her floor's team composition enables a variety of unique offensive options that no other floor has access to.
-
-<todo: better analysis other than writing her strengths>
-
-<todo: passives>
+Abno pages: there's a lot to say about her abno pages, but I'll keep it brief: if I'm going generalist Guardians of the Forest, I like to put Eternally Lit Lamp on Binah so she can redirect with Pillar without regard for speed dice values. Watchful Eyes is also a great option, though make sure her teammates are well-topped up on light. If going Peace, then Eternally Lit Lamp + Salvation makes for a great combo. I wouldn't recommend putting Beast on Binah; even though Beast *is* overpowered and works on anyone, there are better Beast abusers in the game (e.g. Purple Tear and Olivier).
 
 #### Nikolai
 
-<todo>
+At first glance, ya'll may look at the two passives and think to yourself:
+
+- Finishing Touch: Oh, a smoke sidegrade
+- Commander: Oh, Fervor sidegrade, but team-wide
+
+What these evaluations miss is that they *stack* on top of everybody else's bonuses. Finishing Touch plus Smoke is a *100%* damage bonus...increased to 150% if self-smoking also. Mark also affects stagger, unlike Smoke which only affects stagger with Sooty Thwak attribution and self-Smoke.
+
+Commander is a net +5 power across your entire team for 7 passive points and 11 charge. 11 charge is *very* easy to hit -- Concentration plus Graze the Grass, or Absorb + Bulky Impact. It's easy to get this off on turn 1 if drawn into, and made consistent with Battle Ready and/or Skim Prescript. Getting to 20 charge for Disposal requires using this combo a second time.
+
+These two passives alone turn Nikolai into the best offensive support in the game, enabling her teammates to accomplish the most degenerate strategies available off of sheer raw damage enablement plus clash power. She could spend the entire game playing only two cards (Concentration + Graze the Grass) and nothing else, and still be better than half the roster.
+
+And then she gets Disposal and Battle Command. Battle Command clashes decently and gives even more strength; Disposal just deals disgusting amounts of damage and is just fun to use.
+
+Nikolai is *very* hard to build: she needs charge to build for Commander, dragged into Smoke and Battle Command as a support, pressured into self-smoke and Disposal for raw damage output, and needs survivability and econ on top of all that. Often the "optimal" Nikolai deck depends on the enemy you're up against.
+
+"Standard" Nikolai support: [https://tiphereth.zasz.su/u/decks/CS-iRuXZ1JeVUsbE-G0Yim/](https://tiphereth.zasz.su/u/decks/CS-iRuXZ1JeVUsbE-G0Yim/) Can drop Disposal for Sturdy Defense
+Charge-focused sub-DPS Nikolai: [https://tiphereth.zasz.su/u/decks/CS-iRuXd66Q39yyi-kmKxA/](https://tiphereth.zasz.su/u/decks/CS-iRuXd66Q39yyi-kmKxA/)
+Smoke sub-DPS Nikolai: [https://tiphereth.zasz.su/u/decks/CS-iTLtegcnlrg3E-BwVlsf1/](https://tiphereth.zasz.su/u/decks/CS-iTLtegcnlrg3E-BwVlsf1/)
+Turbo Nikolai: [https://tiphereth.zasz.su/u/decks/CS-iRmsieV9ddwW4-BA1C~n/](https://tiphereth.zasz.su/u/decks/CS-iRmsieV9ddwW4-BA1C~n/)
