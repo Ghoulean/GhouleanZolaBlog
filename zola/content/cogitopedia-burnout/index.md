@@ -3,7 +3,7 @@
 title = "Cogitopedia Burnout"
 description = "Challenges while working on Cogitopedia"
 date = 2024-11-01
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["lor"]

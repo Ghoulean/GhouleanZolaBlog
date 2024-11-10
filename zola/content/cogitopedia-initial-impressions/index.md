@@ -3,7 +3,7 @@
 title = "Cogitopedia Initial Impressions"
 description = "Beginning work on improving the Lobotomy Corporation documentation on Cogitopedia."
 date = 2024-09-24
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["lor"]
