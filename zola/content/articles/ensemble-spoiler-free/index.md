@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FREE]"
 description = "This guide is for people who don’t want to build 45 decks for the Reverberation Ensemble, but still want to figure out the gameplay themselves."
 date = 2024-08-17
-updated = 2024-09-08
+updated = 2024-11-10
 draft = false
 
 [taxonomies]
@@ -20,25 +20,25 @@ thumbnail = "banner.png"
 
 For those who just want deckbuilds and want to figure out gameplay themselves, this SPOILER-**FREE** guide provides various generic, easy-to-pilot, and community-tested decks. If you're wanting to smash the postgame as hard as possible, check the [spoiler-**FULL** guide](/articles/ensemble-spoiler-full), which contains additional gameplay tips and tricks to make the most out of every fight.
 
-Note: this guide assumes you completed every reception and have multiple copies of every combat page and key page.
+**Important note**: this guide assumes you completed *every* reception *(including generals)*, have *all* obtainable copies of every key page, and at least *45* copies of every combat page.
 
 # Malkuth
 
 * Xiao
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Raging Storm: Love
-  * Volatile Passion, Flaring Brand, Mind Hauler, Hugging Fire Sitting on Brushwood
-* Lowell
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Forming Storm
-  * Locked Potential, Firm as a Great Mountain, Hugging Fire Sitting on Brushwood, Electric Shock
-* Miris
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Fiery Dragon Fist
-  * Four Trigrams, Furious Fire Rendering the Skies, Firm as a Great Mountain, Electric Shock
-* Mei
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Tieshankao
-  * Four Trigrams, Locked Potential, Easygoing Breather
-* Cecil
-  * Frontal Assault, Graze the Grass, Wedging Thorn, Multislash, Gale Kick, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Tieshankao
-  * Four Trigrams, Furious Fire Rendering the Skies, Wedge
+  * Wedging Thorn, Forward March, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Double-edged Rencounter, Fervid Emotions, Raging Storm: Love
+  * Four Trigrams, Volatile Passion, Mind Hauler, Electric Shock
+* Bayard
+  * Unlock, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Double-edged Rencounter, Fervid Emotions
+  * Four Trigrams, Fervor, A Fighter that Never Retreats, Electric Shock
+* Rudolph
+  * Unlock, Graze the Grass, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Concentration, Duel, Mind Crush
+  * Fervor, Remain Vigilant in Peace, Offensive Position, Bionic Charge-synchronized Hull
+* Hubert
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Duel, Fervid Emotions
+  * Fervor, Firm as a Great Mountain, Offensive Position, Mind Hauler
+* Harold
+  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Double-edged Rencounter, True Trigram Formation
+  * Fervor, Hugging Fire Sitting on Brushwood, Reindeer Treatment, Keeping in Stride
 
 {{ img(src="malkuth_1.png" class="ci" alt="Malkuth 1") }}
 {{ img(src="malkuth_2.png" class="ci" alt="Malkuth 2") }}
@@ -310,6 +310,8 @@ Special thanks to the following people who contributed to the making of this gui
 * Atse
 * CountDuckoo
 * Jakkie
+* Lily
+* Laurin
 * Mozzarella
 * Render
 * Stuff

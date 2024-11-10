@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-09-12
+updated = 2024-11-10
 draft = false
 
 [taxonomies]
@@ -42,8 +42,8 @@ Philip is a 3-phase fight, with each phase locked behind a health gate. You can 
 
 * Phase 1: 
   * Clash your 3-costs against the double offensive pages.
-  * Try to avoid clashing into the Sturdy Defense sidegrades; if you do, throw econ pages at them.
-  * Not really in a rush to get past this phase; focus here is to build hand size \+ team emotion level to prep for the next phase
+  * *Actively avoid* clashing into the defensive pages (Waned Eventide and Conflicting Emotions) and prefer to 1-side instead. The trailing 3-7 and 3-8 are not threatening. Only clash these pages if your nugget is at extremely low health and/or stagger, and a healthier nugget cannot reasonably redirect away from them.
+  * You're not really in a rush to get past this phase; focus here is to build hand size \+ team emotion level to prep for the next phase
 * Phase 2: 
   * The babies are back, but thankfully don't have their annoying passives.
   * Mass spam, preferably at least once per scene. This is why building emotion is important; you get access to Ego masses and, hopefully, Xiao's also
@@ -71,6 +71,8 @@ Philip is a 3-phase fight, with each phase locked behind a health gate. You can 
 
 Equipped with this knowledge, we can construct a counterbuild specifically tailored to fighting Philip. You shouldn't bring this build to any reception other than this one.
 
+This is an untrue solo designed to be both consistent and simple, centered around quickly grabbing Nostalgic Embrace and improvising the rest.
+
 * Build
   * Xiao 
     * Will of the Prescript, Multislash, Frontal Assault, Forward March, Wedging Thorn, Steel Knuckles, Gale Kick, Double Edged Rencounter, Fervid Emotions
@@ -87,25 +89,37 @@ Equipped with this knowledge, we can construct a counterbuild specifically tailo
 {{ img(src="malk_optimized_3.png" class="ci" alt="Nugget 3") }}
 {{ img(src="only_bring_3.png" class="ci" alt="Only bring 3 nuggets") }}
 
-
 Abnos \+ Egos same as previous section.
 
 * PHASE 1:
   * Opening: Turn 1
-    * Mooks clash Coordinated Assault. Xiao clashes card draw if able.
-    * You want to get to team emo level 1 at the end of the turn.
-    * On Xiao, pick
+    * Assistant librarians clash using Coordinated Assault. Xiao clashes card draw if able.
+    * You want to get to team emo level 1 at the end of the turn in order to grab Nostalgic Embrace
   * Opening: turns 2-3
-    * Let both your mooks die
+    * Let both your assistant librarians die so Xiao remains alone
     * On turn 2, do nothing as Xiao. You'll hit emo level 2 anyways due to ally death
     * On turn 3, clash or 1-side a *little* bit as Xiao in order to hit emo level 3
 * PHASE 2:
   * Mass, then mass again. Prefer Green Stem \> Tao Tie \> FMF. Clash Steel Knuckles \+ Gale Kick vs ranged page
-* PHASE 3: Dogpile on the slowest die
+* PHASE 3: Focus fire on the slowest die
 
-### Demo 2
+### Demo
 
 {{ youtube(id="YjCfuAYLwec") }}
+
+## Optimized Build 2
+
+Similar to the previous build, except this one is a true solo centered around Happy Memories.
+
+{{ img(src="happy_memories.png" class="ci" alt="Happy memories solo build") }}
+
+Clash Fervid Emotions turn 1 against Searing Resolution in order to generate the positive emotion coins for Happy Memories.
+
+Abnos \+ Egos same as previous section.
+
+### Demo
+
+Todo
 
 # Yesod
 
@@ -302,7 +316,7 @@ Your opening should look like this:
 
 The rest of the fight is up to you. Be sure to pick up Blind Rage – that mass is relatively low cost, breaks We Need You, You Know\~?, and deals a lot of damage.
 
-### Demo 2:
+### Demo
 
 {{ youtube(id="GW_lwkf8WBk") }}
 
@@ -397,14 +411,16 @@ Similar to Gebura vs Tanya, this fight is moreso how well you can play Binah ove
 
 Note the following synergies among abno pages, which may situationally move the tier of an abno page up or down depending on the current game state:
 
-* \[same\] Eternally Lit Lamp makes activating Salvation's \+1 power effect trivially easy
-* \[diff\] Eternally Lit Lamp can redirect targets away from the Big Eyes holder
-* \[same\] Small Flutters tries to make your librarian untouchable for Punishing Beak
-* \[diff\] Small Beak makes activating Punishment's effect trivially easy
-* \[same\] Small Beak additionally lets you grab Punishing Beak without penalty, as Punishing Beak specifically states taking damage "from attacks"
-* \[same\] Tilted Scales patches up the self-damage from Weight of Sin
-* \[fake\] Long Arms prevents damage from Judgement's Sin effect...or it's SUPPOSED to, since this is bugged and the Sin effect procs anyways
-* \[same\] If you put all your eggs in one basket, you get to activate The Beast
+* Eternally Lit Lamp makes activating Salvation's \+1 power effect trivially easy
+* Eternally Lit Lamp can redirect targets away from the Big Eyes holder
+* Small Flutters tries to make your librarian untouchable for Punishing Beak
+* Small Beak makes activating Punishment's effect trivially easy
+* Weight of Sin also makes activating Punishment's effect trivially easy
+* Small Beak additionally lets you grab Punishing Beak without penalty, as Punishing Beak specifically states taking damage "from attacks"
+* Tilted Scales patches up the self-damage from Weight of Sin
+* Long Arms prevents damage from Judgement's Sin effect...or it's SUPPOSED to, since this is bugged and the Sin effect procs anyways
+* If you put all your eggs in one basket, you can activate The Beast
+* If you spread out your abno pages, you can activate Guardians of the Forest 
 
 ### Demo
 
@@ -427,7 +443,7 @@ If, for whatever reason, you want to kill Elena even faster than you already do,
 
 You MUST pick Weight of Sin as your first abno card in order for this deck to succeed. After obtaining Weight of Sin, use Opportunity Spotted to activate Weight of Sin repeatedly. This deck works well with Big Eyes.
 
-### Demo 2:
+### Demo
 
 {{ youtube(id="yT4lWAwXe6o") }}
 
@@ -937,15 +953,17 @@ This is a scripted fight: Barel and Zena play the exact same cards every turn, e
 
 # A Short Word on Deckbuilding
 
+Everyone has their own opinions on what is or isn't a "good" deck. The personal rule I follow is...
+
 ## The 5-4-3 rule
 
-As a general rule of thumb, I like to adhere to the 5-4-3 rule: 5 card draw, 4 light restores, 3-cost clashers.
+"5 card draw, 4 light restores, 3-cost clashers."
 
  - **5 draw** because you can't do anything with an empty hand, and a full hand of 8 cards gives you way more options than a hand of 2 cards.
  - **4 light restores** because you can't do anything if you have no light. I bias towards 0-cost light restores because you can always play them to restore light. By the way, cards like Blind Faith do not count as light restore because you spend more light than you gain back.
  - **3-cost clashers** because they strike the perfect balance between powerful and "smooth" to use. 3-cost clashers tend to outclash 0-, 1-, and 2-cost cards, while 4-cost clashers can be difficult to slot in at times.
 
-You may have noticed that I have a tendency to build Singleton decks. This is because Singleton is the easiest deck archetype to build for that satisfies these requirements. Although Multislash and Will of the Prescript are really hard to give up, you do have some degree of freedom in choosing your remaining light restores, and a lot of flexibility with your 3-cost clashers.
+You may have noticed that I have a tendency to build Singleton decks. This is because Singleton is the easiest deck archetype to build for that satisfies these requirements, thanks to Multislash and Will of the Prescript. Additionally, you do still have some degree of freedom in choosing your remaining light restores, and a lot of flexibility with your 3-cost clashers.
 
 ## Other deck options
 
@@ -969,6 +987,8 @@ Special thanks to the following people who contributed to the making of this gui
 * Atse
 * CountDuckoo
 * Jakkie
+* Lily
+* Laurin
 * Mozzarella
 * Render
 * Stuff
