@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FREE]"
 description = "This guide is for people who don’t want to build 45 decks for the Reverberation Ensemble, but still want to figure out the gameplay themselves."
 date = 2024-08-17
-updated = 2024-11-10
+updated = 2024-11-27
 draft = false
 
 [taxonomies]
@@ -28,16 +28,16 @@ For those who just want deckbuilds and want to figure out gameplay themselves, t
   * Wedging Thorn, Forward March, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Double-edged Rencounter, Fervid Emotions, Raging Storm: Love
   * Four Trigrams, Volatile Passion, Mind Hauler, Electric Shock
 * Bayard
-  * Unlock, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Double-edged Rencounter, Fervid Emotions
+  * Wedging Thorn, Forward March, Multislash, Will of the City, Afterimage, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Fervid Emotions
   * Four Trigrams, Fervor, A Fighter that Never Retreats, Electric Shock
 * Rudolph
-  * Unlock, Graze the Grass, Multislash, Will of the City, Will of the Prescript, Emotional Turbulence, Concentration, Duel, Mind Crush
+  * Graze the Grass, Wedging Thorn, Multislash, Will of the City, Afterimage, Will of the Prescript, Concentration, Duel, Mind Crush
   * Fervor, Remain Vigilant in Peace, Offensive Position, Bionic Charge-synchronized Hull
 * Hubert
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Duel, Fervid Emotions
+  * Wedging Thorn, Forward March, Multislash, Will of the City, Afterimage, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Fervid Emotions
   * Fervor, Firm as a Great Mountain, Offensive Position, Mind Hauler
 * Harold
-  * Frontal Assault, Wedging Thorn, Forward March, Multislash, Will of the Prescript, Emotional Turbulence, Sturdy Defense, Double-edged Rencounter, True Trigram Formation
+  * Wedging Thorn, Forward March, Multislash, Will of the City, Afterimage, Will of the Prescript, Emotional Turbulence, Sturdy Defense, True Trigram Formation
   * Fervor, Hugging Fire Sitting on Brushwood, Reindeer Treatment, Keeping in Stride
 
 {{ img(src="malkuth_1.png" class="ci" alt="Malkuth 1") }}

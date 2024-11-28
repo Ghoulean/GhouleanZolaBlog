@@ -2,7 +2,7 @@
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
 date = 2024-08-17
-updated = 2024-11-10
+updated = 2024-11-27
 draft = false
 
 [taxonomies]
@@ -42,8 +42,10 @@ Philip is a 3-phase fight, with each phase locked behind a health gate. You can 
 
 * Phase 1: 
   * Clash your 3-costs against the double offensive pages.
-  * *Actively avoid* clashing into the defensive pages (Waned Eventide and Conflicting Emotions) and prefer to 1-side instead. The trailing 3-7 and 3-8 are not threatening. Only clash these pages if your nugget is at extremely low health and/or stagger, and a healthier nugget cannot reasonably redirect away from them.
-  * You're not really in a rush to get past this phase; focus here is to build hand size \+ team emotion level to prep for the next phase
+  * *Actively avoid* clashing into the defensive pages (Waned Eventide and Conflicting Emotions) and prefer to 1-side instead. The trailing 3-7 and 3-8 are not threatening. Only clash these pages if:
+    1. Your nugget is at extremely low health and/or stagger, or
+    2. You really want to build emotion level
+  * You're not really in a rush to get past this phase; focus here is to build hand size, maintain high light, and raise team emotion level to prep for the next phase
 * Phase 2: 
   * The babies are back, but thankfully don't have their annoying passives.
   * Mass spam, preferably at least once per scene. This is why building emotion is important; you get access to Ego masses and, hopefully, Xiao's also
@@ -58,14 +60,14 @@ Philip is a 3-phase fight, with each phase locked behind a health gate. You can 
 ### Recommended Abnos \+ Egos
 
 * Abnos:
-  * Tier 1: Nostalgic Embrace \> Display of Affection \> Matchlight \> Ashes \> The Fairies' Care \> Happy Memories
+  * Tier 1: Nostalgic Embrace \> Display of Affection \> Matchlight = Ashes = The Fairies' Care = Happy Memories
   * Tier 2: Gluttony \>\>\> Vines \> Predation \> Spores \> Worker Bee. Do not pick Footfalls
   * Tier 3: Loyalty
 * Egos: Green Stem \> FMF \> Wingbeat \> Hornet \> The Forgotten
 
 ### Demo
 
-{{ youtube(id="WcDaYmMIGhA") }}
+{{ youtube(id="xz4e2RUlguo") }}
 
 ## Optimized Build
 
