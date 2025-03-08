@@ -5,6 +5,7 @@ build
 storage
 node_modules
 package-lock.json
+zola.code-workspace
 static/demo.html
 static/tinysearch_engine.js
 static/tinysearch_engine.d.ts
