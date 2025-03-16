@@ -36,7 +36,7 @@ When non-solo (for whatever reason), you can go something like this to alleviate
 A solid and easy-to-use keypage that revolves around one simple game plan: deal a lot of damage, and snowball from there:
 
 - Upstanding Slash starts off as a 2-cost with rolls comparable to Baleful Brand, Eliminate, and Shock Round, but if you manage to snowball, you get 1 draw plus cost reduction, eventually putting all your Upstanding Slashes to 0-cost (assuming you're not running Singleton).
-- Spear is the exact same, though its rolls are more akin to Feint (significantly worse base rolls, but scale noticably better off strenght).
+- Spear is the exact same, though its rolls are more akin to Feint (significantly worse base rolls, but scale noticably better off strength).
 - Level Slash is similar, but applies bleed and restores light instead of drawing. At the start of an act, it's effectively a restore 0; as it gets cost-reduced, it becomes a 0-cost restore 2. The bleed application grants synergy with the Vampirism abno page. Generally speaking, however, Level Slash should be paired with a strategy that revolves more heavily around EGO usage.
 - Focus Spirit provides easy access to strength, letting you reach your damage thresholds more easily.
 - Onrush is fun but clunky in the majority of scenarios, but has a niche usecase in Gebura realization and low-turn strategies

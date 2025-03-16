@@ -44,7 +44,7 @@ Obtaining the data is mostly straightforwards. A mod on Steam Workshop known as 
 
 {{ img(src="basemod.png" class="ci b1") }}
 
-Parsing the data is also mostly straightforward. For example, combat page's models generally resembles what combat pages look like in game: they have a name, cart art, card effect (optional), dice, dice rolls, dice effects (optional), etc. Ruina seems to implicitly use a decent amount of default values (for example, missing die type ("Detail") defaults to Slash dice), but outside of that hiccup (which can be solved through trial-and-error), parsing the XMLs is a fairly straightforwards, if not tedious, task.
+Parsing the data is also mostly straightforward. For example, combat page's models generally resembles what combat pages look like in game: they have a name, card art, card effect (optional), dice, dice rolls, dice effects (optional), etc. Ruina seems to implicitly use a decent amount of default values (for example, missing die type ("Detail") defaults to Slash dice), but outside of that hiccup (which can be solved through trial-and-error), parsing the XMLs is a fairly straightforwards, if not tedious, task.
 
 # Querying the data
 
@@ -80,7 +80,7 @@ Most of the annotations were added programatically. Cards with a name collision 
 
 For those edge cases, I manually create and map the disambiguations. It's as painful as it sounds. Covering the playerside-only was fast and easy, but I've procrastinated on and continue to procrastinate on disambiguating the rest. For now I've merely added mappings for "common queries," which I loosely define by queries that cause people to ping me because they think there's some kind of bug (and technically, there is).
 
-As for the nameless pages, I've deliberately excluded nameless pages without a disambiguation. So the unnamed enemyside abnormality pages are queryable, but pages like Retaliate is not.
+As for the nameless pages, I've deliberately excluded nameless pages without a disambiguation. So the unnamed enemyside abnormality pages are queryable, but pages like Retaliate are not.
 
 ## Lookup tables
 
@@ -292,19 +292,17 @@ It's fine given that I don't really push much updates on BinahBot often anymore 
 
 # Final Thoughts
 
-It was kinda fun to build BinahBot, but after like 8 months of working on this project I'm getting bored and I'm starting to move away from both the project and Project Moon as a whole.
+It was kinda fun to build BinahBot, but after like 8 months of working on this project on-and-off I'm getting bored and I'm starting to move away from both the project and Project Moon as a whole.
 
-Given how technically simple the project was, you might be surprised to hear that it took 8 months. That's because I took the first 2 months to write it in TypeScript before throwing out all the code and writing it in Rust. During that time I wasted another month fighting that weird bug with the whole NTFS drive thing. Then another 2 months mucking around with the search...it all adds up.
-
-I'm still glad I went through it. I learned quite a bit of Rust, the functional programming paradigm, and some search theory as well. Learning Rust, and wading my way through the Rust community's...neuroticism...about model perfectionism genuinely has tangible benefits. It's a big contrast, and a humbling experience, from my usual fast-and-loose approach. Also, learning functional programming has transformed the way I think about designing software. I'm still never gonna go full functional.
+Honestly, though, a lot of the code I wrote and concepts I use aren't particularly unique to BinahBot and can be applied to your projects also.
 
 # Appendix
 
-## Choice of AWS compute
+## What is AWS Lambda?
 
-There are two main compute services that AWS offers: EC2 and Lambda. Okay, actually, there's four (ECS, Fargate), but I'm only going to work with two here.
+There are two main compute services that AWS offers: EC2 and Lambda. Okay, actually, there's a lot more (ECS, Fargate, Batch...) but I'm only going to work with these two.
 
-EC2 is basically a virtual machine. You choose your hardware, AWS does some stuff, and bam, you now have access to that box.
+EC2 is basically a virtual machine. You choose your hardware, AWS does some stuff, and bam, you now have access to that box. It's pretty straightforward and it's what you pretty much expect to get when you rent a computer "in the cloud". DigitalOcean's "droplets" and Heroku's "dynos" are both very similar to AWS's EC2.
 
 Lambda is a "serverless function". Obviously, there's still a server hosting this, so the "serverless" part is just a marketing term to mean that you're not going to be fiddling around with any of the underlying hardware. But "function"? You upload a library that exposes a function interface, and when you invoke your Lambda via HTTPS call, your function code runs and responds. Unlike a server hosted on EC2 (which needs to run 24/7 to accept requests), Lambda only runs when you invoke it; consequentially, you only pay AWS when your Lambda runs.
 
@@ -327,6 +325,29 @@ public class HelloWorldHandler implements RequestHandler<Request, String> {
 ```
 
 Feel free to check out the [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) to learn more.
+
+## Choice of AWS Compute
+
+There are two main compute services that AWS offers: EC2 and Lambda. I'm going to handwave over the others.
+
+Tl;dr:
+
+- EC2 offers the best hardware and greatest freedom, but is expensive and time-consuming to manage
+- Lambda is fast, easy, and costs no money if it's not being used; but has some weird limitations that are either expensive (sometimes greater than EC2) or impossible to address
+
+Choose not-Lambda if any of the following hold or may hold in the future hold:
+- Some requests must run for greater than 15 minutes
+  - Lambda aborts requests that hit the 15 minute timeout. There is no way to raise this limit.
+- Strong low latency requirements
+  - If Lambda wasn't invoked recently, it "sleeps". While sleeping, Lambda costs no money. However, the next response needs to "wake up" the Lambda, and the cold start time may cause noticable latency ranging from a few milliseconds to a few seconds.
+- Significant disk storage requirements
+  - Lambda has a soft limit of 512 MB (can raise if you pay) and hard limit of 10 GB  
+  - You can still use S3 and access databases such as DynamoDB and Athena
+- Require special hardware
+  - You cannot choose your hardware with Lambda
+  - Lambda does not have GPU access
+
+If none of these apply, congrats! Try Lambda.
 
 ## Discord Library
 
