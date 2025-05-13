@@ -1,8 +1,8 @@
 +++
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FREE]"
 description = "This guide is for people who don’t want to build 45 decks for the Reverberation Ensemble, but still want to figure out the gameplay themselves."
-date = 2024-08-17
-updated = 2024-11-27
+date = 2024-08-17T15:00:00Z
+updated = 2024-11-27T15:00:00Z
 draft = false
 
 [taxonomies]

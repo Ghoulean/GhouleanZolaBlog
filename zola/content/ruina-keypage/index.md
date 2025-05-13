@@ -1,7 +1,7 @@
 +++
 title = "LoR Keypage Evaluation"
 description = "Opinionated strength of equipped keypages for vanilla content"
-date = 2024-11-01
+date = 2024-11-01T15:00:00Z
 
 [taxonomies]
 tags = ["lor"]

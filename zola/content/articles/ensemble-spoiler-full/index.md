@@ -1,8 +1,8 @@
 +++
 title = "Reverberation Ensemble Guide (and beyond) [SPOILER-FULL]"
 description = "This guide is for people who want to smash endgame Library of Ruina as hard as possible."
-date = 2024-08-17
-updated = 2024-11-27
+date = 2024-08-17T15:00:00Z
+updated = 2024-11-27T15:00:00Z
 draft = false
 
 [taxonomies]

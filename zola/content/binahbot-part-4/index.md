@@ -1,7 +1,7 @@
 +++
 title = "How BinahBot Works - Part 4"
 description = "Infrastructure: the hardware and associated cost of hosting and running BinahBot."
-date = 2025-03-15
+date = 2025-03-15T15:00:00Z
 draft = false
 
 [taxonomies]

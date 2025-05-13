@@ -1,7 +1,7 @@
 +++
 title = "How BinahBot Works - Part 3"
 description = "Page lookup: algorithms used in BinahBot for indexing, searching, and querying pages."
-date = 2025-03-15
+date = 2025-03-15T15:00:00Z
 draft = false
 
 [taxonomies]

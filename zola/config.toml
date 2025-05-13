@@ -2,7 +2,7 @@
 base_url = "https://www.ghoulean.com"
 # Usable site directly from disk, Including Search: "/home/jieiku/.dev/abridge/public"
 # Also set index format = "elasticlunr_javascript", and in [extra] uglyurls = true, integrity = false
-# If you use the npm/node script then all you have to do is set offline = true, and everything else is automatic.
+# If you use the npm/node script then all you have to do is set search_library = "offline", and everything else is automatic.
 
 title = "Ghoulean"
 description = "Ghoulean's personal website"
@@ -34,6 +34,7 @@ include_content = true      # include rendered content of page/section in index
 [markdown]
 highlight_code = true
 highlight_theme = "css"
+bottom_footnotes = true # adds footnote backreference
 render_emoji = false
 external_links_target_blank = true # rel="noopener"
 external_links_no_follow = false   # rel="nofollow"

@@ -1,8 +1,8 @@
 +++
 title = "3D-printed Lain Hairclip"
 description = "Article originally published on Reddit detailing my journey to obtain a physical hairclip worn by Lain of Serial Experiments Lain."
-date = 2023-03-12
-updated = 2024-08-15
+date = 2023-03-12T15:00:00Z
+updated = 2024-08-15T15:00:00Z
 draft = false
 
 [taxonomies]
@@ -11,7 +11,7 @@ tags = ["old", "lain"]
 toc = true
 +++
 
-*Article orginally published on Reddit detailing my journey to obtain a physical hairclip worn by Lain of Serial Experiments Lain. See the original post here: [https://reddit.com/r/Lain/comments/11pq6u0/3dprinted_lain_hairclip/](https://reddit.com/r/Lain/comments/11pq6u0/3dprinted_lain_hairclip/)*
+*Article originally published on Reddit detailing my journey to obtain a physical hairclip worn by Lain of Serial Experiments Lain. See the original post here: [https://reddit.com/r/Lain/comments/11pq6u0/3dprinted_lain_hairclip/](https://reddit.com/r/Lain/comments/11pq6u0/3dprinted_lain_hairclip/)*
 
 Last month...literally last month, like early February...I randomly looked up Lain's hairties and found out that they were not hairties but instead hairclips. Its "true" shape is depicted only in a single image of the Lain art book (as far as I can tell).
 

@@ -1,7 +1,7 @@
 +++
 title = "How BinahBot Works - Part 1"
 description = "Planning: outlining what I want to build, and the first post to dive deep into the technology, architecture, and thought process behind building BinahBot."
-date = 2025-03-15
+date = 2025-03-15T15:00:00Z
 draft = false
 
 [taxonomies]
