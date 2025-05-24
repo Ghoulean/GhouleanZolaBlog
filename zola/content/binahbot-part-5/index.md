@@ -2,7 +2,7 @@
 title = "How BinahBot Works - Part 5"
 description = "Deckbuilding and sharing"
 date = 2025-03-15T15:00:00Z
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["lor"]

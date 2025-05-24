@@ -2,7 +2,7 @@
 title = "How BinahBot Works - Part 2"
 description = "Discord Interactions: describing what Discord expects from bots who want to use slash commands and Interactions, and how BinahBot implements that."
 date = 2025-03-15T15:00:00Z
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["lor"]
