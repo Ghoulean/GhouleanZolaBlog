@@ -1,11 +1,13 @@
 {
     "compilerOptions": {
         "target": "ES2018",
-        "module": "commonjs",
+        "module": "node16",
         "lib": ["es2018"],
         "typeRoots": ["./node_modules/@types"],
-        "moduleResolution": "node",
+        "types": ["node"],
+        "moduleResolution": "node16",
         "outDir": "dist",
+        "rootDir": "src",
         "alwaysStrict": true,
         "declaration": true,
         "experimentalDecorators": true,

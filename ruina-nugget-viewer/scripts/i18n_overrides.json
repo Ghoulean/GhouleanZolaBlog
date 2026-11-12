@@ -1,0 +1,153 @@
+{
+ "appearance_binahlibrarian": {
+  "en": "Assistant Philosophy Librarian"
+ },
+ "appearance_chesedlibrarian": {
+  "en": "Assistant Soc. Sciences Librarian"
+ },
+ "appearance_geburalibrarian": {
+  "en": "Assistant Language Librarian"
+ },
+ "appearance_hodlibrarian": {
+  "en": "Assistant Literature Librarian"
+ },
+ "appearance_hokmalibrarian": {
+  "en": "Assistant Religion Librarian"
+ },
+ "appearance_ketherlibrarian": {
+  "en": "Assistant Gen. Works Librarian"
+ },
+ "appearance_malkuthlibrarian": {
+  "en": "Assistant History Librarian"
+ },
+ "appearance_netzachlibrarian": {
+  "en": "Assistant Art Librarian"
+ },
+ "appearance_tipherethlibrarian": {
+  "en": "Assistant Nat. Sciences Librarian"
+ },
+ "appearance_yesodlibrarian": {
+  "en": "Assistant Tech. Sciences Librarian"
+ },
+ "appearance_blacksilence4_weapon1": {
+  "en": "The Black Silence (Hammer)"
+ },
+ "appearance_blacksilence4_weapon2": {
+  "en": "The Black Silence (Mace and Axe)"
+ },
+ "appearance_blacksilence4_weapon3": {
+  "en": "The Black Silence (Dagger)"
+ },
+ "appearance_blacksilence4_weapon4": {
+  "en": "The Black Silence (Lance)"
+ },
+ "appearance_blacksilence4_weapon5": {
+  "en": "The Black Silence (Longsword)"
+ },
+ "appearance_blacksilence4_weapon6": {
+  "en": "The Black Silence (Gauntlets and Revolver)"
+ },
+ "appearance_blacksilence4_weapon7": {
+  "en": "The Black Silence (Dual Blades)"
+ },
+ "appearance_blacksilence4_weapon8": {
+  "en": "The Black Silence (Greatsword)"
+ },
+ "appearance_blacksilence4_weapon9": {
+  "en": "The Black Silence (Shotgun)"
+ },
+ "appearance_childrencoveringears": {
+  "en": "Unhearing Child (Children)"
+ },
+ "appearance_childrencoveringeyes": {
+  "en": "Unseeing Child (Children)"
+ },
+ "appearance_childrencoveringmouth": {
+  "en": "Unspeaking Child (Children)"
+ },
+ "appearance_classonefixer": {
+  "en": "Grade 1 Fixer Dong-hwan"
+ },
+ "appearance_hanaunit": {
+  "en": "Hana Fixer"
+ },
+ "appearance_shifixer": {
+  "en": "Shi S. Section 2 Fixer"
+ },
+ "appearance_twistbremen": {
+  "en": "Distorted The Musicians of Bremen"
+ },
+ "creature_blackswanbro": {
+  "en": "Black Swan (Brother)"
+ },
+ "creature_blackswanbrowithsmile": {
+  "en": "Black Swan (Sixth Brother)"
+ },
+ "creature_nihil_despairlibrarian": {
+  "en": "Nihil (Despair)"
+ },
+ "creature_nihil_greedlibrarian": {
+  "en": "Nihil (Greed)"
+ },
+ "creature_nihil_hatredlibrarian": {
+  "en": "Nihil (Hatred)"
+ },
+ "creature_nihil_wrathlibrarian": {
+  "en": "Nihil (Wrath)"
+ },
+ "creature_silentgirl_hammer": {
+  "en": "Hammer",
+  "kr": "망치 (아무 말 없는 소녀)",
+  "jp": "金槌 (物言わぬ少女)",
+  "cn": "锤 (噤默处子)",
+  "trcn": "錘 (噤默處子)"
+ },
+ "creature_silentgirl_nail": {
+  "en": "Nail",
+  "kr": "못 (아무 말 없는 소녀)",
+  "jp": "釘 (物言わぬ少女)",
+  "cn": "钉 (噤默处子)",
+  "trcn": "釘 (噤默處子)"
+ },
+ "appearance_yan_distort": {
+  "kr": "얀 (뒤틀림)",
+  "jp": "ヤン (ねじれ)",
+  "cn": "Yan (扭曲)",
+  "trcn": "Yan (扭曲)"
+ },
+ "appearance_yan_librarian": {
+  "kr": "얀 (사서)",
+  "jp": "ヤン (司書)",
+  "cn": "Yan (司书)",
+  "trcn": "Yan (司書)"
+ },
+ "appearance_yan_hand": {
+  "kr": "얀 (손)",
+  "jp": "ヤン (手)",
+  "cn": "Yan (手)",
+  "trcn": "Yan (手)"
+ },
+ "appearance_yan_union": {
+  "kr": "얀 (연합)",
+  "jp": "ヤン (連合)",
+  "cn": "Yan (联合)",
+  "trcn": "Yan (聯合)"
+ },
+ "creature_final_galaxyfriend": {
+  "en": "Friend to the Galaxy (Final)"
+ },
+ "creature_latitia": {
+  "kr": "래티씨아",
+  "trcn": "蕾蒂希婭"
+ },
+ "ego_latitia": {
+  "kr": "래티씨아",
+  "trcn": "蕾蒂希婭"
+ },
+ "ego_thepriceofsilence": {
+  "kr": "정적",
+  "jp": "静寂",
+  "cn": "死寂",
+  "trcn": "死寂"
+ }
+}

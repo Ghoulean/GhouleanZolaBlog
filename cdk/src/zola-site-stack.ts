@@ -1,18 +1,19 @@
 // adapted from: https://github.com/aws-samples/aws-cdk-examples/tree/4833109a2d24f804bd9e20a80b0d17be692db210/typescript/static-site
 
-import { StackProps, Stack, Duration, RemovalPolicy } from "aws-cdk-lib";
+import { StackProps, Stack, Duration, RemovalPolicy, CfnOutput } from "aws-cdk-lib";
 import {
     Certificate,
     CertificateValidation,
 } from "aws-cdk-lib/aws-certificatemanager";
 import {
     AllowedMethods,
+    CachePolicy,
     Distribution,
     OriginAccessIdentity,
     SecurityPolicyProtocol,
     ViewerProtocolPolicy,
 } from "aws-cdk-lib/aws-cloudfront";
-import { S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";
+import { S3BucketOrigin, S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";
 import { PolicyStatement, CanonicalUserPrincipal } from "aws-cdk-lib/aws-iam";
 import {
     ARecord,
@@ -27,10 +28,12 @@ import { Construct } from "constructs";
 import path = require("path");
 
 export interface ZolaSiteStackProps extends StackProps {
-    // e.g. site.com
     domainName: string;
     assetFileLocation: string;
+    ruinaViewerLocation: string;
 }
+
+const RUINA_VIEWER_PREFIX = "ruina-sprite-viewer";
 
 export class ZolaSiteStack extends Stack {
     readonly zone: IHostedZone;
@@ -38,6 +41,7 @@ export class ZolaSiteStack extends Stack {
     readonly cloudfrontOAI: OriginAccessIdentity;
     readonly siteBucket: Bucket;
     readonly wwwBucket: Bucket;
+    readonly spriteAssetBucket: Bucket;
     readonly certificate: Certificate;
     readonly wwwCloudfrontDistribution: Distribution;
     readonly siteCloudfrontDistribution: Distribution;
@@ -48,13 +52,12 @@ export class ZolaSiteStack extends Stack {
         this.zone = HostedZone.fromLookup(this, "Zone", {
             domainName: props.domainName,
         });
-        // no https:// in front
+  
         this.wwwDomain = `www.${props.domainName}`;
         this.cloudfrontOAI = new OriginAccessIdentity(this, "cloudfront-OAI", {
             comment: `OAI for ${id}`,
         });
 
-        // Content bucket (www.site.com)
         this.wwwBucket = new Bucket(this, "WwwBucket", {
             bucketName: this.wwwDomain,
             publicReadAccess: true,
@@ -69,7 +72,7 @@ export class ZolaSiteStack extends Stack {
             websiteIndexDocument: "index.html",
             websiteErrorDocument: "404.html",
         });
-        // Root bucket (site.com)
+
         this.siteBucket = new Bucket(this, "SiteBucket", {
             bucketName: props.domainName,
             publicReadAccess: false,
@@ -81,7 +84,14 @@ export class ZolaSiteStack extends Stack {
             },
         });
 
-        // Grant access to cloudfront
+        this.spriteAssetBucket = new Bucket(this, "SpriteAssetBucket", {
+            publicReadAccess: false,
+            blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+            enforceSSL: true,
+            removalPolicy: RemovalPolicy.RETAIN,
+            autoDeleteObjects: false,
+        });
+
         this.wwwBucket.addToResourcePolicy(
             new PolicyStatement({
                 actions: ["s3:GetObject"],
@@ -105,14 +115,12 @@ export class ZolaSiteStack extends Stack {
             })
         );
 
-        // TLS certificate
         this.certificate = new Certificate(this, "Certificate", {
             domainName: props.domainName,
             subjectAlternativeNames: [`*.${props.domainName}`],
             validation: CertificateValidation.fromDns(this.zone),
         });
 
-        // CloudFront distribution
         this.wwwCloudfrontDistribution = new Distribution(
             this,
             "WwwDistribution",
@@ -137,6 +145,18 @@ export class ZolaSiteStack extends Stack {
                     allowedMethods: AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
                     viewerProtocolPolicy:
                         ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+                },
+                additionalBehaviors: {
+                    "/assets/*": {
+                        origin: S3BucketOrigin.withOriginAccessControl(
+                            this.spriteAssetBucket
+                        ),
+                        compress: true,
+                        allowedMethods: AllowedMethods.ALLOW_GET_HEAD,
+                        cachePolicy: CachePolicy.CACHING_OPTIMIZED,
+                        viewerProtocolPolicy:
+                            ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+                    },
                 },
             }
         );
@@ -168,7 +188,6 @@ export class ZolaSiteStack extends Stack {
             }
         );
 
-        // Route53 alias record for the CloudFront distribution
         new ARecord(this, "WwwAliasRecord", {
             recordName: this.wwwDomain,
             target: RecordTarget.fromAlias(
@@ -184,7 +203,6 @@ export class ZolaSiteStack extends Stack {
             zone: this.zone,
         });
 
-        // Deploy site contents to S3 bucket
         new BucketDeployment(this, "DeployWithInvalidation", {
             sources: [
                 Source.asset(path.join(__dirname, props.assetFileLocation)),
@@ -193,6 +211,23 @@ export class ZolaSiteStack extends Stack {
             distribution: this.wwwCloudfrontDistribution,
             distributionPaths: ["/*"],
             memoryLimit: 1024,
+            exclude: [`${RUINA_VIEWER_PREFIX}/*`],
+        });
+
+        /*new BucketDeployment(this, "DeployRuinaViewer", {
+            sources: [
+                Source.asset(path.join(__dirname, props.ruinaViewerLocation), {
+                    exclude: ["data"],
+                }),
+            ],
+            destinationBucket: this.wwwBucket,
+            destinationKeyPrefix: `${RUINA_VIEWER_PREFIX}/`,
+            distribution: this.wwwCloudfrontDistribution,
+            distributionPaths: [`/${RUINA_VIEWER_PREFIX}/*`],
+        });*/
+
+        new CfnOutput(this, "SpriteAssetBucketName", {
+            value: this.spriteAssetBucket.bucketName,
         });
     }
 }
