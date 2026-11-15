@@ -6,6 +6,8 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
 
+from remove_path_spaces import fix_json
+
 ROOT = Path(__file__).resolve().parent.parent
 VIEWER = ROOT / "viewer"
 INDEX = ROOT / "lor-extractor/out/index.json"
@@ -67,6 +69,7 @@ def main():
 
     with open(VIEWER / "enemy_pages.json", "w", encoding="utf-8") as f:
         json.dump(sorted(enemy), f, indent=1)
+    fix_json(VIEWER / "enemy_pages.json")
     print(f"{len(enemy)} enemy pages")
 
 

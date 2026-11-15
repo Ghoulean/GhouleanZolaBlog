@@ -142,7 +142,6 @@ h3 {
 .group-head .caret { transition: transform .15s; display: inline-block; width: 10px; }
 .group.collapsed .caret { transform: rotate(-90deg); }
 .group.collapsed .group-items { display: none; }
-.group-head .n { margin-left: auto; font-weight: 400; }
 .subgroup-head {
   display: flex;
   width: 100%;
@@ -160,7 +159,6 @@ h3 {
 .subgroup-head .caret { transition: transform .15s; display: inline-block; width: 10px; }
 .subgroup.collapsed .caret { transform: rotate(-90deg); }
 .subgroup.collapsed .subgroup-items { display: none; }
-.subgroup-head .n { margin-left: auto; font-weight: 400; }
 .subgroup-items .item { padding-left: 34px; }
 .item {
   display: block;
@@ -349,7 +347,7 @@ section:last-child { border-bottom: 0; }
   cursor: pointer;
 }
 .btn:hover { background: var(--hover); }
-.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn.primary:hover { filter: brightness(1.08); }
 .btn.ghost { background: none; }
 .btn:disabled { opacity: .5; cursor: default; }
@@ -458,8 +456,6 @@ summary::before { content: "\25B8"; color: var(--muted); transition: transform .
 details[open] > summary::before { transform: rotate(90deg); }
 summary .val { margin-left: auto; font-variant-numeric: tabular-nums; }
 .part-body { padding: 0 10px 10px; }
-.stepper { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
-.stepper button { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel-2); cursor: pointer; }
 .thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: 6px; max-height: 236px; overflow-y: auto; }
 .thumb {
   aspect-ratio: 1;
@@ -507,6 +503,10 @@ details.fold > summary { padding: 0; }
 details.fold > summary h3 { margin: 0; }
 .fold-body { margin-top: 10px; }
 #gift-controls > .row-btns { margin-top: 0; }
+#preload-section .field + .field { margin-top: 10px; }
+#preload-section .field { margin-bottom: 0; }
+#preload-parallel-value { width: 3ch; text-align: right; color: var(--text); }
+#preload-count { margin-top: 8px; }
 .disabled-block { opacity: .45; pointer-events: none; }
 #exp-info { margin: 4px 0 2px; min-height: 16px; }
 

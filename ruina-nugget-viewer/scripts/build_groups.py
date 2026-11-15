@@ -6,6 +6,8 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
 
+from remove_path_spaces import fix_json
+
 ROOT = Path(__file__).resolve().parent.parent
 VIEWER = ROOT / "viewer"
 INDEX = ROOT / "lor-extractor/out/index.json"
@@ -28,7 +30,12 @@ ALIASES = {
     "appearance_blue_philip_burn": "appearance_blue_philip",
     "appearance_myo2 1": "appearance_myo2",
 }
-RANK_OVERRIDES = {"appearance_theredmist": 6}
+RANK_OVERRIDES = {
+    "appearance_theredmist": 6,
+    "appearance_argalia": 7, "appearance_argalia2": 7, "appearance_twistedargalia": 7,
+    "appearance_elena": 7, "appearance_tanya": 7, "appearance_orangecross": 7,
+    "appearance_binah": None,
+}
 SEPHIRAH_OVERRIDES = {
     "Yesod": ["creature_butterfly_super", "ego_freischutz"],
     "Tiphereth": [
@@ -104,7 +111,10 @@ def main():
             out[iid] = out[src]
             missing.remove(iid)
     for iid, rank in RANK_OVERRIDES.items():
-        out[iid] = rank
+        if rank is None:
+            out.pop(iid, None)
+        else:
+            out[iid] = rank
         if iid in missing:
             missing.remove(iid)
     for seph, ids in SEPHIRAH_OVERRIDES.items():
@@ -115,6 +125,7 @@ def main():
 
     with open(VIEWER / "groups.json", "w", encoding="utf-8") as f:
         json.dump(dict(sorted(out.items())), f, indent=1, ensure_ascii=False)
+    fix_json(VIEWER / "groups.json")
     print(f"{len(out)} grouped, {len(missing)} missing:")
     for m in sorted(missing):
         print(" ", m)

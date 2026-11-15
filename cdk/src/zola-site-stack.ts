@@ -10,6 +10,7 @@ import {
     CachePolicy,
     Distribution,
     OriginAccessIdentity,
+    ResponseHeadersPolicy,
     SecurityPolicyProtocol,
     ViewerProtocolPolicy,
 } from "aws-cdk-lib/aws-cloudfront";
@@ -121,6 +122,22 @@ export class ZolaSiteStack extends Stack {
             validation: CertificateValidation.fromDns(this.zone),
         });
 
+        const longCacheHeadersPolicy = new ResponseHeadersPolicy(
+            this,
+            "LongCacheHeadersPolicy",
+            {
+                customHeadersBehavior: {
+                    customHeaders: [
+                        {
+                            header: "Cache-Control",
+                            value: "public, max-age=31536000, immutable",
+                            override: true,
+                        },
+                    ],
+                },
+            }
+        );
+
         this.wwwCloudfrontDistribution = new Distribution(
             this,
             "WwwDistribution",
@@ -154,6 +171,7 @@ export class ZolaSiteStack extends Stack {
                         compress: true,
                         allowedMethods: AllowedMethods.ALLOW_GET_HEAD,
                         cachePolicy: CachePolicy.CACHING_OPTIMIZED,
+                        responseHeadersPolicy: longCacheHeadersPolicy,
                         viewerProtocolPolicy:
                             ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                     },
@@ -214,7 +232,7 @@ export class ZolaSiteStack extends Stack {
             exclude: [`${RUINA_VIEWER_PREFIX}/*`],
         });
 
-        /*new BucketDeployment(this, "DeployRuinaViewer", {
+        new BucketDeployment(this, "DeployRuinaSpriteViewer", {
             sources: [
                 Source.asset(path.join(__dirname, props.ruinaViewerLocation), {
                     exclude: ["data"],
@@ -224,10 +242,6 @@ export class ZolaSiteStack extends Stack {
             destinationKeyPrefix: `${RUINA_VIEWER_PREFIX}/`,
             distribution: this.wwwCloudfrontDistribution,
             distributionPaths: [`/${RUINA_VIEWER_PREFIX}/*`],
-        });*/
-
-        new CfnOutput(this, "SpriteAssetBucketName", {
-            value: this.spriteAssetBucket.bucketName,
         });
     }
 }

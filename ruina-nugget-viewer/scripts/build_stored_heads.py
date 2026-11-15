@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from remove_path_spaces import fix_json
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "lor-extractor/out"
 VIEWER = ROOT / "viewer"
@@ -24,6 +26,7 @@ def main():
             heads.append(key)
     with open(VIEWER / "stored_heads.json", "w", encoding="utf-8") as f:
         json.dump(heads, f, indent=0)
+    fix_json(VIEWER / "stored_heads.json")
     print(len(heads), "appearances with a usable head")
 
 

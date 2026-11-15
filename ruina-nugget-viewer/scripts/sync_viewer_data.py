@@ -4,6 +4,8 @@ import shutil
 import sys
 from pathlib import Path
 
+import remove_path_spaces
+
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "lor-extractor/out"
 DST = ROOT / "viewer/data"
@@ -23,7 +25,7 @@ def ascii_name(name):
 
 if DST.exists():
     shutil.rmtree(DST)
-shutil.copytree(SRC, DST, ignore=shutil.ignore_patterns("preview"))
+shutil.copytree(SRC, DST, ignore=shutil.ignore_patterns("preview", "auras", "auras.json"))
 
 renames = {}
 missing = set()
@@ -60,3 +62,4 @@ leftover = [p for p in DST.rglob("*") if NON_ASCII.search(str(p.relative_to(DST)
 if leftover:
     sys.exit("non-ASCII paths remain:\n" + "\n".join(map(str, leftover)))
 print(f"copied {SRC} -> {DST}, renamed {len(renames)} files to ASCII")
+remove_path_spaces.main()
