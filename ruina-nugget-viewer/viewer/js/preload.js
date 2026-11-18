@@ -121,9 +121,53 @@ async function* jobs(key, pose) {
     for (const k of near) yield [k, null, "rest"];
 }
 
+async function queueFiles(files, live) {
+    const pending = [];
+    for (const file of files) {
+        if (hasImage(file)) {
+            pending.push(
+                loadImage(file).then(
+                    () => true,
+                    () => false
+                )
+            );
+            continue;
+        }
+        await acquire();
+        if (!live()) {
+            release();
+            return null;
+        }
+        pending.push(
+            idle()
+                .then(() => live() && loadImage(file, true).then(() => true))
+                .catch(() => false)
+                .finally(release)
+        );
+    }
+    return pending;
+}
+
+async function preloadHeads(app, head, live) {
+    const files = new Set();
+    for (const p of sortPoses(Object.keys(app.motions))) {
+        if (!live()) return false;
+        let items;
+        try {
+            items = await buildItems(app, app.motions[p], head);
+        } catch {
+            continue;
+        }
+        for (const it of items) if (it.headPart) files.add(it.sprite.file);
+    }
+    return live() && (await queueFiles(files, live)) !== null;
+}
+
 async function run(g, key, pose, head) {
     const live = () => g === gen;
     try {
+        if (!(await preloadHeads(await loadAppearance(key, true), head, live)))
+            return;
         for await (let [k, app, poses] of jobs(key, pose)) {
             if (!live()) return;
             if (!app) {
@@ -151,34 +195,11 @@ async function run(g, key, pose, head) {
                 } catch {
                     continue;
                 }
-                const pending = [];
-                for (const it of items) {
-                    const file = it.sprite.file;
-                    if (hasImage(file)) {
-                        pending.push(
-                            loadImage(file).then(
-                                () => true,
-                                () => false
-                            )
-                        );
-                        continue;
-                    }
-                    await acquire();
-                    if (!live()) {
-                        release();
-                        return;
-                    }
-                    pending.push(
-                        idle()
-                            .then(
-                                () =>
-                                    live() &&
-                                    loadImage(file, true).then(() => true)
-                            )
-                            .catch(() => false)
-                            .finally(release)
-                    );
-                }
+                const pending = await queueFiles(
+                    items.map((it) => it.sprite.file),
+                    live
+                );
+                if (!pending) return;
                 Promise.all(pending).then((ok) => {
                     if (ok.every(Boolean)) markLoaded(k, p);
                 });

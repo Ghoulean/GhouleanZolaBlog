@@ -401,6 +401,8 @@ export async function buildItems(app, motion, head = headSnapshot()) {
         if (root)
             for (const [g, prefab] of gifts)
                 items.push(...giftItems(motion, g, prefab, root));
+        for (let i = skinLayerCount; i < items.length; i++)
+            items[i].headPart = true;
     }
     const isHeadPart = (i) => i >= skinLayerCount;
     return items

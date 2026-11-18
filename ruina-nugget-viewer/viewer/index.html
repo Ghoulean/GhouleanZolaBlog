@@ -1,205 +1,455 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ruina Sprite Viewer</title>
-<link rel="stylesheet" href="style.css">
-<script>
-  (() => {
-    let t = null;
-    try { t = JSON.parse(localStorage.getItem("ruina-viewer:theme")); } catch {}
-    if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    document.documentElement.dataset.theme = t;
-  })();
-</script>
-</head>
-<body>
-<div id="app" class="left-open right-open">
-  <aside id="left" class="sidebar">
-    <div class="side-head">
-      <h1>Ruina Sprite Viewer</h1>
-      <button class="icon-btn" data-toggle="left" aria-label="Collapse list">&lsaquo;</button>
-    </div>
-    <div class="search-wrap">
-      <input id="search" type="search" placeholder="Search" autocomplete="off" spellcheck="false">
-    </div>
-    <nav id="list"></nav>
-  </aside>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ruina Sprite Viewer</title>
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            (() => {
+                let t = null;
+                try {
+                    t = JSON.parse(localStorage.getItem("ruina-viewer:theme"));
+                } catch {}
+                if (t !== "light" && t !== "dark")
+                    t = matchMedia("(prefers-color-scheme: light)").matches
+                        ? "light"
+                        : "dark";
+                document.documentElement.dataset.theme = t;
+            })();
+        </script>
+    </head>
+    <body>
+        <div id="app" class="left-open right-open">
+            <aside id="left" class="sidebar">
+                <div class="side-head">
+                    <h1>Ruina Sprite Viewer</h1>
+                    <button
+                        class="icon-btn"
+                        data-toggle="left"
+                        aria-label="Collapse list"
+                    >
+                        &lsaquo;
+                    </button>
+                </div>
+                <div class="search-wrap">
+                    <input
+                        id="search"
+                        type="search"
+                        placeholder="Search"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                </div>
+                <nav id="list"></nav>
+            </aside>
 
-  <main id="stage">
-    <div id="toolbar">
-      <button class="icon-btn edge" data-toggle="left" aria-label="Show list">&#9776;</button>
-      <div id="title-block">
-        <div id="skin-title">No appearance selected</div>      </div>
-      <div class="spacer"></div>
-      <div class="tool-group">
-        <button class="tool" id="zoom-out" aria-label="Zoom out">&minus;</button>
-        <input class="tool zoom-label" id="zoom-label" type="text" inputmode="numeric" value="100%" aria-label="Zoom percent">
-        <button class="tool" id="zoom-in" aria-label="Zoom in">+</button>
-      </div>
-      <div class="tool-group">
-        <button class="tool" id="reset-view">Reset</button>
-        <button class="tool" id="fit">Fit</button>
-        <button class="tool" id="flip" aria-pressed="false">Flip</button>
-      </div>
-      <div class="tool-group" id="bg-group" role="group" aria-label="Canvas background">
-        <button class="tool swatch" data-bg="checker" aria-pressed="true"><span class="sw sw-checker"></span></button>
-        <button class="tool swatch" data-bg="dark" aria-pressed="false"><span class="sw sw-dark"></span></button>
-        <button class="tool swatch" data-bg="light" aria-pressed="false"><span class="sw sw-light"></span></button>
-      </div>
-      <div class="tool-group">
-        <button class="tool" id="theme-toggle"></button>
-      </div>
-      <div class="lang-dd" id="lang-dd">
-        <div class="tool-group">
-          <button class="tool flag" id="lang-btn" aria-haspopup="listbox" aria-expanded="false"></button>
-        </div>
-        <ul class="lang-menu" id="lang-menu" role="listbox" hidden></ul>
-      </div>
-      <button class="icon-btn edge" data-toggle="right" aria-label="Show options">&#9881;</button>
-    </div>
-    <div id="poses" role="toolbar" aria-label="Pose" hidden></div>
-    <div id="canvas-wrap" class="bg-checker">
-      <canvas id="canvas"></canvas>
-      <div id="empty" class="overlay-msg">Loading...</div>
-      <div id="busy" hidden><span class="spinner"></span>Loading sprites</div>
-      <div id="layers-dock">
-        <div id="layers-panel" hidden>
-          <div class="lp-head">
-            <input type="checkbox" id="layers-all" checked aria-label="Toggle all layers">
-          </div>
-          <ol id="layers-list"></ol>
-        </div>
-        <div class="dock-row">
-          <button class="tool" id="layers-toggle" aria-expanded="false" aria-controls="layers-panel">Layers</button>
-        </div>
-      </div>
-    </div>
-  </main>
+            <main id="stage">
+                <div id="toolbar">
+                    <button
+                        class="icon-btn edge"
+                        data-toggle="left"
+                        aria-label="Show list"
+                    >
+                        &#9776;
+                    </button>
+                    <div id="title-block">
+                        <div id="skin-title">No appearance selected</div>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="tool-group">
+                        <button
+                            class="tool"
+                            id="zoom-out"
+                            aria-label="Zoom out"
+                        >
+                            &minus;
+                        </button>
+                        <input
+                            class="tool zoom-label"
+                            id="zoom-label"
+                            type="text"
+                            inputmode="numeric"
+                            value="100%"
+                            aria-label="Zoom percent"
+                        />
+                        <button class="tool" id="zoom-in" aria-label="Zoom in">
+                            +
+                        </button>
+                    </div>
+                    <div class="tool-group">
+                        <button class="tool" id="reset-view">Reset</button>
+                        <button class="tool" id="fit">Fit</button>
+                        <button class="tool" id="flip" aria-pressed="false">
+                            Flip
+                        </button>
+                    </div>
+                    <div
+                        class="tool-group"
+                        id="bg-group"
+                        role="group"
+                        aria-label="Canvas background"
+                    >
+                        <button
+                            class="tool swatch"
+                            data-bg="checker"
+                            aria-pressed="true"
+                        >
+                            <span class="sw sw-checker"></span>
+                        </button>
+                        <button
+                            class="tool swatch"
+                            data-bg="dark"
+                            aria-pressed="false"
+                        >
+                            <span class="sw sw-dark"></span>
+                        </button>
+                        <button
+                            class="tool swatch"
+                            data-bg="light"
+                            aria-pressed="false"
+                        >
+                            <span class="sw sw-light"></span>
+                        </button>
+                    </div>
+                    <div class="tool-group">
+                        <button class="tool" id="theme-toggle"></button>
+                    </div>
+                    <div class="lang-dd" id="lang-dd">
+                        <div class="tool-group">
+                            <button
+                                class="tool flag"
+                                id="lang-btn"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                            ></button>
+                        </div>
+                        <ul
+                            class="lang-menu"
+                            id="lang-menu"
+                            role="listbox"
+                            hidden
+                        ></ul>
+                    </div>
+                    <button
+                        class="icon-btn edge"
+                        data-toggle="right"
+                        aria-label="Show options"
+                    >
+                        &#9881;
+                    </button>
+                </div>
+                <div id="poses" role="toolbar" aria-label="Pose" hidden></div>
+                <div id="canvas-wrap" class="bg-checker">
+                    <canvas id="canvas"></canvas>
+                    <div id="empty" class="overlay-msg">Loading...</div>
+                    <div id="busy" hidden>
+                        <span class="spinner"></span>Loading sprites
+                    </div>
+                    <div id="layers-dock">
+                        <div id="layers-panel" hidden>
+                            <div class="lp-head">
+                                <input
+                                    type="checkbox"
+                                    id="layers-all"
+                                    checked
+                                    aria-label="Toggle all layers"
+                                />
+                            </div>
+                            <ol id="layers-list"></ol>
+                        </div>
+                        <div class="dock-row">
+                            <button
+                                class="tool"
+                                id="layers-toggle"
+                                aria-expanded="false"
+                                aria-controls="layers-panel"
+                            >
+                                Layers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
 
-  <aside id="right" class="sidebar">
-    <div class="side-head">
-      <h2>Options</h2>
-      <button class="icon-btn" data-toggle="right" aria-label="Collapse options">&rsaquo;</button>
-    </div>
-    <div class="side-scroll">
-      <section id="head-section">
-        <details class="fold" open>
-        <summary><h3>Librarian head</h3></summary>
-        <div class="fold-body">
-        <div id="head-controls">
-          <div class="seg" id="head-mode">
-            <button data-mode="stored">Default</button>
-            <button data-mode="fixed">Fixed head</button>
-            <button data-mode="custom">Custom</button>
-          </div>
+            <aside id="right" class="sidebar">
+                <div class="side-head">
+                    <h2>Options</h2>
+                    <button
+                        class="icon-btn"
+                        data-toggle="right"
+                        aria-label="Collapse options"
+                    >
+                        &rsaquo;
+                    </button>
+                </div>
+                <div class="side-scroll">
+                    <section id="head-section">
+                        <details class="fold" open>
+                            <summary><h3>Librarian head</h3></summary>
+                            <div class="fold-body">
+                                <div id="head-controls">
+                                    <div class="seg" id="head-mode">
+                                        <button data-mode="stored">
+                                            Default
+                                        </button>
+                                        <button data-mode="fixed">
+                                            Fixed head
+                                        </button>
+                                        <button data-mode="custom">
+                                            Custom
+                                        </button>
+                                    </div>
 
-          <div id="custom-controls">
-            <div class="row-btns">
-              <button class="btn" id="randomize">Randomize</button>
-              <button class="btn ghost" id="reset-custom">Reset</button>
-            </div>
-            <div class="colors">
-              <button class="color-item" data-color="hair" aria-pressed="false">Hair <span class="color-fill"></span></button>
-              <button class="color-item" data-color="eye" aria-pressed="false">Eyes <span class="color-fill"></span></button>
-              <button class="color-item" data-color="skin" aria-pressed="false">Skin <span class="color-fill"></span></button>
-            </div>
-            <div id="color-editor" hidden>
-              <label class="ce-hex-row">Hex <input id="ce-hex" class="mono" type="text" maxlength="7" spellcheck="false"></label>
-              <div id="ce-rows"></div>
-            </div>
-            <div id="parts"></div>
-          </div>
+                                    <div id="custom-controls">
+                                        <div class="row-btns">
+                                            <button class="btn" id="randomize">
+                                                Randomize
+                                            </button>
+                                            <button
+                                                class="btn ghost"
+                                                id="reset-custom"
+                                            >
+                                                Reset
+                                            </button>
+                                        </div>
+                                        <div class="colors">
+                                            <button
+                                                class="color-item"
+                                                data-color="hair"
+                                                aria-pressed="false"
+                                            >
+                                                Hair
+                                                <span class="color-fill"></span>
+                                            </button>
+                                            <button
+                                                class="color-item"
+                                                data-color="eye"
+                                                aria-pressed="false"
+                                            >
+                                                Eyes
+                                                <span class="color-fill"></span>
+                                            </button>
+                                            <button
+                                                class="color-item"
+                                                data-color="skin"
+                                                aria-pressed="false"
+                                            >
+                                                Skin
+                                                <span class="color-fill"></span>
+                                            </button>
+                                        </div>
+                                        <div id="color-editor" hidden>
+                                            <label class="ce-hex-row"
+                                                >Hex
+                                                <input
+                                                    id="ce-hex"
+                                                    class="mono"
+                                                    type="text"
+                                                    maxlength="7"
+                                                    spellcheck="false"
+                                            /></label>
+                                            <div id="ce-rows"></div>
+                                        </div>
+                                        <div id="parts"></div>
+                                    </div>
 
-          <div id="fixed-controls">
-            <div class="field">Head
-              <input id="fixed-head-search" type="search" placeholder="Search" autocomplete="off" spellcheck="false" aria-label="Search heads">
-              <div id="fixed-head-list"></div>
-            </div>
-          </div>
-        </div>
-        </div>
-        </details>
-      </section>
+                                    <div id="fixed-controls">
+                                        <div class="field">
+                                            Head
+                                            <input
+                                                id="fixed-head-search"
+                                                type="search"
+                                                placeholder="Search"
+                                                autocomplete="off"
+                                                spellcheck="false"
+                                                aria-label="Search heads"
+                                            />
+                                            <div id="fixed-head-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </section>
 
-      <section id="gift-section">
-        <details class="fold" open>
-          <summary><h3>Gifts <span id="gift-count" class="muted"></span></h3></summary>
-          <div class="fold-body" id="gift-controls">
-            <div class="row-btns">
-              <button class="btn" id="randomize-gifts">Randomize</button>
-              <button class="btn ghost" id="clear-gifts">Reset</button>
-            </div>
-            <div id="gifts"></div>
-          </div>
-        </details>
-      </section>
+                    <section id="gift-section">
+                        <details class="fold" open>
+                            <summary>
+                                <h3>
+                                    Gifts
+                                    <span id="gift-count" class="muted"></span>
+                                </h3>
+                            </summary>
+                            <div class="fold-body" id="gift-controls">
+                                <div class="row-btns">
+                                    <button class="btn" id="randomize-gifts">
+                                        Randomize
+                                    </button>
+                                    <button class="btn ghost" id="clear-gifts">
+                                        Reset
+                                    </button>
+                                </div>
+                                <div id="gifts"></div>
+                            </div>
+                        </details>
+                    </section>
 
-      <section id="preload-section">
-        <details class="fold" open>
-        <summary><h3>Local Storage</h3></summary>
-        <div class="fold-body">
-          <label class="check"><input type="checkbox" id="preload" checked> Load assets in background</label>
-          <div class="field" id="preload-parallel-field">Parallel downloads
-            <div class="scale-row">
-              <input type="range" id="preload-parallel" min="1" max="20" step="1" value="6" aria-label="Parallel downloads">
-              <span id="preload-parallel-value" class="mono">6</span>
-            </div>
-          </div>
-          <div id="preload-count" class="muted small"></div>
-        </div>
-        </details>
-      </section>
+                    <section id="preload-section">
+                        <details class="fold" open>
+                            <summary><h3>Local Storage</h3></summary>
+                            <div class="fold-body">
+                                <label class="check"
+                                    ><input
+                                        type="checkbox"
+                                        id="preload"
+                                        checked
+                                    />
+                                    Load assets in background</label
+                                >
+                                <div class="field" id="preload-parallel-field">
+                                    Parallel downloads
+                                    <div class="scale-row">
+                                        <input
+                                            type="range"
+                                            id="preload-parallel"
+                                            min="1"
+                                            max="20"
+                                            step="1"
+                                            value="6"
+                                            aria-label="Parallel downloads"
+                                        />
+                                        <span
+                                            id="preload-parallel-value"
+                                            class="mono"
+                                            >6</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    id="preload-count"
+                                    class="muted small"
+                                ></div>
+                            </div>
+                        </details>
+                    </section>
 
-      <section id="export-section">
-        <details class="fold" open>
-        <summary><h3>Export</h3></summary>
-        <div class="fold-body">
-        <div class="field-grid">
-          <label class="field">Format
-            <select id="exp-format">
-              <option value="image/png">PNG</option>
-              <option value="image/webp">WebP</option>
-              <option value="image/jpeg">JPEG</option>
-            </select>
-          </label>
-          <div class="field wide">Scale
-            <div class="scale-row">
-              <input type="range" id="exp-scale-range" min="10" max="990" step="10" value="100" aria-label="Export scale slider">
-              <input type="text" id="exp-scale" class="mono" inputmode="numeric" value="100%" aria-label="Export scale percent">
-            </div>
-          </div>
-          <label class="field">Background
-            <select id="exp-bg">
-              <option value="transparent">Transparent</option>
-              <option value="color">Solid Color</option>
-            </select>
-          </label>
-          <label class="field" id="exp-bg-color-field">Color
-            <input type="color" id="exp-bg-color" value="#1c1c22">
-          </label>
-          <label class="field">Padding (px)
-            <input type="number" id="exp-pad" value="16" min="0" max="512" step="4">
-          </label>
-          <label class="field" id="exp-quality-field">Quality
-            <input type="range" id="exp-quality" min="0.5" max="1" step="0.01" value="0.92">
-          </label>
+                    <section id="export-section">
+                        <details class="fold" open>
+                            <summary><h3>Export</h3></summary>
+                            <div class="fold-body">
+                                <div class="field-grid">
+                                    <label class="field"
+                                        >Format
+                                        <select id="exp-format">
+                                            <option value="image/png">
+                                                PNG
+                                            </option>
+                                            <option value="image/webp">
+                                                WebP
+                                            </option>
+                                            <option value="image/jpeg">
+                                                JPEG
+                                            </option>
+                                        </select>
+                                    </label>
+                                    <div class="field wide">
+                                        Scale
+                                        <div class="scale-row">
+                                            <input
+                                                type="range"
+                                                id="exp-scale-range"
+                                                min="10"
+                                                max="990"
+                                                step="10"
+                                                value="100"
+                                                aria-label="Export scale slider"
+                                            />
+                                            <input
+                                                type="text"
+                                                id="exp-scale"
+                                                class="mono"
+                                                inputmode="numeric"
+                                                value="100%"
+                                                aria-label="Export scale percent"
+                                            />
+                                        </div>
+                                    </div>
+                                    <label class="field"
+                                        >Background
+                                        <select id="exp-bg">
+                                            <option value="transparent">
+                                                Transparent
+                                            </option>
+                                            <option value="color">
+                                                Solid Color
+                                            </option>
+                                        </select>
+                                    </label>
+                                    <label class="field" id="exp-bg-color-field"
+                                        >Color
+                                        <input
+                                            type="color"
+                                            id="exp-bg-color"
+                                            value="#1c1c22"
+                                        />
+                                    </label>
+                                    <label class="field"
+                                        >Padding (px)
+                                        <input
+                                            type="number"
+                                            id="exp-pad"
+                                            value="16"
+                                            min="0"
+                                            max="512"
+                                            step="4"
+                                        />
+                                    </label>
+                                    <label class="field" id="exp-quality-field"
+                                        >Quality
+                                        <input
+                                            type="range"
+                                            id="exp-quality"
+                                            min="0.5"
+                                            max="1"
+                                            step="0.01"
+                                            value="0.92"
+                                        />
+                                    </label>
+                                </div>
+                                <label class="check"
+                                    ><input
+                                        type="checkbox"
+                                        id="exp-flip"
+                                        checked
+                                    />
+                                    Match canvas flip</label
+                                >
+                                <div
+                                    id="exp-info"
+                                    class="muted small mono"
+                                ></div>
+                                <div class="row-btns">
+                                    <button class="btn primary" id="export">
+                                        Download
+                                    </button>
+                                    <button class="btn ghost" id="copy">
+                                        Copy to clipboard
+                                    </button>
+                                </div>
+                                <button class="btn" id="export-all" disabled>
+                                    Download all poses (.zip)
+                                </button>
+                                <div
+                                    id="export-all-status"
+                                    class="muted small"
+                                ></div>
+                            </div>
+                        </details>
+                    </section>
+                </div>
+            </aside>
         </div>
-        <label class="check"><input type="checkbox" id="exp-flip" checked> Match canvas flip</label>
-        <div id="exp-info" class="muted small mono"></div>
-        <div class="row-btns">
-          <button class="btn primary" id="export">Download</button>
-          <button class="btn ghost" id="copy">Copy to clipboard</button>
-        </div>
-        <button class="btn" id="export-all" disabled>Download all poses (.zip)</button>
-        <div id="export-all-status" class="muted small"></div>
-        </div>
-        </details>
-      </section>
-    </div>
-  </aside>
-</div>
-<script type="module" src="js/main.js"></script>
-</body>
+        <script type="module" src="js/main.js"></script>
+    </body>
 </html>
