@@ -267,7 +267,8 @@ function buildGifts(data) {
             .map((g) => ({
                 id: g.id,
                 name:
-                    (`${g.prefix} ${g.postfix}`.trim() || `Gift ${g.id}`) +
+                    (`${g.prefix} ${g.postfix}`.trim() ||
+                        `Battle Symbol ${g.id}`) +
                     (data.prefabs[g.prefab].aura ? "*" : ""),
             }))
             .sort((a, b) => a.name.localeCompare(b.name));

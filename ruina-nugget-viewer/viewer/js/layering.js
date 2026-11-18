@@ -211,6 +211,7 @@ function giftItems(motion, gift, prefab, root) {
             ...r,
             ...compose(root, r),
             order: r.role in orders ? orders[r.role] : r.order,
+            gift: true,
             layerKind: "Gift (" + pos + ")",
             layerName: `${gift.prefab} ${r.role}`,
         });
@@ -411,6 +412,7 @@ export async function buildItems(app, motion, head = headSnapshot()) {
             (a, b) =>
                 a.it.order - b.it.order ||
                 isHeadPart(b.i) - isHeadPart(a.i) ||
+                !!b.it.gift - !!a.it.gift ||
                 a.i - b.i
         )
         .map((x) => x.it);
