@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lobotomy Corporation Sprite Viewer</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  (() => {
+    let t = null;
+    try { t = JSON.parse(localStorage.getItem("lobo-viewer:theme")); } catch {}
+    if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
+</head>
+<body>
+<div id="app" class="left-open right-open">
+  <aside id="left" class="sidebar">
+    <div class="side-head">
+      <h1>Lobocorp Sprite Viewer</h1>
+      <button class="icon-btn" data-toggle="left" title="Collapse list">&lsaquo;</button>
+    </div>
+    <div class="tab-bar" role="tablist" hidden>
+      <button role="tab" data-tab="prefabs">Prefabs</button>
+      <button role="tab" data-tab="canvas">Canvas</button>
+      <button role="tab" data-tab="options">Options</button>
+    </div>
+    <div class="tab-pane" data-tab="prefabs" role="tabpanel">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search" autocomplete="off" spellcheck="false">
+      </div>
+      <div id="cat-filter" class="chips"></div>
+      <div id="list-count" class="muted small"></div>
+      <nav id="list"></nav>
+    </div>
+    <div class="tab-pane" data-tab="canvas" role="tabpanel" hidden>
+      <div class="side-scroll">
+        <section>
+          <details class="fold" open>
+            <summary><h3>Canvas</h3></summary>
+            <div class="fold-body" id="slot-canvas-controls"></div>
+          </details>
+        </section>
+        <section id="anim-section">
+          <details class="fold" open>
+            <summary><h3>Animation</h3></summary>
+            <div class="fold-body" id="slot-anim-menu"></div>
+          </details>
+        </section>
+        <section>
+          <details class="fold" open>
+            <summary><h3>Layers <span id="layers-count" class="muted"></span></h3></summary>
+            <div class="fold-body" id="slot-layers"></div>
+          </details>
+        </section>
+      </div>
+    </div>
+    <div class="tab-pane" data-tab="options" role="tabpanel" hidden>
+      <div class="side-scroll">
+        <section>
+          <details class="fold" open>
+            <summary><h3>Display</h3></summary>
+            <div class="fold-body" id="slot-app-controls"></div>
+          </details>
+        </section>
+        <div id="slot-options"></div>
+      </div>
+    </div>
+  </aside>
+  <div id="scrim"></div>
+
+  <main id="stage">
+    <div id="toolbar">
+      <button class="icon-btn edge" data-toggle="left" title="Show list">&#9776;</button>
+      <div id="title-block">
+        <div id="entity-title">Nothing selected</div>
+      </div>
+      <div class="spacer"></div>
+      <div id="canvas-controls">
+        <div class="tool-group">
+          <button class="tool" data-act="zoom-out" title="Zoom out (-)">&minus;</button>
+          <input class="tool zoom-label" type="text" inputmode="numeric" value="100%" title="Zoom (10-990%)" aria-label="Zoom percent">
+          <button class="tool" data-act="zoom-in" title="Zoom in (+)">+</button>
+        </div>
+        <div class="tool-group">
+          <button class="tool" data-act="reset" title="Reset to 100% and re-center">Default</button>
+          <button class="tool" data-act="fit" title="Fit to view (0)">Fit</button>
+          <button class="tool" data-act="flip" title="Flip horizontally (F)" aria-pressed="false">Flip</button>
+        </div>
+        <div class="tool-group bg-group" role="group" title="Canvas background" aria-label="Canvas background">
+          <button class="tool swatch" data-bg="checker" aria-pressed="true"><span class="sw sw-checker"></span></button>
+          <button class="tool swatch" data-bg="dark" aria-pressed="false"><span class="sw sw-dark"></span></button>
+          <button class="tool swatch" data-bg="light" aria-pressed="false"><span class="sw sw-light"></span></button>
+        </div>
+      </div>
+      <div id="app-controls">
+        <div class="tool-group">
+          <button class="tool" id="theme-toggle"></button>
+        </div>
+        <div class="lang-dd" id="lang-dd">
+          <div class="tool-group">
+            <button class="tool flag" id="lang-btn" aria-haspopup="listbox" aria-expanded="false"></button>
+          </div>
+          <ul class="lang-menu" id="lang-menu" role="listbox" hidden></ul>
+        </div>
+      </div>
+      <button class="icon-btn edge" data-toggle="right" title="Show options">&#9881;</button>
+    </div>
+    <details id="anims" hidden>
+      <summary>
+        <span class="anim-field">Part <span id="part-value" class="anim-value"></span></span>
+        <span class="anim-field">Animation <span id="anim-value" class="anim-value"></span></span>
+      </summary>
+      <div id="anim-menu"></div>
+    </details>
+    <div id="canvas-wrap" class="bg-checker">
+      <canvas id="canvas"></canvas>
+      <div id="disclaimer" role="note">This site is an unofficial fan-made project and is not affiliated with, endorsed by, or sponsored by Project Moon. Lobotomy Corporation and all related characters, names, marks, emblems, and images are trademarks of Project Moon.</div>
+      <div id="empty" class="overlay-msg">Pick something from the list.</div>
+      <div id="loading" class="overlay-msg" hidden>Loading...</div>
+      <div id="load-error" class="overlay-msg" hidden></div>
+      <div id="layers-dock">
+        <div id="layers-popover" hidden>
+          <div id="layers-panel">
+            <div class="lp-head">
+              <input type="checkbox" id="layers-all" checked aria-label="Toggle all layers">
+            </div>
+            <ol id="layers-list"></ol>
+          </div>
+        </div>
+        <div class="dock-row">
+          <button class="tool" id="layers-toggle" aria-expanded="false" aria-controls="layers-popover">Layers</button>
+        </div>
+      </div>
+    </div>
+    <div id="playbar">
+      <div class="tool-group">
+        <button class="tool" id="step-back" title="Previous frame (,)">&#9664;&#9646;</button>
+        <button class="tool" id="play" title="Play/pause (space)">&#10074;&#10074;</button>
+        <button class="tool" id="step-fwd" title="Next frame (.)">&#9646;&#9654;</button>
+      </div>
+      <input id="scrub" type="range" min="0" max="1000" value="0" step="1" aria-label="Animation time">
+      <span id="time" class="mono small">0.00 / 0.00 s</span>
+      <label class="field inline">Speed
+        <select id="speed">
+          <option value="0.25">0.25x</option>
+          <option value="0.5">0.5x</option>
+          <option value="1" selected>1x</option>
+          <option value="2">2x</option>
+        </select>
+      </label>
+      <button class="tool solo" id="loop" aria-pressed="true" title="Loop (L)">Loop</button>
+    </div>
+  </main>
+
+  <aside id="right" class="sidebar">
+    <div class="side-head">
+      <h2>Options</h2>
+      <button class="icon-btn" data-toggle="right" title="Collapse options">&rsaquo;</button>
+    </div>
+    <div class="side-scroll">
+      <div id="options-body">
+
+      <section id="custom-section">
+        <details class="fold" open>
+        <summary><h3>Customization</h3></summary>
+        <div class="fold-body">
+      <div id="abno-options">
+        <div class="sub-block" id="skin-section">
+          <h4>Skin</h4>
+          <label class="field">Spine skin
+            <select id="skin"></select>
+          </label>
+        </div>
+      </div>
+
+      <div id="department-options" class="sub-block">
+        <div class="field-grid">
+          <label class="field">Department
+            <select id="department"></select>
+          </label>
+          <label class="field">Service level
+            <select id="service-level"></select>
+          </label>
+        </div>
+        <div class="field">Face
+          <div class="seg" id="expression">
+            <button data-v="default">Default</button>
+            <button data-v="battle">Battle</button>
+            <button data-v="panic">Panic</button>
+            <button data-v="dead">Dead</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="employee-options">
+        <div class="sub-block">
+          <h4>Appearance</h4>
+          <div class="row-btns">
+            <button class="btn" id="randomize">Randomise</button>
+            <button class="btn ghost" id="reset-appearance">Reset</button>
+          </div>
+          <div class="colors">
+            <button class="color-item" data-color="hair" aria-pressed="false">Hair <span class="color-fill"></span></button>
+          </div>
+          <div id="color-editor" hidden>
+            <label class="ce-hex-row">Hex <input id="ce-hex" class="mono" type="text" maxlength="7" spellcheck="false"></label>
+            <div id="ce-rows"></div>
+          </div>
+          <div id="parts"></div>
+        </div>
+
+        <div class="sub-block">
+          <h4>Equipment</h4>
+          <label class="field">E.G.O Suit
+            <select id="armor"></select>
+          </label>
+          <label class="field">E.G.O Weapon
+            <select id="weapon"></select>
+          </label>
+        </div>
+      </div>
+        </div>
+        </details>
+      </section>
+
+      <section id="gift-section">
+        <details class="fold" open>
+          <summary><h3>E.G.O Gifts <span id="gift-count" class="muted"></span></h3></summary>
+          <div class="fold-body" id="gift-controls">
+            <div class="row-btns">
+              <button class="btn" id="randomize-gifts">Randomise</button>
+              <button class="btn ghost" id="clear-gifts">Reset</button>
+            </div>
+            <div id="gifts"></div>
+          </div>
+        </details>
+      </section>
+
+      <section id="export-section">
+        <details class="fold" open>
+        <summary><h3>Export</h3></summary>
+        <div class="fold-body">
+        <div class="seg" id="exp-kind">
+          <button data-v="still">Still frame</button>
+          <button data-v="anim">Animation</button>
+        </div>
+        <div class="field-grid">
+          <label class="field">Format
+            <select id="exp-format"></select>
+          </label>
+          <div class="field wide">Scale
+            <div class="scale-row">
+              <input type="range" id="exp-scale-range" min="10" max="990" step="10" value="100" aria-label="Export scale slider">
+              <input type="text" id="exp-scale" class="mono" inputmode="numeric" value="100%" aria-label="Export scale percent">
+            </div>
+          </div>
+          <label class="field">Background
+            <select id="exp-bg">
+              <option value="transparent">Transparent</option>
+              <option value="color">Solid colour</option>
+            </select>
+          </label>
+          <label class="field" id="exp-bg-color-field">Colour
+            <input type="color" id="exp-bg-color" value="#1c1c22">
+          </label>
+          <label class="field">Padding (px)
+            <input type="number" id="exp-pad" value="16" min="0" max="512" step="4">
+          </label>
+          <label class="field" id="exp-fps-field">FPS
+            <select id="exp-fps"></select>
+          </label>
+        </div>
+        <label class="check"><input type="checkbox" id="exp-flip"> Match canvas flip</label>
+        <div id="exp-info" class="muted small mono"></div>
+        <div class="row-btns">
+          <button class="btn primary" id="export">Download</button>
+          <button class="btn ghost" id="copy">Copy PNG</button>
+        </div>
+        <button class="btn" id="export-all">Download all animations (.zip)</button>
+        <div id="export-status" class="muted small"></div>
+        </div>
+        </details>
+      </section>
+      </div>
+    </div>
+  </aside>
+</div>
+<script src="vendor/spine-webgl.js"></script>
+<script src="render.js"></script>
+<script src="scene.js"></script>
+<script src="export.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>
