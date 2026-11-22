@@ -13,6 +13,7 @@ new ZolaSiteStack(app, "ZolaSiteStack", {
     domainName: process.env["DOMAIN_NAME"]!,
     assetFileLocation: "../../zola/public",
     ruinaViewerLocation: "../../ruina-nugget-viewer/viewer",
+    lobocorpViewerLocation: "../../lobocorp-sprite-viewer/viewer",
 });
 
 app.synth();

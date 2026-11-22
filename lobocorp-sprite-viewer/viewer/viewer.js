@@ -1,6 +1,7 @@
 "use strict";
 
-const DATA_ROOT = (new URLSearchParams(location.search).get("data") || "data/").replace(/\/?$/, "/");
+const IS_LOCAL = location.protocol === "file:" || ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
+const DATA_ROOT = (new URLSearchParams(location.search).get("data") || (IS_LOCAL ? "data/" : "/assets/lobocorp/")).replace(/\/?$/, "/");
 const LIST_GROUPS = [
   { key: "nugget", label: "Nugget" },
   { key: "abno", label: "Abnormalities" },
@@ -2321,5 +2322,7 @@ async function init() {
   syncUrl();
   renderAll();
 }
+
+if (!IS_LOCAL && "serviceWorker" in navigator) navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => {});
 
 init();

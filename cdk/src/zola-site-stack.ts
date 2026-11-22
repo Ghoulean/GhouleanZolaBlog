@@ -32,9 +32,11 @@ export interface ZolaSiteStackProps extends StackProps {
     domainName: string;
     assetFileLocation: string;
     ruinaViewerLocation: string;
+    lobocorpViewerLocation: string;
 }
 
 const RUINA_VIEWER_PREFIX = "ruina-sprite-viewer";
+const LOBOCORP_VIEWER_PREFIX = "lobocorp-sprite-viewer";
 
 export class ZolaSiteStack extends Stack {
     readonly zone: IHostedZone;
@@ -229,7 +231,7 @@ export class ZolaSiteStack extends Stack {
             distribution: this.wwwCloudfrontDistribution,
             distributionPaths: ["/*"],
             memoryLimit: 1024,
-            exclude: [`${RUINA_VIEWER_PREFIX}/*`],
+            exclude: [`${RUINA_VIEWER_PREFIX}/*`, `${LOBOCORP_VIEWER_PREFIX}/*`],
         });
 
         new BucketDeployment(this, "DeployRuinaSpriteViewer", {
@@ -242,6 +244,18 @@ export class ZolaSiteStack extends Stack {
             destinationKeyPrefix: `${RUINA_VIEWER_PREFIX}/`,
             distribution: this.wwwCloudfrontDistribution,
             distributionPaths: [`/${RUINA_VIEWER_PREFIX}/*`],
+        });
+
+        new BucketDeployment(this, "DeployLobocorpSpriteViewer", {
+            sources: [
+                Source.asset(path.join(__dirname, props.lobocorpViewerLocation), {
+                    exclude: ["data"],
+                }),
+            ],
+            destinationBucket: this.wwwBucket,
+            destinationKeyPrefix: `${LOBOCORP_VIEWER_PREFIX}/`,
+            distribution: this.wwwCloudfrontDistribution,
+            distributionPaths: [`/${LOBOCORP_VIEWER_PREFIX}/*`],
         });
     }
 }
