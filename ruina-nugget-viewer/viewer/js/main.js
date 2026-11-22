@@ -1,3 +1,4 @@
+import { initCanvasControls } from "./canvas-controls.js";
 import { initColorEditor } from "./color-editor.js";
 import { DEFAULT_CUSTOM, DEFAULT_SKIN, IS_LOCAL } from "./config.js";
 import { $ } from "./dom.js";
@@ -16,40 +17,19 @@ import {
     renderFixedHeads,
 } from "./head-panel.js";
 import { LANGUAGES, initLangMenu, renderLangGroup } from "./lang.js";
-import { setLayersOpen, toggleAllLayers } from "./layers-panel.js";
+import { initLayersPanel } from "./layers-panel.js";
+import { initPanels } from "./layout.js";
 import { loadIndex, renderList } from "./list.js";
+import { initPoses } from "./poses.js";
 import { initPreloadSetting, updateLoadedCount } from "./preload.js";
-import {
-    selectPose,
-    selectSkin,
-    showError,
-    stepPose,
-    stepSkin,
-} from "./selection.js";
+import { selectSkin, showError, stepPose, stepSkin } from "./selection.js";
 import { state, store } from "./state.js";
+import { initTheme } from "./theme.js";
 import { parseUrl, readHeadParams } from "./url.js";
-import {
-    draw,
-    fitView,
-    resetView,
-    resizeCanvas,
-    setFlip,
-    setZoomPct,
-    stepZoom,
-    wrap,
-    zoomPct,
-} from "./view.js";
+import { fitView, resizeCanvas, setFlip, stepZoom, wrap } from "./view.js";
 
 if (!IS_LOCAL && "serviceWorker" in navigator)
     navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => {});
-
-export function setPanel(side, open) {
-    const app = $("#app");
-    app.classList.toggle(side + "-open", open);
-    if (!matchMedia("(max-width: 860px)").matches)
-        store.set("panel-" + side, open);
-    setTimeout(resizeCanvas, 200);
-}
 
 function init() {
     const saved = store.get("head", null);
@@ -57,24 +37,11 @@ function init() {
         state.headMode = saved.headMode || state.headMode;
         state.custom = { ...DEFAULT_CUSTOM, ...saved.custom };
         state.fixedHead = saved.fixedHead || state.fixedHead;
+        state.fixedSkinColor = saved.fixedSkinColor || null;
         state.gifts = saved.gifts || {};
     }
     state.collapsed = new Set(store.get("collapsed", []));
-    const mobile = matchMedia("(max-width: 860px)").matches;
-    for (const side of ["left", "right"])
-        $("#app").classList.toggle(
-            side + "-open",
-            mobile ? false : store.get("panel-" + side, true)
-        );
-    setBg(store.get("bg", "checker"));
-
-    document.querySelectorAll("[data-toggle]").forEach((b) => {
-        b.onclick = () =>
-            setPanel(
-                b.dataset.toggle,
-                !$("#app").classList.contains(b.dataset.toggle + "-open")
-            );
-    });
+    initPanels();
     $("#search").addEventListener("input", (e) => {
         state.filter.text = e.target.value;
         renderList();
@@ -98,67 +65,10 @@ function init() {
             fhs.blur();
         }
     });
-    $("#layers-toggle").onclick = () =>
-        setLayersOpen($("#layers-panel").hidden);
-    $("#layers-all").onchange = toggleAllLayers;
-    $("#zoom-in").onclick = () => stepZoom(1);
-    $("#zoom-out").onclick = () => stepZoom(-1);
-    const zl = $("#zoom-label");
-    zl.addEventListener("focus", () => zl.select());
-    zl.addEventListener("change", () => {
-        const n = parseFloat(zl.value.replace(/[^\d.]/g, ""));
-        zl.blur();
-        if (Number.isFinite(n)) setZoomPct(n);
-        else draw();
-    });
-    zl.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") zl.blur();
-        if (e.key === "Escape") {
-            zl.value = zoomPct() + "%";
-            zl.blur();
-        }
-    });
-    zl.addEventListener("blur", () => {
-        zl.value = zoomPct() + "%";
-    });
-    $("#reset-view").onclick = resetView;
-    const poseBar = $("#poses");
-    poseBar.onclick = (e) => {
-        const b = e.target.closest(".pose-btn");
-        if (b) {
-            selectPose(b.dataset.pose);
-            b.blur();
-        }
-    };
-    poseBar.addEventListener(
-        "wheel",
-        (e) => {
-            if (
-                !e.deltaY ||
-                Math.abs(e.deltaX) > Math.abs(e.deltaY) ||
-                poseBar.scrollWidth <= poseBar.clientWidth
-            )
-                return;
-            poseBar.scrollLeft += e.deltaY;
-            e.preventDefault();
-        },
-        { passive: false }
-    );
-    $("#fit").onclick = fitView;
-    $("#flip").onclick = () => setFlip(!state.view.flip);
-    document.querySelectorAll("#bg-group [data-bg]").forEach((b) => {
-        b.onclick = () => setBg(b.dataset.bg);
-    });
-    $("#theme-toggle").onclick = () =>
-        setTheme(
-            document.documentElement.dataset.theme === "light"
-                ? "dark"
-                : "light"
-        );
-    setTheme(
-        document.documentElement.dataset.theme === "light" ? "light" : "dark",
-        false
-    );
+    initLayersPanel();
+    initCanvasControls();
+    initPoses();
+    initTheme();
 
     document.querySelectorAll("#head-mode button").forEach((b) => {
         b.onclick = () => {
@@ -249,36 +159,6 @@ function init() {
                 ?.scrollIntoView({ block: "center" });
         })
         .catch(showError);
-}
-
-const THEME_ICONS = {
-    dark: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>`,
-    light:
-        `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/>` +
-        [0, 45, 90, 135, 180, 225, 270, 315]
-            .map(
-                (a) => `<path d="M12 2.5v2.5" transform="rotate(${a} 12 12)"/>`
-            )
-            .join("") +
-        `</svg>`,
-};
-
-function setTheme(theme, save = true) {
-    document.documentElement.dataset.theme = theme;
-    if (save) store.set("theme", theme);
-    const b = $("#theme-toggle");
-    const other = theme === "dark" ? "light" : "dark";
-    b.innerHTML = THEME_ICONS[theme];
-    b.setAttribute("aria-label", `Switch to ${other} mode`);
-}
-
-function setBg(bg) {
-    wrap.classList.remove("bg-checker", "bg-dark", "bg-light");
-    wrap.classList.add("bg-" + bg);
-    document
-        .querySelectorAll("#bg-group [data-bg]")
-        .forEach((b) => b.setAttribute("aria-pressed", b.dataset.bg === bg));
-    store.set("bg", bg);
 }
 
 init();

@@ -1,7 +1,7 @@
 import { $, el } from "./dom.js";
 import { buildItems, headCapable, headSnapshot } from "./layering.js";
 import { buildScene, drawScene } from "./scene.js";
-import { poseList } from "./selection.js";
+import { poseList } from "./poses.js";
 import { state } from "./state.js";
 import { makeZip } from "./zip.js";
 

@@ -1,9 +1,10 @@
-import { DATA_ROOT, POSE_LABELS, POSE_ORDER } from "./config.js";
-import { $, el } from "./dom.js";
+import { DATA_ROOT, POSE_ORDER } from "./config.js";
+import { $ } from "./dom.js";
 import { updateExportInfo } from "./export.js";
 import { syncHeadPanel } from "./head-panel.js";
 import { buildItems, loadAppearance } from "./layering.js";
 import { renderLayers } from "./layers-panel.js";
+import { markPose, poseList, renderPoses } from "./poses.js";
 import { cancelPreload, markLoaded, restartPreload } from "./preload.js";
 import { buildScene } from "./scene.js";
 import { state, store } from "./state.js";
@@ -76,33 +77,6 @@ export function sortPoses(names) {
             a.localeCompare(b, undefined, { numeric: true })
     );
 }
-
-function renderPoses(poses) {
-    const bar = $("#poses");
-    bar.textContent = "";
-    for (const p of poses) {
-        const b = el("button", {
-            type: "button",
-            className: "pose-btn",
-            textContent: POSE_LABELS[p] ?? p,
-        });
-        b.dataset.pose = p;
-        bar.append(b);
-    }
-    bar.hidden = !poses.length;
-    markPose();
-}
-
-function markPose() {
-    for (const b of $("#poses").children) {
-        const on = b.dataset.pose === state.pose;
-        b.setAttribute("aria-pressed", on);
-        if (on) b.scrollIntoView({ block: "nearest", inline: "nearest" });
-    }
-}
-
-export const poseList = () =>
-    [...$("#poses").children].map((b) => b.dataset.pose);
 
 export function stepSkin(d) {
     const items = [...document.querySelectorAll("#list .item")].filter(

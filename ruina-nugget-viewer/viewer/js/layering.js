@@ -342,10 +342,45 @@ export function headCapable(app) {
     );
 }
 
+let skinTones;
+const loadSkinTones = () =>
+    (skinTones ??= fetch("skin_tones.json")
+        .then((r) => (r.ok ? r.json() : {}))
+        .catch(() => ({})));
+
+const toHex = (rgba) =>
+    "#" +
+    rgba
+        .slice(0, 3)
+        .map((c) =>
+            Math.round(Math.min(1, Math.max(0, c)) * 255)
+                .toString(16)
+                .padStart(2, "0")
+        )
+        .join("");
+
+const fixedSkinDefaults = new Map();
+export const cachedFixedHeadSkinColor = (key) => fixedSkinDefaults.get(key);
+
+export async function fixedHeadSkinColor(key) {
+    if (!fixedSkinDefaults.has(key)) {
+        let hex;
+        if (key.includes("/")) hex = (await loadSkinTones())[key];
+        else {
+            const c = (await loadJSON("customize/special_heads.json"))[key]
+                ?.skinColor;
+            if (c) hex = toHex(c);
+        }
+        fixedSkinDefaults.set(key, hex || "#ffffff");
+    }
+    return fixedSkinDefaults.get(key);
+}
+
 export const headSnapshot = () => ({
     headMode: state.headMode,
     custom: { ...state.custom },
     fixedHead: state.fixedHead,
+    fixedSkinColor: state.fixedSkinColor,
     gifts: { ...state.gifts },
 });
 
@@ -365,7 +400,11 @@ export async function buildItems(app, motion, head = headSnapshot()) {
                 : (await loadJSON("customize/special_heads.json"))[
                       head.fixedHead
                   ];
-            if (special) skinColor = special.skinColor;
+            if (special)
+                skinColor = hexColor(
+                    head.fixedSkinColor ||
+                        (await fixedHeadSkinColor(head.fixedHead))
+                );
         }
         const giftIds = Object.values(head.gifts).filter((v) => v != null);
         if (giftIds.length) {
@@ -382,7 +421,7 @@ export async function buildItems(app, motion, head = headSnapshot()) {
         if (custom) {
             if (HIDDEN_WHEN_CUSTOM.has(l.type)) continue;
             if (l.type === "Skin") l = { ...l, color: skinColor };
-        }
+        } else if (app.customizable && l.type === "Skin") continue;
         items.push(l);
     }
     const skinLayerCount = items.length;

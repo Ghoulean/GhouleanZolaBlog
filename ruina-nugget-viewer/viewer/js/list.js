@@ -10,7 +10,6 @@ import {
 } from "./config.js";
 import { $, el } from "./dom.js";
 import { LANGUAGES } from "./lang.js";
-import { setPanel } from "./main.js";
 import { selectSkin } from "./selection.js";
 import { state, store } from "./state.js";
 
@@ -166,11 +165,7 @@ export function renderList() {
                     el("span", { className: "nm" }, highlight(e.name, terms[0]))
                 );
                 b.dataset.key = e.key;
-                b.onclick = () => {
-                    selectSkin(e.key);
-                    if (matchMedia("(max-width: 860px)").matches)
-                        setPanel("left", false);
-                };
+                b.onclick = () => selectSkin(e.key);
                 subItems.append(b);
             }
             items.append(subgroup);

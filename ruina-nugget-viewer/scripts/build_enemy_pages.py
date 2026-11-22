@@ -20,7 +20,7 @@ ALWAYS_OBTAINABLE = {
     "appearance_thepurpletearh_f", "appearance_thepurpletearh_n",
     "appearance_thepurpletearj_f", "appearance_thepurpletearj_n",
     "appearance_thepurpletearz_f", "appearance_thepurpletearz_n",
-    "appearance_xiaodistort", "appearance_xiaoego",
+    "appearance_xiaoego",
     "appearance_myo2",
     "appearance_blue_philip_burn",
     "appearance_theredmist",

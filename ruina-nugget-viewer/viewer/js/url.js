@@ -1,5 +1,6 @@
 import { loadJSON } from "./assets.js";
 import { DEFAULT_CUSTOM } from "./config.js";
+import { cachedFixedHeadSkinColor, fixedHeadSkinColor } from "./layering.js";
 import { state } from "./state.js";
 
 const URL_HEAD_MODES = ["fixed", "custom"];
@@ -29,6 +30,11 @@ function writeHeadParams(q) {
     q.set("head", state.headMode);
     if (state.headMode === "fixed") {
         q.set("fixedhead", state.fixedHead.split("/").pop());
+        if (
+            state.fixedSkinColor &&
+            state.fixedSkinColor !== cachedFixedHeadSkinColor(state.fixedHead)
+        )
+            q.set(URL_COLORS.skinColor, state.fixedSkinColor.replace("#", ""));
     } else {
         for (const [k, name] of Object.entries(URL_PARTS)) {
             if (state.custom[k] !== DEFAULT_CUSTOM[k])
@@ -53,15 +59,23 @@ export async function readHeadParams(q) {
         const n = parseInt(q.get(name), 10);
         if (n >= 1) state.custom[k] = n - 1;
     }
-    for (const [k, name] of Object.entries(URL_COLORS)) {
+    const urlColor = (name) => {
         const c = q.get(name);
-        if (/^[0-9a-f]{6}$/i.test(c || ""))
-            state.custom[k] = "#" + c.toLowerCase();
-    }
+        return /^[0-9a-f]{6}$/i.test(c || "") ? "#" + c.toLowerCase() : null;
+    };
+    if (state.headMode === "custom")
+        for (const [k, name] of Object.entries(URL_COLORS)) {
+            const c = urlColor(name);
+            if (c) state.custom[k] = c;
+        }
     const fixed = q.get("fixedhead")?.replace(/ /g, "_");
     if (fixed) {
         const entry = state.index.find((e) => e.id === fixed);
         state.fixedHead = entry ? entry.key : fixed;
+    }
+    if (state.headMode === "fixed") {
+        const def = await fixedHeadSkinColor(state.fixedHead);
+        state.fixedSkinColor = urlColor(URL_COLORS.skinColor) || def;
     }
     state.gifts = {};
     const ids = (q.get("gifts") || "")

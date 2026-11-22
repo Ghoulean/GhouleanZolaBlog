@@ -6,6 +6,7 @@ import { draw } from "./view.js";
 export function renderLayers() {
     const layers = state.scene?.layers || [];
     $("#layers-toggle").textContent = `Layers (${layers.length})`;
+    $("#layers-count").textContent = layers.length ? `(${layers.length})` : "";
     const list = $("#layers-list");
     list.textContent = "";
     for (const l of [...layers].reverse()) {
@@ -71,7 +72,13 @@ export function toggleAllLayers() {
     draw();
 }
 
-export function setLayersOpen(open) {
-    $("#layers-panel").hidden = !open;
+function setLayersPopoverOpen(open) {
+    $("#layers-popover").hidden = !open;
     $("#layers-toggle").setAttribute("aria-expanded", open);
+}
+
+export function initLayersPanel() {
+    $("#layers-toggle").onclick = () =>
+        setLayersPopoverOpen($("#layers-popover").hidden);
+    $("#layers-all").onchange = toggleAllLayers;
 }

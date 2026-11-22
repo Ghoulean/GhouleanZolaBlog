@@ -8,7 +8,7 @@ import {
 } from "./color-editor.js";
 import { CATEGORIES, GIFT_POSITIONS, PARTS } from "./config.js";
 import { $, el } from "./dom.js";
-import { hasSprite, headCapable } from "./layering.js";
+import { fixedHeadSkinColor, hasSprite, headCapable } from "./layering.js";
 import {
     collapsibleGroup,
     highlight,
@@ -34,6 +34,10 @@ async function ensureHeadData() {
     buildParts(cust);
     buildFixedHeads(special);
     buildGifts(gifts);
+    if (!state.fixedSkinColor) {
+        state.fixedSkinColor = await fixedHeadSkinColor(state.fixedHead);
+        headChanged();
+    }
 }
 
 export function syncHeadPanel() {
@@ -71,6 +75,7 @@ export function saveHead() {
         headMode: state.headMode,
         custom: state.custom,
         fixedHead: state.fixedHead,
+        fixedSkinColor: state.fixedSkinColor,
         gifts: state.gifts,
     });
     updateUrl();
@@ -210,8 +215,11 @@ export function renderFixedHeads() {
                 el("span", { className: "nm" }, highlight(o.name, terms[0]))
             );
             b.dataset.value = o.value;
-            b.onclick = () => {
+            b.onclick = async () => {
                 state.fixedHead = o.value;
+                const color = await fixedHeadSkinColor(o.value);
+                if (state.fixedHead !== o.value) return;
+                state.fixedSkinColor = color;
                 headChanged();
             };
             items.append(b);

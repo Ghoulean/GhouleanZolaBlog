@@ -29,8 +29,8 @@ function viewMatrix() {
 
 let drawQueued = false;
 export function draw() {
-    const zl = $("#zoom-label");
-    if (document.activeElement !== zl) zl.value = zoomPct() + "%";
+    for (const zl of document.querySelectorAll(".zoom-label"))
+        if (document.activeElement !== zl) zl.value = zoomPct() + "%";
     if (drawQueued) return;
     drawQueued = true;
     requestAnimationFrame(() => {
@@ -102,7 +102,9 @@ export function setFlip(on) {
     if (state.view.flip === on) return;
     state.view.flip = on;
     state.view.camX = -state.view.camX;
-    $("#flip").setAttribute("aria-pressed", on);
+    document
+        .querySelectorAll('[data-act="flip"]')
+        .forEach((b) => b.setAttribute("aria-pressed", on));
     draw();
     updateExportInfo();
 }

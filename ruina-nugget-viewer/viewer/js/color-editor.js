@@ -50,8 +50,18 @@ const CE_CHANNELS = {
 
 export const colorEdit = { key: null, hsv: [0, 0, 0] };
 
+const colorOf = (key) =>
+    (key === "fixedSkin"
+        ? state.fixedSkinColor
+        : state.custom[key + "Color"]) || "#ffffff";
+
+function setColor(key, hex) {
+    if (key === "fixedSkin") state.fixedSkinColor = hex;
+    else state.custom[key + "Color"] = hex;
+}
+
 export function colorHex() {
-    return state.custom[colorEdit.key + "Color"];
+    return colorOf(colorEdit.key);
 }
 
 export function setHsvFromHex(hex) {
@@ -140,7 +150,7 @@ function buildColorRows() {
 }
 
 function applyEditorColor(hex, keepHsv) {
-    state.custom[colorEdit.key + "Color"] = hex;
+    setColor(colorEdit.key, hex);
     if (!keepHsv) setHsvFromHex(hex);
     saveHead();
     syncColorSwatches();
@@ -150,8 +160,9 @@ function applyEditorColor(hex, keepHsv) {
 
 export function syncColorSwatches() {
     for (const b of document.querySelectorAll(".color-item")) {
-        b.querySelector(".color-fill").style.background =
-            state.custom[b.dataset.color + "Color"];
+        b.querySelector(".color-fill").style.background = colorOf(
+            b.dataset.color
+        );
         b.setAttribute("aria-pressed", b.dataset.color === colorEdit.key);
     }
 }
@@ -177,8 +188,10 @@ export function syncColorEditor() {
     }
 }
 
-function openColorEditor(key) {
+function openColorEditor(button) {
+    const key = button.dataset.color;
     colorEdit.key = colorEdit.key === key ? null : key;
+    if (colorEdit.key) button.closest(".colors").after($("#color-editor"));
     if (colorEdit.key) setHsvFromHex(colorHex());
     syncColorSwatches();
     syncColorEditor();
@@ -186,7 +199,7 @@ function openColorEditor(key) {
 
 export function initColorEditor() {
     for (const b of document.querySelectorAll(".color-item"))
-        b.onclick = () => openColorEditor(b.dataset.color);
+        b.onclick = () => openColorEditor(b);
     const hexIn = $("#ce-hex");
     hexIn.addEventListener("input", () => {
         let s = hexIn.value.trim();
