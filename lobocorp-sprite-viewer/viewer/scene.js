@@ -50,9 +50,7 @@ function sampleTrack(tr, t) {
 
 class ScenePlayer {
   static async load(gl, dir) {
-    const res = await fetch(`${dir}/scene.json`);
-    if (!res.ok) throw new Error(`${res.status} ${dir}/scene.json`);
-    const doc = await res.json();
+    const doc = JSON.parse(await (await assetBlob(`${dir}/scene.json`)).text());
     const files = new Set();
     for (const s of Object.values(doc.sprites)) files.add(s.file);
     for (const m of Object.values(doc.meshes)) files.add(m.file);
@@ -147,8 +145,9 @@ class ScenePlayer {
       enabled: r.enabled, color: r.color.slice(), order: r.order,
       flipX: !!r.flipX, flipY: !!r.flipY, sprite: r.sprite ?? null,
     }));
+    const replaced = doc.animators[chosenAnimator]?.replaces;
     doc.animators.forEach((a, ai) => {
-      if (a.enabled === false) return;
+      if (a.enabled === false || ai === replaced) return;
       let st, loop;
       if (ai === chosenAnimator && chosenState) { st = chosenState; loop = chosenState.loop; }
       else {

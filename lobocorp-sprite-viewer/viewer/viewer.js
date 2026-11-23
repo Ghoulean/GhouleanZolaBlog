@@ -76,7 +76,18 @@ const DEFAULT_LOOK = {
   front: [1, 0], rear: [0, 0], eye: [0, 0], eyebrow: [0, 0], mouth: [0, 0], eye_closed: [0, 0],
 };
 const FACE_SLOTS = ["Eye", "EyeBrow", "Mouth"];
+const ANIM_FACE_CLIPS = [
+  [/^(Attack_|Worker_Attack$|Walk_(OneHand|Fist|Hammer|Cannon)$)/, "battle"],
+  [/^Panic_/, "panic"],
+  [/^Dead_\d+$/, "dead"],
+];
+const ANIM_FACE_RIGS = {
+  AgentPanic: "panic", BlackCorpsAgentCTRL: "panic", BigBirdAgentDead: "panic", LongBirdAgentDead: "panic",
+  OrchestraAgentDead: "dead", MachineDawnAgentDead: "dead", HealthBraceletDead: "dead", OtherWorldPortraitDead: "dead",
+  ArmorCreatureDead: "dead", SpiderMomAgentDead: "dead",
+};
 const NO_ARMBAND_RIGS = new Set(["employee/rigs/ScytheApostleDead"]);
+const ARMBAND_SLOT = "R arm 1";
 const SEPARATE_FACE_RIGS =new Set(["employee/rigs/OtherWorldPortraitDead"]);
 const GIFT_TYPES = ["add", "replace", "special_add"];
 const GIFT_REGION_LABELS = {
@@ -123,7 +134,7 @@ const DATA = { entities: [], kit: null, armors: [], weapons: [], giftGroups: [],
 
 const state = {
   sel: "employee",
-  filter: { text: "", group: "all" },
+  filter: { text: "" },
   collapsed: new Set(store.get("collapsed", [])),
   lang: "en",
   anim: 0,
@@ -136,6 +147,7 @@ const state = {
   weapon: null,
   gifts: {},
   department: { employee: "malkut", clerk: "malkut" },
+  animFace: store.get("animFace", true) !== false,
   serviceLevel: 1,
   editingColor: null,
   play: { playing: true, ended: false, t: 0, speed: 1, loop: true },
@@ -212,6 +224,179 @@ function renderAfterLoad() {
     renderTitle();
     if (pendingDefaultView && currentModel()?.ready) { pendingDefaultView = false; resetView(); }
   });
+}
+
+// ---- background loading ----
+
+const preload = { enabled: true, gen: 0, limit: 6, active: 0, waiters: [], loaded: new Set() };
+
+function updateLoadedCount() {
+  if (!preload.enabled && $("#preload-count").textContent) return;
+  $("#preload-count").textContent = `${preload.loaded.size} / ${allEntries().length} prefabs loaded`;
+}
+
+function pumpPreload() {
+  while (preload.waiters.length && preload.active < preload.limit) {
+    preload.active++;
+    preload.waiters.shift()();
+  }
+}
+
+const acquirePreload = () => new Promise(r => { preload.waiters.push(r); pumpPreload(); });
+
+function releasePreload() {
+  preload.active--;
+  pumpPreload();
+}
+
+const idle = () => new Promise(r => (window.requestIdleCallback || (f => setTimeout(f, 50)))(() => r(), { timeout: 2000 }));
+
+function initPreloadSetting() {
+  preload.enabled = store.get("preload", true) !== false;
+  preload.limit = Math.min(20, Math.max(1, Math.round(Number(store.get("preloadParallel", 6))) || 6));
+  const box = $("#preload"), range = $("#preload-parallel"), out = $("#preload-parallel-value");
+  const sync = () => {
+    range.disabled = !preload.enabled;
+    $("#preload-parallel-field").classList.toggle("disabled-block", !preload.enabled);
+    $("#preload-count").classList.toggle("disabled-block", !preload.enabled);
+  };
+  box.checked = preload.enabled;
+  range.value = preload.limit;
+  out.textContent = preload.limit;
+  sync();
+  box.onchange = () => {
+    preload.enabled = box.checked;
+    store.set("preload", preload.enabled);
+    sync();
+    updateLoadedCount();
+    if (preload.enabled) restartPreload();
+    else preload.gen++;
+  };
+  range.oninput = () => {
+    preload.limit = Number(range.value);
+    out.textContent = preload.limit;
+    pumpPreload();
+  };
+  range.onchange = () => store.set("preloadParallel", preload.limit);
+}
+
+function restartPreload() {
+  const g = ++preload.gen;
+  if (preload.enabled && DATA.kit && state.sel) runPreload(g, state.sel);
+}
+
+function kitFiles() {
+  const out = new Set();
+  const walk = v => {
+    if (typeof v === "string") { if (v.endsWith(".png")) out.add(v); }
+    else if (Array.isArray(v)) v.forEach(walk);
+    else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) if (k !== "rigs") walk(x);
+  };
+  walk(DATA.kit);
+  return [...out].map(f => ({ kit: f }));
+}
+
+function rigSource(name) {
+  const r = rigInfo(name);
+  return r && { spine: "employee/" + r.dir, skel: r.skeleton, atlas: r.atlas };
+}
+
+function entitySources(id) {
+  if (id === "employee" || id === "clerk") {
+    const rigs = id === "employee" ? Object.keys(DATA.kit.rigs).filter(n => n !== "agent" && n !== "clerk").map(rigSource) : [];
+    return [[rigSource(id === "employee" ? "agent" : "clerk")], [...rigs, ...kitFiles()]].map(l => l.filter(Boolean));
+  }
+  const e = DATA.entities.find(x => x.id === id);
+  if (!e) return [[], []];
+  if (e.kind === "scene") return [[{ scene: e.dir }], []];
+  const src = e.parts.map(p => p.scene ? { scene: p.dir } : { spine: p.dir, skel: "skeleton.json", atlas: "skeleton.atlas" });
+  return [src.slice(0, 1), src.slice(1)];
+}
+
+async function preloadFile(url, live) {
+  if (assetDone.has(url) || assetStore.has(url)) return assetStore.get(url)?.then(() => true, () => false) ?? true;
+  await acquirePreload();
+  if (!live()) { releasePreload(); return null; }
+  try {
+    await idle();
+    if (!live()) return null;
+    await prefetchAsset(url);
+    return true;
+  } catch {
+    return false;
+  } finally {
+    releasePreload();
+  }
+}
+
+async function preloadText(url, live) {
+  const ok = await preloadFile(url, live);
+  if (!ok) return ok;
+  const p = assetStore.get(url);
+  return p ? (await p).text() : "";
+}
+
+async function preloadSpine(dir, skel, atlas, live) {
+  const root = DATA_ROOT + dir + "/";
+  const text = await preloadText(root + atlas, live);
+  if (!text) return text === "";
+  const res = await Promise.all([skel, ...atlasPages(text).map(p => p.name)].map(f => preloadFile(root + f, live)));
+  return res.every(Boolean);
+}
+
+async function preloadScene(dir, live) {
+  const root = DATA_ROOT + dir + "/";
+  const text = await preloadText(root + "scene.json", live);
+  if (!text) return text === "";
+  const doc = JSON.parse(text);
+  const files = new Set([...Object.values(doc.sprites), ...Object.values(doc.meshes)].map(x => x.file));
+  const res = await Promise.all([
+    ...[...files].map(f => preloadFile(root + f, live)),
+    ...Object.values(doc.spine || {}).map(sp => preloadSpine(dir + "/" + sp.dir, sp.skeleton, sp.atlas, live)),
+  ]);
+  return res.every(Boolean);
+}
+
+async function preloadSource(s, live) {
+  const cached = s.kit ? textureCache.get(s.kit) : s.spine ? spineCache.get(s.spine) : sceneCache.get(s.scene);
+  if (cached) { await cached; return !failed.has(s.spine || s.scene) && (!s.kit || cached.value != null); }
+  if (s.kit) return preloadFile(DATA_ROOT + "employee/" + s.kit, live);
+  if (s.spine) return preloadSpine(s.spine, s.skel, s.atlas, live);
+  return preloadScene(s.scene, live);
+}
+
+function preloadNeighbors(id) {
+  const order = sortedEntries().map(e => e.id);
+  const i = order.indexOf(id);
+  const out = [];
+  for (let d = 1; d < order.length; d++) {
+    if (order[i + d]) out.push(order[i + d]);
+    if (i - d >= 0) out.push(order[i - d]);
+  }
+  return out;
+}
+
+async function runPreload(g, id) {
+  const live = () => g === preload.gen;
+  const ids = [id, ...preloadNeighbors(id)];
+  const pending = new Map(ids.map(k => [k, []]));
+  const sources = new Map(ids.map(k => [k, entitySources(k)]));
+  const finish = k => Promise.all(pending.get(k)).then(ok => { if (live() && ok.every(Boolean)) { preload.loaded.add(k); updateLoadedCount(); } });
+  try {
+    for (const pass of [0, 1]) {
+      for (const k of ids) {
+        if (!live()) return;
+        if (preload.loaded.has(k) || (pass === 1 && !sources.get(k)[1].length)) continue;
+        for (const s of sources.get(k)[pass]) {
+          const p = preloadSource(s, live);
+          pending.get(k).push(p);
+          if (s.scene || s.spine) await p;
+          if (!live()) return;
+        }
+        if (pass === 1 || !sources.get(k)[1].length) finish(k);
+      }
+    }
+  } catch {}
 }
 
 // ---- selection helpers ----
@@ -474,12 +659,43 @@ function isSpecialRig(m) {
   return !["agent", "clerk"].some(n => "employee/" + DATA.kit.rigs[n]?.dir === m.dir);
 }
 
-function dressPlan(kind, special) {
+function animFaceTimeline(m) {
+  const a = currentAnim();
+  if (!a) return [];
+  const rig = a.rig || (selKind() === "clerk" ? "clerk" : "agent");
+  const clip = a.clip ?? a.name;
+  let face = ANIM_FACE_RIGS[rig] || (/Weapon$/.test(rig) ? "battle" : null);
+  if (!face && (rig === "agent" || rig === "clerk")) face = ANIM_FACE_CLIPS.find(([re]) => re.test(clip))?.[1] || null;
+  if (!face) return [];
+  const out = [[0, face]];
+  if (face === "panic") {
+    const an = m.data.findAnimation(clip);
+    const ev = an?.timelines.find(t => t instanceof spine.EventTimeline)?.events.find(e => e.data.name === "Suicide");
+    if (ev) out.push([ev.time, "dead"]);
+  }
+  return out;
+}
+
+function currentFace(m) {
+  if (!state.animFace) return state.look.expression;
+  const a = currentAnim();
+  const t = a?.speed < 0 ? animDuration(a) - state.play.t : state.play.t;
+  let face = "default";
+  for (const [at, f] of animFaceTimeline(m)) if (t >= at) face = f;
+  return face;
+}
+
+function faceFiles(face) {
+  const R = DATA.kit.rules;
+  return (R.face[face] || R.face.default).map(r => basicSprite(r.region, regionSelection(r.region))?.file).filter(Boolean);
+}
+
+function dressPlan(kind, special, face = state.look.expression) {
   const kit = DATA.kit, R = kit.rules;
   const ch = [];
   const hair = state.look.hair;
   for (const r of R.hair) ch.push({ slot: r.slot, att: r.attachment, sprite: basicSprite(r.region, regionSelection(r.region)), tint: r.tint === "hair" ? hair : null });
-  for (const r of R.face[state.look.expression] || R.face.default) {
+  for (const r of R.face[face] || R.face.default) {
     ch.push({ slot: r.slot, att: r.attachment, sprite: basicSprite(r.region, regionSelection(r.region)), tint: null, keepEmpty: r.slot === "Mouth" });
   }
   ch.push({ slot: "EyeClose", att: "EyeClose", sprite: basicSprite("eye_closed", regionSelection("eye_closed")), tint: null });
@@ -514,7 +730,7 @@ function dressPlan(kind, special) {
       if (g.region === 2) {
         if (!special) ch.push({ slot: "Mouth", att: "Mouth", sprite: null, keepEmpty: true });
       } else if (g.region === 1) {
-        if (state.look.expression !== "panic" && state.look.expression !== "dead") ch.push({ slot: "Eye", att: "Eye", sprite: g.sprite, tint: "#ffffff" });
+        if (face !== "panic" && face !== "dead") ch.push({ slot: "Eye", att: "Eye", sprite: g.sprite, tint: "#ffffff" });
       } else {
         const slot = R.gifts.replace_slots[g.region];
         ch.push({ slot, att: slot, sprite: g.sprite, tint: null });
@@ -597,7 +813,8 @@ function buildGiftSlots(m, adds, special) {
     att.path = sp.name;
     att.setRegion(spriteRegion(sp, tex));
     att.updateOffset();
-    m.gifts.push({ gift: true, key: "gift:" + g.key, name: g.name, bone, att, z: anchor.z + oz });
+    const follow = g.key === "armband" ? m.skeleton.findSlot(ARMBAND_SLOT) : null;
+    m.gifts.push({ gift: true, key: "gift:" + g.key, name: g.name, bone, att, z: anchor.z + oz, follow });
   }
 }
 
@@ -629,8 +846,9 @@ function giftDrawOrder(m) {
   const R = DATA.kit.rules.gifts;
   const eps = R.z_tie, partZ = R.anchors.agent.part_z;
   const byGap = new Map();
+  const armband = m.skeleton.findSlot(ARMBAND_SLOT) ? m.gifts.find(g => g.key === "gift:armband") : null;
   for (const g of [...m.gifts].sort((x, y) => y.z - x.z)) {
-    if (g.top) continue;
+    if (g.top || g === armband) continue;
     let p = -1;
     if (m.giftSpecial) p = g.z > eps ? -1 : partZ.length;
     else partZ.forEach((pz, k) => { if (pz >= g.z - eps) p = k; });
@@ -643,6 +861,7 @@ function giftDrawOrder(m) {
   for (const slot of m.skeleton.drawOrder) {
     if (seps.has(slot.data.name)) { out.push(...(byGap.get(k) || [])); k++; }
     out.push(slot);
+    if (armband && slot.data.name === ARMBAND_SLOT) out.push(armband);
   }
   for (const [p, list] of [...byGap].sort((x, y) => x[0] - y[0])) if (p >= k) out.push(...list);
   out.push(...m.gifts.filter(g => g.top));
@@ -650,12 +869,14 @@ function giftDrawOrder(m) {
 }
 
 function ensureDressed(m, kind) {
-  const key = `${kind}|${lookVersion}`;
+  const face = currentFace(m);
+  const key = `${kind}|${lookVersion}|${face}`;
   if (m.dressedKey === key) return true;
   const special = isSpecialRig(m);
-  const plan = dressPlan(kind, special);
+  const plan = dressPlan(kind, special, face);
   const adds = kind === "employee" && DATA.kit.rules.gifts ? giftAdds(special, m) : [];
   const files = [...plan.filter(c => c.sprite).map(c => c.sprite.file), ...adds.map(a => a.g.sprite.file)];
+  if (state.animFace) for (const [, f] of animFaceTimeline(m)) files.push(...faceFiles(f));
   const pending = files.map(kitTexture).filter(p => !("value" in p));
   if (pending.length) {
     if (!m.dressWaiting) {
@@ -744,17 +965,6 @@ function rigScaleOf(m) {
 
 // ---- left panel ----
 
-function renderChips() {
-  const box = $("#cat-filter");
-  box.replaceChildren();
-  for (const c of [{ key: "all", label: "All" }, ...LIST_GROUPS]) {
-    const b = el("button", { className: "chip", textContent: c.label });
-    b.setAttribute("aria-pressed", state.filter.group === c.key);
-    b.onclick = () => { state.filter.group = c.key; renderChips(); renderList(); };
-    box.append(b);
-  }
-}
-
 function allEntries() {
   return [
     { id: "employee", name: "Employee", group: "nugget", code: "" },
@@ -763,11 +973,14 @@ function allEntries() {
   ];
 }
 
+function sortedEntries() {
+  const all = allEntries();
+  return LIST_GROUPS.flatMap(g => all.filter(e => e.group === g.key).sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base", numeric: true })));
+}
+
 function listEntries() {
   const q = state.filter.text.trim().toLowerCase();
-  const group = state.filter.group;
-  return allEntries().filter(e => {
-    if (group !== "all" && e.group !== group) return false;
+  return sortedEntries().filter(e => {
     return !q || e.name.toLowerCase().includes(q) || e.code.toLowerCase().includes(q);
   });
 }
@@ -820,6 +1033,7 @@ function select(id) {
   resetPlayback();
   syncUrl();
   renderAll();
+  restartPreload();
 }
 
 function moveSelection(d) {
@@ -1110,6 +1324,8 @@ function partSprites(region) {
 
 function renderEmployeeOptions() {
   for (const b of $$("#expression button")) b.setAttribute("aria-pressed", b.dataset.v === state.look.expression);
+  $("#anim-face").checked = state.animFace;
+  $("#expression").classList.toggle("disabled-block", state.animFace);
   for (const b of $$(".color-item")) {
     b.querySelector(".color-fill").style.background = state.look[b.dataset.color];
     b.setAttribute("aria-pressed", state.editingColor === b.dataset.color);
@@ -2108,7 +2324,6 @@ function readUrl() {
 // ---- wiring ----
 
 function renderAll() {
-  renderChips();
   renderList();
   renderTitle();
   renderAnims();
@@ -2168,6 +2383,7 @@ function wire() {
   };
 
   for (const b of $$("#expression button")) b.onclick = () => { state.look.expression = b.dataset.v; lookChanged(); renderEmployeeOptions(); };
+  $("#anim-face").onchange = e => { state.animFace = e.target.checked; store.set("animFace", state.animFace); lookChanged(); renderEmployeeOptions(); };
   for (const b of $$(".color-item")) b.onclick = () => {
     state.editingColor = state.editingColor === b.dataset.color ? null : b.dataset.color;
     renderEmployeeOptions();
@@ -2299,6 +2515,7 @@ async function init() {
   state.lang = LANGUAGES.some(l => l.key === store.get("lang")) ? store.get("lang") : "en";
   renderLangGroup();
   wire();
+  initPreloadSetting();
   resizeCanvas();
   requestAnimationFrame(tick);
   try {
@@ -2321,6 +2538,8 @@ async function init() {
   state.anim = Math.max(0, defaultAnimIndex());
   syncUrl();
   renderAll();
+  updateLoadedCount();
+  restartPreload();
 }
 
 if (!IS_LOCAL && "serviceWorker" in navigator) navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => {});

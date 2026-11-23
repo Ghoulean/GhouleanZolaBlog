@@ -156,6 +156,7 @@ class Drawer {
     for (const slot of opts.order || sk.drawOrder) {
       if (slot.gift) {
         if (hidden && hidden.has(slot.key)) continue;
+        if (slot.follow && !slot.follow.getAttachment()) continue;
         const att = slot.att;
         this.ensure(4);
         att.computeWorldVertices(slot.bone, this.world, 0, 2);
@@ -201,10 +202,33 @@ class Drawer {
   }
 }
 
+const assetStore = new Map();
+const assetDone = new Set();
+
+function fetchBlob(url, low) {
+  const p = fetch(url, low ? { priority: "low" } : {}).then(r => { if (!r.ok) throw new Error(`${r.status} ${url}`); return r.blob(); });
+  p.then(() => assetDone.add(url), () => {});
+  return p;
+}
+
+function prefetchAsset(url) {
+  if (!assetStore.has(url)) {
+    const p = fetchBlob(url, true);
+    p.catch(() => assetStore.delete(url));
+    assetStore.set(url, p);
+  }
+  return assetStore.get(url);
+}
+
+function assetBlob(url) {
+  const p = assetStore.get(url);
+  if (!p) return fetchBlob(url, false);
+  assetStore.delete(url);
+  return p;
+}
+
 async function loadBitmap(url, pma = false) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`${res.status} ${url}`);
-  const blob = await res.blob();
+  const blob = await assetBlob(url);
   return createImageBitmap(blob, { premultiplyAlpha: pma ? "none" : "premultiply", colorSpaceConversion: "none" });
 }
 
@@ -224,8 +248,8 @@ function atlasPages(text) {
 
 async function loadSpine(gl, dir, skelFile, atlasFile, pma) {
   const [atlasText, json] = await Promise.all([
-    fetch(`${dir}/${atlasFile}`).then(r => { if (!r.ok) throw new Error(`${r.status} ${dir}/${atlasFile}`); return r.text(); }),
-    fetch(`${dir}/${skelFile}`).then(r => { if (!r.ok) throw new Error(`${r.status} ${dir}/${skelFile}`); return r.text(); }),
+    assetBlob(`${dir}/${atlasFile}`).then(b => b.text()),
+    assetBlob(`${dir}/${skelFile}`).then(b => b.text()),
   ]);
   const pages = atlasPages(atlasText);
   const bitmaps = await Promise.all(pages.map(p => loadBitmap(`${dir}/${p.name}`, pma)));

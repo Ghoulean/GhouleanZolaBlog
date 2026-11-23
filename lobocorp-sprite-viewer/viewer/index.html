@@ -30,7 +30,6 @@
       <div class="search-wrap">
         <input id="search" type="search" placeholder="Search" autocomplete="off" spellcheck="false">
       </div>
-      <div id="cat-filter" class="chips"></div>
       <div id="list-count" class="muted small"></div>
       <nav id="list"></nav>
     </div>
@@ -191,6 +190,7 @@
             <button data-v="panic">Panic</button>
             <button data-v="dead">Dead</button>
           </div>
+          <label class="check"><input type="checkbox" id="anim-face" checked> Use animation defaults</label>
         </div>
       </div>
 
@@ -235,6 +235,22 @@
             </div>
             <div id="gifts"></div>
           </div>
+        </details>
+      </section>
+
+      <section id="preload-section">
+        <details class="fold" open>
+        <summary><h3>Local Storage</h3></summary>
+        <div class="fold-body">
+        <label class="check"><input type="checkbox" id="preload" checked> Load assets in background</label>
+        <div class="field" id="preload-parallel-field">Parallel downloads
+          <div class="scale-row">
+            <input type="range" id="preload-parallel" min="1" max="20" step="1" value="6" aria-label="Parallel downloads">
+            <span id="preload-parallel-value" class="mono">6</span>
+          </div>
+        </div>
+        <div id="preload-count" class="muted small"></div>
+        </div>
         </details>
       </section>
 
