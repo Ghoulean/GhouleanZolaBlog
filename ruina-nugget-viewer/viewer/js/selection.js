@@ -15,20 +15,26 @@ let renderToken = 0;
 let busyTimer = null;
 function setBusy(on) {
     clearTimeout(busyTimer);
-    if (on)
+    if (on) {
         busyTimer = setTimeout(() => {
             $("#busy").hidden = false;
         }, 150);
-    else $("#busy").hidden = true;
+    } else {
+        $("#busy").hidden = true;
+    }
 }
 
 export async function selectSkin(key, pose) {
     const entry = state.index.find((e) => e.key === key);
-    if (!entry) return;
+    if (!entry) {
+        return;
+    }
     const first = state.skinKey !== key;
     state.skinKey = key;
     store.set("skin", key);
-    if (first) state.hiddenLayers.clear();
+    if (first) {
+        state.hiddenLayers.clear();
+    }
     document
         .querySelectorAll(".item.active")
         .forEach((n) => n.classList.remove("active"));
@@ -44,13 +50,19 @@ export async function selectSkin(key, pose) {
     try {
         app = await loadAppearance(key);
     } catch (err) {
-        if (token === renderToken) showError(err);
+        if (token === renderToken) {
+            showError(err);
+        }
         return;
     }
-    if (token !== renderToken) return;
+    if (token !== renderToken) {
+        return;
+    }
     state.app = app;
     const poses = sortPoses(Object.keys(app.motions));
-    if (pose) state.chosenPose = pose;
+    if (pose) {
+        state.chosenPose = pose;
+    }
     state.pose = pickPose(app, poses);
     renderPoses(poses);
     syncHeadPanel();
@@ -82,7 +94,9 @@ export function stepSkin(d) {
     const items = [...document.querySelectorAll("#list .item")].filter(
         (n) => n.offsetParent
     );
-    if (!items.length) return;
+    if (!items.length) {
+        return;
+    }
     const i = items.findIndex((n) => n.dataset.key === state.skinKey);
     const next =
         items[
@@ -92,13 +106,17 @@ export function stepSkin(d) {
                     : items.length - 1
                 : Math.min(items.length - 1, Math.max(0, i + d))
         ];
-    if (next.dataset.key === state.skinKey) return;
+    if (next.dataset.key === state.skinKey) {
+        return;
+    }
     selectSkin(next.dataset.key);
     next.scrollIntoView({ block: "nearest" });
 }
 
 export function selectPose(p) {
-    if (!state.app?.motions[p]) return;
+    if (!state.app?.motions[p]) {
+        return;
+    }
     state.pose = p;
     state.chosenPose = p;
     markPose();
@@ -106,7 +124,9 @@ export function selectPose(p) {
 }
 
 export function stepPose(d) {
-    if (!state.app) return;
+    if (!state.app) {
+        return;
+    }
     const poses = poseList();
     const i = poses.indexOf(state.pose);
     selectPose(poses[(i + d + poses.length) % poses.length]);
@@ -115,7 +135,9 @@ export function stepPose(d) {
 let viewCentered = false;
 
 export async function rerender() {
-    if (!state.app) return;
+    if (!state.app) {
+        return;
+    }
     cancelPreload();
     const token = ++renderToken;
     setBusy(true);
@@ -124,25 +146,35 @@ export async function rerender() {
             pose = state.pose;
         const items = await buildItems(state.app, state.app.motions[pose]);
         const scene = await buildScene(items);
-        if (scene && !scene.layers.some((l) => l.missing))
+        if (scene && !scene.layers.some((l) => l.missing)) {
             markLoaded(key, pose);
-        if (token !== renderToken) return;
+        }
+        if (token !== renderToken) {
+            return;
+        }
         state.scene = scene;
         renderLayers();
         $("#empty").hidden = !!scene;
-        if (!scene)
+        if (!scene) {
             $("#empty").textContent = "This pose has no visible sprites.";
+        }
         if (scene && !viewCentered) {
             viewCentered = true;
             centerView();
-        } else draw();
+        } else {
+            draw();
+        }
         updateUrl();
         updateExportInfo();
         restartPreload();
     } catch (err) {
-        if (token === renderToken) showError(err);
+        if (token === renderToken) {
+            showError(err);
+        }
     } finally {
-        if (token === renderToken) setBusy(false);
+        if (token === renderToken) {
+            setBusy(false);
+        }
     }
 }
 

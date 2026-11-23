@@ -22,7 +22,9 @@ import { updateUrl } from "./url.js";
 
 let headDataLoaded = false;
 async function ensureHeadData() {
-    if (headDataLoaded) return;
+    if (headDataLoaded) {
+        return;
+    }
     headDataLoaded = true;
     const [cust, special, gifts, stored] = await Promise.all([
         loadJSON("customize/customize.json"),
@@ -59,13 +61,18 @@ export function syncHeadPanel() {
         "disabled-block",
         !capable || state.headMode === "stored"
     );
-    if (colorEdit.key) setHsvFromHex(colorHex());
+    if (colorEdit.key) {
+        setHsvFromHex(colorHex());
+    }
     syncColorSwatches();
     syncColorEditor();
-    for (const p of PARTS) syncPart(p.key);
+    for (const p of PARTS) {
+        syncPart(p.key);
+    }
     syncFixedHeads();
-    for (const sel of document.querySelectorAll("#gifts select"))
+    for (const sel of document.querySelectorAll("#gifts select")) {
         sel.value = state.gifts[sel.dataset.pos] ?? "";
+    }
     const n = Object.values(state.gifts).filter((v) => v != null).length;
     $("#gift-count").textContent = n ? `(${n})` : "";
 }
@@ -108,7 +115,9 @@ function buildParts(cust) {
             headChanged();
         };
         det.addEventListener("toggle", () => {
-            if (!det.open || thumbs.childElementCount) return;
+            if (!det.open || thumbs.childElementCount) {
+                return;
+            }
             list.forEach((part, i) => {
                 const spr = p.thumb(part);
                 const t = el(
@@ -116,7 +125,7 @@ function buildParts(cust) {
                     { className: "thumb", ariaLabel: `${p.label} ${i + 1}` },
                     el("span", { className: "n", textContent: i + 1 })
                 );
-                if (hasSprite(spr))
+                if (hasSprite(spr)) {
                     t.append(
                         el("img", {
                             src: dataUrl(spr.file),
@@ -124,6 +133,7 @@ function buildParts(cust) {
                             alt: "",
                         })
                     );
+                }
                 t.dataset.i = i;
                 t.onclick = () => set(i);
                 thumbs.append(t);
@@ -136,7 +146,9 @@ function buildParts(cust) {
 
 function syncPart(key) {
     const det = document.querySelector(`#parts details[data-part="${key}"]`);
-    if (!det) return;
+    if (!det) {
+        return;
+    }
     const i = Math.min(state.custom[key], partCounts[key] - 1);
     det.querySelector(".val").textContent = String(i + 1);
     det.querySelectorAll(".thumb").forEach((t) =>
@@ -164,13 +176,15 @@ export function buildFixedHeads(special) {
             name,
             hay: [name, state.enNames[k] || "", k].join(" ").toLowerCase(),
         });
-        if (!SPECIAL_HEAD_CATEGORY[k])
+        if (!SPECIAL_HEAD_CATEGORY[k]) {
             duplicates.add("new/appearance_" + k.replace("customized_", ""));
+        }
     }
     const stored = new Set(state.storedHeads);
     for (const e of state.index) {
-        if (stored.has(e.key) && !duplicates.has(e.key))
+        if (stored.has(e.key) && !duplicates.has(e.key)) {
             groups[e.category].push({ value: e.key, name: e.name, hay: e.hay });
+        }
     }
     state.fixedHeadGroups = CATEGORIES.filter((c) => groups[c.key].length).map(
         (c) => [
@@ -198,7 +212,9 @@ export function renderFixedHeads() {
         const shown = options.filter((o) =>
             terms.every((t) => o.hay.includes(t))
         );
-        if (!shown.length) continue;
+        if (!shown.length) {
+            continue;
+        }
         const [group, items] = collapsibleGroup(
             "head:" + c.key,
             c.label,
@@ -218,7 +234,9 @@ export function renderFixedHeads() {
             b.onclick = async () => {
                 state.fixedHead = o.value;
                 const color = await fixedHeadSkinColor(o.value);
-                if (state.fixedHead !== o.value) return;
+                if (state.fixedHead !== o.value) {
+                    return;
+                }
                 state.fixedSkinColor = color;
                 headChanged();
             };
@@ -226,26 +244,30 @@ export function renderFixedHeads() {
         }
         list.append(group);
     }
-    if (!list.childElementCount)
+    if (!list.childElementCount) {
         list.append(
             el("div", {
                 className: "muted small empty-note",
                 textContent: "No matches",
             })
         );
+    }
     scrollFixedHeadIntoView();
 }
 
 function syncFixedHeads() {
-    for (const b of document.querySelectorAll("#fixed-head-list .item"))
+    for (const b of document.querySelectorAll("#fixed-head-list .item")) {
         b.classList.toggle("active", b.dataset.value === state.fixedHead);
+    }
     scrollFixedHeadIntoView();
 }
 
 function scrollFixedHeadIntoView() {
     const list = $("#fixed-head-list");
     const active = list.querySelector(".item.active");
-    if (!active || !active.offsetParent) return;
+    if (!active || !active.offsetParent) {
+        return;
+    }
     const top =
         active.getBoundingClientRect().top -
         list.getBoundingClientRect().top +
@@ -253,8 +275,9 @@ function scrollFixedHeadIntoView() {
     if (
         top < list.scrollTop ||
         top + active.offsetHeight > list.scrollTop + list.clientHeight
-    )
+    ) {
         list.scrollTop = top - list.clientHeight / 2;
+    }
 }
 
 export function pickFirstFixedHead() {
@@ -280,14 +303,17 @@ function buildGifts(data) {
                     (data.prefabs[g.prefab].aura ? "*" : ""),
             }))
             .sort((a, b) => a.name.localeCompare(b.name));
-        if (!opts.length) continue;
+        if (!opts.length) {
+            continue;
+        }
         const sel = el(
             "select",
             {},
             el("option", { value: "", textContent: "None" })
         );
-        for (const o of opts)
+        for (const o of opts) {
             sel.append(el("option", { value: o.id, textContent: o.name }));
+        }
         sel.dataset.pos = pos;
         sel.value = state.gifts[pos] ?? "";
         sel.onchange = () => {
@@ -307,8 +333,11 @@ function buildGifts(data) {
 
 export function randomize() {
     const r = (n) => Math.floor(Math.random() * n);
-    for (const p of PARTS)
-        if (partCounts[p.key]) state.custom[p.key] = r(partCounts[p.key]);
+    for (const p of PARTS) {
+        if (partCounts[p.key]) {
+            state.custom[p.key] = r(partCounts[p.key]);
+        }
+    }
     const hsl = (h, s, l) => {
         const c = document.createElement("canvas").getContext("2d");
         c.fillStyle = `hsl(${h} ${s}% ${l}%)`;
@@ -323,11 +352,14 @@ export function randomize() {
 export function randomizeGifts() {
     state.gifts = {};
     for (const sel of document.querySelectorAll("#gifts select")) {
-        if (Math.random() < 0.5) continue;
+        if (Math.random() < 0.5) {
+            continue;
+        }
         const opts = [...sel.options].filter((o) => o.value !== "");
-        if (opts.length)
+        if (opts.length) {
             state.gifts[sel.dataset.pos] =
                 +opts[Math.floor(Math.random() * opts.length)].value;
+        }
     }
     headChanged();
 }

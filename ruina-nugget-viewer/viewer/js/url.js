@@ -25,30 +25,39 @@ const URL_HEAD_KEYS = [
 ];
 
 function writeHeadParams(q) {
-    for (const k of URL_HEAD_KEYS) q.delete(k);
-    if (!URL_HEAD_MODES.includes(state.headMode)) return;
+    for (const k of URL_HEAD_KEYS) {
+        q.delete(k);
+    }
+    if (!URL_HEAD_MODES.includes(state.headMode)) {
+        return;
+    }
     q.set("head", state.headMode);
     if (state.headMode === "fixed") {
         q.set("fixedhead", state.fixedHead.split("/").pop());
         if (
             state.fixedSkinColor &&
             state.fixedSkinColor !== cachedFixedHeadSkinColor(state.fixedHead)
-        )
+        ) {
             q.set(URL_COLORS.skinColor, state.fixedSkinColor.replace("#", ""));
+        }
     } else {
         for (const [k, name] of Object.entries(URL_PARTS)) {
-            if (state.custom[k] !== DEFAULT_CUSTOM[k])
+            if (state.custom[k] !== DEFAULT_CUSTOM[k]) {
                 q.set(name, state.custom[k] + 1);
+            }
         }
         for (const [k, name] of Object.entries(URL_COLORS)) {
-            if (state.custom[k] !== DEFAULT_CUSTOM[k])
+            if (state.custom[k] !== DEFAULT_CUSTOM[k]) {
                 q.set(name, state.custom[k].replace("#", ""));
+            }
         }
     }
     const gifts = Object.values(state.gifts)
         .filter((v) => v != null)
         .sort((a, b) => a - b);
-    if (gifts.length) q.set("gifts", gifts.join(","));
+    if (gifts.length) {
+        q.set("gifts", gifts.join(","));
+    }
 }
 
 export async function readHeadParams(q) {
@@ -57,17 +66,22 @@ export async function readHeadParams(q) {
     state.custom = { ...DEFAULT_CUSTOM };
     for (const [k, name] of Object.entries(URL_PARTS)) {
         const n = parseInt(q.get(name), 10);
-        if (n >= 1) state.custom[k] = n - 1;
+        if (n >= 1) {
+            state.custom[k] = n - 1;
+        }
     }
     const urlColor = (name) => {
         const c = q.get(name);
         return /^[0-9a-f]{6}$/i.test(c || "") ? "#" + c.toLowerCase() : null;
     };
-    if (state.headMode === "custom")
+    if (state.headMode === "custom") {
         for (const [k, name] of Object.entries(URL_COLORS)) {
             const c = urlColor(name);
-            if (c) state.custom[k] = c;
+            if (c) {
+                state.custom[k] = c;
+            }
         }
+    }
     const fixed = q.get("fixedhead")?.replace(/ /g, "_");
     if (fixed) {
         const entry = state.index.find((e) => e.id === fixed);
@@ -86,23 +100,30 @@ export async function readHeadParams(q) {
         const data = await loadJSON("customize/gifts.json");
         for (const id of ids) {
             const g = data.gifts.find((x) => x.id === id);
-            if (g && !g.noAppear && g.prefab && data.prefabs[g.prefab])
+            if (g && !g.noAppear && g.prefab && data.prefabs[g.prefab]) {
                 state.gifts[g.position] = id;
+            }
         }
     }
 }
 
 export function updateUrl() {
-    if (!state.skinKey) return;
+    if (!state.skinKey) {
+        return;
+    }
     const q = new URLSearchParams(location.search);
     q.set("keypage", state.skinKey.split("/")[1]);
     const pose = state.chosenPose ?? state.pose;
-    if (pose) q.set("pose", pose);
-    else q.delete("pose");
+    if (pose) {
+        q.set("pose", pose);
+    } else {
+        q.delete("pose");
+    }
     writeHeadParams(q);
     const url = "?" + q.toString().replace(/%2F/g, "/").replace(/%2C/g, ",");
-    if (location.search !== url || location.hash)
+    if (location.search !== url || location.hash) {
         history.replaceState(null, "", url);
+    }
 }
 
 export function parseUrl() {

@@ -103,7 +103,9 @@ export function initLangMenu() {
     $("#lang-btn").onclick = () =>
         $("#lang-menu").hidden ? openLangMenu() : closeLangMenu();
     document.addEventListener("pointerdown", (e) => {
-        if (!$("#lang-dd").contains(e.target)) closeLangMenu();
+        if (!$("#lang-dd").contains(e.target)) {
+            closeLangMenu();
+        }
     });
     $("#lang-dd").addEventListener("keydown", (e) => {
         const menu = $("#lang-menu");
@@ -134,7 +136,9 @@ export function initLangMenu() {
 }
 
 async function setLang(key) {
-    if (key === state.lang) return;
+    if (key === state.lang) {
+        return;
+    }
     state.lang = key;
     store.set("lang", key);
     renderLangGroup();
@@ -143,6 +147,8 @@ async function setLang(key) {
         .then(buildFixedHeads)
         .catch(() => {});
     const entry = state.index.find((e) => e.key === state.skinKey);
-    if (entry) $("#skin-title").textContent = entry.name;
+    if (entry) {
+        $("#skin-title").textContent = entry.name;
+    }
     document.querySelector(".item.active")?.scrollIntoView({ block: "center" });
 }

@@ -11,10 +11,11 @@
                 try {
                     t = JSON.parse(localStorage.getItem("ruina-viewer:theme"));
                 } catch {}
-                if (t !== "light" && t !== "dark")
+                if (t !== "light" && t !== "dark") {
                     t = matchMedia("(prefers-color-scheme: light)").matches
                         ? "light"
                         : "dark";
+                }
                 document.documentElement.dataset.theme = t;
             })();
         </script>

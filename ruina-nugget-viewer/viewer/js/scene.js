@@ -27,7 +27,9 @@ export async function buildScene(items) {
             file: it.sprite.file,
             missing: !img,
         });
-        if (!img) return;
+        if (!img) {
+            return;
+        }
         const s = it.sprite;
         const k = 100 / s.ppu;
         const w = img.naturalWidth,
@@ -61,7 +63,9 @@ export async function buildScene(items) {
             alpha: color[3] ?? 1,
         });
     });
-    if (!parts.length) return null;
+    if (!parts.length) {
+        return null;
+    }
     return {
         parts,
         layers,
@@ -71,7 +75,9 @@ export async function buildScene(items) {
 
 export function drawScene(ctx, scene, base, hidden = null) {
     for (const p of scene.parts) {
-        if (hidden?.has(p.key)) continue;
+        if (hidden?.has(p.key)) {
+            continue;
+        }
         const t = base.multiply(p.m);
         t.e = Math.round(t.e);
         t.f = Math.round(t.f);

@@ -1,11 +1,15 @@
 const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
     let c = n;
-    for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+    for (let k = 0; k < 8; k++) {
+        c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+    }
     return c >>> 0;
 });
 function crc32(bytes) {
     let c = 0xffffffff;
-    for (const b of bytes) c = CRC_TABLE[(c ^ b) & 0xff] ^ (c >>> 8);
+    for (const b of bytes) {
+        c = CRC_TABLE[(c ^ b) & 0xff] ^ (c >>> 8);
+    }
     return (c ^ 0xffffffff) >>> 0;
 }
 

@@ -16,8 +16,11 @@ export function renderLayers() {
             disabled: l.missing,
         });
         box.onchange = () => {
-            if (box.checked) state.hiddenLayers.delete(l.key);
-            else state.hiddenLayers.add(l.key);
+            if (box.checked) {
+                state.hiddenLayers.delete(l.key);
+            } else {
+                state.hiddenLayers.add(l.key);
+            }
             syncLayersAll();
             draw();
         };
@@ -65,8 +68,11 @@ export function toggleAllLayers() {
     const layers = toggleableLayers();
     const allVisible = layers.every((l) => !state.hiddenLayers.has(l.key));
     for (const l of layers) {
-        if (allVisible) state.hiddenLayers.add(l.key);
-        else state.hiddenLayers.delete(l.key);
+        if (allVisible) {
+            state.hiddenLayers.add(l.key);
+        } else {
+            state.hiddenLayers.delete(l.key);
+        }
     }
     renderLayers();
     draw();

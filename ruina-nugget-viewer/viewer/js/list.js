@@ -125,12 +125,13 @@ export function collapsibleGroup(key, label, className, open) {
 export function listOrder() {
     const out = [];
     for (const c of CATEGORIES) {
-        for (const sub of SUBGROUPS[c.key])
+        for (const sub of SUBGROUPS[c.key]) {
             out.push(
                 ...state.index.filter(
                     (e) => e.category === c.key && e.sub === sub
                 )
             );
+        }
     }
     return out;
 }
@@ -144,11 +145,15 @@ export function renderList() {
         const rows = state.index.filter(
             (e) => e.category === c.key && terms.every((t) => e.hay.includes(t))
         );
-        if (!rows.length) continue;
+        if (!rows.length) {
+            continue;
+        }
         const [group, items] = collapsibleGroup(c.key, c.label, "group", q);
         for (const sub of SUBGROUPS[c.key]) {
             const subRows = rows.filter((e) => e.sub === sub);
-            if (!subRows.length) continue;
+            if (!subRows.length) {
+                continue;
+            }
             const [subgroup, subItems] = collapsibleGroup(
                 `${c.key}:${sub}`,
                 sub,

@@ -10,7 +10,9 @@ export function loadJSON(path, low = false) {
         jsonCache.set(
             path,
             fetch(dataUrl(path), low ? { priority: "low" } : {}).then((r) => {
-                if (!r.ok) throw new Error(`${r.status} ${path}`);
+                if (!r.ok) {
+                    throw new Error(`${r.status} ${path}`);
+                }
                 return r.json();
             })
         );
@@ -27,7 +29,9 @@ export function loadImage(file, low = false) {
             new Promise((res, rej) => {
                 const img = new Image();
                 img.decoding = "async";
-                if (low) img.fetchPriority = "low";
+                if (low) {
+                    img.fetchPriority = "low";
+                }
                 img.onload = () => res(img);
                 img.onerror = () => {
                     imgCache.delete(file);

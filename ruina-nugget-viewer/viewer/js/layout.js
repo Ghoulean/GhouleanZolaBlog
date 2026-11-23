@@ -20,16 +20,19 @@ export const isPanelOpen = (side) =>
 
 export function setPanel(side, open) {
     $("#app").classList.toggle(side + "-open", open);
-    if (!isMobile()) store.set("panel-" + side, open);
+    if (!isMobile()) {
+        store.set("panel-" + side, open);
+    }
     setTimeout(resizeCanvas, 200);
 }
 
 function restorePanels() {
-    for (const side of ["left", "right"])
+    for (const side of ["left", "right"]) {
         $("#app").classList.toggle(
             side + "-open",
             isMobile() ? false : store.get("panel-" + side, true)
         );
+    }
 }
 
 function placeControls() {
@@ -40,8 +43,11 @@ function placeControls() {
             node.before(mark);
             homes.set(node, mark);
         }
-        if (isMobile()) $(slot).append(node);
-        else homes.get(node).after(node);
+        if (isMobile()) {
+            $(slot).append(node);
+        } else {
+            homes.get(node).after(node);
+        }
     }
 }
 
@@ -55,10 +61,12 @@ function applyTab() {
     const mobile = isMobile();
     const shown = mobile ? tab : "appearance";
     $("#left .tab-bar").hidden = !mobile;
-    for (const pane of document.querySelectorAll("#left .tab-pane"))
+    for (const pane of document.querySelectorAll("#left .tab-pane")) {
         pane.hidden = pane.dataset.tab !== shown;
-    for (const b of document.querySelectorAll("#left .tab-bar [data-tab]"))
+    }
+    for (const b of document.querySelectorAll("#left .tab-bar [data-tab]")) {
         b.setAttribute("aria-selected", b.dataset.tab === tab);
+    }
 }
 
 function applyLayout() {

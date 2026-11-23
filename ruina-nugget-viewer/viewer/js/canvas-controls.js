@@ -25,11 +25,16 @@ function initZoomLabel(zl) {
     zl.addEventListener("change", () => {
         const n = parseFloat(zl.value.replace(/[^\d.]/g, ""));
         zl.blur();
-        if (Number.isFinite(n)) setZoomPct(n);
-        else draw();
+        if (Number.isFinite(n)) {
+            setZoomPct(n);
+        } else {
+            draw();
+        }
     });
     zl.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") zl.blur();
+        if (e.key === "Enter") {
+            zl.blur();
+        }
         if (e.key === "Escape") {
             zl.value = zoomPct() + "%";
             zl.blur();
@@ -49,10 +54,12 @@ const ACTIONS = {
 };
 
 function wire(root) {
-    for (const b of root.querySelectorAll("[data-act]"))
+    for (const b of root.querySelectorAll("[data-act]")) {
         b.onclick = ACTIONS[b.dataset.act];
-    for (const b of root.querySelectorAll("[data-bg]"))
+    }
+    for (const b of root.querySelectorAll("[data-bg]")) {
         b.onclick = () => setBg(b.dataset.bg);
+    }
     initZoomLabel(root.querySelector(".zoom-label"));
 }
 

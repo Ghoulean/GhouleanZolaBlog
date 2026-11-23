@@ -14,7 +14,7 @@ function rgbToHsv([r, g, b]) {
     const max = Math.max(r, g, b),
         d = max - Math.min(r, g, b);
     let h = 0;
-    if (d)
+    if (d) {
         h =
             60 *
             (max === r
@@ -22,6 +22,7 @@ function rgbToHsv([r, g, b]) {
                 : max === g
                   ? (b - r) / d + 2
                   : (r - g) / d + 4);
+    }
     return [h, max ? (d / max) * 100 : 0, max * 100];
 }
 
@@ -56,8 +57,11 @@ const colorOf = (key) =>
         : state.custom[key + "Color"]) || "#ffffff";
 
 function setColor(key, hex) {
-    if (key === "fixedSkin") state.fixedSkinColor = hex;
-    else state.custom[key + "Color"] = hex;
+    if (key === "fixedSkin") {
+        state.fixedSkinColor = hex;
+    } else {
+        state.custom[key + "Color"] = hex;
+    }
 }
 
 export function colorHex() {
@@ -82,10 +86,12 @@ function ceGradient(mode, i) {
         return `linear-gradient(to right, ${at(0)}, ${at(255)})`;
     }
     const [h, s, v] = colorEdit.hsv;
-    if (i === 0)
+    if (i === 0) {
         return `linear-gradient(to right, ${[0, 60, 120, 180, 240, 300, 360].map((x) => css(hsvToRgb([x, s, v]))).join(", ")})`;
-    if (i === 1)
+    }
+    if (i === 1) {
         return `linear-gradient(to right, ${css(hsvToRgb([h, 0, v]))}, ${css(hsvToRgb([h, 100, v]))})`;
+    }
     return `linear-gradient(to right, ${css(hsvToRgb([h, s, 0]))}, ${css(hsvToRgb([h, s, 100]))})`;
 }
 
@@ -120,7 +126,9 @@ function buildColorRows() {
                     ch.max,
                     Math.max(0, Math.round(Number(raw)))
                 );
-                if (!Number.isFinite(n)) return;
+                if (!Number.isFinite(n)) {
+                    return;
+                }
                 if (mode === "rgb") {
                     const rgb = hexToRgb(colorHex());
                     rgb[i] = n;
@@ -132,7 +140,9 @@ function buildColorRows() {
             };
             range.addEventListener("input", () => commit(range.value));
             num.addEventListener("input", () => {
-                if (num.value !== "") commit(num.value);
+                if (num.value !== "") {
+                    commit(num.value);
+                }
             });
             num.addEventListener("blur", () => syncColorEditor());
             const row = el(
@@ -151,7 +161,9 @@ function buildColorRows() {
 
 function applyEditorColor(hex, keepHsv) {
     setColor(colorEdit.key, hex);
-    if (!keepHsv) setHsvFromHex(hex);
+    if (!keepHsv) {
+        setHsvFromHex(hex);
+    }
     saveHead();
     syncColorSwatches();
     syncColorEditor();
@@ -170,7 +182,9 @@ export function syncColorSwatches() {
 export function syncColorEditor() {
     const ed = $("#color-editor");
     ed.hidden = !colorEdit.key;
-    if (!colorEdit.key) return;
+    if (!colorEdit.key) {
+        return;
+    }
     const hexIn = $("#ce-hex");
     if (document.activeElement !== hexIn) {
         hexIn.value = colorHex().toUpperCase();
@@ -184,35 +198,49 @@ export function syncColorEditor() {
         const v = Math.round(vals[mode][i]);
         range.value = v;
         range.style.background = ceGradient(mode, i);
-        if (document.activeElement !== num) num.value = v;
+        if (document.activeElement !== num) {
+            num.value = v;
+        }
     }
 }
 
 function openColorEditor(button) {
     const key = button.dataset.color;
     colorEdit.key = colorEdit.key === key ? null : key;
-    if (colorEdit.key) button.closest(".colors").after($("#color-editor"));
-    if (colorEdit.key) setHsvFromHex(colorHex());
+    if (colorEdit.key) {
+        button.closest(".colors").after($("#color-editor"));
+    }
+    if (colorEdit.key) {
+        setHsvFromHex(colorHex());
+    }
     syncColorSwatches();
     syncColorEditor();
 }
 
 export function initColorEditor() {
-    for (const b of document.querySelectorAll(".color-item"))
+    for (const b of document.querySelectorAll(".color-item")) {
         b.onclick = () => openColorEditor(b);
+    }
     const hexIn = $("#ce-hex");
     hexIn.addEventListener("input", () => {
         let s = hexIn.value.trim();
-        if (!s.startsWith("#")) s = "#" + s;
-        if (/^#[0-9a-f]{3}$/i.test(s))
+        if (!s.startsWith("#")) {
+            s = "#" + s;
+        }
+        if (/^#[0-9a-f]{3}$/i.test(s)) {
             s = "#" + [...s.slice(1)].map((c) => c + c).join("");
+        }
         const ok = /^#[0-9a-f]{6}$/i.test(s);
         hexIn.classList.toggle("invalid", !ok);
-        if (ok) applyEditorColor(s.toLowerCase(), false);
+        if (ok) {
+            applyEditorColor(s.toLowerCase(), false);
+        }
     });
     hexIn.addEventListener("blur", () => syncColorEditor());
     hexIn.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === "Escape") hexIn.blur();
+        if (e.key === "Enter" || e.key === "Escape") {
+            hexIn.blur();
+        }
     });
     buildColorRows();
 }

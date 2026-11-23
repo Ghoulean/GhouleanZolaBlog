@@ -29,15 +29,22 @@ function viewMatrix() {
 
 let drawQueued = false;
 export function draw() {
-    for (const zl of document.querySelectorAll(".zoom-label"))
-        if (document.activeElement !== zl) zl.value = zoomPct() + "%";
-    if (drawQueued) return;
+    for (const zl of document.querySelectorAll(".zoom-label")) {
+        if (document.activeElement !== zl) {
+            zl.value = zoomPct() + "%";
+        }
+    }
+    if (drawQueued) {
+        return;
+    }
     drawQueued = true;
     requestAnimationFrame(() => {
         drawQueued = false;
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        if (!state.scene) return;
+        if (!state.scene) {
+            return;
+        }
         ctx.imageSmoothingEnabled = true;
         ctx.imageSmoothingQuality = "high";
         drawScene(ctx, state.scene, viewMatrix(), state.hiddenLayers);
@@ -45,7 +52,9 @@ export function draw() {
 }
 
 export function centerView() {
-    if (!state.scene) return;
+    if (!state.scene) {
+        return;
+    }
     const b = state.scene.bounds;
     const v = state.view;
     const cx = (b.minX + b.maxX) / 2;
@@ -55,7 +64,9 @@ export function centerView() {
 }
 
 export function fitView() {
-    if (!state.scene) return;
+    if (!state.scene) {
+        return;
+    }
     const b = state.scene.bounds;
     const cw = canvas.width / dpr,
         ch = canvas.height / dpr;
@@ -78,7 +89,9 @@ export const stepZoom = (dir, sx, sy) =>
     setZoomPct(zoomPct() + (dir > 0 ? 10 : -10), sx, sy);
 
 export function resetView() {
-    if (!state.scene) return;
+    if (!state.scene) {
+        return;
+    }
     state.view.zoom = 1;
     centerView();
 }
@@ -99,7 +112,9 @@ function zoomAt(factor, sx, sy) {
 }
 
 export function setFlip(on) {
-    if (state.view.flip === on) return;
+    if (state.view.flip === on) {
+        return;
+    }
     state.view.flip = on;
     state.view.camX = -state.view.camX;
     document
@@ -122,7 +137,9 @@ canvas.addEventListener("pointerdown", (e) => {
 });
 canvas.addEventListener("pointermove", (e) => {
     const prev = pointers.get(e.pointerId);
-    if (!prev) return;
+    if (!prev) {
+        return;
+    }
     const cur = { x: e.clientX, y: e.clientY };
     const v = state.view;
     if (pointers.size === 1) {
@@ -147,8 +164,12 @@ canvas.addEventListener("pointermove", (e) => {
 });
 const endPointer = (e) => {
     pointers.delete(e.pointerId);
-    if (pointers.size < 2) pinch = null;
-    if (!pointers.size) canvas.classList.remove("dragging");
+    if (pointers.size < 2) {
+        pinch = null;
+    }
+    if (!pointers.size) {
+        canvas.classList.remove("dragging");
+    }
 };
 canvas.addEventListener("pointerup", endPointer);
 canvas.addEventListener("pointercancel", endPointer);
@@ -177,7 +198,9 @@ canvas.addEventListener(
                 wheelAcc = 0;
             }
         }
-        if (dir) stepZoom(dir, e.clientX - r.left, e.clientY - r.top);
+        if (dir) {
+            stepZoom(dir, e.clientX - r.left, e.clientY - r.top);
+        }
     },
     { passive: false }
 );

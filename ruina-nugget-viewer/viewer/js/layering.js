@@ -29,7 +29,9 @@ export const hasSprite = (s) => s && s.size;
 
 function headRoot(motion, scaleFactor) {
     const head = motion.layers.find((l) => l.type === "Head");
-    if (!head) return null;
+    if (!head) {
+        return null;
+    }
     const parent = motion.headPivot || head;
     return compose(parent, {
         x: 0,
@@ -65,7 +67,9 @@ function storedHead(app) {
                 hasSprite(l.sprite)
         );
         const root = headRoot(m, sf);
-        if (!root || !layers.some((l) => l.type === "Head")) continue;
+        if (!root || !layers.some((l) => l.type === "Head")) {
+            continue;
+        }
         const minOf = (type) =>
             Math.min(
                 ...layers.filter((l) => l.type === type).map((l) => l.order)
@@ -103,8 +107,11 @@ export function loadAppearance(key, low = false) {
             loadJSON(key + "/appearance.json", low)
                 .then((app) => {
                     const scaled = structuredClone(app);
-                    for (const m of Object.values(scaled.motions))
-                        for (const l of m.layers) l.order *= 10;
+                    for (const m of Object.values(scaled.motions)) {
+                        for (const l of m.layers) {
+                            l.order *= 10;
+                        }
+                    }
                     return scaled;
                 })
                 .catch((err) => {
@@ -118,16 +125,21 @@ export function loadAppearance(key, low = false) {
 
 const storedHeadCache = new Map();
 function loadStoredHead(key) {
-    if (!storedHeadCache.has(key))
+    if (!storedHeadCache.has(key)) {
         storedHeadCache.set(key, loadAppearance(key).then(storedHead));
+    }
     return storedHeadCache.get(key);
 }
 
 function minOrders(motion, skipBlr = false) {
     const o = { FrontHair: 1000, RearHair: 1000, Face: 1000, Head: 1000 };
     for (const l of motion.layers) {
-        if (l.type in o && !(skipBlr && l.type === "Face" && l.name === "blr"))
+        if (
+            l.type in o &&
+            !(skipBlr && l.type === "Face" && l.name === "blr")
+        ) {
             o[l.type] = Math.min(o[l.type], l.order);
+        }
     }
     return o;
 }
@@ -142,9 +154,11 @@ function specialItems(motion, special, scaleFactor, giftHidden) {
     if (!s) {
         s = heads.find((h) => h.direction === d) || heads[0];
     } else if (s.direction !== d) {
-        if (s.replaceHead)
+        if (s.replaceHead) {
             s = heads.find((h) => h.object === s.replaceHead) || s;
-        else s = heads.find((h) => h.direction === d) || heads[0];
+        } else {
+            s = heads.find((h) => h.direction === d) || heads[0];
+        }
     }
     const o = minOrders(motion, true);
     const rhO = o.RearHair === 1000 ? -2 : o.RearHair;
@@ -157,11 +171,17 @@ function specialItems(motion, special, scaleFactor, giftHidden) {
         rearHair: rhO,
     };
     const root = headRoot(motion, scaleFactor);
-    if (!root) return { items: [], root: null };
+    if (!root) {
+        return { items: [], root: null };
+    }
     const items = [];
     for (const r of s.renderers) {
-        if (!r.visible || !hasSprite(r.sprite)) continue;
-        if (giftHidden.has(r.role) && !r.additional) continue;
+        if (!r.visible || !hasSprite(r.sprite)) {
+            continue;
+        }
+        if (giftHidden.has(r.role) && !r.additional) {
+            continue;
+        }
         items.push({
             ...r,
             ...compose(root, r),
@@ -174,8 +194,12 @@ function specialItems(motion, special, scaleFactor, giftHidden) {
     if (special.keepSourceOrder) {
         let prev = -Infinity;
         for (const it of items) {
-            if (it.role === "rearHair") continue;
-            if (it.order < prev) it.order = prev + 0.01;
+            if (it.role === "rearHair") {
+                continue;
+            }
+            if (it.order < prev) {
+                it.order = prev + 0.01;
+            }
             prev = it.order;
         }
     }
@@ -188,13 +212,18 @@ function giftItems(motion, gift, prefab, root) {
     const rhO = o.RearHair >= 100 ? 0 : o.RearHair;
     const pos = gift.position;
     let order = o.FrontHair;
-    if (pos in GIFT_ORDER_FROM_FACE) order = o.Face + GIFT_ORDER_FROM_FACE[pos];
-    else if (pos === "Ear") order = o.FrontHair + 2;
-    else if (pos in GIFT_ORDER_FROM_HAIR)
+    if (pos in GIFT_ORDER_FROM_FACE) {
+        order = o.Face + GIFT_ORDER_FROM_FACE[pos];
+    } else if (pos === "Ear") {
+        order = o.FrontHair + 2;
+    } else if (pos in GIFT_ORDER_FROM_HAIR) {
         order =
             (o.FrontHair <= o.Face ? o.Face : o.FrontHair) +
             GIFT_ORDER_FROM_HAIR[pos];
-    if (gift.id === 85) order = o.Head + 1;
+    }
+    if (gift.id === 85) {
+        order = o.Head + 1;
+    }
     const show = { front, frontBack: front, side: !front, sideBack: !front };
     const orders = {
         front: order,
@@ -205,8 +234,12 @@ function giftItems(motion, gift, prefab, root) {
     const items = [];
     for (const r of prefab.renderers) {
         const base = r.role.replace("Child", "");
-        if (!r.visible || !hasSprite(r.sprite)) continue;
-        if (base in show && !show[base]) continue;
+        if (!r.visible || !hasSprite(r.sprite)) {
+            continue;
+        }
+        if (base in show && !show[base]) {
+            continue;
+        }
         items.push({
             ...r,
             ...compose(root, r),
@@ -222,9 +255,12 @@ function giftItems(motion, gift, prefab, root) {
 function giftHiddenParts(gifts) {
     const pos = new Set(gifts.map((g) => g.position));
     const hidden = new Set();
-    if (pos.has("Helmet"))
+    if (pos.has("Helmet")) {
         ["head", "frontHair", "rearHair"].forEach((x) => hidden.add(x));
-    if (pos.has("Hood")) hidden.add("rearHair");
+    }
+    if (pos.has("Hood")) {
+        hidden.add("rearHair");
+    }
     return hidden;
 }
 
@@ -237,18 +273,34 @@ function customItems(motion, cust, opt, scaleFactor, giftHidden) {
         hood = null;
     for (const l of motion.layers) {
         const o = l.order;
-        if (l.type === "FrontHair") fhO = Math.min(fhO, o);
-        else if (l.type === "RearHair") rhO = Math.min(rhO, o);
-        else if (l.type === "Face") faceO = Math.min(faceO, o);
-        else if (l.type === "Head") headO = Math.min(headO, o);
-        else if (l.type === "Hood" && (!hood || o > hood.order)) hood = l;
+        if (l.type === "FrontHair") {
+            fhO = Math.min(fhO, o);
+        } else if (l.type === "RearHair") {
+            rhO = Math.min(rhO, o);
+        } else if (l.type === "Face") {
+            faceO = Math.min(faceO, o);
+        } else if (l.type === "Head") {
+            headO = Math.min(headO, o);
+        } else if (l.type === "Hood" && (!hood || o > hood.order)) {
+            hood = l;
+        }
     }
-    if (hood && fhO > hood.order) fhO = hood.order - 5;
-    if (faceO >= 1000) faceO = headO + 10;
-    if (fhO >= 1000) fhO = faceO + 10;
-    if (rhO === 1000) rhO = -2;
+    if (hood && fhO > hood.order) {
+        fhO = hood.order - 5;
+    }
+    if (faceO >= 1000) {
+        faceO = headO + 10;
+    }
+    if (fhO >= 1000) {
+        fhO = faceO + 10;
+    }
+    if (rhO === 1000) {
+        rhO = -2;
+    }
     const root = headRoot(motion, scaleFactor);
-    if (!root) return { items: [], root: null };
+    if (!root) {
+        return { items: [], root: null };
+    }
 
     const act = motion.action;
     const expr =
@@ -310,7 +362,9 @@ function customItems(motion, cust, opt, scaleFactor, giftHidden) {
     const identity = { x: 0, y: 0, rotation: 0, scaleX: 1, scaleY: 1 };
     const items = [];
     for (const [rigName, spr, order, color, role] of parts) {
-        if (!hasSprite(spr) || giftHidden.has(role)) continue;
+        if (!hasSprite(spr) || giftHidden.has(role)) {
+            continue;
+        }
         const rig = cust.rig[rigName] || identity;
         items.push({
             sprite: spr,
@@ -365,11 +419,14 @@ export const cachedFixedHeadSkinColor = (key) => fixedSkinDefaults.get(key);
 export async function fixedHeadSkinColor(key) {
     if (!fixedSkinDefaults.has(key)) {
         let hex;
-        if (key.includes("/")) hex = (await loadSkinTones())[key];
-        else {
+        if (key.includes("/")) {
+            hex = (await loadSkinTones())[key];
+        } else {
             const c = (await loadJSON("customize/special_heads.json"))[key]
                 ?.skinColor;
-            if (c) hex = toHex(c);
+            if (c) {
+                hex = toHex(c);
+            }
         }
         fixedSkinDefaults.set(key, hex || "#ffffff");
     }
@@ -400,11 +457,12 @@ export async function buildItems(app, motion, head = headSnapshot()) {
                 : (await loadJSON("customize/special_heads.json"))[
                       head.fixedHead
                   ];
-            if (special)
+            if (special) {
                 skinColor = hexColor(
                     head.fixedSkinColor ||
                         (await fixedHeadSkinColor(head.fixedHead))
                 );
+            }
         }
         const giftIds = Object.values(head.gifts).filter((v) => v != null);
         if (giftIds.length) {
@@ -417,11 +475,19 @@ export async function buildItems(app, motion, head = headSnapshot()) {
     }
     const items = [];
     for (let l of motion.layers) {
-        if (!(l.visible && hasSprite(l.sprite))) continue;
+        if (!(l.visible && hasSprite(l.sprite))) {
+            continue;
+        }
         if (custom) {
-            if (HIDDEN_WHEN_CUSTOM.has(l.type)) continue;
-            if (l.type === "Skin") l = { ...l, color: skinColor };
-        } else if (app.customizable && l.type === "Skin") continue;
+            if (HIDDEN_WHEN_CUSTOM.has(l.type)) {
+                continue;
+            }
+            if (l.type === "Skin") {
+                l = { ...l, color: skinColor };
+            }
+        } else if (app.customizable && l.type === "Skin") {
+            continue;
+        }
         items.push(l);
     }
     const skinLayerCount = items.length;
@@ -438,11 +504,14 @@ export async function buildItems(app, motion, head = headSnapshot()) {
             ? specialItems(motion, special, sf, hidden)
             : customItems(motion, cust, opt, sf, hidden);
         items.push(...headItems);
-        if (root)
-            for (const [g, prefab] of gifts)
+        if (root) {
+            for (const [g, prefab] of gifts) {
                 items.push(...giftItems(motion, g, prefab, root));
-        for (let i = skinLayerCount; i < items.length; i++)
+            }
+        }
+        for (let i = skinLayerCount; i < items.length; i++) {
             items[i].headPart = true;
+        }
     }
     const isHeadPart = (i) => i >= skinLayerCount;
     return items

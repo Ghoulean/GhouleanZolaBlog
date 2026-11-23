@@ -42,7 +42,9 @@ export function initExportScale() {
         setExportScale(Number.isFinite(n) ? n : exportScalePct);
     });
     txt.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") txt.blur();
+        if (e.key === "Enter") {
+            txt.blur();
+        }
         if (e.key === "Escape") {
             txt.value = exportScalePct + "%";
             txt.blur();
@@ -74,7 +76,9 @@ export function updateExportInfo() {
     const isJpeg = $("#exp-format").value === "image/jpeg";
     const solid = $("#exp-bg").value === "color" || isJpeg;
     $("#exp-bg").disabled = isJpeg;
-    if (isJpeg) $("#exp-bg").value = "color";
+    if (isJpeg) {
+        $("#exp-bg").value = "color";
+    }
     $("#exp-bg-color-field").classList.toggle("disabled-block", !solid);
     $("#exp-quality-field").classList.toggle(
         "disabled-block",
@@ -82,7 +86,9 @@ export function updateExportInfo() {
     );
     const btns = [$("#export"), $("#copy")];
     btns.forEach((b) => (b.disabled = !state.scene));
-    if (!exportAllBusy) $("#export-all").disabled = !state.app;
+    if (!exportAllBusy) {
+        $("#export-all").disabled = !state.app;
+    }
     if (!state.scene) {
         $("#exp-info").textContent = "";
         return;
@@ -135,7 +141,9 @@ function exportName(
 }
 
 export function doExport() {
-    if (!state.scene) return;
+    if (!state.scene) {
+        return;
+    }
     const { c, o } = renderExport();
     const ext = {
         "image/png": "png",
@@ -144,11 +152,14 @@ export function doExport() {
     }[o.type];
     c.toBlob(
         (blob) => {
-            if (!blob) return;
-            if (blob.type !== o.type)
+            if (!blob) {
+                return;
+            }
+            if (blob.type !== o.type) {
                 alert(
                     `This browser can't encode ${ext.toUpperCase()}; saved as ${blob.type} instead.`
                 );
+            }
             const a = el("a", {
                 href: URL.createObjectURL(blob),
                 download: exportName(
@@ -175,7 +186,9 @@ function saveBlob(blob, name) {
 
 let exportAllBusy = false;
 export async function doExportAll() {
-    if (!state.app || exportAllBusy) return;
+    if (!state.app || exportAllBusy) {
+        return;
+    }
     exportAllBusy = true;
     const btn = $("#export-all"),
         status = $("#export-all-status");
@@ -216,8 +229,9 @@ export async function doExportAll() {
                 data: new Uint8Array(await blob.arrayBuffer()),
             });
         }
-        if (files.length)
+        if (files.length) {
             saveBlob(makeZip(files), exportName("zip", null, ctx));
+        }
         status.textContent =
             `Saved ${files.length} image${files.length === 1 ? "" : "s"}` +
             (skipped.length
@@ -233,7 +247,9 @@ export async function doExportAll() {
 }
 
 export async function doCopy() {
-    if (!state.scene) return;
+    if (!state.scene) {
+        return;
+    }
     const btn = $("#copy");
     try {
         const { c } = renderExport();

@@ -18,7 +18,9 @@ const currentTheme = () =>
 
 function setTheme(theme, save = true) {
     document.documentElement.dataset.theme = theme;
-    if (save) store.set("theme", theme);
+    if (save) {
+        store.set("theme", theme);
+    }
     const b = $("#theme-toggle");
     const other = theme === "dark" ? "light" : "dark";
     b.innerHTML = THEME_ICONS[theme];

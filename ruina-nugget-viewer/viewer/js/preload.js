@@ -13,7 +13,9 @@ const waiters = [];
 const loaded = new Set();
 
 export function updateLoadedCount() {
-    if (!enabled && $("#preload-count").textContent) return;
+    if (!enabled && $("#preload-count").textContent) {
+        return;
+    }
     const total = state.index?.reduce((n, e) => n + e.motions.length, 0) ?? 0;
     $("#preload-count").textContent =
         `${loaded.size} / ${total} sprites loaded`;
@@ -23,7 +25,9 @@ const isLoaded = (key, pose) => loaded.has(key + "|" + pose);
 
 export function markLoaded(key, pose) {
     const id = key + "|" + pose;
-    if (loaded.has(id)) return;
+    if (loaded.has(id)) {
+        return;
+    }
     loaded.add(id);
     updateLoadedCount();
 }
@@ -70,8 +74,11 @@ export function initPreloadSetting() {
         store.set("preload", enabled);
         sync();
         updateLoadedCount();
-        if (enabled) restartPreload();
-        else cancelPreload();
+        if (enabled) {
+            restartPreload();
+        } else {
+            cancelPreload();
+        }
     };
     range.oninput = () => {
         limit = Number(range.value);
@@ -87,7 +94,9 @@ export function cancelPreload() {
 
 export function restartPreload() {
     const g = ++gen;
-    if (enabled && state.app) run(g, state.skinKey, state.pose, headSnapshot());
+    if (enabled && state.app) {
+        run(g, state.skinKey, state.pose, headSnapshot());
+    }
 }
 
 const idle = () =>
@@ -100,11 +109,17 @@ const idle = () =>
 function neighbors(key) {
     const order = listOrder();
     const i = order.findIndex((e) => e.key === key);
-    if (i < 0) return [];
+    if (i < 0) {
+        return [];
+    }
     const out = [];
     for (let d = 1; d < order.length; d++) {
-        if (order[i + d]) out.push(order[i + d].key);
-        if (order[i - d]) out.push(order[i - d].key);
+        if (order[i + d]) {
+            out.push(order[i + d].key);
+        }
+        if (order[i - d]) {
+            out.push(order[i - d].key);
+        }
     }
     return out;
 }
@@ -117,8 +132,12 @@ async function* jobs(key, pose) {
         sortPoses(Object.keys(app.motions)).filter((p) => p !== pose),
     ];
     const near = neighbors(key);
-    for (const k of near) yield [k, null, "picked"];
-    for (const k of near) yield [k, null, "rest"];
+    for (const k of near) {
+        yield [k, null, "picked"];
+    }
+    for (const k of near) {
+        yield [k, null, "rest"];
+    }
 }
 
 async function queueFiles(files, live) {
@@ -151,14 +170,20 @@ async function queueFiles(files, live) {
 async function preloadHeads(app, head, live) {
     const files = new Set();
     for (const p of sortPoses(Object.keys(app.motions))) {
-        if (!live()) return false;
+        if (!live()) {
+            return false;
+        }
         let items;
         try {
             items = await buildItems(app, app.motions[p], head);
         } catch {
             continue;
         }
-        for (const it of items) if (it.headPart) files.add(it.sprite.file);
+        for (const it of items) {
+            if (it.headPart) {
+                files.add(it.sprite.file);
+            }
+        }
     }
     return live() && (await queueFiles(files, live)) !== null;
 }
@@ -166,13 +191,20 @@ async function preloadHeads(app, head, live) {
 async function run(g, key, pose, head) {
     const live = () => g === gen;
     try {
-        if (!(await preloadHeads(await loadAppearance(key, true), head, live)))
+        if (
+            !(await preloadHeads(await loadAppearance(key, true), head, live))
+        ) {
             return;
+        }
         for await (let [k, app, poses] of jobs(key, pose)) {
-            if (!live()) return;
+            if (!live()) {
+                return;
+            }
             if (!app) {
                 await idle();
-                if (!live()) return;
+                if (!live()) {
+                    return;
+                }
                 try {
                     app = await loadAppearance(k, true);
                 } catch {
@@ -187,8 +219,12 @@ async function run(g, key, pose, head) {
                           );
             }
             for (const p of poses) {
-                if (!live()) return;
-                if (isLoaded(k, p)) continue;
+                if (!live()) {
+                    return;
+                }
+                if (isLoaded(k, p)) {
+                    continue;
+                }
                 let items;
                 try {
                     items = await buildItems(app, app.motions[p], head);
@@ -199,9 +235,13 @@ async function run(g, key, pose, head) {
                     items.map((it) => it.sprite.file),
                     live
                 );
-                if (!pending) return;
+                if (!pending) {
+                    return;
+                }
                 Promise.all(pending).then((ok) => {
-                    if (ok.every(Boolean)) markLoaded(k, p);
+                    if (ok.every(Boolean)) {
+                        markLoaded(k, p);
+                    }
                 });
             }
         }
