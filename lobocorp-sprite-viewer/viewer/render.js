@@ -16,7 +16,19 @@ class GLTexture extends spine.Texture {
             gl.UNSIGNED_BYTE,
             bitmap
         );
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        const pot = (n) => (n & (n - 1)) === 0;
+        const mips =
+            (typeof WebGL2RenderingContext !== "undefined" &&
+                gl instanceof WebGL2RenderingContext) ||
+            (pot(bitmap.width) && pot(bitmap.height));
+        if (mips) {
+            gl.generateMipmap(gl.TEXTURE_2D);
+        }
+        gl.texParameteri(
+            gl.TEXTURE_2D,
+            gl.TEXTURE_MIN_FILTER,
+            mips ? gl.LINEAR_MIPMAP_LINEAR : gl.LINEAR
+        );
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
@@ -35,7 +47,12 @@ class Batcher {
         const vs = `attribute vec2 aPos; attribute vec4 aColor; attribute vec2 aUV;
       uniform mat3 uProj; varying vec4 vColor; varying vec2 vUV;
       void main() { vec3 p = uProj * vec3(aPos, 1.0); gl_Position = vec4(p.xy, 0.0, 1.0); vColor = aColor; vUV = aUV; }`;
-        const fs = `precision mediump float; varying vec4 vColor; varying vec2 vUV; uniform sampler2D uTex;
+        const fs = `#ifdef GL_FRAGMENT_PRECISION_HIGH
+      precision highp float;
+      #else
+      precision mediump float;
+      #endif
+       varying vec4 vColor; varying vec2 vUV; uniform sampler2D uTex;
       void main() { gl_FragColor = texture2D(uTex, vUV) * vColor; }`;
         const sh = (type, src) => {
             const s = gl.createShader(type);
@@ -159,6 +176,20 @@ class Batcher {
 
 const QUAD_TRIS = [0, 1, 2, 2, 3, 0];
 
+function followerBone(bone) {
+    const r = Math.atan2(bone.c, bone.a);
+    const cos = Math.cos(r),
+        sin = Math.sin(r);
+    return {
+        worldX: bone.worldX,
+        worldY: bone.worldY,
+        a: cos * bone.scaleX,
+        b: -sin * bone.scaleY,
+        c: sin * bone.scaleX,
+        d: cos * bone.scaleY,
+    };
+}
+
 class Drawer {
     constructor(batcher) {
         this.b = batcher;
@@ -244,7 +275,12 @@ class Drawer {
                 }
                 const att = slot.att;
                 this.ensure(4);
-                att.computeWorldVertices(slot.bone, this.world, 0, 2);
+                att.computeWorldVertices(
+                    slot.follower ? followerBone(slot.bone) : slot.bone,
+                    this.world,
+                    0,
+                    2
+                );
                 const ac = att.color;
                 this.emit(
                     att.region.texture,

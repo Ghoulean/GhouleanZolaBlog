@@ -1278,7 +1278,8 @@ h4 {
 #employee-options .sub-block:last-child {
     margin-bottom: 0;
 }
-#employee-options.disabled-block,
+#appearance-block.disabled-block,
+#equipment-block.disabled-block,
 #gift-controls.disabled-block {
     opacity: 0.4;
 }

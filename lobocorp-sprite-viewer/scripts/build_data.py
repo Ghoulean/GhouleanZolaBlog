@@ -648,6 +648,21 @@ def clean_scene(path, eid):
     return dropped, drawable
 
 
+def merge_portrait(employee_dir):
+    src = os.path.join(LCX, "scratch", "portrait", "kit")
+    shutil.copyfile(os.path.join(src, "portrait.json"), os.path.join(employee_dir, "portrait.json"))
+    copy_tree(os.path.join(src, "sprites", "portrait"), os.path.join(employee_dir, "sprites", "portrait"))
+
+
+def use_clerk_page_for_agent(rigs):
+    agent, clerk = os.path.join(rigs, "agent"), os.path.join(rigs, "clerk")
+    with open(os.path.join(agent, "skeleton.atlas"), "rb") as a, open(os.path.join(clerk, "skeleton.atlas"), "rb") as c:
+        if a.read() != c.read():
+            print("agent/clerk atlases differ, keeping the agent page")
+            return
+    shutil.copyfile(os.path.join(clerk, "skeleton.png"), os.path.join(agent, "skeleton.png"))
+
+
 def main():
     cat = json.load(open(os.path.join(LCX, "cache", "catalog.json"), encoding="utf8"))["entities"]
     os.makedirs(OUT, exist_ok=True)
@@ -754,6 +769,8 @@ def main():
     merge_gift_rules(os.path.join(OUT, "employee", "kit.json"))
     merge_symbol_rules(os.path.join(OUT, "employee", "kit.json"))
     clean_weapons(os.path.join(OUT, "employee"))
+    use_clerk_page_for_agent(os.path.join(OUT, "employee", "rigs"))
+    merge_portrait(os.path.join(OUT, "employee"))
 
     json.dump({"format": "lobo-viewer/1", "entities": entries},
               open(os.path.join(OUT, "index.json"), "w", encoding="utf8"), ensure_ascii=False, separators=(",", ":"))

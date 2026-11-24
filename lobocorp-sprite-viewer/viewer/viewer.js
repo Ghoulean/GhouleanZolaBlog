@@ -139,6 +139,19 @@ const ANIM_FACE_RIGS = {
 const NO_ARMBAND_RIGS = new Set(["employee/rigs/ScytheApostleDead"]);
 const ARMBAND_SLOT = "R arm 1";
 const SEPARATE_FACE_RIGS = new Set(["employee/rigs/OtherWorldPortraitDead"]);
+const SEPARATOR_RIGS = new Set([
+    "AgentPanic",
+    "ArmorCreatureDead",
+    "BigTreeSapUse",
+    "HealthBraceletDead",
+    "KitEquipCreatureUse",
+    "LongBirdAgentDead",
+    "MachineDawnAgentDead",
+    "OrchestraAgentDead",
+    "OtherWorldPortraitDead",
+    "PinkCorpsAgentCTRL",
+    "SpiderMomAgentDead",
+]);
 const GIFT_TYPES = ["add", "replace", "special_add"];
 const GIFT_REGION_LABELS = {
     head: "Head",
@@ -166,6 +179,7 @@ const GIFT_WEAPON = {
     shift: [0.47, 0],
 };
 const GIFT_GROUP_TAIL = ["2:10", "2:5", "2:4"];
+const GIFT_RANDOMIZE_KEEP = new Set(["2:5", "2:4"]);
 const isWeaponGift = (g) => g.type === 2 && g.region === 4;
 const DEPARTMENTS = [
     { key: "malkut", label: "Malkuth" },
@@ -245,12 +259,14 @@ const state = {
 // ---- canvas & GL ----
 
 const canvas = $("#canvas");
-const gl = canvas.getContext("webgl", {
+const GL_OPTS = {
     alpha: true,
     premultipliedAlpha: true,
     preserveDrawingBuffer: true,
     antialias: true,
-});
+};
+const gl =
+    canvas.getContext("webgl2", GL_OPTS) || canvas.getContext("webgl", GL_OPTS);
 const batcher = new Batcher(gl);
 const drawer = new Drawer(batcher);
 const dpr = () => devicePixelRatio || 1;
@@ -856,6 +872,17 @@ function employeeCatalog() {
         }
         out.splice(i, 0, e);
     }
+    if (DATA.portrait) {
+        const i = out.findLastIndex((o) => o.group === "Idle") + 1;
+        out.splice(i, 0, {
+            key: "portrait",
+            name: "Portrait*",
+            group: "Idle",
+            base: null,
+            variants: null,
+            portrait: true,
+        });
+    }
     return (catalogCache = out);
 }
 
@@ -867,6 +894,18 @@ function resolveForWeapon(catalog, weaponRig) {
             group: e.group,
             gated: !e.base || !!e.base.weapons,
         };
+        if (e.portrait) {
+            return {
+                ...common,
+                gated: false,
+                rig: "agent",
+                clip: "Portrait",
+                portrait: true,
+                dur: 0,
+                loop: false,
+                speed: 1,
+            };
+        }
         const v = weaponRig && e.variants?.get(weaponRig);
         if (v) {
             return {
@@ -1112,6 +1151,14 @@ function isSpecialRig(m) {
     );
 }
 
+function separatorOff(m) {
+    if (!isSpecialRig(m)) {
+        return false;
+    }
+    const name = m.dir.split("/").pop();
+    return !/Weapon$/.test(name) && !SEPARATOR_RIGS.has(name);
+}
+
 function animFaceTimeline(m) {
     const a = currentAnim();
     if (!a) {
@@ -1296,6 +1343,9 @@ function hexColor(h) {
 let lookVersion = 0;
 function lookChanged() {
     lookVersion++;
+    if (DATA.kit) {
+        syncUrl();
+    }
 }
 
 function giftOffset(name) {
@@ -1381,7 +1431,7 @@ function buildGiftSlots(m, adds, special) {
         const [ox, oy, oz] = offset;
         const sx = Math.hypot(a, d);
         const sp = g.sprite;
-        const [w, h] = sp.size;
+        const [w, h] = sp.rect || sp.size;
         const ppu = sp.ppu || 100;
         const att = new spine.RegionAttachment("gift_" + g.key);
         att.x = (a * ox + b * oy + c) / rigScale;
@@ -1401,6 +1451,7 @@ function buildGiftSlots(m, adds, special) {
             key: "gift:" + g.key,
             name: g.name,
             bone,
+            follower: true,
             att,
             z: anchor.z + oz,
             follow,
@@ -1421,7 +1472,7 @@ function weaponGiftSlot(m, g, rigScale) {
         return null;
     }
     const sp = g.sprite;
-    const [w, h] = sp.size;
+    const [w, h] = sp.rect || sp.size;
     const ppu = sp.ppu || 100;
     const r = (ref.rotation * Math.PI) / 180,
         [dx, dy] = GIFT_WEAPON.shift;
@@ -1498,11 +1549,12 @@ function giftDrawOrder(m) {
 
 function ensureDressed(m, kind) {
     const face = currentFace(m);
-    const key = `${kind}|${lookVersion}|${face}`;
+    const portrait = kind === "employee" && !!currentAnim()?.portrait;
+    const key = `${kind}|${lookVersion}|${face}|${portrait}`;
     if (m.dressedKey === key) {
         return true;
     }
-    const special = isSpecialRig(m);
+    const special = separatorOff(m);
     const plan = dressPlan(kind, special, face);
     const adds =
         kind === "employee" && DATA.kit.rules.gifts ? giftAdds(special, m) : [];
@@ -1514,6 +1566,9 @@ function ensureDressed(m, kind) {
         for (const [, f] of animFaceTimeline(m)) {
             files.push(...faceFiles(f));
         }
+    }
+    if (portrait) {
+        files.push(...portraitSprites().map((s) => s.file));
     }
     const pending = files.map(kitTexture).filter((p) => !("value" in p));
     if (pending.length) {
@@ -1535,6 +1590,8 @@ function ensureDressed(m, kind) {
 
 function spriteRegion(sprite, tex) {
     const [w, h] = sprite.size;
+    const [W, H] = sprite.rect || sprite.size;
+    const [tx, ty] = sprite.trim || [0, 0];
     const [pvx, pvy] = sprite.pivot || [0.5, 0.5];
     const region = new spine.TextureAtlasRegion();
     region.texture = tex;
@@ -1547,10 +1604,10 @@ function spriteRegion(sprite, tex) {
     region.y = 0;
     region.width = w;
     region.height = h;
-    region.originalWidth = w;
-    region.originalHeight = h;
-    region.offsetX = Math.round(w * (0.5 - pvx));
-    region.offsetY = Math.round(h * (0.5 - pvy));
+    region.originalWidth = W;
+    region.originalHeight = H;
+    region.offsetX = tx + W * (0.5 - pvx);
+    region.offsetY = ty + H * (0.5 - pvy);
     region.rotate = false;
     return region;
 }
@@ -1591,7 +1648,7 @@ function applyDress(m, plan) {
         if (!tex) {
             continue;
         }
-        const [w, h] = c.sprite.size;
+        const [w, h] = c.sprite.rect || c.sprite.size;
         const region = spriteRegion(c.sprite, tex);
         const color = c.tint ? hexColor(c.tint) : new spine.Color(1, 1, 1, 1);
         if (orig instanceof spine.RegionAttachment) {
@@ -2140,9 +2197,13 @@ function setLayersOpen(open) {
 function renderOptions() {
     const k = selKind();
     const off = k !== "employee";
-    const opts = $("#employee-options");
-    opts.classList.toggle("disabled-block", off);
-    opts.inert = off;
+    const lookOff = off && k !== "clerk";
+    const look = $("#appearance-block");
+    look.classList.toggle("disabled-block", lookOff);
+    look.inert = lookOff;
+    const equip = $("#equipment-block");
+    equip.classList.toggle("disabled-block", off);
+    equip.inert = off;
     const gifts = $("#gift-controls");
     const giftsOff = off || !DATA.giftGroups.length;
     gifts.classList.toggle("disabled-block", giftsOff);
@@ -2412,8 +2473,6 @@ function renderGiftValues() {
     for (const sel of $$("#gifts select")) {
         sel.value = state.gifts[sel.dataset.key] ?? "";
     }
-    const n = Object.keys(state.gifts).length;
-    $("#gift-count").textContent = n ? `(${n})` : "";
 }
 
 function giftsChanged() {
@@ -2423,9 +2482,16 @@ function giftsChanged() {
 }
 
 function randomizeGifts() {
-    state.gifts = {};
+    const kept = Object.fromEntries(
+        Object.entries(state.gifts).filter(([k]) => GIFT_RANDOMIZE_KEEP.has(k))
+    );
+    state.gifts = kept;
     for (const grp of DATA.giftGroups) {
-        if (Math.random() < 0.5 || !grp.gifts.length) {
+        if (
+            GIFT_RANDOMIZE_KEEP.has(grp.key) ||
+            Math.random() < 0.5 ||
+            !grp.gifts.length
+        ) {
             continue;
         }
         state.gifts[grp.key] =
@@ -2576,7 +2642,7 @@ function renderExport() {
     $("#copy").hidden = state.expKind !== "still";
     $("#export-all").hidden = state.expKind !== "anim";
     const b = measure();
-    const sc = exportScalePct / 100;
+    const sc = (exportScalePct / 100) * VIEW_SCALE;
     const pad = Math.max(0, +$("#exp-pad").value || 0);
     const a = currentAnim();
     $("#exp-info").textContent = b
@@ -2709,6 +2775,10 @@ function sceneAnimator(m) {
 }
 
 function drawModel(m, d) {
+    if (m.employee && currentAnim()?.portrait && DATA.portrait) {
+        drawPortrait(m, d);
+        return;
+    }
     if (m.scene) {
         m.scene.draw(
             d,
@@ -2725,6 +2795,528 @@ function drawModel(m, d) {
                     ? giftDrawOrder(m.spine)
                     : followerDrawOrder(m),
         });
+    }
+}
+
+// ---- portrait ----
+
+const PORTRAIT_ARMOR = {
+    Body: 0,
+    CoatBack: 1,
+    CoatLeft: 2,
+    CoatRight: 3,
+    "L arm 1": 4,
+    "L arm 2": 5,
+    "L leg 2": 6,
+    "L leg 1": 7,
+    "L hand": 8,
+    "R arm 1": 9,
+    "R arm 2": 10,
+    "R leg 2": 11,
+    "R leg 1": 12,
+    "R hand": 13,
+};
+const PORTRAIT_ONE_HANDED = new Set(["mace", "axe", "knife", "pistol"]);
+const PORTRAIT_UNIQUE_PARENT = ["OneHanded", "TwoHanded", "L arm 1", "R arm 1", "Fist"];
+const PORTRAIT_EYE = [-2.4, 63];
+const PORTRAIT_HEAD = [5.1, 121.4];
+const PORTRAIT_HEADBACK = [0, 160];
+
+function portraitFace() {
+    const R = DATA.kit.rules;
+    const face = state.animFace ? "default" : state.look.expression;
+    const out = {};
+    for (const r of R.face[face] || R.face.default) {
+        out[r.slot] = basicSprite(r.region, regionSelection(r.region));
+    }
+    for (const r of R.hair) {
+        out[r.slot] = basicSprite(r.region, regionSelection(r.region));
+    }
+    return out;
+}
+
+function portraitWeapon() {
+    const w = currentWeapon();
+    if (!w) {
+        return null;
+    }
+    const kit = DATA.kit;
+    if (w.class === "special") {
+        const unique = DATA.portrait.unique_weapons[w.sprite];
+        return unique ? { unique } : null;
+    }
+    if (w.class === "fist") {
+        const sh = kit.weapon_sheets.find((s) => s.class === "fist");
+        const sp = sh?.sprites[2 * (parseInt(w.sprite, 10) || 0) + 1];
+        return sp ? { node: "Fist", sprite: sp } : null;
+    }
+    const sp = kit.weapon_sheets
+        .filter((s) => s.class === w.class)
+        .flatMap((s) => s.sprites)
+        .find((s) => s.name === w.sprite);
+    if (!sp) {
+        return null;
+    }
+    return {
+        node: PORTRAIT_ONE_HANDED.has(w.class) ? "OneHanded" : "TwoHanded",
+        sprite: sp,
+    };
+}
+
+function portraitGifts() {
+    const all = Object.entries(state.gifts)
+        .map(([k, id]) => [k, DATA.giftById.get(id)])
+        .filter(([, g]) => g?.sprite);
+    return [
+        ...all.filter(([, g]) => g.type !== 1),
+        ...all.filter(([, g]) => g.type === 1),
+    ];
+}
+
+function portraitSprites() {
+    const out = [];
+    const sheet = armorSheet(
+        DATA.armors.find((a) => a.id === state.armor)?.armor_id ?? 0
+    );
+    out.push(...Object.values(PORTRAIT_ARMOR).map((i) => sheet.sprites[i]));
+    out.push(...Object.values(portraitFace()));
+    const head = portraitNode("Head")?.image?.sprite;
+    if (head) {
+        out.push(head);
+    }
+    out.push(armbandSprite());
+    const w = portraitWeapon();
+    if (w?.unique) {
+        out.push(...w.unique.map((u) => u.sprite));
+    } else if (w) {
+        out.push(w.sprite);
+    }
+    out.push(...portraitGifts().map(([, g]) => g.sprite));
+    return out.filter(Boolean);
+}
+
+function portraitNode(name, n = DATA.portrait.root) {
+    if (n.name === name) {
+        return n;
+    }
+    for (const c of n.children) {
+        const r = portraitNode(name, c);
+        if (r) {
+            return r;
+        }
+    }
+    return null;
+}
+
+function portraitTree() {
+    const clone = (n) => ({ ...n, children: n.children.map(clone) });
+    const root = clone(DATA.portrait.root);
+    const find = (name, n = root, parent = null) => {
+        if (n.name === name) {
+            return { node: n, parent };
+        }
+        for (const c of n.children) {
+            const r = find(name, c, n);
+            if (r) {
+                return r;
+            }
+        }
+        return null;
+    };
+    const indexIn = (parent, name) =>
+        parent.children.findIndex((c) => c.name === name);
+    const attach = (sprite, key, extra = {}) => {
+        const [w, h] = sprite.rect || sprite.size;
+        const k = 100 / (sprite.ppu || 100);
+        return {
+            name: key,
+            active: true,
+            pos: [0, 0],
+            size: [w * k, h * k],
+            pivot: [0.5, 0.5],
+            anchor: [0.5, 0.5, 0.5, 0.5],
+            rot: 0,
+            scale: [1, 1],
+            image: { preserveAspect: false, color: [1, 1, 1, 1] },
+            sprite,
+            children: [],
+            ...extra,
+        };
+    };
+    const set = (name, sprite, color) => {
+        const n = find(name)?.node;
+        if (n) {
+            n.sprite = sprite;
+            if (color) {
+                n.tint = color;
+            }
+        }
+    };
+
+    const sheet = armorSheet(
+        DATA.armors.find((a) => a.id === state.armor)?.armor_id ?? 0
+    );
+    for (const [name, i] of Object.entries(PORTRAIT_ARMOR)) {
+        set(name, sheet.sprites[i]);
+    }
+    const face = portraitFace();
+    for (const [slot, sp] of Object.entries(face)) {
+        set(slot, sp);
+    }
+    set("HairFront", face.HairFront, state.look.hair);
+    set("HairBack", face.HairBack, state.look.hair);
+    set("Head", find("Head")?.node.image?.sprite);
+    set("Symbol", armbandSprite());
+    for (const n of ["OneHanded", "TwoHanded", "Fist"]) {
+        set(n, null);
+    }
+
+    const w = portraitWeapon();
+    if (w?.unique) {
+        for (const u of w.unique) {
+            const parent = find(PORTRAIT_UNIQUE_PARENT[u.pos])?.node;
+            if (!parent) {
+                continue;
+            }
+            const n = attach(u.sprite, "weapon:" + u.sprite.name, {
+                pos: u.position,
+                rot: u.rotation,
+                scale: u.scale,
+                image: { preserveAspect: true, color: [1, 1, 1, 1] },
+            });
+            const at = u.pos === 2 ? 1 : u.pos === 3 ? 0 : u.childIndex;
+            if (at >= 0 && at <= parent.children.length) {
+                parent.children.splice(at, 0, n);
+            } else {
+                parent.children.push(n);
+            }
+        }
+    } else if (w) {
+        set(w.node, w.sprite);
+    }
+
+    const hideMouth = portraitGifts().some(
+        ([, g]) => g.type === 1 && g.region === 2
+    );
+    const hideHand = portraitGifts().some(
+        ([, g]) => g.type === 1 && g.region === 4
+    );
+    if (hideMouth) {
+        set("Mouth", null);
+    }
+    if (hideHand) {
+        set("R hand", null);
+    }
+    for (const [key, g] of portraitGifts()) {
+        const n = attach(g.sprite, "gift:" + key);
+        const after = (name, d = 1) => {
+            const i = indexIn(root, name);
+            root.children.splice(i < 0 ? root.children.length : i + d, 0, n);
+        };
+        switch (g.region) {
+            case 1:
+                n.pos = /Mask/.test(g.sprite.name)
+                    ? [g.id === 400052 ? -28.4 : -15.71, PORTRAIT_EYE[1]]
+                    : PORTRAIT_EYE;
+                after("Mouth");
+                break;
+            case 3:
+                n.pos = [16, 108];
+                n.scale = [1.2, 1.2];
+                root.children.push(n);
+                break;
+            case 0:
+                n.pos = PORTRAIT_HEAD;
+                root.children.push(n);
+                break;
+            case 2:
+                if (g.id === 400032 || g.id === 400018) {
+                    n.pos = [-13, 9];
+                    after("HairFront", 2);
+                } else {
+                    n.pos = [-34, 0];
+                    after("HairFront");
+                }
+                break;
+            case 4: {
+                const arm = find("R arm 1").node;
+                n.pos = [16.5, -91.1];
+                arm.children.splice(indexIn(arm, "R hand") + 1, 0, n);
+                break;
+            }
+            case 5:
+                n.pos = [-6.5, -49.7];
+                root.children.push(n);
+                break;
+            case 13:
+                n.pos = find("L hand").node.pos;
+                root.children.push(n);
+                break;
+            case 7:
+                n.pos = [36.6, 24.3];
+                root.children.push(n);
+                break;
+            case 8:
+                n.pos = find("Head").node.pos;
+                after("Mouth");
+                break;
+            case 9:
+                n.pos = g.id === 400043 ? [17, -94.8] : [104.2, -94.8];
+                after("HairBack");
+                break;
+            case 11:
+                n.pos = [-74.5, -94.8];
+                after("HairBack");
+                break;
+            case 10:
+                n.pos = PORTRAIT_HEADBACK;
+                n.scale = [0.65, 0.65];
+                root.children.unshift(n);
+                break;
+            case 6:
+                n.pos = [-6.3, -27.8];
+                root.children.push(n);
+                break;
+            default:
+                root.children.push(n);
+        }
+    }
+    return root;
+}
+
+function portraitQuad(n) {
+    const sp = n.sprite;
+    const [W, H] = sp.rect || sp.size;
+    const [w, h] = sp.size;
+    const [tx, ty] = sp.trim || [0, 0];
+    let [rw, rh] = n.size;
+    let rx = -n.pivot[0] * rw,
+        ry = -n.pivot[1] * rh;
+    if (n.image.preserveAspect && W > 0 && H > 0) {
+        const sr = W / H;
+        if (sr > rw / rh) {
+            const old = rh;
+            rh = rw / sr;
+            ry += (old - rh) * n.pivot[1];
+        } else {
+            const old = rw;
+            rw = rh * sr;
+            rx += (old - rw) * n.pivot[0];
+        }
+    }
+    const x0 = rx + (rw * tx) / W,
+        y0 = ry + (rh * ty) / H,
+        x1 = rx + (rw * (tx + w)) / W,
+        y1 = ry + (rh * (ty + h)) / H;
+    return [x0, y0, x1, y0, x1, y1, x0, y1];
+}
+
+function clipPolygon(xy, uv, box) {
+    let pts = [];
+    for (let i = 0; i < xy.length / 2; i++) {
+        pts.push([xy[i * 2], xy[i * 2 + 1], uv[i * 2], uv[i * 2 + 1]]);
+    }
+    const edges = [
+        [0, box[0], 1],
+        [1, box[1], 1],
+        [0, box[2], -1],
+        [1, box[3], -1],
+    ];
+    for (const [axis, v, sign] of edges) {
+        const inside = (p) => (p[axis] - v) * sign >= 0;
+        const out = [];
+        for (let i = 0; i < pts.length; i++) {
+            const a = pts[i],
+                b = pts[(i + 1) % pts.length];
+            const ia = inside(a),
+                ib = inside(b);
+            if (ia) {
+                out.push(a);
+            }
+            if (ia !== ib) {
+                const t = (v - a[axis]) / (b[axis] - a[axis]);
+                out.push(a.map((x, k) => x + (b[k] - x) * t));
+            }
+        }
+        pts = out;
+        if (!pts.length) {
+            break;
+        }
+    }
+    return pts;
+}
+
+function portraitItems() {
+    const items = [];
+    const mul = (m, n) => [
+        m[0] * n[0] + m[2] * n[1],
+        m[1] * n[0] + m[3] * n[1],
+        m[0] * n[2] + m[2] * n[3],
+        m[1] * n[2] + m[3] * n[3],
+        m[0] * n[4] + m[2] * n[5] + m[4],
+        m[1] * n[4] + m[3] * n[5] + m[5],
+    ];
+    const apply = (m, x, y) => [
+        m[0] * x + m[2] * y + m[4],
+        m[1] * x + m[3] * y + m[5],
+    ];
+    const walk = (n, parent, M, clip) => {
+        if (!n.active) {
+            return;
+        }
+        const ar = parent
+            ? [
+                  -parent.pivot[0] * parent.size[0] +
+                      parent.size[0] * n.anchor[0],
+                  -parent.pivot[1] * parent.size[1] +
+                      parent.size[1] * n.anchor[1],
+              ]
+            : [0, 0];
+        const r = (n.rot * Math.PI) / 180;
+        const c = Math.cos(r),
+            s = Math.sin(r);
+        const local = parent
+            ? [
+                  c * n.scale[0],
+                  s * n.scale[0],
+                  -s * n.scale[1],
+                  c * n.scale[1],
+                  ar[0] + n.pos[0],
+                  ar[1] + n.pos[1],
+              ]
+            : [1, 0, 0, 1, 0, 0];
+        const W = mul(M, local);
+        if (n.image && n.sprite) {
+            const q = portraitQuad(n);
+            const xy = [];
+            for (let i = 0; i < 4; i++) {
+                xy.push(...apply(W, q[i * 2], q[i * 2 + 1]));
+            }
+            items.push({
+                name: n.name,
+                sprite: n.sprite,
+                xy,
+                color: n.image.color,
+                tint: n.tint,
+                clip,
+            });
+        }
+        let childClip = clip;
+        if (n.mask) {
+            const xs = [],
+                ys = [];
+            const rx = -n.pivot[0] * n.size[0],
+                ry = -n.pivot[1] * n.size[1];
+            for (const [x, y] of [
+                [rx, ry],
+                [rx + n.size[0], ry],
+                [rx + n.size[0], ry + n.size[1]],
+                [rx, ry + n.size[1]],
+            ]) {
+                const p = apply(W, x, y);
+                xs.push(p[0]);
+                ys.push(p[1]);
+            }
+            const box = [
+                Math.min(...xs),
+                Math.min(...ys),
+                Math.max(...xs),
+                Math.max(...ys),
+            ];
+            childClip = clip
+                ? [
+                      Math.max(box[0], clip[0]),
+                      Math.max(box[1], clip[1]),
+                      Math.min(box[2], clip[2]),
+                      Math.min(box[3], clip[3]),
+                  ]
+                : box;
+        }
+        for (const ch of n.children) {
+            walk(ch, n, W, childClip);
+        }
+    };
+    walk(portraitTree(), null, [1, 0, 0, 1, 0, 0], null);
+    let minY = Infinity;
+    for (const it of items) {
+        if (PORTRAIT_ARMOR[it.name] != null) {
+            for (let i = 1; i < 8; i += 2) {
+                minY = Math.min(minY, it.xy[i]);
+            }
+        }
+    }
+    if (Number.isFinite(minY)) {
+        for (const it of items) {
+            for (let i = 1; i < 8; i += 2) {
+                it.xy[i] -= minY;
+            }
+            if (it.clip) {
+                it.clip = [
+                    it.clip[0],
+                    it.clip[1] - minY,
+                    it.clip[2],
+                    it.clip[3] - minY,
+                ];
+            }
+        }
+    }
+    return items;
+}
+
+function drawPortrait(m, d) {
+    const sk = m.spine;
+    if (sk.portraitKey !== m.spine.dressedKey) {
+        sk.portraitItems = portraitItems();
+        sk.portraitKey = m.spine.dressedKey;
+    }
+    const hidden = spineHidden(m);
+    const UV = [0, 1, 1, 1, 1, 0, 0, 0];
+    for (const it of sk.portraitItems) {
+        const si = sk.data.findSlotIndex(it.name);
+        if (
+            (si >= 0 && hidden.has(si)) ||
+            hidden.has(it.name) ||
+            (it.name === "Symbol" && hidden.has("gift:armband"))
+        ) {
+            continue;
+        }
+        const tex = textureCache.get(it.sprite.file)?.value;
+        if (!tex) {
+            continue;
+        }
+        let xy = it.xy,
+            uv = UV;
+        let n = 4,
+            tris = QUAD_TRIS;
+        if (it.clip) {
+            const pts = clipPolygon(it.xy, UV, it.clip);
+            if (pts.length < 3) {
+                continue;
+            }
+            n = pts.length;
+            xy = pts.flatMap((p) => [p[0], p[1]]);
+            uv = pts.flatMap((p) => [p[2], p[3]]);
+            tris = [];
+            for (let i = 1; i < n - 1; i++) {
+                tris.push(0, i, i + 1);
+            }
+        }
+        const tint = it.tint ? hexColor(it.tint) : { r: 1, g: 1, b: 1 };
+        const [cr, cg, cb, ca] = it.color;
+        d.emit(
+            tex,
+            BLEND.normal,
+            xy,
+            uv,
+            n,
+            tris,
+            tris.length,
+            cr * tint.r,
+            cg * tint.g,
+            cb * tint.b,
+            ca,
+            null
+        );
     }
 }
 
@@ -2854,14 +3446,24 @@ function measure() {
     return Number.isFinite(d.bounds.minX) ? d.bounds : null;
 }
 
-function resizeCanvas() {
+let deviceBox = null;
+
+function resizeCanvas(entries) {
+    const box = entries?.[0]?.devicePixelContentBoxSize?.[0] || deviceBox;
+    if (box) {
+        deviceBox = box;
+        canvas.width = Math.max(1, box.inlineSize);
+        canvas.height = Math.max(1, box.blockSize);
+        return;
+    }
     const r = canvas.getBoundingClientRect();
     canvas.width = Math.max(1, Math.round(r.width * dpr()));
     canvas.height = Math.max(1, Math.round(r.height * dpr()));
 }
 
+const VIEW_SCALE = 49.95121765136719 / 100;
 const ZOOM_MIN_PCT = 10,
-    ZOOM_MAX_PCT = 990;
+    ZOOM_MAX_PCT = 1980;
 const clampZoom = (z) =>
     Math.min(ZOOM_MAX_PCT / 100, Math.max(ZOOM_MIN_PCT / 100, z));
 const zoomPct = () => Math.round(state.view.zoom * 100);
@@ -2891,7 +3493,8 @@ function fitView() {
         Math.min(
             cw / Math.max(1, b.maxX - b.minX),
             ch / Math.max(1, b.maxY - b.minY)
-        ) * 0.86
+        ) *
+            (0.86 / VIEW_SCALE)
     );
     centerView();
 }
@@ -2919,8 +3522,9 @@ function zoomAt(factor, sx, sy) {
     const ox = sx - cw / 2,
         oy = sy - ch / 2;
     const s = v.flip ? -1 : 1;
-    v.camX += s * (ox / v.zoom - ox / nz);
-    v.camY += oy / v.zoom - oy / nz;
+    const k = 1 / VIEW_SCALE;
+    v.camX += s * k * (ox / v.zoom - ox / nz);
+    v.camY += k * (oy / v.zoom - oy / nz);
     v.zoom = nz;
 }
 
@@ -2967,7 +3571,7 @@ function draw() {
         projection(
             canvas.width / dpr(),
             canvas.height / dpr(),
-            v.zoom,
+            v.zoom * VIEW_SCALE,
             v.camX,
             v.camY,
             v.flip
@@ -3003,7 +3607,8 @@ function tick(now) {
 
 // ---- export ----
 
-function renderToCanvas(scale, pad, bg, flip, bounds) {
+function renderToCanvas(pct, pad, bg, flip, bounds) {
+    const scale = pct * VIEW_SCALE;
     const m = currentModel();
     if (!m?.ready) {
         return null;
@@ -3800,24 +4405,134 @@ function initPanels() {
 
 // ---- url ----
 
+const URL_PARTS = {
+    front: "front",
+    rear: "rear",
+    eye: "eyes",
+    eyebrow: "brows",
+    mouth: "mouth",
+    eye_closed: "closedeyes",
+};
+let urlDefaults = null;
+
+function departmentUsable(kind, d) {
+    return kind === "clerk"
+        ? d in DATA.kit.rules.clerk_armor
+        : d === "none" || d in (DATA.kit.symbol_sheets?.[0]?.sprites || {});
+}
+
+function lookIndex(key, sel) {
+    const region = LOOK_PARTS.find((p) => p.key === key).region;
+    return partSprites(region).findIndex(
+        (x) => x.sel[0] === sel?.[0] && x.sel[1] === sel?.[1]
+    );
+}
+
+function writeLookParams(q, kind) {
+    for (const [key, name] of Object.entries(URL_PARTS)) {
+        const i = lookIndex(key, state.look[key]);
+        if (i >= 0 && i !== lookIndex(key, DEFAULT_LOOK[key])) {
+            q.set(name, i);
+        }
+    }
+    if (state.look.hair.toLowerCase() !== DEFAULT_LOOK.hair) {
+        q.set("hair", state.look.hair.replace("#", "").toLowerCase());
+    }
+    if (state.department[kind] !== urlDefaults.department[kind]) {
+        q.set("dept", state.department[kind]);
+    }
+    if (kind !== "employee") {
+        return;
+    }
+    if (state.serviceLevel !== urlDefaults.serviceLevel) {
+        q.set("level", state.serviceLevel);
+    }
+    if (state.armor !== urlDefaults.armor) {
+        q.set("suit", state.armor);
+    }
+    if (state.weapon !== urlDefaults.weapon) {
+        q.set("weapon", state.weapon ?? "none");
+    }
+    const gifts = Object.values(state.gifts).sort((a, b) => a - b);
+    if (gifts.length) {
+        q.set("gifts", gifts.join(","));
+    }
+}
+
+function readLookParams(q, kind) {
+    for (const [key, name] of Object.entries(URL_PARTS)) {
+        const i = parseInt(q.get(name), 10);
+        const region = LOOK_PARTS.find((p) => p.key === key).region;
+        const x = Number.isInteger(i) ? partSprites(region)[i] : null;
+        if (x) {
+            state.look[key] = x.sel;
+        }
+    }
+    const hair = q.get("hair");
+    if (/^[0-9a-f]{6}$/i.test(hair || "")) {
+        state.look.hair = "#" + hair.toLowerCase();
+    }
+    const dept = q.get("dept");
+    if (dept && departmentUsable(kind, dept)) {
+        state.department[kind] = dept;
+    }
+    if (kind !== "employee") {
+        return;
+    }
+    const level = parseInt(q.get("level"), 10);
+    if ((DATA.kit.symbol_sheets || []).some((s) => s.level === level)) {
+        state.serviceLevel = level;
+    }
+    const suit = Number(q.get("suit"));
+    if (q.has("suit") && DATA.armors.some((a) => a.id === suit)) {
+        state.armor = suit;
+    }
+    const weapon = q.get("weapon");
+    if (weapon === "none") {
+        state.weapon = null;
+    } else if (weapon && DATA.weapons.some((w) => w.id === Number(weapon))) {
+        state.weapon = Number(weapon);
+    }
+    const gifts = {};
+    for (const id of (q.get("gifts") || "").split(",").map(Number)) {
+        const grp = DATA.giftGroups.find((g) => g.gifts.some((x) => x.id === id));
+        if (grp) {
+            gifts[grp.key] = id;
+        }
+    }
+    state.gifts = gifts;
+}
+
 function syncUrl() {
-    const p = new URLSearchParams(location.search);
+    const old = new URLSearchParams(location.search);
+    const p = new URLSearchParams();
+    if (old.has("data")) {
+        p.set("data", old.get("data"));
+    }
     if (state.sel) {
         p.set("id", state.sel);
-    } else {
-        p.delete("id");
     }
-    history.replaceState(null, "", "?" + p);
+    if ((state.sel === "employee" || state.sel === "clerk") && urlDefaults) {
+        writeLookParams(p, state.sel);
+    }
+    const url = "?" + p.toString().replace(/%2C/g, ",");
+    if (location.search !== url) {
+        history.replaceState(null, "", url);
+    }
 }
 
 function readUrl() {
-    const id = new URLSearchParams(location.search).get("id");
+    const q = new URLSearchParams(location.search);
+    const id = q.get("id");
     if (
         id === "employee" ||
         id === "clerk" ||
         DATA.entities.some((e) => e.id === id)
     ) {
         state.sel = id;
+    }
+    if (id === "employee" || id === "clerk") {
+        readLookParams(q, id);
     }
 }
 
@@ -4061,9 +4776,10 @@ function wire() {
             return;
         }
         state.view.camX -=
-            ((e.clientX - drag.x) / state.view.zoom) *
+            ((e.clientX - drag.x) / (state.view.zoom * VIEW_SCALE)) *
             (state.view.flip ? -1 : 1);
-        state.view.camY -= (e.clientY - drag.y) / state.view.zoom;
+        state.view.camY -=
+            (e.clientY - drag.y) / (state.view.zoom * VIEW_SCALE);
         drag = { x: e.clientX, y: e.clientY };
     };
     canvas.onpointerup = () => {
@@ -4163,7 +4879,12 @@ function wire() {
         }
     });
 
-    new ResizeObserver(resizeCanvas).observe($("#canvas-wrap"));
+    const ro = new ResizeObserver(resizeCanvas);
+    try {
+        ro.observe(canvas, { box: "device-pixel-content-box" });
+    } catch {
+        ro.observe($("#canvas-wrap"));
+    }
 }
 
 function prepareEquipment(kit) {
@@ -4247,11 +4968,20 @@ async function init() {
                 return r.json();
             }),
         ]);
+        DATA.portrait = await fetch(DATA_ROOT + "employee/portrait.json")
+            .then((r) => (r.ok ? r.json() : null))
+            .catch(() => null);
         DATA.entities = index.entities;
         DATA.kit = kit;
         prepareEquipment(kit);
         prepareGifts(kit);
         buildGifts();
+        urlDefaults = {
+            armor: state.armor,
+            weapon: state.weapon,
+            serviceLevel: state.serviceLevel,
+            department: { ...state.department },
+        };
     } catch (err) {
         $("#load-error").hidden = false;
         $("#load-error").textContent =
