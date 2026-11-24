@@ -494,8 +494,18 @@ async function mediaRecorderWebm(frames, fps, onProgress) {
     c.width = w;
     c.height = h;
     const g = c.getContext("2d");
-    const stream = c.captureStream(0);
-    const track = stream.getVideoTracks()[0];
+    let stream = c.captureStream(0);
+    let track = stream.getVideoTracks()[0];
+    let requestFrame = () => {};
+    if (typeof track.requestFrame === "function") {
+        requestFrame = () => track.requestFrame();
+    } else if (typeof stream.requestFrame === "function") {
+        requestFrame = () => stream.requestFrame();
+    } else {
+        track.stop();
+        stream = c.captureStream(fps);
+        track = stream.getVideoTracks()[0];
+    }
     const rec = new MediaRecorder(stream, {
         mimeType: mime,
         videoBitsPerSecond: Math.min(40e6, Math.max(2e6, w * h * fps * 0.3)),
@@ -518,7 +528,7 @@ async function mediaRecorderWebm(frames, fps, onProgress) {
         await waitUntil(start + i * step);
         g.clearRect(0, 0, w, h);
         g.drawImage(frames[i], 0, 0);
-        track.requestFrame();
+        requestFrame();
         if (onProgress) {
             onProgress(i + 1, frames.length);
         }
